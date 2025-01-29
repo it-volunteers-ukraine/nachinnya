@@ -1,0 +1,1 @@
+console.log("footer"),console.log("header"),console.log("main");

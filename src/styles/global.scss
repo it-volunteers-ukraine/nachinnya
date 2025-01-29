@@ -1,0 +1,81 @@
+@import "./variables.scss";
+
+// containers
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 110px;
+  }
+}
+
+.section {
+  padding: 32px 0;
+  @media screen and (min-width: $tablet) {
+    padding: 56px 0;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 80px 0;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media screen and (min-width: $tablet) {
+    max-width: $desktop;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1128px;
+    padding: 0;
+  }
+}
+
+//headings
+.section_heading {
+  //styleName: Headings/Heading 26;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  color: $primary-color;
+  @media screen and (min-width: $tablet) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 45px;
+  }
+}
+
+.main_heading {
+  //styleName: Headings/Heading xlarge;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  @media screen and (min-width: $desktop) {
+    font-size: 45px;
+  }
+}
+
+//buttons
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: $big-br;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  padding: 10px 16px;
+}
