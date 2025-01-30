@@ -1,0 +1,13 @@
+.latest-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.post-item {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.post-item h3 {
+    margin: 0;
+    font-size: 20px;
+}
