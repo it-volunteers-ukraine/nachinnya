@@ -13,10 +13,12 @@ $query = new WP_Query($args);
 if ($query->have_posts()) :
     echo '<div class="latest-posts">';
     while ($query->have_posts()) : $query->the_post(); ?>
+    <div class="container">
         <div class="post-item">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <p><?php the_excerpt(); ?></p>
         </div>
+    </div>
     <?php endwhile;
     echo '</div>';
     wp_reset_postdata();

@@ -1,13 +1,16 @@
+@import "./../../../../src/styles/variables.scss";
+
 .latest-posts {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 .post-item {
-    padding: 15px;
+    padding: 15px 0;
     border-bottom: 1px solid #ccc;
 }
 .post-item h3 {
     margin: 0;
     font-size: 20px;
+    color: $red;
 }
