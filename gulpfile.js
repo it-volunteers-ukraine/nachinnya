@@ -6,6 +6,10 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const path = require('path');
+const postcss = require('gulp-postcss');
+const postcssModules = require("postcss-modules");
+const fs = require('fs');
+const cssModulesJSON = {}; //object for store unical class names
 
 function images() {
   return src('src/images/*.*')
@@ -29,11 +33,24 @@ function stylesTemplates() {
 }
 
 function blockStyles() {
-  return src('inc/acf/blocks/**/*.scss')
+  return src('inc/acf/blocks/**/*.module.scss')
+    .pipe(postcss([
+      postcssModules({
+        generateScopedName: "[name]__[local]___[hash:base64:5]",
+        getJSON: (cssFileName, json) => {
+          const fileName = path.basename(cssFileName, ".module.scss");
+          cssModulesJSON[fileName] = json;
+
+          fs.writeFileSync("assets/blocks/styles/modules.json", JSON.stringify(cssModulesJSON, null, 2));
+        }
+      })
+    ]))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(scss({ outputStyle: 'compressed' }))
     .pipe(dest('assets/blocks/styles'));
 }
+
+// ****************************************
 
 function scripts() {
   return src('src/scripts/*.js')
@@ -57,7 +74,7 @@ function blockScripts() {
 function watching() {
   watch('src/styles/*.scss', styles);
   watch('src/styles/template-styles/*.scss', stylesTemplates);
-  watch('inc/acf/blocks/**/*.scss', blockStyles);
+  watch('inc/acf/blocks/**/*.module.scss', blockStyles);
   watch('src/scripts/*.js', scripts);
   watch('src/scripts/template-scripts/*.js', scriptsTemplates);
   watch('inc/acf/blocks/**/*.js', blockScripts);

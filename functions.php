@@ -40,6 +40,13 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
 
+
+
+  wp_enqueue_style( 'contacts-style', get_template_directory_uri() . '/assets/blocks/styles/jsblock1/jsblock1.module.css', array('main') );
+  wp_enqueue_style( 'contacts', get_template_directory_uri() . '/assets/blocks/styles/jsblock2/jsblock2.module.css', array('main') );
+
+
+
   // Enqueue scripts and styles of blocks
   function register_acf_block_assets() {
     $blocks_dir = get_template_directory() . '/inc/acf/blocks';
