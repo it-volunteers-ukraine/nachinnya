@@ -9,7 +9,8 @@ const path = require('path');
 const postcss = require('gulp-postcss');
 const postcssModules = require("postcss-modules");
 const fs = require('fs');
-const cssModulesJSON = {}; //object for store unical class names
+const cssModulesJSON = {};
+const rename = require('gulp-rename');
 
 function images() {
   return src('src/images/*.*')
@@ -47,6 +48,9 @@ function blockStyles() {
     ]))
     .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
     .pipe(scss({ outputStyle: 'compressed' }))
+    .pipe(rename(function (path) {
+      path.basename = path.basename.replace('.module', '');
+    }))
     .pipe(dest('assets/blocks/styles'));
 }
 
