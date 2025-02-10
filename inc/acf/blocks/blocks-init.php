@@ -48,7 +48,29 @@ function it_volunteers_acf_blocks_init() {
             'category'          => 'posts-blocks',
             'icon'              => 'admin-post',
             'keywords'          => array('posts', 'latest posts', 'blog'),
-        ));    
+        ));
+
+        // Register a jsblock1 block
+        acf_register_block_type(array(
+            'name'              => 'jsblock1',
+            'title'             => __('jsblock1'),
+            'description'       => __('Block jsblock1'),
+            'render_template'   => acf_theme_blocks_path('jsblock1/jsblock1.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/jsblock1/jsblock1.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/jsblock1/jsblock1.js',
+            'category'          => 'custom-blocks',
+        ));
+
+        // Register a jsblock2 block
+        acf_register_block_type(array(
+            'name'              => 'jsblock2',
+            'title'             => __('jsblock2'),
+            'description'       => __('Block jsblock2'),
+            'render_template'   => acf_theme_blocks_path('jsblock2/jsblock2.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/jsblock2/jsblock2.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/jsblock2/jsblock2.js',
+            'category'          => 'custom-blocks',
+        ));
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');

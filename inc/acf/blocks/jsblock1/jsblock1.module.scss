@@ -1,0 +1,17 @@
+@use "./../../../../src/styles/variables.scss" as vars;
+
+.block {
+    background: vars.$red;
+}
+
+.button_a {
+    background: vars.$white;
+}
+
+.button_b {
+    background: vars.$primary-color;
+}
+
+.paragraph_2 {
+    font-size: 24px;
+}
