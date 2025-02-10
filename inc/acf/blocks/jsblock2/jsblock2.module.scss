@@ -1,3 +1,5 @@
+@use "./../../../../src/styles/variables.scss" as vars;
+
 .block {
     background: green;
 }
@@ -7,5 +9,5 @@
 }
 
 .button_b {
-    background: magenta;
+    background: vars.$violet-light;
 }

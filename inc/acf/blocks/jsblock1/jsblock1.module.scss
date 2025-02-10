@@ -1,11 +1,13 @@
+@use "./../../../../src/styles/variables.scss" as vars;
+
 .block {
-    background: red;
+    background: vars.$red;
 }
 
 .button_a {
-    background: white;
+    background: vars.$white;
 }
 
 .button_b {
-    background: blue;
+    background: vars.$primary-color;
 }
