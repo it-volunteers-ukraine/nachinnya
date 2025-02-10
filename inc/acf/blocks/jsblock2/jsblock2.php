@@ -1,17 +1,21 @@
 <?php
+$default_classes = [
+    'block' => 'block',
+    'button_a' => 'button',
+    'button_b' => 'button',
+];
+
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
+$classes = $default_classes;
 
 if (file_exists($modules_file)) {
     $modules = json_decode(file_get_contents($modules_file), true);
-    $block_class = $modules['jsblock2']['block'] ?? 'block';
-    $button_a_class = $modules['jsblock2']['button_a'] ?? 'button';
-    $button_b_class = $modules['jsblock2']['button_b'] ?? 'button';
-} else {
-    $block_class = 'block';
+    $classes = array_merge($default_classes, $modules['jsblock2'] ?? []);
 }
 ?>
-<div class="<?php echo esc_attr($block_class); ?>">
+
+<div class="<?php echo esc_attr($classes['block']); ?>">
     <p>jsblock2</p>
-    <button class="<?php echo esc_attr($button_a_class); ?>">Button A</button>
-    <button class="<?php echo esc_attr($button_b_class); ?>">Button B</button>
+    <button class="<?php echo esc_attr($classes['button_a']); ?>">Button A</button>
+    <button class="<?php echo esc_attr($classes['button_b']); ?>">Button B</button>
 </div>
