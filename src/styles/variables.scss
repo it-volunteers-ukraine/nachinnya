@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'KharkivTone';
+    src: url('/assets/fonts/KharkivTone.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$primary-font: 'KharkivTone', sans-serif;
+
 $BG: #F5EFE6;
 $red: #B74028;
 $dark_red: #351311;
@@ -10,8 +19,6 @@ $grey: #BBBBBB;
 $white: #F5EFE6;
 $red_for_logo: #C61818;
 $derk_for_logo: #16080A;
-
-$primary-font: "Nunito", sans-serif;
 
 $full: 1920px;
 $desktop: 1440px;
