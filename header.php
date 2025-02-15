@@ -1,3 +1,46 @@
+<?php
+    // The logo elements
+    $logo_url = get_field('logo', 'option');
+    $logo_elements = "";
+    if ($logo_url) {
+        $logo_elements = <<<LOGO
+            <a href="/"><img class="header__logo-img" src="$logo_url"></a>
+        LOGO;
+    }
+
+    // The social-icons elements
+    $socials = get_field('socials', 'option');
+    $socials_elements = "";
+    if ($socials && count($socials)) {
+        //
+        $socials_items = "";
+        foreach ($socials as $social) {
+            $url = $social["url"];
+            $img_url = $social["icon"];
+
+            $socials_items .= <<<ITEM
+                <li class="header__social-icon">
+                    <a href="$url" target="_blank" rel="noreferrer">
+                        <img class="header__social-icon-image" src="$img_url">
+                    </a>
+                </li>
+            ITEM;
+        }
+
+        //
+        $socials_elements = <<<LIST
+            <ul class="header__social-icons">$socials_items</ul>
+        LIST;
+        $dropdown_menu_socials_elements = <<<LIST
+            <ul class="header__dropdown-menu-social-icons">$socials_items</ul>
+        LIST;
+    }
+
+    //
+    $menu_open_svg_href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-veggie-burger";
+    $menu_close_svg_href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-cross";
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -9,37 +52,108 @@
 </head>
 <body>  
     <div class="wrapper">
+        <!-- The header -->
         <header class="header">
             <div class="header__content _container">
-                <div class="header__menu menu">
-                    <div class="menu__icon icon-menu menu__round">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <!-- The logo -->
+                <?= $logo_elements ?>
+                <!-- The header group -->
+                <div class="header__group">
+                    <!-- The menu -->
+                    <nav class="menu__nav"> 
+                        <?php wp_nav_menu([
+                            'theme_location'       => 'header',
+                            'container'            => false,
+                            'menu_class'           => 'header__menu__list',
+                            'menu_id'              => false,
+                            'echo'                 => true,
+                            'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
+                        ]); ?>
+                    </nav>
+                    <!-- The language switcher -->
+                    <div class="header__language-switcher">
+                        <button
+                            class="header__language-switcher-button header__dropdown-menu-language-switcher-button-selected"
+                            type="button"
+                            onclick="toggleHeaderLanguageSwitcherDropdown();"
+                        >
+                            УКР
+                        </button>
+                        <ul
+                            id="headerLanguageSwitcherDropdown"
+                            class="header__language-switcher-dropdown header__language-switcher-dropdown-hidden"
+                        >
+                            <li><button class="header__language-switcher-button" type="button">УКР</button></li>
+                            <li><button class="header__language-switcher-button" type="button">ENG</button></li>
+                        </ul>
+                    </div>
+                    <!-- The social icons -->
+                    <?= $socials_elements ?>
+                    <!-- The dropdown menu toggle button for the mobile screens -->
+                    <button class="header__mobile-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
+                        <svg class="header__mobile-menu-dropdown-open-svg">
+                            <use xlink:href="<?= $menu_open_svg_href ?>"></use>
+                        </svg>
+                    </button>
+                    <!-- The dropdown menu toggle button for the tablet and the desktop screens -->
+                    <button class="header__td-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
+                        <svg class="header__td-menu-dropdown-open-svg">
+                            <use xlink:href="<?= $menu_open_svg_href ?>"></use>
+                        </svg>
+                        Меню
+                    </button>
+                </div>
+            </div>                      
+        </header>
+        <!-- The dropdown menu -->
+        <button
+            id="headerDropdownMenuOverlay"
+            class="header__dropdown-menu-overlay header__dropdown-menu-overlay-hidden"
+            type="button"
+            onclick="toggleHeaderDropdownMenu();"
+        >
+        </button>
+        <div id="headerDropdownMenu" class="header__dropdown-menu header__dropdown-menu-hidden">
+            <!-- The dropdown menu toggle button for the mobile screens -->
+            <button class="header__mobile-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
+                <svg class="header__mobile-menu-dropdown-close-svg">
+                    <use xlink:href="<?= $menu_close_svg_href ?>"></use>
+                </svg>
+            </button>
+            <!-- The dropdown menu toggle button for the tablet and desktop screens -->
+            <button class="header__td-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
+                <svg class="header__td-menu-dropdown-close-svg">
+                    <use xlink:href="<?= $menu_close_svg_href ?>"></use>
+                </svg>
+                Закрити
+            </button>
+
+            <div class="header__dropdown-menu-wrapper">
+                <div class="header__dropdown-menu-items-wrapper">
+                    <!-- The menu -->
+                    <nav class="header__dropdown-menu__nav"> 
+                        <?php wp_nav_menu([
+                            'theme_location'       => 'header',
+                            'container'            => false,
+                            'menu_class'           => 'header__dropdown-menu__list',
+                            'menu_id'              => false,
+                            'echo'                 => true,
+                            'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',
+                        ]); ?>
+                    </nav>
+                    <!-- The language switcher -->
+                    <div class="header__dropdown-menu-language-switcher">
+                        <button
+                            class="header__dropdown-menu-language-switcher-button header__dropdown-menu-language-switcher-button-selected"
+                            type="button"
+                        >
+                            УКР
+                        </button>
                     </div>
                 </div>
-                <div class="menu__nav">  
-                    <?php 
-                        if ( has_custom_logo() ) {
-                            echo get_custom_logo();
-                        }
-                    ?>                     
-                    <div class="menu__content">Nachynnya</div>
-                    <nav class="menu__body"> 
-                        <div class=" menu__container">
-                            <?php wp_nav_menu( [
-                                'theme_location'       => 'header',                          
-                                'container'            => false,                           
-                                'menu_class'           => 'menu__list',
-                                'menu_id'              => false,    
-                                'echo'                 => true,                            
-                                'items_wrap'           => '<ul id="%1$s" class="header_list %2$s">%3$s</ul>',  
-                                ] ); 
-                            ?>   
-                        </div>                          
-                    </nav> 
-                    <div class="burger-menu__overlay"></div> 
-                </div>                
-            </div>                      
-        </header>  
+                <!-- The social icons -->
+                <?= $dropdown_menu_socials_elements ?>
+            </div>
+        </div>
+        <!-- End of the header -->
 	
