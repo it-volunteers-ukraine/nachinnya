@@ -1,11 +1,14 @@
 @font-face {
     font-family: 'KharkivTone';
-    src: url('/assets/fonts/KharkivTone.woff') format('woff');
+    src: url('/assets/fonts/Kharkiv-Tone-04.10.2020.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 $primary-font: 'KharkivTone', sans-serif;
+$secondary-font: 'Raleway', serif;
 
 $BG: #F5EFE6;
 $red: #B74028;

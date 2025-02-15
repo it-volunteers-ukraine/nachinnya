@@ -1,6 +1,6 @@
-@import "./variables.scss";
-@import "./general.scss";
-@import "./global.scss";
-@import "./start-page.scss";
-@import "./header.scss";
-@import "./footer.scss";
+@use "./variables.scss" as *;
+@use "./general.scss";
+@use "./global.scss";
+@use "./start-page.scss";
+@use "./header.scss";
+@use "./footer.scss";

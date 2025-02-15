@@ -15,9 +15,12 @@ if (file_exists($modules_file)) {
 }
 ?>
 
+<div class="section">
 <div class="<?php echo esc_attr($classes['block']); ?>">
+    <h1>title jsblock1</h1>
     <p>jsblock1</p>
     <button class="<?php echo esc_attr($classes['button_a']); ?>">Button A</button>
     <button class="<?php echo esc_attr($classes['button_b']); ?>">Button B</button>
     <p class="<?php echo esc_attr($classes['paragraph_2']); ?>">New article</p>
+</div>
 </div>

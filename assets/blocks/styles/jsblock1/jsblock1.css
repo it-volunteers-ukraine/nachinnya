@@ -1,1 +1,22 @@
-@font-face{font-family:"KharkivTone";src:url("/assets/fonts/KharkivTone.woff") format("woff");font-weight:normal;font-style:normal}.jsblock1-module__block___gWy9q{background:#b74028;font-family:"KharkivTone",sans-serif}.jsblock1-module__button_a___iCrvm{background:#f5efe6}.jsblock1-module__button_b___Mhw7G{background:#3053a0}.jsblock1-module__paragraph_2___2X5vD{font-size:24px;font-family:"KharkivTone",sans-serif}
+@font-face {
+  font-family: "KharkivTone";
+  src: url("/assets/fonts/Kharkiv-Tone-04.10.2020.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.jsblock1-module__block___gWy9q {
+  background: #B74028;
+}
+
+.jsblock1-module__button_a___iCrvm {
+  background: #F5EFE6;
+}
+
+.jsblock1-module__button_b___Mhw7G {
+  background: #3053A0;
+}
+
+.jsblock1-module__paragraph_2___2X5vD {
+  font-size: 24px;
+  font-family: "KharkivTone", sans-serif;
+}
