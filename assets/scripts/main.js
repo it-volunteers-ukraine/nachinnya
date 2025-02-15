@@ -1,1 +1,1 @@
-console.log("footer"),console.log("header"),console.log("main");
+console.log("footer");const toggleHeaderLanguageSwitcherDropdown=()=>{document.getElementById("headerLanguageSwitcherDropdown").classList.toggle("header__language-switcher-dropdown-hidden")},toggleHeaderDropdownMenu=()=>{document.getElementById("headerDropdownMenuOverlay").classList.toggle("header__dropdown-menu-overlay-hidden");document.getElementById("headerDropdownMenu").classList.toggle("header__dropdown-menu-hidden")};console.log("main");
