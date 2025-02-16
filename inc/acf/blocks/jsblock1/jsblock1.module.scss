@@ -1,18 +1,18 @@
-@use "./../../../../src/styles/variables.scss" as vars;
+@use "./../../../../src/styles/variables.scss" as *;
 
 .block {
-    background: vars.$red;
+    background: $red;
 }
 
 .button_a {
-    background: vars.$white;
+    background: $white;
 }
 
 .button_b {
-    background: vars.$blue;
+    background: $blue;
 }
 
 .paragraph_2 {
     font-size: 24px;
-    font-family: vars.$primary-font;
+    font-family: $primary-font;
 }
