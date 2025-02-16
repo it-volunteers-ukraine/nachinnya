@@ -1,9 +1,4 @@
-@font-face {
-  font-family: "KharkivTone";
-  src: url("../../assets/fonts/KharkivTone.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @font-face {
   font-family: "KharkivTone";
   src: url("../../assets/fonts/KharkivTone.woff") format("woff");
@@ -97,6 +92,7 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 ::-moz-focus-inner {
@@ -127,6 +123,7 @@ progress {
 
 [type=search] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -229,12 +226,6 @@ input {
   background: transparent;
 }
 
-@font-face {
-  font-family: "KharkivTone";
-  src: url("../../assets/fonts/KharkivTone.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -262,7 +253,7 @@ input {
   margin: 0 auto;
   padding: 0 80px;
 }
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1440px) {
   .container {
     padding: 0 40px;
   }
@@ -270,6 +261,116 @@ input {
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "KharkivTone", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 88px;
+  line-height: 110%;
+}
+@media screen and (max-width: 1920px) {
+  h1 {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  h1 {
+    font-size: 52px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 110%;
+}
+@media screen and (max-width: 1920px) {
+  h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 130%;
+}
+@media screen and (max-width: 1920px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 14px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 120%;
+}
+@media screen and (max-width: 1920px) {
+  h4 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 14px;
+  }
+}
+
+body,
+.body_medium {
+  font-family: "Raleway", serif;
+  font-size: 20px;
+  line-height: 130%;
+}
+@media screen and (max-width: 1920px) {
+  body,
+  .body_medium {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body,
+  .body_medium {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-weight: 400;
+}
+
+.body_medium {
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .body_medium {
+    line-height: 120%;
   }
 }
 
@@ -389,12 +490,6 @@ input {
   color: #f3db66;
 }
 
-@font-face {
-  font-family: "KharkivTone";
-  src: url("../../assets/fonts/KharkivTone.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 .header {
   background-color: #F5EFE6;
   border-bottom: 1px solid rgba(53, 19, 17, 0.2509803922);

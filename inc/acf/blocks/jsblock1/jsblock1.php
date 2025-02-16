@@ -16,6 +16,7 @@ if (file_exists($modules_file)) {
 ?>
 
 <div class="<?php echo esc_attr($classes['block']); ?>">
+    <h1>title</h1>
     <p>jsblock1</p>
     <button class="<?php echo esc_attr($classes['button_a']); ?>">Button A</button>
     <button class="<?php echo esc_attr($classes['button_b']); ?>">Button B</button>
