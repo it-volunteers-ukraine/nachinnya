@@ -38,10 +38,12 @@
     font-size: 16px;
     padding: 0px 4px;
 }
+
 .menu-item:hover {
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
 }
+
 .menu-item:active {
     color: variables.$dark_red;
     border-bottom: 2px solid variables.$dark_red;
@@ -62,11 +64,13 @@
     font-size: 16px;
     padding: 0px 4px;
 }
+
 .header__language-switcher-button:hover,
 .header__dropdown-menu-language-switcher-button:hover {
     color: variables.$red;
-    border-bottom: 1px solid variables.$red; 
+    border-bottom: 1px solid variables.$red;
 }
+
 .header__language-switcher-button:active,
 .header__dropdown-menu-language-switcher-button:active {
     color: variables.$dark_red;
@@ -103,9 +107,11 @@
     flex-direction: row;
     gap: 24px;
 }
+
 .header__social-icons {
     display: none;
 }
+
 .header__dropdown-menu-social-icons {
     display: flex;
 }
@@ -127,9 +133,11 @@
     justify-content: center;
     align-items: center;
 }
+
 .header__mobile-menu-dropdown-toggle:hover {
     border-color: variables.$yellow_hover;
 }
+
 .header__mobile-menu-dropdown-toggle:active {
     border-color: variables.$yellow_pressed;
 }
@@ -152,10 +160,12 @@
     font-size: 16px;
     text-transform: uppercase;
 }
+
 .header__td-menu-dropdown-toggle:hover {
     border-color: variables.$yellow_hover;
     color: variables.$yellow_hover;
 }
+
 .header__td-menu-dropdown-toggle:active {
     border-color: variables.$yellow_pressed;
     color: variables.$yellow_pressed;
@@ -168,10 +178,12 @@
     width: 14px;
     height: 10px;
 }
+
 .header__mobile-menu-dropdown-toggle:hover .header__mobile-menu-dropdown-open-svg,
 .header__td-menu-dropdown-toggle:hover .header__td-menu-dropdown-open-svg {
     stroke: variables.$yellow_hover;
 }
+
 .header__mobile-menu-dropdown-toggle:active .header__mobile-menu-dropdown-open-svg,
 .header__td-menu-dropdown-toggle:active .header__td-menu-dropdown-open-svg {
     stroke: variables.$yellow_pressed;
@@ -193,11 +205,13 @@
     width: 12px;
     height: 12px;
 }
+
 .header__mobile-menu-dropdown-toggle:hover .header__mobile-menu-dropdown-close-svg,
 .header__td-menu-dropdown-toggle:hover .header__td-menu-dropdown-close-svg {
     stroke: variables.$yellow_hover;
     fill: variables.$yellow_hover;
 }
+
 .header__mobile-menu-dropdown-toggle:active .header__mobile-menu-dropdown-close-svg,
 .header__td-menu-dropdown-toggle:active .header__td-menu-dropdown-close-svg {
     stroke: variables.$yellow_pressed;
@@ -212,6 +226,7 @@
     height: 100%;
     z-index: 99;
 }
+
 .header__dropdown-menu-overlay-hidden {
     display: none;
 }

@@ -82,7 +82,7 @@ function watching() {
   watch('src/scripts/*.js', scripts);
   watch('src/scripts/template-scripts/*.js', scriptsTemplates);
   watch('inc/acf/blocks/**/*.js', blockScripts);
-  watch('src/images', images);
+  watch('src/images/**/*.*', images);
 }
 
 exports.styles = styles;
