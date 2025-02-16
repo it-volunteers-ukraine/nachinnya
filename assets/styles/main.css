@@ -276,14 +276,19 @@ h1 {
   font-size: 88px;
   line-height: 110%;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
   h1 {
     font-size: 80px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1440px) {
   h1 {
     font-size: 52px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
   }
 }
 
@@ -291,14 +296,19 @@ h2 {
   font-size: 44px;
   line-height: 110%;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
   h2 {
     font-size: 38px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1440px) {
   h2 {
     font-size: 32px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 24px;
   }
 }
 
@@ -306,9 +316,14 @@ h3 {
   font-size: 30px;
   line-height: 130%;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
   h3 {
     font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 14px;
   }
 }
 
@@ -316,9 +331,14 @@ h4 {
   font-size: 20px;
   line-height: 120%;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
   h4 {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h4 {
+    font-size: 14px;
   }
 }
 
@@ -328,10 +348,16 @@ body,
   font-size: 20px;
   line-height: 130%;
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1920px) {
   body,
   .body_medium {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body,
+  .body_medium {
+    font-size: 14px;
   }
 }
 
