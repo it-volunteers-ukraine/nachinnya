@@ -242,7 +242,7 @@ input {
 .section {
   padding: 80px 0;
 }
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1440px) {
   .section {
     padding: 64px 0;
   }
@@ -295,6 +295,7 @@ h1 {
 h2 {
   font-size: 44px;
   line-height: 110%;
+  color: #351311;
 }
 @media screen and (max-width: 1920px) {
   h2 {
@@ -345,8 +346,10 @@ h4 {
 body,
 .body_medium {
   font-family: "Raleway", serif;
+  color: #351311;
   font-size: 20px;
   line-height: 130%;
+  background-color: #F5EFE6;
 }
 @media screen and (max-width: 1920px) {
   body,

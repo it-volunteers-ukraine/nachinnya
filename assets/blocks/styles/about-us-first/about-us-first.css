@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "KharkivTone";
+  src: url("../../assets/fonts/KharkivTone.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.about-us-first-module__image-container___kDEcL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  margin: 41px auto 63px;
+  width: 920px;
+}
+
+.about-us-first-module__image-container___kDEcL::before {
+  content: "";
+  position: absolute;
+  border: 2px solid #B74028;
+  top: 11.41px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(6.68deg);
+  -ms-transform: rotate(6.68deg);
+  transform: rotate(6.68deg);
+  z-index: -1;
+}
+
+.about-us-first-module__image-container___kDEcL::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  height: 100px;
+  background: url("../../../../assets/images/pattern.png") repeat-x center center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+  -webkit-animation: about-us-first-module__scrollPattern___ub4UC 1s ease-out forwards;
+  animation: about-us-first-module__scrollPattern___ub4UC 1s ease-out forwards;
+}
+
+@-webkit-keyframes about-us-first-module__scrollPattern___ub4UC {
+  from {
+    background-position: center center;
+  }
+  to {
+    background-position: calc(50% - 50px) center;
+  }
+}
+@keyframes about-us-first-module__scrollPattern___ub4UC {
+  from {
+    background-position: center center;
+  }
+  to {
+    background-position: calc(50% - 50px) center;
+  }
+}
+.about-us-first-module__main_photo___miyzk {
+  max-width: 920px;
+  display: block;
+}
+
+.about-us-first-module__pattern___YX5o9 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background: url("../../../../assets/images/pattern.png") repeat-x center center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.about-us-first-module__title___UJyH4 {
+  padding-top: 36px;
+}
