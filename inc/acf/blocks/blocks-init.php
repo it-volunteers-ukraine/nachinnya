@@ -71,6 +71,16 @@ function it_volunteers_acf_blocks_init() {
             'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/jsblock2/jsblock2.js',
             'category'          => 'custom-blocks',
         ));
+
+        // Register a breadcrumbs block
+        acf_register_block_type(array(
+            'name'              => 'breadcrumbs',
+            'title'             => __('breadcrumbs'),
+            'description'       => __('Breadcrumbs'),
+            'render_template'   => acf_theme_blocks_path('breadcrumbs/breadcrumbs.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/breadcrumbs/breadcrumbs.css',
+            'category'          => 'custom-blocks',
+        ));
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');
