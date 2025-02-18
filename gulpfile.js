@@ -104,12 +104,4 @@ exports.default = parallel(
   blockScripts,
   watching
 );
-exports.build = series(
-  styles,
-  stylesTemplates,
-  blockStyles,
-  images,
-  scripts,
-  scriptsTemplates,
-  blockScripts
-);
+exports.build = series(styles,  images, scripts, scriptsTemplates);
