@@ -39,6 +39,7 @@
     //
     $menu_open_svg_href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-veggie-burger";
     $menu_close_svg_href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-cross";
+    $scroll_to_top_svg_href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-arrow-right";
 ?>
 
 <!DOCTYPE html>
@@ -155,5 +156,16 @@
                 <?= $dropdown_menu_socials_elements ?>
             </div>
         </div>
+        <!-- The button "Scroll to top" -->
+        <button
+            id="headerScrollToTopButton"
+            class="header__scroll-to-top-button"
+            type="button"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+        >
+            <svg class="header__scroll-to-top-button-svg">
+                <use xlink:href="<?= $scroll_to_top_svg_href ?>"></use>
+            </svg>
+        </button>
         <!-- End of the header -->
 	
