@@ -1,0 +1,94 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 41px auto 63px;
+    width: 920px;
+
+    @media screen and (max-width: $desktop) {
+        width: 596px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 482px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 284px;
+    }
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    border: 2px solid $red;
+    top: 11.41px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(6.68deg);
+    z-index: -1;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    height: 100px;
+    background: url('../../../../assets/images/pattern.png') repeat-x center center;
+    transform: translateY(-50%);
+    z-index: -1;
+    animation: scrollPattern 1s ease-out forwards;
+
+    @media screen and (max-width: $desktop) {
+        background-size: auto 72px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        background-size: auto 58px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        background-size: auto 42px;
+    }
+}
+
+.main_photo {
+    max-width: 920px;
+    display: block;
+
+    @media screen and (max-width: $desktop) {
+        width: 596px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 482px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 284px;
+    }
+}
+
+.pattern {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    background: url('../../../../assets/images/pattern.png') repeat-x center center;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+@keyframes scrollPattern {
+    from {
+        background-position: center center;
+    }
+
+    to {
+        background-position: calc(50% - 20px) center;
+    }
+}
