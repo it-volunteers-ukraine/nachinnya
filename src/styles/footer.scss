@@ -1,8 +1,38 @@
-.footer-ornament{
-    width: 42px;
+@use "./variables.scss";
+
+footer {
+  color: variables.$white;
+  font-family: variables.$primary-font;
+  font-size: 14px;
+}
+.footer-ornament {
+    width: 50%;
+    height: auto;
+}
+
+.ornament {
     height: 42px;
 }
 
-.ornament{
-    height: 42px;
+.footer {
+    padding: 72px 16px 0 16px;
+    background-color: variables.$red;
+}
+.logo-footer-link{
+    display: inline-flex;
+    line-height: 0;
+    margin-bottom: 64px;
+}
+.logo-footer-img{
+    width: 164px;
+    height: 120px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
+
+.wave-y {
+  stroke: variables.$yellow;
 }
