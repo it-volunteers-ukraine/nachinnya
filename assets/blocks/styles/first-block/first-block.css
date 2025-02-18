@@ -16,6 +16,21 @@
   margin: 41px auto 63px;
   width: 920px;
 }
+@media screen and (max-width: 1440px) {
+  .first-block-module__image-container___zER-b {
+    width: 596px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .first-block-module__image-container___zER-b {
+    width: 482px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .first-block-module__image-container___zER-b {
+    width: 284px;
+  }
+}
 
 .first-block-module__image-container___zER-b::before {
   content: "";
@@ -44,6 +59,54 @@
   -webkit-animation: first-block-module__scrollPattern___SxPip 1s ease-out forwards;
   animation: first-block-module__scrollPattern___SxPip 1s ease-out forwards;
 }
+@media screen and (max-width: 1440px) {
+  .first-block-module__image-container___zER-b::after {
+    background-size: auto 72px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .first-block-module__image-container___zER-b::after {
+    background-size: auto 58px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .first-block-module__image-container___zER-b::after {
+    background-size: auto 42px;
+  }
+}
+
+.first-block-module__main_photo___K52Dc {
+  max-width: 920px;
+  display: block;
+}
+@media screen and (max-width: 1440px) {
+  .first-block-module__main_photo___K52Dc {
+    width: 596px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .first-block-module__main_photo___K52Dc {
+    width: 482px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .first-block-module__main_photo___K52Dc {
+    width: 284px;
+  }
+}
+
+.first-block-module__pattern___AkYsC {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background: url("../../../../assets/images/pattern.png") repeat-x center center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+}
 
 @-webkit-keyframes first-block-module__scrollPattern___SxPip {
   from {
@@ -60,21 +123,4 @@
   to {
     background-position: calc(50% - 20px) center;
   }
-}
-.first-block-module__main_photo___K52Dc {
-  max-width: 920px;
-  display: block;
-}
-
-.first-block-module__pattern___AkYsC {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100vw;
-  height: 100px;
-  background: url("../../../../assets/images/pattern.png") repeat-x center center;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: -1;
 }

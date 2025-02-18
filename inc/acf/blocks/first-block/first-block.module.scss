@@ -6,6 +6,18 @@
     position: relative;
     margin: 41px auto 63px;
     width: 920px;
+
+    @media screen and (max-width: $desktop) {
+        width: 596px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 482px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 284px;
+    }
 }
 
 .image-container::before {
@@ -29,21 +41,35 @@
     transform: translateY(-50%);
     z-index: -1;
     animation: scrollPattern 1s ease-out forwards;
-}
 
-@keyframes scrollPattern {
-    from {
-        background-position: center center;
+    @media screen and (max-width: $desktop) {
+        background-size: auto 72px;
     }
 
-    to {
-        background-position: calc(50% - 20px) center;
+    @media screen and (max-width: $tablet) {
+        background-size: auto 58px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        background-size: auto 42px;
     }
 }
 
 .main_photo {
     max-width: 920px;
     display: block;
+
+    @media screen and (max-width: $desktop) {
+        width: 596px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 482px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 284px;
+    }
 }
 
 .pattern {
@@ -55,4 +81,14 @@
     background: url('../../../../assets/images/pattern.png') repeat-x center center;
     transform: translateY(-50%);
     z-index: -1;
+}
+
+@keyframes scrollPattern {
+    from {
+        background-position: center center;
+    }
+
+    to {
+        background-position: calc(50% - 20px) center;
+    }
 }

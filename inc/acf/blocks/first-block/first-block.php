@@ -13,14 +13,12 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class='section'>
-    <div class='container'>
-        <?php 
-            $image = get_field('main_section_photo');
-            if( !empty( $image ) ): ?>
-                <div class="<?php echo esc_attr($classes['image-container']); ?>">
-                    <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                </div>
-        <?php endif; ?>
-    </div>
-</section>
+<div class='container'>
+    <?php 
+        $image = get_field('main_section_photo');
+        if( !empty( $image ) ): ?>
+            <div class="<?php echo esc_attr($classes['image-container']); ?>">
+                <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </div>
+    <?php endif; ?>
+</div>
