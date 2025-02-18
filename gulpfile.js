@@ -60,8 +60,8 @@ function blockStyles() {
         path.basename = path.basename.replace(".module", "");
       })
     )
-    .pipe(dest("assets/blocks/styles"))
-    .on("end", resolve);
+    .pipe(dest("assets/blocks/styles"));
+  // .on("end", resolve);
 }
 
 // ****************************************

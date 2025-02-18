@@ -4,7 +4,7 @@ $default_classes = [
     'image-container' => 'image-container',
 ];
 
-$modules_file = get_template_directory() . '/inc/acf/blocks/modules.json';
+$modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
 $classes = $default_classes;
 
 if (file_exists($modules_file)) {
