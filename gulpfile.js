@@ -1,90 +1,98 @@
-const { src, dest, watch, parallel, series } = require('gulp');
-const scss = require('gulp-sass')(require('sass'));
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify-es').default;
-const autoprefixer = require('gulp-autoprefixer');
-const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
-const path = require('path');
-const postcss = require('gulp-postcss');
+const { src, dest, watch, parallel, series } = require("gulp");
+const scss = require("gulp-sass")(require("sass"));
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify-es").default;
+const autoprefixer = require("gulp-autoprefixer");
+const imagemin = require("gulp-imagemin");
+const newer = require("gulp-newer");
+const path = require("path");
+const postcss = require("gulp-postcss");
 const postcssModules = require("postcss-modules");
-const fs = require('fs');
+const fs = require("fs");
 const cssModulesJSON = {};
-const rename = require('gulp-rename');
+const rename = require("gulp-rename");
 
 function images() {
-  return src('src/images/*.*')
-    .pipe(newer('assets/images'))
+  return src("src/images/*.*")
+    .pipe(newer("assets/images"))
     .pipe(imagemin())
-    .pipe(dest('assets/images'))
+    .pipe(dest("assets/images"));
 }
 
 function styles() {
-  return src('src/styles/main.scss')
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(dest('assets/styles'));
+  return src("src/styles/main.scss")
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+    .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(dest("assets/styles"));
 }
 
 function stylesTemplates() {
-  return src('src/styles/template-styles/*.scss')
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(dest('assets/styles/template-styles'));
+  return src("src/styles/template-styles/*.scss")
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+    .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(dest("assets/styles/template-styles"));
 }
 
 function blockStyles() {
-  return src('inc/acf/blocks/**/*.module.scss')
-    .pipe(postcss([
-      postcssModules({
-        generateScopedName: "[name]__[local]___[hash:base64:5]",
-        getJSON: (cssFileName, json) => {
-          const fileName = path.basename(cssFileName, ".module.scss");
-          cssModulesJSON[fileName] = json;
+  return src("inc/acf/blocks/**/*.module.scss")
+    .pipe(
+      postcss([
+        postcssModules({
+          generateScopedName: "[name]__[local]___[hash:base64:5]",
+          getJSON: (cssFileName, json) => {
+            const fileName = path.basename(cssFileName, ".module.scss");
+            cssModulesJSON[fileName] = json;
 
-          fs.mkdirSync("assets/blocks/styles/", { recursive: true });
-          // fs.writeFileSync("assets/blocks/styles/modules.json", JSON.stringify(cssModulesJSON, null, 2));
-          fs.writeFileSync("inc/acf/blocks/modules.json", JSON.stringify(cssModulesJSON, null, 2));
-        }
+            fs.mkdirSync("assets/blocks/styles/", { recursive: true });
+            fs.writeFileSync(
+              "assets/blocks/styles/modules.json",
+              JSON.stringify(cssModulesJSON, null, 2)
+            );
+            // fs.writeFileSync("assets/blocks/modules.json", JSON.stringify(cssModulesJSON, null, 2));
+          },
+        }),
+      ])
+    )
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+    .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(
+      rename(function (path) {
+        path.basename = path.basename.replace(".module", "");
       })
-    ]))
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-    .pipe(scss({ outputStyle: 'compressed' }))
-    .pipe(rename(function (path) {
-      path.basename = path.basename.replace('.module', '');
-    }))
-    .pipe(dest('assets/blocks/styles'));
+    )
+    .pipe(dest("assets/blocks/styles"))
+    .on("end", resolve);
 }
 
 // ****************************************
 
 function scripts() {
-  return src('src/scripts/*.js')
-    .pipe(concat('main.js'))
+  return src("src/scripts/*.js")
+    .pipe(concat("main.js"))
     .pipe(uglify())
-    .pipe(dest('assets/scripts'));
+    .pipe(dest("assets/scripts"));
 }
 
 function scriptsTemplates() {
-  return src('src/scripts/template-scripts/*.js')
+  return src("src/scripts/template-scripts/*.js")
     .pipe(uglify())
-    .pipe(dest('assets/scripts/template-scripts'));
+    .pipe(dest("assets/scripts/template-scripts"));
 }
 
 function blockScripts() {
-  return src('inc/acf/blocks/**/*.js')
+  return src("inc/acf/blocks/**/*.js")
     .pipe(uglify())
-    .pipe(dest('assets/blocks/scripts'));
+    .pipe(dest("assets/blocks/scripts"));
 }
 
 function watching() {
-  watch('src/styles/*.scss', styles);
-  watch('src/styles/template-styles/*.scss', stylesTemplates);
-  watch('inc/acf/blocks/**/*.module.scss', blockStyles);
-  watch('src/scripts/*.js', scripts);
-  watch('src/scripts/template-scripts/*.js', scriptsTemplates);
-  watch('inc/acf/blocks/**/*.js', blockScripts);
-  watch('src/images/**/*.*', images);
+  watch("src/styles/*.scss", styles);
+  watch("src/styles/template-styles/*.scss", stylesTemplates);
+  watch("inc/acf/blocks/**/*.module.scss", blockStyles);
+  watch("src/scripts/*.js", scripts);
+  watch("src/scripts/template-scripts/*.js", scriptsTemplates);
+  watch("inc/acf/blocks/**/*.js", blockScripts);
+  watch("src/images/**/*.*", images);
 }
 
 exports.styles = styles;
@@ -95,6 +103,7 @@ exports.scripts = scripts;
 exports.scriptsTemplates = scriptsTemplates;
 exports.blockScripts = blockScripts;
 exports.watching = watching;
+
 exports.default = parallel(
   styles,
   stylesTemplates,
@@ -105,4 +114,12 @@ exports.default = parallel(
   blockScripts,
   watching
 );
-exports.build = series(styles, images, scripts, scriptsTemplates);
+exports.build = series(
+  styles,
+  stylesTemplates,
+  // blockStyles,
+  images,
+  scripts,
+  scriptsTemplates,
+  blockScripts
+);
