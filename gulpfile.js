@@ -42,6 +42,7 @@ function blockStyles() {
           const fileName = path.basename(cssFileName, ".module.scss");
           cssModulesJSON[fileName] = json;
 
+          fs.mkdirSync("assets/blocks/styles/", {recursive: true});
           fs.writeFileSync("assets/blocks/styles/modules.json", JSON.stringify(cssModulesJSON, null, 2));
         }
       })
