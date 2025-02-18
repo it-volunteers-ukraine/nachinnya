@@ -44,7 +44,7 @@
     border-bottom: 1px solid variables.$red;
 }
 
-.menu-item:active {
+.menu-item a:active {
     color: variables.$dark_red;
     border-bottom: 2px solid variables.$dark_red;
 }
