@@ -16,15 +16,32 @@
     "text-column": "about-us-first-module__text-column___1O74N",
     "red_long_arrow": "about-us-first-module__red_long_arrow___KMvo3"
   },
-  "jsblock2": {
-    "block": "jsblock2-module__block___NXtaE",
-    "button_a": "jsblock2-module__button_a___c1TF8",
-    "button_b": "jsblock2-module__button_b___KHEhB"
-  },
   "jsblock1": {
     "block": "jsblock1-module__block___gWy9q",
     "button_a": "jsblock1-module__button_a___iCrvm",
     "button_b": "jsblock1-module__button_b___Mhw7G",
     "paragraph_2": "jsblock1-module__paragraph_2___2X5vD"
+  },
+  "jsblock2": {
+    "block": "jsblock2-module__block___NXtaE",
+    "button_a": "jsblock2-module__button_a___c1TF8",
+    "button_b": "jsblock2-module__button_b___KHEhB"
+  },
+  "main-sec": {
+    "image-container": "main-sec-module__image-container___BHXwO",
+    "scrollPattern": "main-sec-module__scrollPattern___Ly2d5",
+    "main_photo": "main-sec-module__main_photo___Nk6GO",
+    "pattern": "main-sec-module__pattern___lS2s2",
+    "upper-title-wrapper": "main-sec-module__upper-title-wrapper___b80Et",
+    "bottom-title-wrapper": "main-sec-module__bottom-title-wrapper___-b23U",
+    "title-flex-container": "main-sec-module__title-flex-container___qA4j-",
+    "title": "main-sec-module__title___Rs6YZ",
+    "top_left_rounds": "main-sec-module__top_left_rounds___EL8Ip",
+    "down_right_rounds": "main-sec-module__down_right_rounds___atJaS",
+    "under_title_image": "main-sec-module__under_title_image___Q45Hf",
+    "text-columns-wrapper": "main-sec-module__text-columns-wrapper___Yvc3L",
+    "text-columns": "main-sec-module__text-columns___KIZjA",
+    "text-column": "main-sec-module__text-column___9E6Hg",
+    "red_long_arrow": "main-sec-module__red_long_arrow___bz4DG"
   }
 }
