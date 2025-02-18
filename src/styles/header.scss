@@ -39,12 +39,12 @@
     padding: 0px 4px;
 }
 
-.menu-item:hover {
+.menu-item a:hover {
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
 }
 
-.menu-item:active {
+.menu-item a:active {
     color: variables.$dark_red;
     border-bottom: 2px solid variables.$dark_red;
 }
@@ -116,7 +116,7 @@
     display: flex;
 }
 
-.header__social-icon-image:hover {
+.header__social-icon-link:hover .header__social-icon-image {
     transform: scale(110%);
 }
 
@@ -269,6 +269,47 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+}
+
+// The scroll to top button
+.header__scroll-to-top-button {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    background-color: variables.$yellow;
+    width: 48px;
+    height: 48px;
+    border: 1px solid variables.$red;
+    border-radius: 100px;
+    z-index: 100;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__scroll-to-top-button.header__scroll-to-top-button-visible {
+    display: flex;
+}
+
+.header__scroll-to-top-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.header__scroll-to-top-button:active {
+    background-color: variables.$yellow_pressed;
+    border-color: variables.$yellow;
+}
+
+.header__scroll-to-top-button-svg {
+    width: 10px;
+    height: 18px;
+    rotate: -90deg;
+    fill: variables.$red;
+}
+
+.header__scroll-to-top-button:active .header__scroll-to-top-button-svg {
+    fill: variables.$white;
 }
 
 // Screen layouts
