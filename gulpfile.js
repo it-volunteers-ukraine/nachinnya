@@ -116,10 +116,10 @@ exports.default = parallel(
 );
 exports.build = series(
   styles,
-  stylesTemplates,
-  // blockStyles,
   images,
   scripts,
+  stylesTemplates,
   scriptsTemplates,
-  blockScripts
+  blockScripts,
+  blockStyles
 );
