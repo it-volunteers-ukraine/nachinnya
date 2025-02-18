@@ -20,7 +20,7 @@
 
             $socials_items .= <<<ITEM
                 <li class="header__social-icon">
-                    <a href="$url" target="_blank" rel="noreferrer">
+                    <a class="header__social-icon-link" href="$url" target="_blank" rel="noreferrer">
                         <img class="header__social-icon-image" src="$img_url">
                     </a>
                 </li>
