@@ -72,14 +72,14 @@ function it_volunteers_acf_blocks_init() {
             'category'          => 'custom-blocks',
         ));
 
-        // Register an about-us-first block
+        // Register a first-block
         acf_register_block_type(array(
-            'name'              => 'about-us-first',
-            'title'             => __('about-us-first'),
-            'description'       => __('Block about-us-first'),
-            'render_template'   => acf_theme_blocks_path('about-us-first/about-us-first.php'),
-            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/about-us-first/about-us-first.css',
-            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/about-us-first/about-us-first.js',
+            'name'              => 'first-block',
+            'title'             => __('first-block'),
+            'description'       => __('Block first-block'),
+            'render_template'   => acf_theme_blocks_path('first-block/first-block.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/first-block/first-block.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/first-block/first-block.js',
             'category'          => 'custom-blocks',
         ));
     }

@@ -34,7 +34,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/about-us-first"
+                "value": "acf\/first-block"
             }
         ]
     ],
@@ -47,5 +47,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739894814
+    "modified": 1739895770
 }

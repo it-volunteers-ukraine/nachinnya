@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "KharkivTone";
+  src: url("../../assets/fonts/KharkivTone.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.first-block-module__image-container___zER-b {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  margin: 41px auto 63px;
+  width: 920px;
+}
+
+.first-block-module__image-container___zER-b::before {
+  content: "";
+  position: absolute;
+  border: 2px solid #B74028;
+  top: 11.41px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(6.68deg);
+  -ms-transform: rotate(6.68deg);
+  transform: rotate(6.68deg);
+  z-index: -1;
+}
+
+.first-block-module__image-container___zER-b::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  height: 100px;
+  background: url("../../../../assets/images/pattern.png") repeat-x center center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+  -webkit-animation: first-block-module__scrollPattern___SxPip 1s ease-out forwards;
+  animation: first-block-module__scrollPattern___SxPip 1s ease-out forwards;
+}
+
+@-webkit-keyframes first-block-module__scrollPattern___SxPip {
+  from {
+    background-position: center center;
+  }
+  to {
+    background-position: calc(50% - 20px) center;
+  }
+}
+@keyframes first-block-module__scrollPattern___SxPip {
+  from {
+    background-position: center center;
+  }
+  to {
+    background-position: calc(50% - 20px) center;
+  }
+}
+.first-block-module__main_photo___K52Dc {
+  max-width: 920px;
+  display: block;
+}
+
+.first-block-module__pattern___AkYsC {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background: url("../../../../assets/images/pattern.png") repeat-x center center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+}

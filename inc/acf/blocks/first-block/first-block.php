@@ -9,18 +9,18 @@ $classes = $default_classes;
 
 if (file_exists($modules_file)) {
     $modules = json_decode(file_get_contents($modules_file), true);
-    $classes = array_merge($default_classes, $modules['about-us-first'] ?? []);
+    $classes = array_merge($default_classes, $modules['first-block'] ?? []);
 }
 ?>
 
 <section class='section'>
     <div class='container'>
-        <div class="<?php echo esc_attr($classes['image-container']); ?>">
-            <?php 
-                $image = get_field('main_section_photo');
-                if( !empty( $image ) ): ?>
+        <?php 
+            $image = get_field('main_section_photo');
+            if( !empty( $image ) ): ?>
+                <div class="<?php echo esc_attr($classes['image-container']); ?>">
                     <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php endif; ?>
-        </div>
+                </div>
+        <?php endif; ?>
     </div>
 </section>

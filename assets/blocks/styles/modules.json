@@ -1,20 +1,9 @@
 {
-  "about-us-first": {
-    "image-container": "about-us-first-module__image-container___kDEcL",
-    "scrollPattern": "about-us-first-module__scrollPattern___ub4UC",
-    "main_photo": "about-us-first-module__main_photo___miyzk",
-    "pattern": "about-us-first-module__pattern___YX5o9",
-    "upper-title-wrapper": "about-us-first-module__upper-title-wrapper___0Hh-h",
-    "bottom-title-wrapper": "about-us-first-module__bottom-title-wrapper___Xn2l7",
-    "title-flex-container": "about-us-first-module__title-flex-container___6dhOu",
-    "title": "about-us-first-module__title___UJyH4",
-    "top_left_rounds": "about-us-first-module__top_left_rounds___XI-LF",
-    "down_right_rounds": "about-us-first-module__down_right_rounds___P8aL6",
-    "under_title_image": "about-us-first-module__under_title_image___tyzCI",
-    "text-columns-wrapper": "about-us-first-module__text-columns-wrapper___haH4M",
-    "text-columns": "about-us-first-module__text-columns___pA6kG",
-    "text-column": "about-us-first-module__text-column___1O74N",
-    "red_long_arrow": "about-us-first-module__red_long_arrow___KMvo3"
+  "first-block": {
+    "image-container": "first-block-module__image-container___zER-b",
+    "scrollPattern": "first-block-module__scrollPattern___SxPip",
+    "main_photo": "first-block-module__main_photo___K52Dc",
+    "pattern": "first-block-module__pattern___AkYsC"
   },
   "jsblock1": {
     "block": "jsblock1-module__block___gWy9q",
@@ -26,22 +15,5 @@
     "block": "jsblock2-module__block___NXtaE",
     "button_a": "jsblock2-module__button_a___c1TF8",
     "button_b": "jsblock2-module__button_b___KHEhB"
-  },
-  "main-sec": {
-    "image-container": "main-sec-module__image-container___BHXwO",
-    "scrollPattern": "main-sec-module__scrollPattern___Ly2d5",
-    "main_photo": "main-sec-module__main_photo___Nk6GO",
-    "pattern": "main-sec-module__pattern___lS2s2",
-    "upper-title-wrapper": "main-sec-module__upper-title-wrapper___b80Et",
-    "bottom-title-wrapper": "main-sec-module__bottom-title-wrapper___-b23U",
-    "title-flex-container": "main-sec-module__title-flex-container___qA4j-",
-    "title": "main-sec-module__title___Rs6YZ",
-    "top_left_rounds": "main-sec-module__top_left_rounds___EL8Ip",
-    "down_right_rounds": "main-sec-module__down_right_rounds___atJaS",
-    "under_title_image": "main-sec-module__under_title_image___Q45Hf",
-    "text-columns-wrapper": "main-sec-module__text-columns-wrapper___Yvc3L",
-    "text-columns": "main-sec-module__text-columns___KIZjA",
-    "text-column": "main-sec-module__text-column___9E6Hg",
-    "red_long_arrow": "main-sec-module__red_long_arrow___bz4DG"
   }
 }
