@@ -39,7 +39,7 @@
     padding: 0px 4px;
 }
 
-.menu-item:hover {
+.menu-item a:hover {
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
 }
@@ -116,7 +116,7 @@
     display: flex;
 }
 
-.header__social-icon-image:hover {
+.header__social-icon-link:hover .header__social-icon-image {
     transform: scale(110%);
 }
 
