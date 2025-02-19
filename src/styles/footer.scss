@@ -15,7 +15,7 @@ footer {
 }
 
 .footer {
-  padding: 72px 16px 0 16px;
+  padding: 72px 16px 32px 16px;
   background-color: $red;
 }
 
@@ -163,7 +163,6 @@ footer {
 .copyright {
   display: block;
   text-align: center;
-  padding-bottom: 32px;
   line-height: 1.27;
   font-family: $secondary-font;
 
@@ -189,11 +188,14 @@ footer {
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   footer {
     font-size: 16px;
   }
 
+  .footer {
+    padding: 72px 40px 32px 40px;
+  }
   .ornament {
   }
 
@@ -204,5 +206,52 @@ footer {
   .logo-footer-img {
     width: 93px;
     height: 67px;
+  }
+
+  .address {
+    gap: 34px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-content {
+    align-items: flex-start;
+  }
+  .footer-menu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px 65px
+  }
+  .address{
+
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  .logo-footer-img {
+    width: 196px;
+    height: 140px;
+  }
+
+  .footer {
+    padding: 72px 80px 32px 80px;
+  }
+
+  .footer-menu {
+    justify-content: unset;
+  }
+
+  .address {
+    gap: 50px;
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .logo-footer-img {
+    width: 277px;
+    height: 199px;
   }
 }

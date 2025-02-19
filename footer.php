@@ -16,6 +16,12 @@ $phone = str_replace(' ', '', $phone_number);
         @media screen and (min-width: 768px) {
             height: 58px;
         }
+        @media screen and (min-width: 768px) {
+            height: 64px;
+        }
+        @media screen and (min-width: 1440px) {
+            height: 89px;
+        }
     }
 </style>
 <footer>
