@@ -82,6 +82,17 @@ function it_volunteers_acf_blocks_init() {
             'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/first-block/first-block.js',
             'category'          => 'custom-blocks',
         ));
+
+        // Register main-section-block
+        acf_register_block_type(array(
+            'name'              => 'main-section-block',
+            'title'             => __('main-section-block'),
+            'description'       => __('Block with photo and upper title'),
+            'render_template'   => acf_theme_blocks_path('main-section-block/main-section-block.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/main-section-block/main-section-block.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/main-section-block/main-section-block.js',
+            'category'          => 'custom-blocks',
+        ));
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');
