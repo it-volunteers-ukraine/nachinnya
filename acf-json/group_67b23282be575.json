@@ -3,6 +3,27 @@
     "title": "Головна секція з фото",
     "fields": [
         {
+            "key": "field_67b6000adbadc",
+            "label": "Заголовок над фото",
+            "name": "main_section_upper_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67b2328381a1d",
             "label": "Головне фото",
             "name": "main_section_photo",
@@ -34,7 +55,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/first-block"
+                "value": "acf\/main-section-block"
             }
         ]
     ],
@@ -47,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739895770
+    "modified": 1739980966
 }
