@@ -92,6 +92,11 @@
     }
 
     @media screen and (max-width: $tablet) {
+        margin-bottom: 85px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 240px;
         margin-bottom: 95px;
     }
 }
@@ -106,22 +111,27 @@
     background-size: contain;
     background-repeat: no-repeat;
     right: -33px;
-    bottom: -32px;
+    bottom: -52px;
+
+    @media screen and (max-width: $desktop) {
+        bottom: -44px;
+    }
 
     @media screen and (max-width: $tablet) {
         width: 300px;
-        bottom: -20px;
+        bottom: -40px;
     }
 
     @media screen and (max-width: $mobile) {
         width: 200px;
-        bottom: -12px;
+        bottom: -32px;
     }
 }
 
 .title {
     position: relative;
     display: inline-block;
+    text-align: center;
     padding: 0 40px;
 }
 
@@ -136,6 +146,14 @@
     background-repeat: no-repeat;
     left: -32px;
     top: 5px;
+
+    @media screen and (max-width: $desktop) {
+        left: -24px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        left: -12px;
+    }
 }
 
 .title::after {
@@ -150,4 +168,12 @@
     transform: rotate(180deg);
     right: -32px;
     top: 10px;
+
+    @media screen and (max-width: $desktop) {
+        right: -24px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        right: -12px;
+    }
 }
