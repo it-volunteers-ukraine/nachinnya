@@ -26,11 +26,11 @@
   margin: 0 auto;
   padding: 0 80px;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: $tablet) {
     padding: 0 40px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     padding: 0 16px;
   }
 }
@@ -49,15 +49,15 @@ h1 {
   font-size: 88px;
   line-height: 110%;
 
-  @media screen and (max-width: $full) {
+  @media screen and (max-width: $desktop) {
     font-size: 80px;
   }
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: $tablet) {
     font-size: 52px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     font-size: 30px;
   }
 }
@@ -67,15 +67,15 @@ h2 {
   line-height: 120%;
   color: $dark-red;
 
-  @media screen and (max-width: $full) {
+  @media screen and (max-width: $desktop) {
     font-size: 38px;
   }
 
-  @media screen and (max-width: $desktop) {
-    font-size: 32px;
+  @media screen and (max-width: $tablet) {
+    font-size: 38px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     font-size: 24px;
   }
 }
@@ -84,12 +84,12 @@ h3 {
   font-size: 30px;
   line-height: 130%;
 
-  @media screen and (max-width: $full) {
+  @media screen and (max-width: $desktop) {
     font-size: 20px;
   }
 
-  @media screen and (max-width: $tablet) {
-    font-size: 14px;
+  @media screen and (max-width: $mobile) {
+    font-size: 18px;
   }
 }
 
@@ -97,11 +97,11 @@ h4 {
   font-size: 20px;
   line-height: 120%;
 
-  @media screen and (max-width: $full) {
+  @media screen and (max-width: $desktop) {
     font-size: 16px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     font-size: 14px;
   }
 }
@@ -115,11 +115,11 @@ body,
   line-height: 130%;
   background-color: $BG;
 
-  @media screen and (max-width: $full) {
+  @media screen and (max-width: $desktop) {
     font-size: 16px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $mobile) {
     font-size: 14px;
   }
 }
