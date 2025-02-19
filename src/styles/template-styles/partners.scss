@@ -1,0 +1,86 @@
+@use "../variables.scss";
+
+.partners {
+  .title {
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 148px;
+    margin-bottom: 104px;
+    @media screen and (min-width: variables.$tablet) {
+      margin-top: 128px;
+    }
+    @media screen and (min-width: variables.$desktop) {
+      font-size: 30px;
+      margin-top: 160px;
+    }
+  }
+
+  .partners-title {
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 18px;
+    @media screen and (min-width: variables.$desktop) {
+      margin-bottom: 88px;
+      font-size: 30px;
+    }
+  }
+
+  .partners-title:nth-of-type(2) {
+    text-align: right;
+  }
+
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: variables.$tablet) {
+      padding: 0 95px;
+    }
+
+    @media screen and (min-width: variables.$desktop) {
+      padding: 0 0;
+    }
+
+
+    .posts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media screen and (min-width: variables.$tablet) {
+        flex-direction: row;
+        margin-bottom: 40px;
+      }
+
+      @media screen and (min-width: variables.$desktop) {
+        flex-direction: row;
+      }
+
+      .partners-description {
+        width: 100%;
+        margin-bottom: 20px;
+        color: rgb(53, 19, 17);
+        font-size: 20px;
+        @media screen and (min-width: variables.$tablet) {
+          width: 264px;
+        }
+        @media screen and (min-width: variables.$desktop) {
+          width: 425px;
+        }
+      }
+
+      .partners-logo {
+        margin-bottom: 20px;
+        @media screen and (min-width: variables.$tablet) {
+          width: 210px;
+        }
+        @media screen and (min-width: variables.$desktop) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
