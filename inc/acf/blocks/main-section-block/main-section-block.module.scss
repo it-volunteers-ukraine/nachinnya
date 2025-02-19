@@ -72,17 +72,6 @@
     }
 }
 
-.pattern {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100vw;
-    height: 100px;
-    background: url('../../../../assets/images/pattern.png') repeat-x center center;
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
 @keyframes scrollPattern {
     from {
         background-position: center center;
@@ -91,4 +80,74 @@
     to {
         background-position: calc(50% - 20px) center;
     }
+}
+
+.upper-title-wrapper {
+    width: fit-content;
+    margin: 0 auto 180px;
+    position: relative;
+
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 130px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 95px;
+    }
+}
+
+.upper-title-wrapper::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 350px;
+    height: 20px;
+    background-image: url("../../../../assets/images/title_element.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -33px;
+    bottom: -32px;
+
+    @media screen and (max-width: $tablet) {
+        width: 300px;
+        bottom: -20px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 200px;
+        bottom: -12px;
+    }
+}
+
+.title {
+    position: relative;
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.title::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    background-image: url("../../../../assets/images/rounded_elements.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -32px;
+    top: 5px;
+}
+
+.title::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    background-image: url("../../../../assets/images/rounded_elements.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    right: -32px;
+    top: 10px;
 }

@@ -42,6 +42,7 @@ h3,
 h4 {
   font-family: $primary-font;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 h1 {
@@ -63,7 +64,7 @@ h1 {
 
 h2 {
   font-size: 44px;
-  line-height: 110%;
+  line-height: 120%;
   color: $dark-red;
 
   @media screen and (max-width: $full) {
