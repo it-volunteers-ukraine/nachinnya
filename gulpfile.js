@@ -53,15 +53,35 @@ function blockStyles() {
         }),
       ])
     )
+    .on("error", (err) => {
+      console.error("❌ Ошибка в PostCSS:", err);
+      done(err); // Прерываем сборку, если произошла ошибка
+    })
     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+    .on("error", (err) => {
+      console.error("❌ Ошибка в Autoprefixer:", err);
+      done(err);
+    })
     .pipe(scss({ outputStyle: "compressed" }))
+    .on("error", (err) => {
+      console.error("❌ Ошибка при компиляции SCSS:", err);
+      done(err);
+    })
     .pipe(
       rename(function (path) {
         path.basename = path.basename.replace(".module", "");
       })
     )
-    .pipe(dest("assets/blocks/styles"));
-  // .on("end", resolve);
+    .pipe(dest("assets/blocks/styles"))
+    .on("error", (err) => {
+      console.error("❌ Ошибка при сохранении файла:", err);
+      done(err);
+    })
+    .on("end", () => {
+      console.log("✅ blockStyles завершена успешно!");
+      // resolve(); 
+    });
+  // .on("end", done);
 }
 
 // ****************************************
