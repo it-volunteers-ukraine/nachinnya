@@ -1,10 +1,10 @@
 {
-    "key": "group_67b75c7b5feb0",
-    "title": "For Templates-parts",
+    "key": "group_67b7805f58b4a",
+    "title": "Для джс блоку 2",
     "fields": [
         {
-            "key": "field_67b75c7b401f2",
-            "label": "Заголовок",
+            "key": "field_67b7805f61e9d",
+            "label": "н2 заголовок для джс2 блоку",
             "name": "h2_title",
             "aria-label": "",
             "type": "text",
@@ -27,9 +27,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "block",
                 "operator": "==",
-                "value": "theme-general-settings"
+                "value": "acf\/jsblock2"
             }
         ]
     ],
@@ -42,5 +42,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740075426
+    "modified": 1740079398
 }

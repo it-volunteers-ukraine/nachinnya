@@ -1,5 +1,5 @@
 <?php 
-    $h2_title = get_field('h2_title', 'option');
+    $h2_title = get_field('h2_title');
     if (!empty($h2_title)) : 
 ?>
     <div class="h2-title-wrapper">

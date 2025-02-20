@@ -35,7 +35,5 @@ if (file_exists($modules_file)) {
                     <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                 </div>
         <?php endif; ?>
-
-        <?php get_template_part('template-parts/h2-title'); ?>
     </div>
 </section>
