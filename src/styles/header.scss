@@ -21,6 +21,7 @@
     align-items: center;
 }
 
+// The menus
 .menu__nav {
     display: none;
 }
@@ -31,7 +32,8 @@
     gap: 44px;
 }
 
-.menu-item {
+.header__menu__list .menu-item,
+.header__dropdown-menu__list .menu-item {
     display: flex;
     align-items: center;
 
@@ -39,24 +41,39 @@
     padding: 0px 4px;
 }
 
-.menu-item a{
+.header__menu__list .menu-item a, 
+.header__dropdown-menu__list .menu-item a{
+    position: relative;
     border-bottom: 1px solid transparent;
     transition: all variables.$animations;
 }
 
-.menu-item a:hover {
+.header__menu__list .menu-item a:hover,
+.header__dropdown-menu__list a:hover {
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
 }
 
-.menu-item a:active {
+.header__menu__list .menu-item a:active,
+.header__dropdown-menu__list .menu-item a:active {
     color: variables.$dark_red;
-    border-bottom: 2px solid variables.$dark_red;
+    border-bottom: 1px solid variables.$dark_red;
 }
 
-.current-menu-item {
+.header__menu__list .menu-item a:active::after,
+.header__dropdown-menu__list .menu-item a:active::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 1px solid variables.$dark_red;
+}
+
+.header__menu__list .current-menu-item a,
+.header__dropdown-menu__list .current-menu-item a {
     color: variables.$red;
-    border-bottom: 2px solid variables.$red;
+    border-bottom: 1px solid variables.$red;
 }
 
 // The language switcher
