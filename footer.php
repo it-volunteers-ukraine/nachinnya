@@ -6,24 +6,26 @@ $phone = str_replace(' ', '', $phone_number);
 <style>
     /* https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/symbol-defs.svg#icon-ornament1 */
     .ornament {
-        /* background-image: url('<?php echo $ornament_url; ?>'); */
-        /* mask-image: url('https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/ornament1.svg'); */
         background-image: url('https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/ornament1.svg');
         width: 100%;
         height: 42px;
         background-size: contain;
         background-repeat: repeat-x;
-        @media screen and (min-width: 768px) {
+
+    }
+    @media screen and (min-width: 768px) {
+        .ornament{
             height: 58px;
         }
-        @media screen and (min-width: 768px) {
-            height: 64px;
-        }
-        @media screen and (min-width: 1440px) {
+    }
+
+    @media screen and (min-width: 1440px) {
+        .ornament{
             height: 89px;
         }
     }
 </style>
+
 <footer>
     <div class="ornament"></div>
     <div class="footer">
@@ -40,24 +42,26 @@ $phone = str_replace(' ', '', $phone_number);
                 'menu_class'     => 'footer-menu', // Класс для стилизации меню
                 'container'      => false, // Убираем контейнер (если не нужен)
                 "menu_id"        => "footer-menu", //
+                'items_wrap'      => '<ul id="%1$s" class="%2$s wrap-link">%3$s</ul>',
+                // 'list_item_class'  => 'nav-item',
+                // 'link_class' => 'aaaaa',
             ));
             // }
             ?>
-    
+
             <address class="address">
                 <div class="address-contact">
-                    <div class="address-wrap">
-                        <a href="mailto:INFO@NACHYNNYA.ORG.UA" target="_blank" class="email">iNFO@NACHYNNYA.ORG.UA</a>
+                    <div class="address-wrap " >
+                        <a href="mailto:INFO@NACHYNNYA.ORG.UA" target="_blank" class="email link-adv">iNFO@NACHYNNYA.ORG.UA</a>
                     </div>
-                    <div class="address-wrap">
-                        <a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone_number ?></a>
+                    <div class="address-wrap ">
+                        <a href="tel:<?php echo $phone; ?>" class="phone link-adv"><?php echo $phone_number ?></a>
                     </div>
                 </div>
                 <div class="uzor">
                     <svg class="wave-y hidden">
                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-wave-m-y"></use>
                     </svg>
-    
                     <svg class="wave-y hidden">
                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-wave-l-y"></use>
                     </svg>
@@ -98,7 +102,10 @@ $phone = str_replace(' ', '', $phone_number);
         </div>
 
         <!-- <img src="" alt="" class="footer-ornament"> -->
-        <a href="https://it-volunteers.com/" class="copyright" target="_blank">Сайт розроблено IT Volunteers ©2025 Громадська організація «Начиння»</a>
+         <div class="copyright-wrap">
+             <a href="https://it-volunteers.com/" class="copyright link-adv" target="_blank">Сайт розроблено IT Volunteers ©2025 Громадська організація «Начиння»</a>
+
+         </div>
     </div>
 </footer>
 <?php wp_footer(); ?>
