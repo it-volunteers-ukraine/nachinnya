@@ -39,6 +39,11 @@ function wp_it_volunteers_scripts() {
     wp_enqueue_script( 'contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true );
   }
 
+  // Enqueue template parts
+  if (is_singular() && locate_template('template-parts/h2-title.php')) {
+    wp_enqueue_style('h2-title-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/h2-title.css', array('main'));
+}
+
   // Enqueue scripts and styles of blocks
   function register_acf_block_assets() {
     $blocks_dir = get_template_directory() . '/inc/acf/blocks';

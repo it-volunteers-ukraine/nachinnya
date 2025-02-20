@@ -33,6 +33,14 @@ function stylesTemplates() {
     .pipe(dest("assets/styles/template-styles"));
 }
 
+function stylesTemplatesParts() {
+  return src("src/styles/template-parts-styles/*.scss")
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+    .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
+    .pipe(dest("assets/styles/template-parts-styles"))
+    .on("end", () => console.log("✅ stylesTemplatesParts завершено!"));
+}
+
 function blockStyles() {
   return src("inc/acf/blocks/**/*.module.scss")
     .pipe(
@@ -99,6 +107,12 @@ function scriptsTemplates() {
     .pipe(dest("assets/scripts/template-scripts"));
 }
 
+function scriptsTemplateParts() {
+  return src(["src/scripts/template-parts-scripts/*.js"])
+    .pipe(uglify())
+    .pipe(dest("assets/scripts/template-parts-scripts"));
+}
+
 function blockScripts() {
   return src("inc/acf/blocks/**/*.js")
     .pipe(uglify())
@@ -108,29 +122,35 @@ function blockScripts() {
 function watching() {
   watch("src/styles/*.scss", styles);
   watch("src/styles/template-styles/*.scss", stylesTemplates);
+  watch("src/styles/template-parts-styles/*.scss", stylesTemplatesParts);
   watch("inc/acf/blocks/**/*.module.scss", blockStyles);
   watch("src/scripts/*.js", scripts);
   watch("src/scripts/template-scripts/*.js", scriptsTemplates);
+  watch("src/scripts/template-parts-scripts/*.js", scriptsTemplateParts);
   watch("inc/acf/blocks/**/*.js", blockScripts);
   watch("src/images/**/*.*", images);
 }
 
 exports.styles = styles;
 exports.stylesTemplates = stylesTemplates;
+exports.stylesTemplatesParts = stylesTemplatesParts;
 exports.blockStyles = blockStyles;
 exports.images = images;
 exports.scripts = scripts;
 exports.scriptsTemplates = scriptsTemplates;
+exports.scriptsTemplateParts = scriptsTemplateParts;
 exports.blockScripts = blockScripts;
 exports.watching = watching;
 
 exports.default = parallel(
   styles,
   stylesTemplates,
+  stylesTemplatesParts,
   blockStyles,
   images,
   scripts,
   scriptsTemplates,
+  scriptsTemplateParts,
   blockScripts,
   watching
 );
@@ -139,7 +159,9 @@ exports.build = series(
   images,
   scripts,
   stylesTemplates,
+  stylesTemplatesParts,
   scriptsTemplates,
+  scriptsTemplateParts,
   blockScripts,
   blockStyles
 );
