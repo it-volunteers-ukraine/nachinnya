@@ -2,6 +2,8 @@
 
 // $aaaa: unquote(calc(222px * ( 1 - (480px / ( 1920px - 100vw)))));
 
+
+// helpers start
 .link-adv,
 .wrap-link-adv a {
   position: relative;
@@ -21,14 +23,22 @@
 }
 .link-adv:hover,
 .wrap-link-adv a:hover {
-  color: $yellow;
-  border-color: $yellow;
+  color: $yellow-hover;
+  // border-color: $yellow;
 }
 
 .link-adv:hover::after,
 .wrap-link-adv a:hover::after {
-  background-color: $yellow;
+  background-color: $yellow-hover;
 }
+
+.wrap-link-adv a:focus-visible{
+  color: $yellow-selected;
+}
+.wrap-link-adv a:focus-visible::after{
+  background-color: $yellow-selected;
+}
+
 .link-adv:active,
 .wrap-link-adv a:active {
   color: $yellow-pressed;
@@ -38,6 +48,9 @@
   background-color: $yellow-pressed;
   height: 2px;
 }
+
+// end helpers
+
 
 footer {
   color: $white;
@@ -68,7 +81,6 @@ footer {
 .logo-footer-link {
   display: inline-flex;
   line-height: 0;
-  // margin-bottom: 64px;
   transition: all $animations-very-long;
 }
 
@@ -128,7 +140,6 @@ footer {
 .wave-y {
   width: 300px;
   height: 20px;
-  // margin-bottom: 24px;
 }
 
 @media screen and (max-width: 1439.9px) {
@@ -158,7 +169,6 @@ footer {
 }
 
 .social-title {
-  // margin-bottom: 16px;
   text-transform: uppercase;
 }
 
@@ -272,7 +282,5 @@ footer {
   .footer-menu {
     font-size: 16px;
   }
-  .address {
-    // max-width: 495px;
-  }
+
 }
