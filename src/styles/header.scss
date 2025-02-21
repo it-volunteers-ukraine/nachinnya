@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
 
+    font-family: variables.$primary-font;
     font-size: 16px;
     padding: 0px 4px;
 }
@@ -83,6 +84,7 @@
 
 .header__language-switcher-button,
 .header__dropdown-menu-language-switcher-button {
+    font-family: variables.$primary-font;
     font-size: 16px;
     padding: 0px 4px;
     border-bottom: 1px solid transparent;
@@ -190,6 +192,7 @@
     gap: 12px;
 
     color: variables.$yellow;
+    font-family: variables.$primary-font;
     font-size: 16px;
     text-transform: uppercase;
 }
