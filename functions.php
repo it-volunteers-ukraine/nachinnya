@@ -89,6 +89,7 @@ function wp_it_volunteers_menus() {
   $locations = array(
     'header' => __( 'Header Menu', 'wp-it-volunteers' ),
     'footer' => __( 'Footer Menu', 'wp-it-volunteers' ),
+    'option' => __( 'Option Menu', 'wp-it-volunteers' ),
   );
 
   register_nav_menus( $locations );
@@ -119,4 +120,10 @@ if( function_exists('acf_add_options_page') ) {
       'menu_title'    => 'Footer',
       'parent_slug'   => 'theme-general-settings',
   ));
+
+  acf_add_options_sub_page(array(
+    'page_title'    => 'Theme Common Info Settings',
+    'menu_title'    => 'Common Info',
+    'parent_slug'   => 'theme-general-settings',
+));
 }
