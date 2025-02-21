@@ -105,6 +105,16 @@ function it_volunteers_acf_blocks_init() {
             'category'          => 'posts-blocks',
             'icon'              => 'admin-post',
         ));
+
+        // Register a breadcrumbs block
+        acf_register_block_type(array(
+            'name'              => 'breadcrumbs',
+            'title'             => __('breadcrumbs'),
+            'description'       => __('Breadcrumbs'),
+            'render_template'   => acf_theme_blocks_path('breadcrumbs/breadcrumbs.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/breadcrumbs/breadcrumbs.css',
+            'category'          => 'custom-blocks',
+        ));
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');
