@@ -1,11 +1,11 @@
 <?php
 $ornament_url = get_template_directory_uri() . "/assets/images/symbol-defs.svg#icon-ornament1";
 // $phone_number = '+38 099 169 47 45';
-$phone_number = esc_html(get_field('phone_number', 'option'));
+$phone_number = esc_html(get_field('phone_number', 'options'));
 $phone = str_replace(' ', '', $phone_number);
-$email = esc_html(get_field('email', 'option'));
+$email = esc_html(get_field('email', 'options'));
 
-$socials = get_field('socials', 'option');
+$socials = get_field('socials', 'options');
 // echo var_dump($socials);
 ?>
 <style>
