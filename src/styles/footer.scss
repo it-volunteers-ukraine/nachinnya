@@ -3,13 +3,13 @@
 // $aaaa: unquote(calc(222px * ( 1 - (480px / ( 1920px - 100vw)))));
 
 .link-adv,
-.wrap-link a {
+.wrap-link-adv a {
   position: relative;
   transition: all $animations;
 }
 
 .link-adv::after,
-.wrap-link a::after {
+.wrap-link-adv a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -20,21 +20,21 @@
   transition: all $animations;
 }
 .link-adv:hover,
-.wrap-link a:hover {
+.wrap-link-adv a:hover {
   color: $yellow;
   border-color: $yellow;
 }
 
 .link-adv:hover::after,
-.wrap-link a:hover::after {
+.wrap-link-adv a:hover::after {
   background-color: $yellow;
 }
 .link-adv:active,
-.wrap-link a:active {
+.wrap-link-adv a:active {
   color: $yellow-pressed;
 }
 .link-adv:active::after,
-.wrap-link a:active::after {
+.wrap-link-adv a:active::after {
   background-color: $yellow-pressed;
   height: 2px;
 }
