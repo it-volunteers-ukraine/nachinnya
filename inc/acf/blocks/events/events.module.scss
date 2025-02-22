@@ -1,0 +1,133 @@
+@use "../../../../src/styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.title-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    gap: 12px;
+}
+
+.title-header h1 {
+    width: 204px;
+    text-align: center;
+    font-family: variables.$primary-font;
+    font-size: 24px;
+    color: variables.$dark-red;
+}
+
+.title-header img {
+    width: 36px;
+    height: 36px;
+}
+
+.title-header img:nth-of-type(2) {
+    rotate: -180deg;
+}
+
+.title-decoration-image {
+    width: 200px;
+}
+
+
+
+.item {
+    padding: 64px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-upper-part {
+    display: flex;
+    justify-content: center;
+    height: 83.33vw;
+}
+
+.item-upper-part-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 73.17%;
+}
+
+.item-upper-part-image {
+    object-fit: cover;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    transform: translateX(-5px) translateY(-5px) rotate(4deg);
+}
+
+.item-upper-part-blue {
+    position: absolute;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    border: 2px solid variables.$blue;
+}
+
+.item-upper-part-yellow {
+    position: absolute;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    border: 2px solid variables.$yellow;
+    transform: rotate(4deg);
+}
+
+.item-text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-text-part-title {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+}
+
+.item-text-part-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}

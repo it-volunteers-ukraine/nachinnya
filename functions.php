@@ -120,3 +120,6 @@ if( function_exists('acf_add_options_page') ) {
       'parent_slug'   => 'theme-general-settings',
   ));
 }
+
+// Helper class to work with images
+require get_template_directory() . '/parts/image-helper.php';
