@@ -6,6 +6,8 @@
     gap: 40px;
 }
 
+/* Title styles */
+
 .title {
     display: flex;
     flex-direction: column;
@@ -42,7 +44,7 @@
     width: 200px;
 }
 
-
+/* Item styles */
 
 .item {
     padding: 64px 0px;
@@ -129,5 +131,75 @@
 .item-text-part-card-info-time {
     font-family: variables.$secondary-font;
     font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-text-part-card-info-price,
+.item-text-part-card-info-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-price-label,
+.item-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-info-price-value,
+.item-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.item-text-part-card-show-more-button {
+    font-family: variables.$primary-font;
+    font-size: 16px;
     color: variables.$red;
 }

@@ -12,8 +12,11 @@
     }
 
     //
+    $price_label_text = get_field('price_label_text');
+    $duration_label_text = get_field('duration_label_text');
     $registration_button_text = get_field('registration_button_text');
     $show_more_text = get_field('show_more_text');
+    $show_less_text = get_field('show_less_text');
 
     //
     $paged = max(get_query_var('paged'), 1);
@@ -54,8 +57,11 @@
                     'inc/acf/blocks/events/item',
                     null,
                     [
+                        "price_label_text" => $price_label_text,
+                        "duration_label_text" => $duration_label_text,
                         "registration_button_text" => $registration_button_text,
                         "show_more_text" => $show_more_text,
+                        "show_less_text" => $show_less_text,
                     ],
                 );
             }
