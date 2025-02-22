@@ -1,0 +1,55 @@
+@use "../../../../src/styles/variables.scss";
+
+.list {
+    display: flex;
+}
+
+.item {
+    display: inline;
+    font-family: variables.$secondary-font;
+}
+
+.item+.item:before {
+    padding: 0px 4px;
+    color: variables.$black;
+    font-family: variables.$primary-font;
+    content: "/";
+}
+
+.item.selected span {
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+}
+
+.link {
+    transition: all variables.$animations;
+    border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+    color: variables.$dark-red;
+    border-bottom: 1px solid variables.$dark-red;
+}
+
+.link:active {
+    color: variables.$red;
+    border-bottom: 2px solid variables.$red;
+}
+
+@media screen and (max-width: calc(variables.$tablet - 0.1px)) {
+    .item {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: variables.$tablet) {
+    .item {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: variables.$full) {
+    .item {
+        font-size: 20px;
+    }
+}
