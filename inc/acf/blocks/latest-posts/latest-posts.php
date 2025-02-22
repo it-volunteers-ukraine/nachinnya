@@ -1,10 +1,8 @@
 <?php
-// Number of posts (you can change in ACF)
-$posts_per_page = get_field('posts_per_page') ?: 5;
 
 $args = array(
     'post_type'      => 'post',
-    'posts_per_page' => $posts_per_page,
+    'posts_per_page' => 5,
     'orderby'        => 'date',
     'order'          => 'DESC',
 );
@@ -16,7 +14,12 @@ if ($query->have_posts()) :
     <div class="container">
         <div class="post-item">
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <p><?php the_excerpt(); ?></p>
+                <?php 
+                    $paragraph = get_field('paragraph', get_the_ID());
+                    if ($paragraph) :
+                    ?>
+                        <p><?php echo esc_html($paragraph); ?></p>
+                <?php endif; ?>
         </div>
     </div>
     <?php endwhile;
