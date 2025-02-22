@@ -4,13 +4,6 @@
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: $desktop) {
-    padding-bottom: 110px;
-  }
 }
 
 .section {

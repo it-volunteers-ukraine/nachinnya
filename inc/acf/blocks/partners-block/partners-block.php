@@ -1,6 +1,6 @@
 <?php
 $default_classes = [
-    'partners-info' => 'partners-info',
+    'partner-title' => 'partner-title',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -12,15 +12,47 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class='section'>
-    <div class='container'>
-        <?php 
-            $text = get_field('partners_text');
-            if (!empty($text)) : 
-        ?>
-            <div class="<?php echo esc_attr($classes['partners-info']); ?>">
-                <p class="<?php echo esc_attr($classes['partners-info']); ?>"><?php echo esc_html($text); ?></p>
-            </div>
-        <?php endif; ?>
+<section>
+<?php
+
+$args = array(
+    'post_type'      => 'partners',
+    'posts_per_page' => -1,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+);
+
+$query = new WP_Query($args);
+if ($query->have_posts()) :
+    echo '<div class="partners">';
+    while ($query->have_posts()) : $query->the_post(); 
+
+    $partner_title = get_field('partner_title', get_the_ID()); 
+    $partner_image = get_field('partner_image', get_the_ID());
+
+?>
+
+    <div class="container">
+        <div class="post-item">
+            <?php if ($partner_image) : ?>
+                <img src="<?php echo esc_url($partner_image['url']); ?>" alt="<?php echo esc_attr($partner_title); ?>">
+            <?php endif; ?>
+            
+            <h3 class="<?php echo esc_attr($classes['partner-title']); ?>">
+                <a href="<?php the_permalink(); ?>">
+                    <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
+                </a>
+            </h3>
+
+            <p><?php the_excerpt(); ?></p>
+        </div>
     </div>
+
+    <?php endwhile;
+    echo '</div>';
+    wp_reset_postdata();
+else :
+    echo '<p>Немає записів.</p>';
+endif;
+?>
 </section>
