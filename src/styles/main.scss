@@ -1,7 +1,7 @@
 @use "./variables.scss";
-@use "./general.scss";
-@use "./global.scss";
+@use "./_general.scss";
+@use "./_global.scss";
 @use "./start-page.scss";
-@use "./header.scss";
-@use "./footer.scss";
+@use "./_header.scss";
+@use "./_footer.scss";
 @use "./template-styles/partners.scss";
