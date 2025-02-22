@@ -1,1 +1,5 @@
-console.log('events');
+//
+const eventsToggleShowMoreText = (btn) => {
+    //
+    console.log(btn);
+}

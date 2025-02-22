@@ -31,6 +31,7 @@
         'item-text-part-card-intro-text' => 'item-text-part-card-intro-text',
         'item-text-part-card-show-more' => 'item-text-part-card-show-more',
         'item-text-part-card-show-more-button' => 'item-text-part-card-show-more-button',
+        'item-text-part-card-show-more-button-hidden' => 'item-text-part-card-show-more-button-hidden',
         'item-text-part-card-main-text' => 'item-text-part-card-main-text',
     ];
 
@@ -125,8 +126,10 @@
                 ?>
                         <div class="<?= $classes["item-text-part-card-show-more"] ?>">
                             <button
+                                id="eventsToggleMoreTextButton<?= $current_id ?>"
                                 class="<?= $classes["item-text-part-card-show-more-button"] ?>"
                                 role="button"
+                                onclick="eventsToggleShowMoreText(this);"
                             >
                                 <?= $show_more_text ?>
                             </button>
