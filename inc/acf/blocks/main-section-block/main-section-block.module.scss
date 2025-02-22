@@ -200,10 +200,24 @@ img {
 }
 
 .main_section_columns-text {
+    position: relative;
     display: flex;
     gap: 20px;
     width: 870px;
     margin: 0 auto;
+}
+
+.main_section_columns-text::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 310px;
+    height: 167px;
+    background-image: url("../../../../assets/images/loop-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -379px;
+    top: 30px;
 }
 
 .left,
