@@ -2,20 +2,20 @@
 
 .h2-title-wrapper {
     width: fit-content;
-    margin: 151px auto 88px;
+    margin: 100px auto 88px;
     position: relative;
 
     @media screen and (max-width: $desktop) {
-        margin-bottom: 130px;
+        margin-bottom: 76px;
     }
 
     @media screen and (max-width: $tablet) {
-        margin-bottom: 85px;
+        margin-bottom: 80px;
     }
 
     @media screen and (max-width: $mobile) {
         width: 240px;
-        margin-bottom: 95px;
+        margin-bottom: 72px;
     }
 }
 
