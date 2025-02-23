@@ -4,9 +4,10 @@
     "fields": [
         {
             "key": "field_679b376da4e75",
-            "label": "Кількість постів на сторінці",
-            "name": "posts_per_page",
-            "type": "number",
+            "label": "Текст",
+            "name": "paragraph",
+            "aria-label": "",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,20 +17,19 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "append": ""
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/latest-posts"
+                "value": "post"
             }
         ]
     ],
@@ -41,5 +41,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1738226392
+    "show_in_rest": 0,
+    "modified": 1740247587
 }
