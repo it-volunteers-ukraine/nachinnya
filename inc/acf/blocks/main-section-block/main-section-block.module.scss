@@ -216,6 +216,25 @@ img {
     }
 }
 
+.title-template-part {
+    width: fit-content;
+    padding-top: 32px;
+    margin: 0px auto 36px;
+
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 32px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        padding-top: 24px;
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 240px;
+    }
+}
+
 .slogan {
     max-width: 870px;
     text-align: center;
