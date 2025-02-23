@@ -1,5 +1,6 @@
 <?php 
-    $h2_title = get_field('h2_title');
+    $current_id = get_the_ID();
+    $h2_title = get_field('h2_title', $current_id);
     if (!empty($h2_title)) : 
 ?>
     <div class="h2-title-wrapper">
