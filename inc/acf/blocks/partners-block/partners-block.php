@@ -27,7 +27,7 @@ if ($query->have_posts()) :
     echo '<div class="partners">';
     while ($query->have_posts()) : $query->the_post(); 
 
-    $partner_title = get_field('partner_title', get_the_ID()); 
+    $partner_title = get_field('partner_title', get_the_ID());
     $partner_image = get_field('partner_image', get_the_ID());
 
 ?>
