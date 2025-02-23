@@ -1,8 +1,9 @@
-@use "./../../../src/styles/variables.scss" as *;
+@use "../variables.scss" as *;
 
 .h2-title-wrapper {
     width: fit-content;
-    margin: 100px auto 88px;
+    padding-top: 32px;
+    margin: 0px auto 88px;
     position: relative;
 
     @media screen and (max-width: $desktop) {
@@ -10,6 +11,7 @@
     }
 
     @media screen and (max-width: $tablet) {
+        padding-top: 24px;
         margin-bottom: 80px;
     }
 
@@ -38,11 +40,13 @@
     @media screen and (max-width: $tablet) {
         width: 300px;
         bottom: -40px;
+        right: -25px;
     }
 
     @media screen and (max-width: $mobile) {
         width: 200px;
         bottom: -32px;
+        right: 0px;
     }
 }
 
@@ -70,7 +74,10 @@
     }
 
     @media screen and (max-width: $mobile) {
-        left: -12px;
+        width: 36px;
+        height: 36px;
+        left: 0px;
+        top: 0px;
     }
 }
 
@@ -92,6 +99,10 @@
     }
 
     @media screen and (max-width: $mobile) {
-        right: -12px;
+        width: 36px;
+        height: 36px;
+        right: 0px;
+        top: 0px;
+
     }
 }

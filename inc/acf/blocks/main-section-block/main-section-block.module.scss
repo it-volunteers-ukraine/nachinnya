@@ -2,20 +2,20 @@
 
 .upper-title-wrapper {
     width: fit-content;
-    margin: 0 auto 180px;
+    margin: 0 auto;
     position: relative;
+    padding-bottom: 88px;
 
     @media screen and (max-width: $desktop) {
-        margin-bottom: 130px;
+        padding-bottom: 84px;
     }
 
     @media screen and (max-width: $tablet) {
-        margin-bottom: 85px;
+        padding-bottom: 24px;
     }
 
     @media screen and (max-width: $mobile) {
-        width: 240px;
-        margin-bottom: 95px;
+        padding-bottom: 40px;
     }
 }
 
@@ -29,20 +29,22 @@
     background-size: contain;
     background-repeat: no-repeat;
     right: -33px;
-    bottom: -52px;
+    bottom: 88px;
 
     @media screen and (max-width: $desktop) {
-        bottom: -44px;
+        bottom: 85px;
     }
 
     @media screen and (max-width: $tablet) {
         width: 300px;
-        bottom: -40px;
+        bottom: 24px;
+        right: -25px;
     }
 
     @media screen and (max-width: $mobile) {
         width: 200px;
-        bottom: -32px;
+        bottom: 32px;
+        right: 0px;
     }
 }
 
@@ -51,6 +53,19 @@
     display: inline-block;
     text-align: center;
     padding: 0 40px;
+    margin-bottom: 52px;
+
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 44px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        margin-bottom: 32px;
+    }
 }
 
 .title::before {
@@ -70,7 +85,9 @@
     }
 
     @media screen and (max-width: $mobile) {
-        left: -12px;
+        width: 36px;
+        height: 36px;
+        left: 0px;
     }
 }
 
@@ -92,7 +109,9 @@
     }
 
     @media screen and (max-width: $mobile) {
-        right: -12px;
+        width: 36px;
+        height: 36px;
+        right: 0px;
     }
 }
 
@@ -101,18 +120,21 @@
     justify-content: center;
     position: relative;
     margin: 41px auto 63px;
-    width: 920px;
+    max-width: 920px;
 
     @media screen and (max-width: $desktop) {
-        width: 596px;
+        max-width: 596px;
+        margin: 2px auto 47px;
     }
 
     @media screen and (max-width: $tablet) {
-        width: 482px;
+        max-width: 482px;
+        margin: 21px auto 25px;
     }
 
     @media screen and (max-width: $mobile) {
-        width: 284px;
+        max-width: 284px;
+        margin: 23px auto 19px;
     }
 }
 
@@ -120,7 +142,7 @@
     content: "";
     position: absolute;
     border: 2px solid $red;
-    top: 11.41px;
+    top: 0px;
     width: 100%;
     height: 100%;
     transform: rotate(6.68deg);
@@ -153,18 +175,19 @@
 
 .main_photo {
     max-width: 920px;
+    width: 100%;
     display: block;
 
     @media screen and (max-width: $desktop) {
-        width: 596px;
+        max-width: 596px;
     }
 
     @media screen and (max-width: $tablet) {
-        width: 482px;
+        max-width: 482px;
     }
 
     @media screen and (max-width: $mobile) {
-        width: 284px;
+        max-width: 284px;
     }
 }
 
@@ -194,17 +217,49 @@ img {
 }
 
 .slogan {
-    width: 870px;
+    max-width: 870px;
     text-align: center;
     margin: 0 auto 44px;
+
+    @media screen and (max-width: $desktop) {
+        max-width: 648px;
+        margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        max-width: 328px;
+        margin-bottom: 20px;
+    }
 }
 
 .main_section_columns-text {
     position: relative;
     display: flex;
     gap: 20px;
-    width: 870px;
+    max-width: 870px;
     margin: 0 auto;
+
+    @media screen and (max-width: $desktop) {
+        max-width: 628px;
+        gap: 18px;
+    }
+
+    @media screen and (max-width: 1330px) {
+        padding-bottom: 118px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        max-width: 688px;
+        gap: 20px;
+        padding-bottom: 118px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        max-width: 328px;
+        gap: 16px;
+        padding-bottom: 70px;
+    }
 }
 
 .main_section_columns-text::before {
@@ -218,6 +273,35 @@ img {
     background-repeat: no-repeat;
     left: -379px;
     top: 30px;
+
+    @media screen and (max-width: 1700px) {
+        left: -200px;
+    }
+
+    @media screen and (max-width: $desktop) {
+        width: 280px;
+        height: 140px;
+        left: -328px;
+    }
+
+    @media screen and (max-width: 1330px) {
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        width: 200px;
+        height: 100px;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 100px;
+        height: 50px;
+    }
 }
 
 .left,
