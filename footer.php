@@ -6,7 +6,6 @@ $phone = str_replace(' ', '', $phone_number);
 $email = esc_html(get_field('email', 'options'));
 
 $socials = get_field('socials', 'options');
-// echo var_dump($socials);
 ?>
 <style>
     /* https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/symbol-defs.svg#icon-ornament1 */
@@ -73,33 +72,13 @@ $socials = get_field('socials', 'options');
                     </svg>
                 </div>
                 <?php
-                $socseti = get_field('socseti_block', 'options');
-                $socseti_title = esc_html(get_field('socseti_title', 'options'));
-                // echo var_dump($socseti);
+                get_template_part('template-parts/socblock', null, ['is_main' => false, 'is_title' => true]);
                 ?>
-                <div class="social-wrap">
-                    <?php if ($socseti) : ?>
-                        <p class="social-title"><?php echo $socseti_title; ?></p>
-                        <div class="social footer__social">
-                            <?php foreach ($socseti as $item) : ?>
-                                <a href="<?php echo $item['url']; ?>" class="social-link">
-                                    <?php
-                                    $social_sprite_url = esc_url(get_field('social_sprite', 'options')) . "#" . $item['sprite_icon_name'];
-                                    ?>
-                                    <svg class="social-icon">
-                                        <use xlink:href="<?php echo $social_sprite_url; ?>"></use>
-                                    </svg>
-                                </a>
-                            <?php endforeach; ?>
 
-                        </div>
-                    <?php endif; ?>
-                </div>
             </address>
 
         </div>
 
-        <!-- <img src="" alt="" class="footer-ornament"> -->
         <div class="copyright-wrap">
             <a href="https://it-volunteers.com/" class="copyright link-adv" target="_blank"><?php echo esc_html(get_field('copyright', 'option')); ?></a>
         </div>
