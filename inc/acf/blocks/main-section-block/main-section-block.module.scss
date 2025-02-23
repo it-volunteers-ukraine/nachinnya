@@ -2,20 +2,20 @@
 
 .upper-title-wrapper {
     width: fit-content;
-    margin: 0 auto 180px;
+    margin: 0 auto;
     position: relative;
+    padding-bottom: 88px;
 
     @media screen and (max-width: $desktop) {
-        margin-bottom: 130px;
+        padding-bottom: 32px;
     }
 
     @media screen and (max-width: $tablet) {
-        margin-bottom: 85px;
+        padding-bottom: 24px;
     }
 
     @media screen and (max-width: $mobile) {
-        width: 240px;
-        margin-bottom: 95px;
+        padding-bottom: 40px;
     }
 }
 
@@ -29,20 +29,22 @@
     background-size: contain;
     background-repeat: no-repeat;
     right: -33px;
-    bottom: -52px;
+    bottom: 88px;
 
     @media screen and (max-width: $desktop) {
-        bottom: -44px;
+        bottom: 32px;
     }
 
     @media screen and (max-width: $tablet) {
         width: 300px;
-        bottom: -40px;
+        bottom: 24px;
+        right: -25px;
     }
 
     @media screen and (max-width: $mobile) {
         width: 200px;
-        bottom: -32px;
+        bottom: 32px;
+        right: 0px;
     }
 }
 
@@ -51,6 +53,19 @@
     display: inline-block;
     text-align: center;
     padding: 0 40px;
+    margin-bottom: 52px;
+
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 44px;
+    }
+
+    @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        margin-bottom: 32px;
+    }
 }
 
 .title::before {
@@ -70,7 +85,9 @@
     }
 
     @media screen and (max-width: $mobile) {
-        left: -12px;
+        width: 36px;
+        height: 36px;
+        left: 0px;
     }
 }
 
@@ -92,7 +109,9 @@
     }
 
     @media screen and (max-width: $mobile) {
-        right: -12px;
+        width: 36px;
+        height: 36px;
+        right: 0px;
     }
 }
 
@@ -197,6 +216,10 @@ img {
     width: 870px;
     text-align: center;
     margin: 0 auto 44px;
+
+    @media screen and (max-width: $desktop) {
+        margin-bottom: 24px;
+    }
 }
 
 .main_section_columns-text {
@@ -205,6 +228,11 @@ img {
     gap: 20px;
     width: 870px;
     margin: 0 auto;
+
+    @media screen and (max-width: $desktop) {
+        width: 628px;
+        gap: 18px;
+    }
 }
 
 .main_section_columns-text::before {
@@ -218,6 +246,12 @@ img {
     background-repeat: no-repeat;
     left: -379px;
     top: 30px;
+
+    @media screen and (max-width: $desktop) {
+        width: 280px;
+        height: 140px;
+        left: -328px;
+    }
 }
 
 .left,
