@@ -1,6 +1,6 @@
 {
     "key": "group_67b9ed33d5902",
-    "title": "Пост партнери",
+    "title": "Блок Партнери",
     "fields": [
         {
             "key": "field_67b9ed335fd7e",
@@ -75,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740242271
+    "modified": 1740249284
 }
