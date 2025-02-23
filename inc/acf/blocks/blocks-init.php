@@ -1,6 +1,6 @@
 <?php
 
-function acf_theme_blocks_path($path) {
+function acf_theme_blocks_path($path = '') {
     return get_template_directory() . '/inc/acf/blocks/' . $path;
 }
 
@@ -25,6 +25,15 @@ function it_volunteers_acf_blocks_init() {
     
     // Check function exists.
     if( function_exists('acf_register_block_type') ) {
+
+        $block_folders = glob(acf_theme_blocks_path() . '*', GLOB_ONLYDIR);
+        foreach ($block_folders as $block_path) {
+            $register_file = $block_path . '/register.php';
+    
+            if (file_exists($register_file)) {
+                include_once $register_file;
+            }
+        }
         
         // Register a hero1 block.
         acf_register_block_type(array(
