@@ -127,10 +127,10 @@ function scripts() {
 
 
 function watching() {
-  watch("src/styles/*.scss", styles);
+  watch("src/styles/**/*.scss", styles);
   // watch("src/styles/template-styles/*.scss", stylesTemplates);
   watch("inc/acf/blocks/**/*.module.scss", blockStyles);
-  watch("src/scripts/*.js", scripts);
+  watch("src/scripts/**/*.js", scripts);
   // watch("src/scripts/template-scripts/*.js", scriptsTemplates);
   watch("inc/acf/blocks/**/*.js", blockScripts);
   watch("src/images/**/*.*", images);
