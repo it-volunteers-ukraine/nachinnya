@@ -1,3 +1,12 @@
+<?php 
+            $h2_title = get_field('h2_title');
+            if (!empty($h2_title)) : 
+        ?>
+            <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
+                <?php get_template_part('template-parts/h2-title'); ?>
+            </div>
+        <?php endif; ?>
+
 <?php
 
 $args = array(

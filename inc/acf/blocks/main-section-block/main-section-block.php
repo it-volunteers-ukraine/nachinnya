@@ -4,7 +4,7 @@ $default_classes = [
     'image-container' => 'image-container',
     'upper-title-wrapper' => 'upper-title-wrapper',
     'title' => 'title',
-    'title-container' => 'title-container',
+    'title-template-part' => 'title-template-part',
     'main_section_slogan' => 'main_section_slogan',
     'slogan' => 'slogan',
     'main_section_columns-text' => 'main_section_columns-text',
@@ -47,7 +47,9 @@ if (file_exists($modules_file)) {
             $h2_title = get_field('h2_title');
             if (!empty($h2_title)) : 
         ?>
-            <?php get_template_part('template-parts/h2-title'); ?>
+            <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
+                <?php get_template_part('template-parts/h2-title'); ?>
+            </div>
         <?php endif; ?>
 
         <!-- slogan -->
