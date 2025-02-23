@@ -1,0 +1,53 @@
+@use "../variables.scss" as *;
+
+.social-wrap.main .social-icon {
+  fill: $red;
+}
+
+.social-wrap.advanced .social-icon {
+  fill: $yellow;
+}
+
+.social-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  // justify-content: space-between;
+  // width: 220px;
+}
+
+.social-title {
+  text-transform: uppercase;
+}
+
+.social-link {
+  line-height: 0;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+}
+.social-link:hover .social-icon {
+  transition: all $animations;
+}
+.social-link:hover .social-icon {
+  transform: scale(1.073);
+}
+
+@media screen and (min-width: 768px) {
+  .social-wrap.main .social {
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .social{
+    gap: 24px;
+  }
+}

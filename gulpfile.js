@@ -12,33 +12,39 @@ const fs = require("fs");
 const cssModulesJSON = {};
 const rename = require("gulp-rename");
 
+// function images() {
+//   return src("src/images/*.*")
+//     .pipe(newer("assets/images"))
+//     .pipe(imagemin())
+//     .pipe(dest("assets/images"));
+// }
+
 function images() {
-  return src("src/images/*.*")
+  return src("src/images/**/*.*")
     .pipe(newer("assets/images"))
     .pipe(imagemin())
     .pipe(dest("assets/images"));
 }
 
+// function styles() {
+//   return src("src/styles/main.scss")
+//     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+//     .pipe(scss({ outputStyle: "compressed" }))
+//     .pipe(dest("assets/styles"));
+// }
+
+// function stylesTemplates() {
+//   return src("src/styles/template-styles/*.scss")
+//     .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+//     .pipe(scss({ outputStyle: "compressed" }))
+//     .pipe(dest("assets/styles/template-styles"));
+// }
+
 function styles() {
-  return src("src/styles/main.scss")
-    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
+  return src("src/styles/**/*.scss")
     .pipe(scss({ outputStyle: "compressed" }))
+    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
     .pipe(dest("assets/styles"));
-}
-
-function stylesTemplates() {
-  return src("src/styles/template-styles/*.scss")
-    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
-    .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(dest("assets/styles/template-styles"));
-}
-
-function stylesTemplatesParts() {
-  return src("src/styles/template-parts-styles/*.scss")
-    .pipe(autoprefixer({ overrideBrowserslist: ["last 10 versions"] }))
-    .pipe(scss({ outputStyle: "compressed" }).on("error", scss.logError))
-    .pipe(dest("assets/styles/template-parts-styles"))
-    .on("end", () => console.log("✅ stylesTemplatesParts завершено!"));
 }
 
 function blockStyles() {
@@ -87,31 +93,25 @@ function blockStyles() {
     })
     .on("end", () => {
       console.log("✅ blockStyles завершена успешно!");
-      // resolve(); 
+      // resolve();
     });
   // .on("end", done);
 }
 
 // ****************************************
 
-function scripts() {
-  return src("src/scripts/*.js")
-    .pipe(concat("main.js"))
-    .pipe(uglify())
-    .pipe(dest("assets/scripts"));
-}
+// function scripts() {
+//   return src("src/scripts/*.js")
+//     .pipe(concat("main.js"))
+//     .pipe(uglify())
+//     .pipe(dest("assets/scripts"));
+// }
 
-function scriptsTemplates() {
-  return src("src/scripts/template-scripts/*.js")
-    .pipe(uglify())
-    .pipe(dest("assets/scripts/template-scripts"));
-}
-
-function scriptsTemplateParts() {
-  return src(["src/scripts/template-parts-scripts/*.js"])
-    .pipe(uglify())
-    .pipe(dest("assets/scripts/template-parts-scripts"));
-}
+// function scriptsTemplates() {
+//   return src("src/scripts/template-scripts/*.js")
+//     .pipe(uglify())
+//     .pipe(dest("assets/scripts/template-scripts"));
+// }
 
 function blockScripts() {
   return src("inc/acf/blocks/**/*.js")
@@ -119,49 +119,48 @@ function blockScripts() {
     .pipe(dest("assets/blocks/scripts"));
 }
 
+function scripts() {
+  return src("src/scripts/**/*.js")
+    .pipe(uglify())
+    .pipe(dest("assets/scripts"));
+}
+
+
 function watching() {
   watch("src/styles/*.scss", styles);
-  watch("src/styles/template-styles/*.scss", stylesTemplates);
-  watch("src/styles/template-parts-styles/*.scss", stylesTemplatesParts);
+  // watch("src/styles/template-styles/*.scss", stylesTemplates);
   watch("inc/acf/blocks/**/*.module.scss", blockStyles);
   watch("src/scripts/*.js", scripts);
-  watch("src/scripts/template-scripts/*.js", scriptsTemplates);
-  watch("src/scripts/template-parts-scripts/*.js", scriptsTemplateParts);
+  // watch("src/scripts/template-scripts/*.js", scriptsTemplates);
   watch("inc/acf/blocks/**/*.js", blockScripts);
   watch("src/images/**/*.*", images);
 }
 
 exports.styles = styles;
-exports.stylesTemplates = stylesTemplates;
-exports.stylesTemplatesParts = stylesTemplatesParts;
+// exports.stylesTemplates = stylesTemplates;
 exports.blockStyles = blockStyles;
 exports.images = images;
 exports.scripts = scripts;
-exports.scriptsTemplates = scriptsTemplates;
-exports.scriptsTemplateParts = scriptsTemplateParts;
+// exports.scriptsTemplates = scriptsTemplates;
 exports.blockScripts = blockScripts;
 exports.watching = watching;
 
 exports.default = parallel(
   styles,
-  stylesTemplates,
-  stylesTemplatesParts,
-  blockStyles,
   images,
   scripts,
-  scriptsTemplates,
-  scriptsTemplateParts,
+  // stylesTemplates,
+  blockStyles,
   blockScripts,
+  // scriptsTemplates,
   watching
 );
 exports.build = series(
   styles,
   images,
   scripts,
-  stylesTemplates,
-  stylesTemplatesParts,
-  scriptsTemplates,
-  scriptsTemplateParts,
+  // stylesTemplates,
+  // scriptsTemplates,
   blockScripts,
   blockStyles
 );
