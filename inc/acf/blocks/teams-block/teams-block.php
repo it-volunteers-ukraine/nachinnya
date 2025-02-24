@@ -3,6 +3,8 @@ $default_classes = [
     'team-wrap' => 'team-wrap',
     'team-list' => 'team-list',
     'team-item' => 'team-item',
+    'team-img-frame' => 'team-img-frame',
+    'team-img-wrap' => 'team-img-wrap',
     'team-img' => 'team-img',
 ];
 
@@ -23,14 +25,33 @@ $current_id = get_the_ID();
 <section class="section">
     <div class="container">
         <?php get_template_part('template-parts/h2-title', null, []); ?>
-        <div class="team-wrap">
-            <ul class="team-list">
-
+        <div class="<?php echo esc_attr($classes['team-wrap']); ?>">
+            <ul class="<?php echo esc_attr($classes['team-list']); ?>">
                 <!-- <li class="team-item"><img src="<?php echo get_field('photo1'); ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
-                <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t1.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li>
-                <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t2.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li>
-                <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t3.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li>
-                <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t4.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li>
+                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                    <div class="<?php echo esc_attr($classes['team-img-frame']); ?>">
+                        <div class="<?php echo esc_attr($classes['team-img-wrap']); ?>">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t1.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>">
+                        </div>
+                    </div>
+                </li>
+                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                    <div class="<?php echo esc_attr($classes['team-img-frame']); ?>">
+                        <div class="<?php echo esc_attr($classes['team-img-wrap']); ?>">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t2.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>">
+                        </div>
+                    </div>
+                </li>
+                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                    <div class="<?php echo esc_attr($classes['team-img-frame']); ?>">
+                        <div class="<?php echo esc_attr($classes['team-img-wrap']); ?>">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t3.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>">
+                        </div>
+                    </div>
+                </li>
+                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t2.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
+                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t3.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
+                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t4.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
             </ul>
         </div>
     </div>
