@@ -141,6 +141,13 @@
                 "operator": "==",
                 "value": "acf\/main-section-block"
             }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "28"
+            }
         ]
     ],
     "menu_order": 0,
@@ -152,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740344402
+    "modified": 1740383762
 }
