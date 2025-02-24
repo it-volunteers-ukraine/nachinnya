@@ -1,3 +1,86 @@
-.team-img{
-    width: 200px;
+@use "./../../../../src/styles/variables.scss" as *;
+
+.team-list {
+  display: flex;
+}
+$klr: 0.2362;
+$ktb: 0.18;
+$img-width: 320px;
+$img-height: 442px;
+$image-frame-width: 419px;
+$image-frame-height: 509px;
+
+/*ширина Frame при ширине фото 320 = 419, $klr= */
+$k-frame-width: calc($img-width / $image-frame-width);
+
+/*вісота Frame при ширине фото 320 = 509, $klr= */
+$k-frame-height: calc($img-width / $image-frame-height);
+
+/* при 320px ширине нужно получить 18px 18/320=0.05625 */
+$k18-320: calc(18px / $img-width);
+$k18-419: calc(18px / $image-frame-width);
+
+/* при 320px ширине нужно получить 18px 18/320=0.05625 */
+$k4-320: calc(4px / $img-width);
+$k4-419: calc(4px / $image-frame-width);
+
+.team-item {
+  outline: 1px dashed green;
+}
+
+.team-img-frame {
+  position: relative;
+  width: calc($img-width / $k-frame-width);
+  height: calc($img-width / $k-frame-height);
+  display: flex;
+
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-img-wrap {
+  position: relative;
+
+  transform: rotate(-5.89deg);
+  width: 320px;
+  height: 442px;
+  border-radius: 4px;
+  top: calc(100% * 0.028);
+  left: 0.5%;
+}
+
+.team-img-wrap::before,
+.team-img-wrap::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.team-img-wrap::before {
+  content: "";
+  transform: rotate(-0.4deg);
+  top: calc(100% * $k18-419);
+  left: calc(-100% * $k18-419);
+  border-color: $blue;
+}
+.team-img-wrap::after {
+  content: "";
+  transform: rotate(-8.31deg);
+  top: 18px; /* 18px */
+  left: -4px; /* -4px */
+  top: calc(100% * $k18-419);
+  left: calc(-100% * $k4-419);
+  border-color: $red;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 4px;
 }
