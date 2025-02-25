@@ -32,34 +32,23 @@ $current_id = get_the_ID();
                     <?php
                     $photo_url = get_template_directory_uri() . '/assets/images/teams/t1.jpg';
                     $photo_alt = 'alt';
-                    get_template_part('template-parts/photo-vertical', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt]);
+                    get_template_part('template-parts/photo-vertical', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'test-class']);
                     ?>
-
                 </li>
                 <li class="<?php echo esc_attr($classes['team-item']); ?>">
                     <?php
                     $photo_alt = 'alt';
                     $photo_url = get_template_directory_uri() . '/assets/images/teams/t6-g.jpg';
-                    get_template_part('template-parts/photo-horizontal', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'is_horiz' => true]);
+                    get_template_part('template-parts/photo-horizontal', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'test-class']);
                     ?>
                 </li>
-                <!-- <li class="<?php echo esc_attr($classes['team-item']); ?>">
-                    <div class="<?php echo esc_attr($classes['team-img-frame']); ?>">
-                        <div class="<?php echo esc_attr($classes['team-img-wrap']); ?>">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t2.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>">
-                        </div>
-                    </div>
-                </li> -->
                 <li class="<?php echo esc_attr($classes['team-item']); ?>">
-                    <div class="<?php echo esc_attr($classes['team-img-frame']); ?>">
-                        <div class="<?php echo esc_attr($classes['team-img-wrap']); ?>">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t3.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>">
-                        </div>
-                    </div>
+                    <?php
+                    $photo_alt = 'alt';
+                    $photo_url = get_template_directory_uri() . '/assets/images/teams/t2.jpg';
+                    get_template_part('template-parts/photo-vertical', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'test-class']);
+                    ?>
                 </li>
-                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t2.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
-                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t3.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
-                <!-- <li class="team-item"><img src="<?php echo get_template_directory_uri() . '/assets/images/teams/t4.jpg' ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
             </ul>
         </div>
     </div>
