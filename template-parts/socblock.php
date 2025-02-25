@@ -5,7 +5,7 @@
 -->
 
 <?php
-wp_enqueue_style('footer-socblock-style', get_template_directory_uri() . '/assets/styles/template-parts/socblock.css', [], '1.0');
+wp_enqueue_style('parts-socblock-style', get_template_directory_uri() . '/assets/styles/template-parts/socblock.css', [], '1.0');
 
 $socseti = get_field('socseti_block', 'options');
 $socseti_title = esc_html(get_field('socseti_title', 'options'));
