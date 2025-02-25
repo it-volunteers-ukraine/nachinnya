@@ -9,6 +9,7 @@ $default_classes = [
     'h2-title-wrapper' => 'h2-title-wrapper',
     'h2-title-elements-container' => 'h2-title-elements-container',
     'h2-title' => 'h2-title',
+    'partners-main-title' => 'partners-main-title',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -24,7 +25,7 @@ if (file_exists($modules_file)) {
 
     <div class="<?php echo esc_attr($classes['h2-title-wrapper']); ?>">
         <div class="<?php echo esc_attr($classes['h2-title-elements-container']); ?>">
-            <h2 class="<?php echo esc_attr($classes['h2-title']); ?>"><?php the_title() ?></h2>
+            <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
         </div>
     </div>
 
