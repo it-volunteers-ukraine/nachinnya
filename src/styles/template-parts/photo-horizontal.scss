@@ -1,0 +1,147 @@
+@use "../variables.scss" as *;
+
+/*
+360  182x252 (240x290)
+768  182x252 (240x290)
+1440 228x316 (300x364)
+1920 320x442 (419x509)
+
+angle - -14.2
+top - 3%
+left - 0.25%
+*/
+
+$img-w-360: 229px;
+$img-h-360: 166px;
+
+$img-w-768: 285px;
+$img-h-768: 207px;
+
+$img-w-1440: 427px;
+$img-h-1440: 310px;
+
+$img-w-1920: 427px;
+$img-h-1920: 310px;
+
+$angle-frame-horiz: 14.87deg;
+$angle-frame-horiz-before: 1.66deg;
+$angle-frame-horiz-after: 6.81deg;
+
+/* размер фото для макс устройства*/
+$img-width-template-hor: 427px;
+/* $img-height-template-hor: 442px; */
+
+/* размер контейнера с фото и рамками */
+$image-frame-width-template-hor: 522px;
+$image-frame-height-template-hor: 447px;
+
+$k-frame-width: calc($img-width-template-hor / $image-frame-width-template-hor);
+$k-frame-height: calc(
+  $img-width-template-hor / $image-frame-height-template-hor
+);
+
+/*
+frame1 - left: 13.21 top: 15.3
+frame2 - left: 20px top: 14.8
+*/
+
+/* при 419px ширине нужно контейнера фото нужно получить 18px 18/419 */
+$k-13-w: calc(13.21px / $image-frame-width-template-hor);
+$k-13_21-w: calc(13.21px / $image-frame-width-template-hor);
+$k-15-w: calc(15px / $image-frame-width-template-hor);
+$k-14_8-w: calc(14.8px / $image-frame-width-template-hor);
+$k-15_3-w: calc(15.3px / $image-frame-width-template-hor);
+$k-20-w: calc(20px / $image-frame-width-template-hor);
+
+/* при 419px ширине нужно контейнера фото нужно получить 4px 4/419 */
+$k-4-419: calc(4px / $image-frame-width-template-hor);
+
+@mixin set-img-size-hor($width, $height) {
+  .team-img-wrap-hor {
+    width: $width;
+    height: $height;
+  }
+  .team-img-frame-hor {
+    width: calc($width / $k-frame-width);
+    height: calc($width / $k-frame-height);
+  }
+}
+
+.team-img-frame-hor {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-img-wrap-hor {
+  position: relative;
+  border-radius: 4px;
+
+  transform: rotate($angle-frame-horiz);
+  top: 3%;
+  left: 0.25%;
+  top: 12.6%;
+  left: -2.4%;
+}
+
+@include set-img-size-hor($img-w-360, $img-h-360);
+
+.team-img-wrap-hor::before,
+.team-img-wrap-hor::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.team-img-wrap-hor::before {
+  border-color: $blue;
+
+  transform: rotate($angle-frame-horiz-before);
+  left: calc(100% * $k-13_21-w); /*13.21px */
+  top: calc(100% * $k-15_3-w); /* 15.3px */
+}
+.team-img-wrap-hor::after {
+  border-color: $red;
+
+  transform: rotate($angle-frame-horiz-after);
+  left: calc(100% * $k-20-w); /* 20px */
+  top: calc(100% * $k-15_3-w); /* -14.8px */
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 4px;
+}
+
+/*
+@media screen and (min-width: 768px) {
+}*/
+
+@media screen and (min-width: 768px) {
+  @include set-img-size-hor($img-w-768, $img-h-768);
+}
+
+/*@media screen and (min-width: 1200px) {
+}*/
+
+@media screen and (min-width: 1440px) {
+  @include set-img-size-hor($img-w-1440, $img-h-1440);
+}
+
+@media screen and (min-width: 1920px) {
+  @include set-img-size-hor($img-w-1920, $img-h-1920);
+}
+/*
+@media screen and (min-width: 768px){
+  
+}
+*/
