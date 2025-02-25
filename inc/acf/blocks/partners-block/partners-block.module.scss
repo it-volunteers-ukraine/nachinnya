@@ -1,7 +1,83 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
-.partner-title {
-    font-size: 50px;
-    color: $blue;
-    background-color: $yellow;
+.partners_section {
+  padding: 0 0;
+
+  .partners {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+
+    @media screen and (max-width: $tablet) {
+      padding: 0 0;
+    }
+
+    @media screen and (max-width: $desktop) {
+      gap: 62px;
+      padding: 0 146px;
+    }
+
+    .partners-title {
+      text-align: center;
+      margin-bottom: 88px;
+    }
+
+    .partners-title:nth-of-type(2) {
+      text-align: center;
+
+      @media screen and (max-width: $desktop) {
+        text-align: right;
+      }
+    }
+
+    .post-item {
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: $tablet) {
+        gap: 40px;
+        align-items: center;
+      }
+
+      @media screen and (max-width: $desktop) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 88px;
+      }
+
+      .partner-text {
+        white-space: pre-wrap;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $tablet) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: $desktop) {
+          font-size: 20px;
+          line-height: 14px;
+          margin-top: 30px;
+        }
+
+      }
+
+      .partner-image {
+        width: 324px;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $tablet) {
+          width: 210px;
+        }
+        @media screen and (max-width: $desktop) {
+          width: 425px;
+        }
+      }
+
+    }
+  }
+
 }
+
