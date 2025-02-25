@@ -39,8 +39,8 @@ $current_id = get_the_ID();
                 <li class="<?php echo esc_attr($classes['team-item']); ?>">
                     <?php
                     $photo_alt = 'alt';
-                    $photo_url = get_template_directory_uri() . '/assets/images/teams/t4.jpg';
-                    get_template_part('template-parts/photo-vertical', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'is_horiz' => true]);
+                    $photo_url = get_template_directory_uri() . '/assets/images/teams/t6-g.jpg';
+                    get_template_part('template-parts/photo-horizontal', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'is_horiz' => true]);
                     ?>
                 </li>
                 <!-- <li class="<?php echo esc_attr($classes['team-item']); ?>">
