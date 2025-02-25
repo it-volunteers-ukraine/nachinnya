@@ -1,7 +1,14 @@
 <?php
 $default_classes = [
-    'partner-title' => 'partner-title',
+    'partners-title' => 'partners-title',
     'partner-text' => 'partner-text',
+    'partners_section' => 'partners_section',
+    'partners' => 'partners',
+    'post-item' => 'post-item',
+    'partner-image' => 'partner-image',
+    'h2-title-wrapper' => 'h2-title-wrapper',
+    'h2-title-elements-container' => 'h2-title-elements-container',
+    'h2-title' => 'h2-title',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -13,11 +20,11 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class="partners_section">
+<section class="<?php echo esc_attr($classes['partners_section']); ?>">
 
-    <div class="h2-title-wrapper">
-        <div class="h2-title-elements-container">
-            <h2 class="h2-title"><?php the_title() ?></h2>
+    <div class="<?php echo esc_attr($classes['h2-title-wrapper']); ?>">
+        <div class="<?php echo esc_attr($classes['h2-title-elements-container']); ?>">
+            <h2 class="<?php echo esc_attr($classes['h2-title']); ?>"><?php the_title() ?></h2>
         </div>
     </div>
 
@@ -32,7 +39,7 @@ if (file_exists($modules_file)) {
 
         $query = new WP_Query($args);
         if ($query->have_posts()) :
-            echo '<div class="partners">';
+            echo '<div class="' . esc_attr($classes['partners']) . '">';
             while ($query->have_posts()) : $query->the_post();
 
                 $id = get_the_ID();
@@ -40,12 +47,13 @@ if (file_exists($modules_file)) {
                 $partner_image = get_field('partner_image', $id);
                 $partner_text = get_field('partner_text', $id);
                 ?>
-                <h3 class="<?php echo esc_attr($classes['partner-title']); ?>">
+                <h3 class="<?php echo esc_attr($classes['partners-title']); ?>">
                     <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
                 </h3>
-                <div class="post-item">
+                <div class="<?php echo esc_attr($classes['post-item']); ?>">
                     <?php if ($partner_image) : ?>
-                        <img src="<?php echo esc_url($partner_image['url']); ?>"
+                        <img class="<?php echo esc_attr($classes['partner-image']); ?>"
+                             src="<?php echo esc_url($partner_image['url']); ?>"
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
 
