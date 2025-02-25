@@ -11,74 +11,74 @@ top - 3%
 left - 0.25%
 */
 
-$img-w-360: 182px;
-$img-h-360: 252px;
+$vert-img-w-360: 182px;
+$vert-img-h-360: 252px;
 
-$img-w-768: 182px;
-$img-h-768: 252px;
+$vert-img-w-768: 182px;
+$vert-img-h-768: 252px;
 
-$img-w-1440: 228px;
-$img-h-1440: 316px;
+$vert-img-w-1440: 228px;
+$vert-img-h-1440: 316px;
 
-$img-w-1920: 320px;
-$img-h-1920: 442px;
+$vert-img-w-1920: 320px;
+$vert-img-h-1920: 442px;
 
-$angle-frame: -5.89deg;
-$angle-frame-before: -0.4deg;
-$angle-frame-after: -8.31deg;
-
-$angle-frame-right: 14.89deg;
-$angle-frame-right-before: 0.4deg;
-$angle-frame-right-after: 8.31deg;
+$vert-angle-frame: -5.89deg;
+$vert-angle-frame-before: -0.4deg;
+$vert-angle-frame-after: -8.31deg;
 
 /* размер фото для макс устройства*/
-$img-width-template: 320px;
-$img-height-template: 442px;
+$vert-img-width-template: 320px;
+$vert-img-height-template: 442px;
 
 /* размер контейнера с фото и рамками */
-$image-frame-width-template: 419px;
-$image-frame-height-template: 509px;
+$vert-img-frame-width-template: 419px;
+$vert-img-frame-height-template: 509px;
 
-$k-frame-width: calc($img-width-template / $image-frame-width-template);
-$k-frame-height: calc($img-width-template / $image-frame-height-template);
+$k-vert-frame-width: calc(
+  $vert-img-width-template / $vert-img-frame-width-template
+);
+$k-vert-frame-height: calc(
+  $vert-img-width-template / $vert-img-frame-height-template
+);
 
 /* при 419px ширине нужно контейнера фото нужно получить 18px 18/419 */
-$k-18-419: calc(18px / $image-frame-width-template);
+$k-18-419: calc(18px / $vert-img-frame-width-template);
 
 /* при 419px ширине нужно контейнера фото нужно получить 4px 4/419 */
-$k-4-419: calc(4px / $image-frame-width-template);
+$k-4-419: calc(4px / $vert-img-frame-width-template);
 
 @mixin set-img-size($width, $height) {
-  .team-img-wrap {
+  .vert-img-wrap {
     width: $width;
     height: $height;
   }
-  .team-img-frame {
-    width: calc($width / $k-frame-width);
-    height: calc($width / $k-frame-height);
+  .vert-img-frame {
+    width: calc($width / $k-vert-frame-width);
+    height: calc($width / $k-vert-frame-height);
   }
 }
 
-.team-img-frame {
+.vert-img-frame {
   display: flex;
   position: relative;
   justify-content: center;
   overflow: hidden;
 }
 
-.team-img-wrap {
+.vert-img-wrap {
   position: relative;
   border-radius: 4px;
 
-  transform: rotate($angle-frame);
+  transform: rotate($vert-angle-frame);
   top: 3%;
   left: 0.25%;
 }
 
-@include set-img-size($img-w-360, $img-h-360);
+@include set-img-size($vert-img-w-360, $vert-img-h-360);
 
-.team-img-wrap::before,
-.team-img-wrap::after {
+.vert-img-wrap::before,
+.vert-img-wrap::after {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -88,27 +88,27 @@ $k-4-419: calc(4px / $image-frame-width-template);
   border-style: solid;
 }
 
-.team-img-wrap::before,
-.team-img-wrap::after {
+.vert-img-wrap::before,
+.vert-img-wrap::after {
   content: "";
 }
 
-.team-img-wrap::before {
+.vert-img-wrap::before {
   border-color: $blue;
 
-  transform: rotate($angle-frame-before);
+  transform: rotate($vert-angle-frame-before);
   top: calc(100% * $k-18-419);
   left: calc(-100% * $k-18-419);
 }
-.team-img-wrap::after {
+.vert-img-wrap::after {
   border-color: $red;
 
-  transform: rotate($angle-frame-after);
+  transform: rotate($vert-angle-frame-after);
   top: calc(100% * $k-18-419); /* 18px */
   left: calc(-100% * $k-4-419); /* -4px */
 }
 
-.team-img {
+.vert-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -121,18 +121,18 @@ $k-4-419: calc(4px / $image-frame-width-template);
 }*/
 
 @media screen and (min-width: 768px) {
-  @include set-img-size($img-w-768, $img-h-768);
+  @include set-img-size($vert-img-w-768, $vert-img-h-768);
 }
 
 /*@media screen and (min-width: 1200px) {
 }*/
 
 @media screen and (min-width: 1440px) {
-  @include set-img-size($img-w-1440, $img-h-1440);
+  @include set-img-size($vert-img-w-1440, $vert-img-h-1440);
 }
 
 @media screen and (min-width: 1920px) {
-  @include set-img-size($img-w-1920, $img-h-1920);
+  @include set-img-size($vert-img-w-1920, $vert-img-h-1920);
 }
 /*
 @media screen and (min-width: 768px){
