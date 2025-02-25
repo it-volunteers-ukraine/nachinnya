@@ -1,14 +1,14 @@
 @use "../variables.scss" as *;
 
 /*
-360  182x252 (240x290)
-768  182x252 (240x290)
-1440 228x316 (300x364)
-1920 320x442 (419x509)
+360  229x252 (280x240)
+768  229x252 (280x240)
+1440 286x207 (355x300)
+1920 427x310 (522x447)
 
-angle - -14.2
-top - 3%
-left - 0.25%
+angle -
+top - 
+left - 
 */
 
 $horiz-img-w-360: 229px;
@@ -81,8 +81,6 @@ $k-4-419: calc(4px / $horiz-img-frame-width-template);
   border-radius: 4px;
 
   transform: rotate($horiz-angle-frame);
-  top: 3%;
-  left: 0.25%;
   top: 12.6%;
   left: -2.4%;
 }
