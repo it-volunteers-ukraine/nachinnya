@@ -13,50 +13,51 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section>
+<section class="partners_section">
 
-    <?php get_template_part('template-parts/h2-title'); ?>
+    <div class="h2-title-wrapper">
+        <div class="h2-title-elements-container">
+            <h2 class="h2-title"><?php the_title() ?></h2>
+        </div>
+    </div>
 
-    <?php
-    $args = array(
-        'post_type' => 'partners',
-        'posts_per_page' => -1,
-        'orderby' => 'date',
-        'order' => 'ASC',
-    );
+    <div class="container">
+        <?php
+        $args = array(
+            'post_type' => 'partners',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'ASC',
+        );
 
-    $query = new WP_Query($args);
-    if ($query->have_posts()) :
-        echo '<div class="partners">';
-        while ($query->have_posts()) : $query->the_post();
+        $query = new WP_Query($args);
+        if ($query->have_posts()) :
+            echo '<div class="partners">';
+            while ($query->have_posts()) : $query->the_post();
 
-            $id = get_the_ID();
-            $partner_title = get_field('partner_title', $id);
-            $partner_image = get_field('partner_image', $id);
-            $partner_text = get_field('partner_text', $id);
-            ?>
-            <div class="container">
+                $id = get_the_ID();
+                $partner_title = get_field('partner_title', $id);
+                $partner_image = get_field('partner_image', $id);
+                $partner_text = get_field('partner_text', $id);
+                ?>
+                <h3 class="<?php echo esc_attr($classes['partner-title']); ?>">
+                    <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
+                </h3>
                 <div class="post-item">
-
-
                     <?php if ($partner_image) : ?>
                         <img src="<?php echo esc_url($partner_image['url']); ?>"
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
 
-                    <h3 class="<?php echo esc_attr($classes['partner-title']); ?>">
-                        <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
-                    </h3>
-
                     <p class="<?php echo esc_attr($classes['partner-text']); ?>"><?php echo esc_html($partner_text); ?></p>
                 </div>
-            </div>
 
-        <?php endwhile;
-        echo '</div>';
-        wp_reset_postdata();
-    else :
-        echo '<p>Немає записів.</p>';
-    endif;
-    ?>
+            <?php endwhile;
+            echo '</div>';
+            wp_reset_postdata();
+        else :
+            echo '<p>Немає записів.</p>';
+        endif;
+        ?>
+    </div>
 </section>
