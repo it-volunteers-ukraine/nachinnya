@@ -49,20 +49,16 @@ if (file_exists($modules_file)) {
             <!-- content -->
             <div class="<?php echo esc_attr($classes['content-container']); ?>">
                 <div class="<?php echo esc_attr($classes['point1']); ?>">
-                    <!-- <h3 class="<?php echo esc_attr($classes['year1']); ?>">2022</h3> -->
-                    <h3 class="year1">2022</h3>
+                    <h3 class="<?php echo esc_attr($classes['year2022']); ?>">2022</h3>
                 </div>
                 <div class="<?php echo esc_attr($classes['point2']); ?>">
-                    <!-- <h3 class="<?php echo esc_attr($classes['year2']); ?>">2023</h3> -->
-                    <h3 class="year2">2023</h3>
+                    <h3 class="<?php echo esc_attr($classes['year2023']); ?>">2023</h3>
                 </div>
                 <div class="<?php echo esc_attr($classes['point3']); ?>">
-                    <!-- <h3 class="<?php echo esc_attr($classes['year3']); ?>">2024</h3> -->
-                    <h3 class="year3">2024</h3>
+                    <h3 class="<?php echo esc_attr($classes['year2024']); ?>">2024</h3>
                 </div>
                 <div class="<?php echo esc_attr($classes['point4']); ?>">
-                    <!-- <h3 class="<?php echo esc_attr($classes['year4']); ?>">2025</h3> -->
-                    <h3 class="year4">2025</h3>
+                    <h3 class="<?php echo esc_attr($classes['year2025']); ?>">2025</h3>
                 </div>
             </div>
         </div>
