@@ -1,28 +1,49 @@
 
 // basic motion without years:
 
-// const balls = document.querySelectorAll('[class*="history-section-block-module__ball-container"]');
-// const trajectories = document.querySelectorAll('[class*="history-section-block-module__path-container"]');
+const balls = document.querySelectorAll('[class*="history-section-block-module__ball-container"]');
+const trajectories = document.querySelectorAll('[class*="history-section-block-module__path-container"]');
+const year2022 = document.querySelector('[class*="history-section-block-module__year2022"]');
 
-// gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin);
 
-// balls.forEach((ball, index) => {
-//     const trajectory = trajectories[index]?.querySelector("path");
+function logBallPositions() {
+    balls.forEach((ball, index) => {
+        const transform = ball.getBoundingClientRect();
+        const ballYFromBottom = window.innerHeight - transform.bottom;
+        console.log(`Ball ${index + 1} Y from bottom:`, ballYFromBottom);
+    });
+}
 
-//     if (trajectory) {
-//         gsap.to(ball.querySelector("svg"), {
-//             motionPath: {
-//                 path: trajectory,
-//                 align: trajectory,
-//                 autoRotate: true,
-//                 alignOrigin: [0.5, 0.5]
-//             },
-//             duration: 15,
-//             repeat: -1,
-//             ease: "power1.inOut"
-//         });
-//     }
-// });
+logBallPositions();
+
+window.addEventListener('scroll', logBallPositions);
+
+balls.forEach((ball, index) => {
+    const trajectory = trajectories[index]?.querySelector("path");
+
+    if (trajectory) {
+        const ballSvg = ball.querySelector("svg");
+
+        gsap.to(ballSvg, {
+            motionPath: {
+                path: trajectory,
+                align: trajectory,
+                autoRotate: true,
+                alignOrigin: [0.5, 0.5]
+            },
+            paused: true,
+            duration: 15,
+            repeat: -1,
+            ease: "power1.inOut",
+            onUpdate: function () {
+                const transform = ball.getBoundingClientRect();
+                console.log(`Ball ${index + 1} Y Position:`, transform.top);
+            }
+        });
+    }
+});
+
 
 
 
@@ -74,48 +95,44 @@
 
 
 // -----------------------------------------------
-gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
-const ball = document.querySelector('[class*="history-section-block-module__ball-container"] svg');
-const trajectory = document.querySelector('[class*="history-section-block-module__path-container"] path');
-const years = Array.from(document.querySelectorAll('.year1, .year2, .year3, .year4'));
+// const ball = document.querySelector('[class*="history-section-block-module__ball-container"] svg');
+// const trajectory = document.querySelector('[class*="history-section-block-module__path-container"] path');
+// const years = Array.from(document.querySelectorAll('.year1, .year2, .year3, .year4'));
 
-if (ball && trajectory && years.length) {
-    let path = MotionPathPlugin.getRawPath(trajectory)[0];
+// if (ball && trajectory && years.length) {
+//     let path = MotionPathPlugin.getRawPath(trajectory)[0];
 
-    let positions = years.map(year => {
-        let rect = year.getBoundingClientRect();
-        let yPosition = rect.top + window.scrollY;
+//     let positions = years.map(year => {
+//         let rect = year.getBoundingClientRect();
+//         let yPosition = rect.top + window.scrollY;
 
-        return path.reduce((prev, curr) => {
-            return Math.abs(curr[1] - yPosition) < Math.abs(prev[1] - yPosition) ? curr : prev;
-        });
-    });
+//         return path.reduce((prev, curr) => {
+//             return Math.abs(curr[1] - yPosition) < Math.abs(prev[1] - yPosition) ? curr : prev;
+//         });
+//     });
 
-    let tl = gsap.timeline();
+//     let tl = gsap.timeline();
 
-    years.forEach((year, i) => {
-        ScrollTrigger.create({
-            trigger: year,
-            start: "bottom bottom",
-            onEnter: () => {
-                gsap.to(ball, {
-                    motionPath: {
-                        path: trajectory,
-                        align: trajectory,
-                        alignOrigin: [0.5, 0.5],
-                        autoRotate: true,
-                        start: i / positions.length,
-                        end: (i + 1) / positions.length
-                    },
-                    duration: 2,
-                    ease: "power1.inOut"
-                });
-            }
-        });
-    });
-}
-
-
-
-
+//     years.forEach((year, i) => {
+//         ScrollTrigger.create({
+//             trigger: year,
+//             start: "bottom bottom",
+//             onEnter: () => {
+//                 gsap.to(ball, {
+//                     motionPath: {
+//                         path: trajectory,
+//                         align: trajectory,
+//                         alignOrigin: [0.5, 0.5],
+//                         autoRotate: true,
+//                         start: i / positions.length,
+//                         end: (i + 1) / positions.length
+//                     },
+//                     duration: 2,
+//                     ease: "power1.inOut"
+//                 });
+//             }
+//         });
+//     });
+// }
