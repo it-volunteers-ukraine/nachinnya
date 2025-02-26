@@ -1,0 +1,155 @@
+@use "../variables.scss" as *;
+
+/*
+360  229x252 (280x240)
+768  229x252 (280x240)
+1440 286x207 (355x300)
+1920 427x310 (522x447)
+
+angle -
+top - 
+left - 
+*/
+
+$horiz-img-w-360: 229px;
+$horiz-img-h-360: 166px;
+
+$horiz-img-w-768: 229px;
+$horiz-img-h-768: 166px;
+
+$horiz-img-w-1440: 286px;
+$horiz-img-h-1440: 207px;
+
+$horiz-img-w-1920: 427px;
+$horiz-img-h-1920: 310px;
+
+$horiz-angle-frame: 14.87deg;
+$horiz-angle-frame-before: 1.66deg;
+$horiz-angle-frame-after: 6.81deg;
+
+/* размер фото для макс устройства*/
+$horiz-img-width-template: 427px;
+/* $img-height-template-hor: 442px; */
+
+/* размер контейнера с фото и рамками */
+$horiz-img-frame-width-template: 522px;
+$horiz-img-frame-height-template: 447px;
+
+$k-horiz-frame-width: calc(
+  $horiz-img-width-template / $horiz-img-frame-width-template
+);
+$k-horiz-frame-height: calc(
+  $horiz-img-width-template / $horiz-img-frame-height-template
+);
+
+/*
+frame1 - left: 13.21 top: 15.3
+frame2 - left: 20px top: 14.8
+*/
+
+/* при 419px ширине нужно контейнера фото нужно получить 18px 18/419 */
+$k-13-w: calc(13.21px / $horiz-img-frame-width-template);
+$k-13_21-w: calc(13.21px / $horiz-img-frame-width-template);
+$k-15-w: calc(15px / $horiz-img-frame-width-template);
+$k-14_8-w: calc(14.8px / $horiz-img-frame-width-template);
+$k-15_3-w: calc(15.3px / $horiz-img-frame-width-template);
+$k-20-w: calc(20px / $horiz-img-frame-width-template);
+
+/* при 419px ширине нужно контейнера фото нужно получить 4px 4/419 */
+$k-4-419: calc(4px / $horiz-img-frame-width-template);
+
+@mixin set-img-size-hor($width, $height) {
+  .hor-img-wrap {
+    width: $width;
+    height: $height;
+  }
+  .hor-img-frame {
+    width: calc($width / $k-horiz-frame-width);
+    height: calc($width / $k-horiz-frame-height);
+  }
+}
+
+.hor-img-frame {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hor-img-wrap {
+  position: relative;
+  border-radius: 4px;
+
+  transform: rotate($horiz-angle-frame);
+  top: 12.6%;
+  left: -2.4%;
+}
+
+@include set-img-size-hor($horiz-img-w-360, $horiz-img-h-360);
+
+.hor-img-wrap::before,
+.hor-img-wrap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.hor-img-wrap::before {
+  border-color: $blue;
+
+  transform: rotate($horiz-angle-frame-before);
+  left: calc(100% * $k-13_21-w); /*13.21px */
+  top: calc(100% * $k-15_3-w); /* 15.3px */
+}
+.hor-img-wrap::after {
+  border-color: $red;
+
+  transform: rotate($horiz-angle-frame-after);
+  left: calc(100% * $k-20-w); /* 20px */
+  top: calc(100% * $k-15_3-w); /* -14.8px */
+}
+
+.hor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 4px;
+  /* background-image: url("/wp-content/themes/nachinnya/assets/images/no_image_available_500_x_500.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+
+.hor-img:hover {
+  transform: $animation-rotate;
+}
+
+/*
+@media screen and (min-width: 768px) {
+}*/
+
+@media screen and (min-width: 768px) {
+  @include set-img-size-hor($horiz-img-w-768, $horiz-img-h-768);
+}
+
+/*@media screen and (min-width: 1200px) {
+}*/
+
+@media screen and (min-width: 1440px) {
+  @include set-img-size-hor($horiz-img-w-1440, $horiz-img-h-1440);
+}
+
+@media screen and (min-width: 1920px) {
+  @include set-img-size-hor($horiz-img-w-1920, $horiz-img-h-1920);
+}
+/*
+@media screen and (min-width: 768px){
+  
+}
+*/
