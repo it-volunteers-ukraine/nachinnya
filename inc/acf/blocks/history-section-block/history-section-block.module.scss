@@ -5,8 +5,52 @@
     margin: 0 auto 88px;
 }
 
+.content-with-animation-wrapper {
+    position: relative;
+}
+
 .animation-container,
 .ball-container,
-.path-container {
+.path-container,
+.content-container {
     display: block;
+}
+
+.animation-container {
+    position: absolute;
+}
+
+.content-container {
+    padding-top: 39px;
+}
+
+.point1 {
+    height: 509px;
+    background-color: rgb(138, 176, 138);
+    margin-bottom: 210px;
+}
+
+.point2 {
+    height: 509px;
+    margin-bottom: 210px;
+    background-color: rgb(192, 118, 118);
+}
+
+.point3 {
+    height: 616px;
+    margin-bottom: 210px;
+    background-color: rgb(141, 131, 176);
+}
+
+.point4 {
+    height: 509px;
+    margin-bottom: 210px;
+    background-color: rgb(172, 148, 168);
+}
+
+.year1,
+.year2,
+.year3,
+.year4 {
+    font-style: italic;
 }
