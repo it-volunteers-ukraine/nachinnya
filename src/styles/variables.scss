@@ -1,35 +1,37 @@
 @font-face {
-    font-family: 'KharkivTone';
-    src: url('../../fonts/KharkivTone.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "KharkivTone";
+  src: url("../../fonts/KharkivTone.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-$primary-font: 'KharkivTone', sans-serif;
-$secondary-font: 'Raleway', serif;
+$primary-font: "KharkivTone", sans-serif;
+$secondary-font: "Raleway", serif;
 
-$BG: #F5EFE6;
-$red: #B74028;
+$BG: #f5efe6;
+$red: #b74028;
 $dark_red: #351311;
-$blue: #3053A0;
-$yellow: #F2C857;
-$yellow-hover: #F2C857;
-$yellow-pressed: #EFB330;
-$yellow-selected: #E89319; 
+$blue: #3053a0;
+$yellow: #f2c857;
+$yellow-hover: #f2c857;
+$yellow-pressed: #efb330;
+$yellow-selected: #e89319;
 // $yellow_hover: #EFB330;
 // $yellow_pressed: #E89319;
 $black: #000000;
-$grey: #BBBBBB;
-$white: #F5EFE6;
-$red_for_logo: #C61818;
-$derk_for_logo: #16080A;
+$grey: #bbbbbb;
+$white: #f5efe6;
+$red_for_logo: #c61818;
+$derk_for_logo: #16080a;
 
 $full: 1920px;
 $desktop: 1440px;
 $tablet: 768px;
 $mobile: 360px;
+
+$animation-rotate: rotate(-1deg);
 
 $animations: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 $animations-long: 500ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -126,6 +126,10 @@ $k-4-419: calc(4px / $horiz-img-frame-width-template);
   background-size: cover; */
 }
 
+.hor-img:hover {
+  transform: $animation-rotate;
+}
+
 /*
 @media screen and (min-width: 768px) {
 }*/
