@@ -120,10 +120,7 @@ $k-4-419: calc(4px / $horiz-img-frame-width-template);
   object-fit: cover;
   line-height: 0;
   border-radius: 4px;
-  /* background-image: url("/wp-content/themes/nachinnya/assets/images/no_image_available_500_x_500.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
+  transition: transform $animations;
 }
 
 .hor-img:hover {

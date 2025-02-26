@@ -110,7 +110,7 @@ $k-4-419: calc(4px / $vert-img-frame-width-template);
   object-fit: cover;
   line-height: 0;
   border-radius: 4px;
-  transition: rotate $animations;
+  transition: transform $animations;
 }
 
 .vert-img:hover {
