@@ -28,21 +28,21 @@ $current_id = get_the_ID();
         <div class="<?php echo esc_attr($classes['team-wrap']); ?>">
             <ul class="<?php echo esc_attr($classes['team-list']); ?>">
                 <!-- <li class="team-item"><img src="<?php echo get_field('photo1'); ?>" alt="" class="<?php echo esc_attr($classes['team-img']); ?>"></li> -->
-                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                <li class="debug-green <?php echo esc_attr($classes['team-item']); ?>">
                     <?php
                     $photo_url = get_template_directory_uri() . '/assets/images/teams/t1.jpg';
                     $photo_alt = 'alt';
                     get_template_part('template-parts/photo-vertical', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'test-class']);
                     ?>
                 </li>
-                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                <li class="debug-red <?php echo esc_attr($classes['team-item']); ?>">
                     <?php
                     $photo_alt = 'alt';
                     $photo_url = get_template_directory_uri() . '/assets/images/teams/t6-g.jpg';
                     get_template_part('template-parts/photo-horizontal', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'test-class']);
                     ?>
                 </li>
-                <li class="<?php echo esc_attr($classes['team-item']); ?>">
+                <li class="debug-blue <?php echo esc_attr($classes['team-item']); ?>">
                     <?php
                     $photo_alt = 'alt';
                     $photo_url = get_template_directory_uri() . '/assets/images/teams/t2.jpg';
