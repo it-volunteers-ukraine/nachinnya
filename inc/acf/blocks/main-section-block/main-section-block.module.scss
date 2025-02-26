@@ -177,6 +177,8 @@
     max-width: 920px;
     width: 100%;
     display: block;
+    transform: rotate(-0.5deg);
+    animation: rotateToNormal 0.5s ease-out 1 forwards;
 
     @media screen and (max-width: $desktop) {
         max-width: 596px;
@@ -189,11 +191,6 @@
     @media screen and (max-width: $mobile) {
         max-width: 284px;
     }
-}
-
-img {
-    transform: rotate(-0.5deg);
-    animation: rotateToNormal 0.5s ease-out 1 forwards;
 }
 
 @keyframes rotateToNormal {
