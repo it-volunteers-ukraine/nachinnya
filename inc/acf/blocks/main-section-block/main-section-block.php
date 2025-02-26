@@ -24,9 +24,9 @@ if (file_exists($modules_file)) {
     <div class='container'>
 
         <!-- If h2 title is above the image -->
-        <?php 
-            $main_section_upper_title = get_field('main_section_upper_title');
-            if (!empty($main_section_upper_title)) : 
+        <?php
+        $main_section_upper_title = get_field('main_section_upper_title');
+        if (!empty($main_section_upper_title)) :
         ?>
             <div class="<?php echo esc_attr($classes['upper-title-wrapper']); ?>">
                 <h2 class="<?php echo esc_attr($classes['title']); ?>"><?php echo esc_html($main_section_upper_title); ?></h2>
@@ -34,18 +34,18 @@ if (file_exists($modules_file)) {
         <?php endif; ?>
 
         <!-- Image -->
-        <?php 
-            $image = get_field('main_section_photo');
-            if( !empty( $image ) ): ?>
-                <div class="<?php echo esc_attr($classes['image-container']); ?>">
-                    <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                </div>
+        <?php
+        $image = get_field('main_section_photo');
+        if (!empty($image)): ?>
+            <div class="<?php echo esc_attr($classes['image-container']); ?>">
+                <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </div>
         <?php endif; ?>
 
-                <!-- h2 title -->
-        <?php 
-            $h2_title = get_field('h2_title');
-            if (!empty($h2_title)) : 
+        <!-- h2 title -->
+        <?php
+        $h2_title = get_field('h2_title');
+        if (!empty($h2_title)) :
         ?>
             <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
                 <?php get_template_part('template-parts/h2-title'); ?>
@@ -53,9 +53,9 @@ if (file_exists($modules_file)) {
         <?php endif; ?>
 
         <!-- slogan -->
-        <?php 
-            $main_section_slogan = get_field('main_section_slogan');
-            if (!empty($main_section_slogan)) : 
+        <?php
+        $main_section_slogan = get_field('main_section_slogan');
+        if (!empty($main_section_slogan)) :
         ?>
             <div class="<?php echo esc_attr($classes['main_section_slogan']); ?>">
                 <h3 class="<?php echo esc_attr($classes['slogan']); ?>"><?php echo wp_kses_post($main_section_slogan); ?></h3>
@@ -63,10 +63,10 @@ if (file_exists($modules_file)) {
         <?php endif; ?>
 
         <!-- 2-columns text -->
-        <?php 
-            $main_section_column_left = get_field('main_section_column_left');
-            $main_section_column_right = get_field('main_section_column_right');
-            if (!empty($main_section_column_left) && !empty($main_section_column_right)) : 
+        <?php
+        $main_section_column_left = get_field('main_section_column_left');
+        $main_section_column_right = get_field('main_section_column_right');
+        if (!empty($main_section_column_left) && !empty($main_section_column_right)) :
         ?>
             <div class="<?php echo esc_attr($classes['main_section_columns-text']); ?>">
                 <div class="<?php echo esc_attr($classes['left']); ?>">
