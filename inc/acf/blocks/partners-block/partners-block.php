@@ -6,10 +6,10 @@ $default_classes = [
     'partners' => 'partners',
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
-    'h2-title-wrapper' => 'h2-title-wrapper',
-    'h2-title-elements-container' => 'h2-title-elements-container',
-    'h2-title' => 'h2-title',
     'partners-main-title' => 'partners-main-title',
+    'partners-pagination' => 'partners-pagination',
+    'page' => 'page',
+    'pagination-links' => 'pagination-links',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -23,19 +23,19 @@ if (file_exists($modules_file)) {
 
 <section class="<?php echo esc_attr($classes['partners_section']); ?>">
 
-    <div class="<?php echo esc_attr($classes['h2-title-wrapper']); ?>">
-        <div class="<?php echo esc_attr($classes['h2-title-elements-container']); ?>">
-            <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
-        </div>
-    </div>
+    <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
 
     <div class="container">
+
         <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => -1,
+            'posts_per_page' => 6,
             'orderby' => 'date',
             'order' => 'ASC',
+            'paged' => $paged,
         );
 
         $query = new WP_Query($args);
@@ -62,8 +62,25 @@ if (file_exists($modules_file)) {
                 </div>
 
             <?php endwhile;
+
+
             echo '</div>';
+
             wp_reset_postdata();
+
+
+            $total_pages = $query->max_num_pages;
+            echo '<ul class="' . esc_attr($classes['partners-pagination']) . '">';
+            for ($i = 1; $i <= $total_pages; $i++) {
+                if ($i == $paged) {
+                    echo '<li class="' . esc_attr($classes['page']) . '"><span>' . $i . '</span></li>';
+                } else {
+                    echo '<li><a href="#" class="' . esc_attr($classes['pagination-links']) . '" 
+                    data-page="' . esc_attr($i) . '">' . esc_html($i) . '</a></li>';
+                }
+            }
+            echo '</ul>';
+
         else :
             echo '<p>Немає записів.</p>';
         endif;
