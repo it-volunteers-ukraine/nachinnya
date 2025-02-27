@@ -14,15 +14,14 @@ $default_classes = [
     'team-sky-s' => 'team-sky-s',
     'team-text' => 'team-text',
     'team-text-wrap' => 'team-text-wrap',
+    'count-5' => 'count-5',
+    'count-6' => 'count-6',
 
 
 
     'container' => 'container',
 
     // 'team-sky-s' => 'team-sky-s',
-
-
-
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -35,7 +34,10 @@ if (file_exists($modules_file)) {
 
 $current_id = get_the_ID();
 $team_block = get_field('team_block');
-echo 'team-block: ' . ceil(count($team_block) / 2);
+// $count = count($team_block) == 5 ? 'count-5' : '';
+$count_res = 'count-' . count($team_block);
+
+// echo 'team-block: ' . ceil(count($team_block) / 2);
 // echo '<pre>';
 // echo var_dump($team_block);
 // print_r($team_block);
@@ -47,7 +49,8 @@ echo 'team-block: ' . ceil(count($team_block) / 2);
     <div class="container <?php echo esc_attr($classes["container"]); ?>">
         <?php get_template_part('template-parts/h2-title', null, []); ?>
         <div class="debug-blue <?php echo esc_attr($classes['team-wrap']); ?>">
-            <ul class="<?php echo esc_attr($classes['team-list']); ?>">
+            <ul class="<?php
+                        echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
                 <? if ($team_block) : ?>
                     <?php foreach ($team_block as $team) : ?>
                         <li class="debug-green <?php echo esc_attr($classes['team-item']); ?>">
