@@ -1,5 +1,6 @@
 <?php
 $default_classes = [
+    'team-rirle' => 'team-title',
     'team-wrap' => 'team-wrap',
     'team-list' => 'team-list',
     'team-item' => 'team-item',
@@ -9,17 +10,16 @@ $default_classes = [
     'team-sky-xl' => 'team-sky-xl',
     'team-sky-l' => 'team-sky-l',
     'team-sky-m' => 'team-sky-m',
-    'team-sky-m-one' => 'team-sky-m-one',
-    'team-sky-m-two' => 'team-sky-m-two',
     'team-sky-s' => 'team-sky-s',
     'team-text' => 'team-text',
     'team-text-wrap' => 'team-text-wrap',
+    'count-1' => 'count-1',
+    'count-2' => 'count-2',
+    'count-3' => 'count-3',
+    'count-4' => 'count-4',
     'count-5' => 'count-5',
     'count-6' => 'count-6',
 
-
-
-    'container' => 'container',
 
     // 'team-sky-s' => 'team-sky-s',
 ];
@@ -33,6 +33,7 @@ if (file_exists($modules_file)) {
 }
 
 $current_id = get_the_ID();
+$is_debug = get_field('debug_page');
 $team_block = get_field('team_block');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 $count_res = 'count-' . count($team_block);
@@ -45,15 +46,19 @@ $count_res = 'count-' . count($team_block);
 // echo '</pre>';
 ?>
 
-<section class="debug-red section">
-    <div class="container <?php echo esc_attr($classes["container"]); ?>">
-        <?php get_template_part('template-parts/h2-title', null, []); ?>
-        <div class="debug-blue <?php echo esc_attr($classes['team-wrap']); ?>">
+<section class="section">
+    <div class="container <?php echo $is_debug ? 'debug-red ' : ''; ?>">
+        <div class="<?php echo esc_attr($classes['team-title']); ?>">
+            <?php get_template_part('template-parts/h2-title', null, []); ?>
+        </div>
+        <div class="<?php echo $is_debug ? 'debug-blue ' : '';
+                    echo esc_attr($classes['team-wrap']); ?>">
             <ul class="<?php
                         echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
                 <? if ($team_block) : ?>
                     <?php foreach ($team_block as $team) : ?>
-                        <li class="debug-green <?php echo esc_attr($classes['team-item']); ?>">
+                        <li class="<?php echo $is_debug ? 'debug-green ' : '';
+                                    echo esc_attr($classes['team-item']); ?>">
                             <?php
                             $photo_url = esc_url($team['member_photo']['sizes']['large']);
                             $photo_alt = esc_html($team['member_photo']['alt']);
@@ -83,14 +88,10 @@ $count_res = 'count-' . count($team_block);
             <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
             <?php endfor; ?>
-            <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-one"]])); ?> '>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-two"]])); ?> '> -->
+
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1920.svg" alt="sky-1920" class='<?php echo esc_attr($classes["team-sky-xl"]); ?> '>
         </div>
-        <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr($classes["team-sky-m"]); ?> '>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_360.svg" alt="sky-360" class='<?php echo esc_attr($classes["team-sky-s"]); ?> '> -->
     </div>
 
 </section>

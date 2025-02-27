@@ -117,6 +117,27 @@
                     "parent_repeater": "field_67bee83f488af"
                 }
             ]
+        },
+        {
+            "key": "field_67c0cb8a60a5c",
+            "label": "Debug Page",
+            "name": "debug_page",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -137,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740564694
+    "modified": 1740688757
 }
