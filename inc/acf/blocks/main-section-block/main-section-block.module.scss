@@ -6,15 +6,15 @@
     position: relative;
     padding-bottom: 88px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         padding-bottom: 84px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         padding-bottom: 24px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         padding-bottom: 40px;
     }
 }
@@ -31,17 +31,17 @@
     right: -33px;
     bottom: 88px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         bottom: 85px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         width: 300px;
         bottom: 24px;
         right: -25px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 200px;
         bottom: 32px;
         right: 0px;
@@ -55,15 +55,15 @@
     padding: 0 40px;
     margin-bottom: 52px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         margin-bottom: 44px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         margin-bottom: 40px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         margin-bottom: 32px;
     }
 }
@@ -80,11 +80,11 @@
     left: -32px;
     top: 5px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         left: -24px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 36px;
         height: 36px;
         left: 0px;
@@ -104,11 +104,11 @@
     right: -32px;
     top: 10px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         right: -24px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 36px;
         height: 36px;
         right: 0px;
@@ -270,8 +270,11 @@
         padding-bottom: 118px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 630px) {
         flex-direction: column;
+    }
+
+    @media screen and (max-width: $mobile) {
         max-width: 328px;
         gap: 16px;
         padding-bottom: 70px;

@@ -9,7 +9,7 @@
 .section {
   padding: 80px 0;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     padding: 64px 0;
   }
 }
@@ -19,11 +19,11 @@
   margin: 0 auto;
   padding: 0 80px;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     padding: 0 40px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.7px) {
     padding: 0 16px;
   }
 }
@@ -42,15 +42,15 @@ h1 {
   font-size: 88px;
   line-height: 110%;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 1919.9px) {
     font-size: 80px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     font-size: 52px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     font-size: 30px;
   }
 }
@@ -60,15 +60,15 @@ h2 {
   line-height: 120%;
   color: $dark-red;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 1919.9px) {
     font-size: 38px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     font-size: 32px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     font-size: 24px;
   }
 }
@@ -77,11 +77,11 @@ h3 {
   font-size: 30px;
   line-height: 130%;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 1919.9px) {
     font-size: 20px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     font-size: 18px;
   }
 }
@@ -90,11 +90,11 @@ h4 {
   font-size: 20px;
   line-height: 120%;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 1919.9px) {
     font-size: 16px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     font-size: 14px;
   }
 }
@@ -108,11 +108,11 @@ body,
   line-height: 130%;
   background-color: $BG;
 
-  @media screen and (max-width: $desktop) {
+  @media screen and (max-width: 1919.9px) {
     font-size: 16px;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     font-size: 14px;
   }
 }
@@ -124,7 +124,7 @@ body {
 .body_medium {
   font-weight: 500;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     line-height: 120%;
   }
 }
