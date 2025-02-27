@@ -35,6 +35,7 @@ if (file_exists($modules_file)) {
 
 $current_id = get_the_ID();
 $team_block = get_field('team_block');
+echo 'team-block: ' . ceil(count($team_block) / 2);
 // echo '<pre>';
 // echo var_dump($team_block);
 // print_r($team_block);
@@ -76,14 +77,17 @@ $team_block = get_field('team_block');
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-one"]])); ?> '>
-            <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-two"]])); ?> '>
-            <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
-            <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_1920.svg" alt="sky-1920" class='<?php echo esc_attr($classes["team-sky-xl"]); ?> '>
+            <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
+            <?php endfor; ?>
+            <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-one"]])); ?> '>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"], $classes["team-sky-m-two"]])); ?> '> -->
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1920.svg" alt="sky-1920" class='<?php echo esc_attr($classes["team-sky-xl"]); ?> '>
         </div>
-        <!-- <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
-        <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr($classes["team-sky-m"]); ?> '>
-        <img src="<?php echo get_template_directory_uri(); ?> . /assets/images/sky_360.svg" alt="sky-360" class='<?php echo esc_attr($classes["team-sky-s"]); ?> '> -->
+        <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr($classes["team-sky-m"]); ?> '>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_360.svg" alt="sky-360" class='<?php echo esc_attr($classes["team-sky-s"]); ?> '> -->
     </div>
 
 </section>
