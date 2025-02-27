@@ -52,10 +52,9 @@ $team_block = get_field('team_block');
         </div>
         <div class="<?php echo $is_debug ? 'debug-blue ' : '';
                     echo esc_attr($classes['team-wrap']); ?>">
-            <ul class="<?php
-                        echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
-                <? if ($team_block) : ?>
-                    <?php $count_res = 'count-' . count($team_block); ?>
+            <? if ($team_block) : ?>
+                <?php $count_res = 'count-' . count($team_block); ?>
+                <ul class="<?php echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
                     <?php foreach ($team_block as $team) : ?>
                         <li class="<?php echo $is_debug ? 'debug-green ' : '';
                                     echo esc_attr($classes['team-item']); ?>">
@@ -83,8 +82,8 @@ $team_block = get_field('team_block');
                             </div>
                         </li>
                     <?php endforeach; ?>
-                <?php endif; ?>
-            </ul>
+                </ul>
+            <?php endif; ?>
             <?php if ($team_block) : ?>
                 <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
