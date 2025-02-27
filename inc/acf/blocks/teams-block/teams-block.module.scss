@@ -1,16 +1,9 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
-/*
-.container {
-  padding: 0 16px;
-  margin: 0;
+.team-title {
+  margin-top: 64px;
+  margin-bottom: 40px;
 }
-
-@media screen and (min-width: 768px) {
-  .container {
-  }
-}
-*/
 
 .team-wrap {
   position: relative;
@@ -72,6 +65,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .team-title {
+    margin-top: 0;
+    margin-bottom: 88px;
+  }
   .team-sky-s {
     display: none;
   }
@@ -82,12 +79,6 @@
     height: 354px;
     width: 180%;
   }
-
-  /*
-  .team-sky-m:nth-child(n) {
-    top: calc(var(--n, 1) * (380px + 20px));
-  }
-    */
 
   @for $i from 1 through 10 {
     @if $i == 1 {
@@ -128,10 +119,6 @@
     padding-top: 97px;
   }
 
-  .team-item:nth-child(1),
-  .team-item:nth-child(2) {
-  }
-
   .team-item:nth-child(4n + 2) {
     margin-right: 5%;
   }
@@ -149,6 +136,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .team-title {
+    margin-top: 80px;
+    margin-bottom: 88px;
+  }
   .team-sky-m {
     display: none;
   }
