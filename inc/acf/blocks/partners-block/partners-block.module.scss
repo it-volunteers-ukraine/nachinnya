@@ -48,9 +48,12 @@
     .partners-title:nth-of-type(2) {
       text-align: right;
 
+      @media screen and (max-width: $tablet) {
+        text-align: center;
+      }
+
       @media screen and (max-width: $mobile) {
         text-align: center;
-        width: 328px;
       }
     }
 
@@ -64,10 +67,16 @@
       @media screen and (max-width: $tablet) {
         gap: 40px;
         align-items: center;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: $desktop) {
+        justify-content: space-between;
       }
 
       @media screen and (max-width: $mobile) {
         flex-direction: column;
+        gap: 20px;
       }
 
       .partner-text {
@@ -78,7 +87,8 @@
 
         @media screen and (max-width: $tablet) {
           font-size: 16px;
-          margin-top: 16px;
+          margin-top: 1px;
+          white-space: pre-wrap;
         }
 
         @media screen and (max-width: $desktop) {
@@ -86,30 +96,38 @@
         }
 
         @media screen and (max-width: $mobile) {
-          margin-bottom: 20px;
+          margin-top:20px;
           font-size: 20px;
+          line-height: 20px;
+          white-space: normal;
+          padding: 0 30px;
         }
 
       }
 
       .partner-image {
         margin-bottom: 20px;
-        width: 425px;
 
         @media screen and (max-width: $tablet) {
           width: 210px;
           margin-bottom: 0;
         }
 
-        @media screen and (max-width: $desktop) {
-          width: 390px;
-        }
-
         @media screen and (max-width: $mobile) {
-          width: 324px;
-          margin-bottom: 20px;
+          width: 210px;
         }
       }
+    }
+  }
+
+  .partners-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 24px;
+
+    .page {
+      padding: 0 20px;
     }
   }
 }
