@@ -1,5 +1,6 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
+/*
 .container {
   padding: 0 16px;
   margin: 0;
@@ -9,6 +10,7 @@
   .container {
   }
 }
+*/
 
 .team-wrap {
   position: relative;
@@ -16,7 +18,7 @@
 
 .team-list {
   display: flex;
-  gap: 40px;
+  gap: 40px 0;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -119,6 +121,7 @@
     max-height: 500px; /* height: 480 */
     /* max-width: 264px; */
     width: 100%;
+    width: 45%;
   }
   .team-item:nth-child(odd) {
     align-self: flex-end;
@@ -129,18 +132,19 @@
   .team-item:nth-child(2) {
   }
 
-  .team-item:nth-child(2) {
-    margin-right: 11%;
+  .team-item:nth-child(4n + 2) {
+    margin-right: 5%;
   }
 
   .team-item:nth-child(3) {
-    margin-left: 11%;
+    margin-left: 5%;
   }
 }
 
 @media screen and (min-width: 960px) {
   .team-list {
-    column-gap: 150px;
+    column-gap: 170px;
+    column-gap: 13%;
   }
 }
 
@@ -160,7 +164,7 @@
   }
 
   .team-item {
-    min-width: 325px;
+    min-width: 300px;
     max-width: 21%;
     max-height: 620px;
   }
@@ -182,6 +186,15 @@
     margin-top: -80px;
   }
 
+  .count-5 .team-item:nth-child(5) {
+    margin-right: 25%;
+  }
+  .count-6 .team-item:nth-child(6) {
+    margin-right: 25%;
+  }
+  .count-6 .team-item:nth-child(5) {
+    margin-left: 25%;
+  }
   .team-item:nth-child(3) {
     margin-left: unset;
   }
