@@ -14,16 +14,6 @@ const toggleHeaderDropdownMenu = () => {
   menu.classList.toggle("header__dropdown-menu-hidden");
 };
 
-// The event listener for the window's scroll changes
-// window.addEventListener("scroll", () => {
-//   const btn = document.getElementById("headerScrollToTopButton");
-//   // Show the button if we have scrolled past the window's inner height
-//   btn.classList.toggle(
-//     "header__scroll-to-top-button-visible",
-//     window.scrollY > window.innerHeight
-//   );
-// });
-
 document.addEventListener("DOMContentLoaded", function () {
   let lastScrollTop = 0;
   const scrollButton = document.getElementById("headerScrollToTopButton");
