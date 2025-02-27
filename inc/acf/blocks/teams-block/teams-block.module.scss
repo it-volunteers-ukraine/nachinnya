@@ -84,7 +84,6 @@
     top: 380px;
   }
   .team-sky-m-two {
-    left: 0;
     bottom: -20px;
   }
 
@@ -122,5 +121,45 @@
 @media screen and (min-width: 960px) {
   .team-list {
     column-gap: 150px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .team-sky-m {
+    display: none;
+  }
+
+  .team-sky-l {
+    display: block;
+    width: 100%;
+    height: 370px;
+    top: 412px;
+  }
+  .team-list {
+    flex-wrap: nowrap;
+    gap: unset;
+  }
+
+  .team-item {
+    min-width: 325px;
+    max-width: 20%;
+    max-height: 620px;
+  }
+
+  .team-item:nth-child(odd) {
+    align-self: unset;
+    padding-top: unset;
+  }
+  .team-item:nth-child(1),
+  .team-item:nth-child(4) {
+    padding-top: 124px;
+  }
+
+  .team-item:nth-child(2) {
+    margin-right: unset;
+  }
+
+  .team-item:nth-child(3) {
+    margin-left: unset;
   }
 }
