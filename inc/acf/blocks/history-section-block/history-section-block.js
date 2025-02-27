@@ -1,48 +1,42 @@
 
-// basic motion without years:
+// basic motion:
 
-const balls = document.querySelectorAll('[class*="history-section-block-module__ball-container"]');
-const trajectories = document.querySelectorAll('[class*="history-section-block-module__path-container"]');
-const year2022 = document.querySelector('[class*="history-section-block-module__year2022"]');
+const year2022 = document.getElementById('year2022');
+const year2023 = document.getElementById('year2023');
+const year2024 = document.getElementById('year2024');
+const year2025 = document.getElementById('year2025');
+const point1 = document.querySelector('[class*="history-section-block-module__point1"]');
+const point2 = document.querySelector('[class*="history-section-block-module__point2"]');
+const point3 = document.querySelector('[class*="history-section-block-module__point3"]');
+const point4 = document.querySelector('[class*="history-section-block-module__point4"]');
+const ball = document.getElementById('ball');
+const trajectory = document.getElementById('trajectory');
 
-gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
-function logBallPositions() {
-    balls.forEach((ball, index) => {
-        const transform = ball.getBoundingClientRect();
-        const ballYFromBottom = window.innerHeight - transform.bottom;
-        console.log(`Ball ${index + 1} Y from bottom:`, ballYFromBottom);
-    });
-}
-
-logBallPositions();
-
-window.addEventListener('scroll', logBallPositions);
-
-balls.forEach((ball, index) => {
-    const trajectory = trajectories[index]?.querySelector("path");
-
-    if (trajectory) {
-        const ballSvg = ball.querySelector("svg");
-
-        gsap.to(ballSvg, {
-            motionPath: {
-                path: trajectory,
-                align: trajectory,
-                autoRotate: true,
-                alignOrigin: [0.5, 0.5]
-            },
-            paused: true,
-            duration: 15,
-            repeat: -1,
-            ease: "power1.inOut",
-            onUpdate: function () {
-                const transform = ball.getBoundingClientRect();
-                console.log(`Ball ${index + 1} Y Position:`, transform.top);
-            }
-        });
-    }
+gsap.to(ball, {
+    duration: 1.5,
+    motionPath: {
+        path: trajectory,
+        align: trajectory,
+        alignOrigin: [0.5, 0.5],
+        autoRotate: true,
+    },
+    repeat: 1,
+    scrollTrigger: {
+        trigger: year2022,
+        endTrigger: point1,
+        endTrigger: point4,
+        start: 'top center',
+        end: 'top center',
+        markers: true,
+        scrub: true,
+    },
 });
+
+
+
+
 
 
 
