@@ -36,7 +36,6 @@ $current_id = get_the_ID();
 $is_debug = get_field('debug_page');
 $team_block = get_field('team_block');
 // $count = count($team_block) == 5 ? 'count-5' : '';
-$count_res = 'count-' . count($team_block);
 
 // echo 'team-block: ' . ceil(count($team_block) / 2);
 // echo '<pre>';
@@ -56,6 +55,7 @@ $count_res = 'count-' . count($team_block);
             <ul class="<?php
                         echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
                 <? if ($team_block) : ?>
+                    <?php $count_res = 'count-' . count($team_block); ?>
                     <?php foreach ($team_block as $team) : ?>
                         <li class="<?php echo $is_debug ? 'debug-green ' : '';
                                     echo esc_attr($classes['team-item']); ?>">
@@ -85,9 +85,11 @@ $count_res = 'count-' . count($team_block);
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
-            <?php endfor; ?>
+            <?php if ($team_block) : ?>
+                <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
+                <?php endfor; ?>
+            <?php endif; ?>
 
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1920.svg" alt="sky-1920" class='<?php echo esc_attr($classes["team-sky-xl"]); ?> '>
