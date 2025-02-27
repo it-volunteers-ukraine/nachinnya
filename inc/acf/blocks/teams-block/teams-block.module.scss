@@ -58,11 +58,11 @@
 .team-sky-m {
   display: none;
   position: absolute;
+  width: 100%;
 }
 
 .team-sky-s {
   display: block;
-  width: 100%;
   position: absolute;
   left: 0;
   top: 0px;
@@ -131,18 +131,18 @@
 
   .team-sky-l {
     display: block;
-    width: 100%;
     height: 370px;
     top: 412px;
   }
   .team-list {
     flex-wrap: nowrap;
     gap: unset;
+    padding-bottom: 200px;
   }
 
   .team-item {
     min-width: 325px;
-    max-width: 20%;
+    max-width: 21%;
     max-height: 620px;
   }
 
@@ -161,5 +161,22 @@
 
   .team-item:nth-child(3) {
     margin-left: unset;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .team-sky-l {
+    display: none;
+  }
+
+  .team-sky-xl {
+    display: block;
+    height: 357px;
+    top: 590px;
+  }
+
+  .team-item {
+    min-width: 419px;
+    max-height: 850px;
   }
 }
