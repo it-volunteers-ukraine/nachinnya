@@ -37,7 +37,6 @@ $is_debug = get_field('debug_page');
 $team_block = get_field('team_block');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 
-// echo 'team-block: ' . ceil(count($team_block) / 2);
 // echo '<pre>';
 // echo var_dump($team_block);
 // print_r($team_block);
