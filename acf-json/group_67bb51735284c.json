@@ -24,6 +24,27 @@
             "append": ""
         },
         {
+            "key": "field_67c19c5fa452a",
+            "label": "Welcome to Command",
+            "name": "welcome_to_command",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67bee83f488af",
             "label": "team Block",
             "name": "team_block",
@@ -120,7 +141,7 @@
         },
         {
             "key": "field_67c0cb8a60a5c",
-            "label": "Debug Page",
+            "label": "Debug This Page",
             "name": "debug_page",
             "aria-label": "",
             "type": "true_false",
@@ -158,5 +179,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740688757
+    "modified": 1740745049
 }
