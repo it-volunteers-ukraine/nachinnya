@@ -195,6 +195,84 @@
 // });
 
 
+// **************************************************************************************
+// Finish variant, works on all resolutions and MY LINE
+
+// const year2022 = document.getElementById('year2022');
+// const year2023 = document.getElementById('year2023');
+// const year2024 = document.getElementById('year2024');
+// const year2025 = document.getElementById('year2025');
+// const ball = document.getElementById('ball');
+// const trajectory = document.getElementById('trajectory');
+
+// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+
+// // 2022 - 2023
+// gsap.to(ball, {
+//     duration: 1.5,
+//     ease: "power1.inOut",
+//     motionPath: {
+//         path: trajectory,
+//         align: trajectory,
+//         alignOrigin: [0.5, 0.5],
+//         autoRotate: true,
+//         start: 0,
+//         end: 0.24
+//     },
+//     scrollTrigger: {
+//         trigger: year2022,
+//         start: 'top 75%',
+//         end: 'bottom 50%',
+//         scrub: true,
+//         markers: true,
+//     }
+// });
+
+// // 2023 - 2024
+// gsap.to(ball, {
+//     duration: 1.5,
+//     ease: "power1.inOut",
+//     motionPath: {
+//         path: trajectory,
+//         align: trajectory,
+//         alignOrigin: [0.5, 0.5],
+//         autoRotate: true,
+//         start: 0.24,
+//         end: 0.528
+//     },
+//     scrollTrigger: {
+//         trigger: year2023,
+//         start: 'top 75%',
+//         end: 'bottom 50%',
+//         scrub: true,
+//         markers: true,
+//     }
+// });
+
+// // 2024 - 2025
+// gsap.to(ball, {
+//     duration: 1.5,
+//     ease: "power1.inOut",
+//     motionPath: {
+//         path: trajectory,
+//         align: trajectory,
+//         alignOrigin: [0.5, 0.5],
+//         autoRotate: true,
+//         start: 0.528,
+//         end: 0.82
+//     },
+//     scrollTrigger: {
+//         trigger: year2024,
+//         start: 'top 75%',
+//         end: 'bottom 25%',
+//         scrub: true,
+//         markers: true,
+//     }
+// });
+
+// ************************************************************************************
+
+// Tests with origin line
 // Finish variant, works on all resolutions and MY LINE
 const year2022 = document.getElementById('year2022');
 const year2023 = document.getElementById('year2023');
@@ -215,7 +293,7 @@ gsap.to(ball, {
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
         start: 0,
-        end: 0.24
+        end: 0.255
     },
     scrollTrigger: {
         trigger: year2022,
@@ -235,8 +313,8 @@ gsap.to(ball, {
         align: trajectory,
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
-        start: 0.24,
-        end: 0.528
+        start: 0.255,
+        end: 0.53
     },
     scrollTrigger: {
         trigger: year2023,
@@ -256,8 +334,8 @@ gsap.to(ball, {
         align: trajectory,
         alignOrigin: [0.5, 0.5],
         autoRotate: true,
-        start: 0.528,
-        end: 0.82
+        start: 0.53,
+        end: 0.84
     },
     scrollTrigger: {
         trigger: year2024,
