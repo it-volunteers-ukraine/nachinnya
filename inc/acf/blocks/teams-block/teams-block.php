@@ -13,12 +13,15 @@ $default_classes = [
     'team-sky-s' => 'team-sky-s',
     'team-text' => 'team-text',
     'team-text-wrap' => 'team-text-wrap',
+    'team-welcome-block' => 'team-welcome-block',
+    'team-welcome-text' => 'team-welcome-text',
     'count-1' => 'count-1',
     'count-2' => 'count-2',
     'count-3' => 'count-3',
     'count-4' => 'count-4',
     'count-5' => 'count-5',
     'count-6' => 'count-6',
+
 
 
     // 'team-sky-s' => 'team-sky-s',
@@ -35,6 +38,7 @@ if (file_exists($modules_file)) {
 $current_id = get_the_ID();
 $is_debug = get_field('debug_page');
 $team_block = get_field('team_block');
+$welcome  = get_field('welcome_to_command');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 
 // echo '<pre>';
@@ -82,11 +86,18 @@ $team_block = get_field('team_block');
                         </li>
                     <?php endforeach; ?>
                 </ul>
-            <?php endif; ?>
-            <?php if ($team_block) : ?>
+                <!-- <?php endif; ?> -->
+                <!-- <?php if ($team_block) : ?> -->
                 <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
                 <?php endfor; ?>
+
+                <?php if (count($team_block) < 5 && $welcome): ?>
+                    <div class=" <?php echo esc_attr($classes['team-welcome-block']); ?> ">
+                        <a href="<?php echo get_field('telegram-bot', 'option'); ?>" class="link-main <?php echo esc_attr($classes['team-welcome-text']); ?> "><?php echo $welcome; ?></a>
+                    </div>
+                <?php endif; ?>
+
             <?php endif; ?>
 
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
