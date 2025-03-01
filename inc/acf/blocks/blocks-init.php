@@ -84,6 +84,18 @@ function it_volunteers_acf_blocks_init()
             'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/breadcrumbs/breadcrumbs.css',
             'category'          => 'custom-blocks',
         ));
+
+        // Register an events block
+        acf_register_block_type(array(
+            'name'              => 'events',
+            'title'             => __('Events'),
+            'description'       => __('Події'),
+            'render_template'   => acf_theme_blocks_path('events/events.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/events/events.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/events/events.js',
+            'category'          => 'custom-blocks',
+            'icon'              => 'admin-post',
+        ));
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');
