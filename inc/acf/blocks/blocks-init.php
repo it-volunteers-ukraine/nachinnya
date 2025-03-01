@@ -85,17 +85,19 @@ function it_volunteers_acf_blocks_init()
             'category'          => 'custom-blocks',
         ));
 
-        // Register an events block
+        // Register show-more-block ?
         acf_register_block_type(array(
-            'name'              => 'events',
-            'title'             => __('Events'),
-            'description'       => __('Події'),
-            'render_template'   => acf_theme_blocks_path('events/events.php'),
-            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/events/events.css',
-            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/events/events.js',
+            'name'              => 'show-more-block',
+            'title'             => __('show-more-block'),
+            'description'       => __('Block with button show more button'),
+            'render_template'   => acf_theme_blocks_path('show-more-block/show-more-block.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/show-more-block/show-more-block.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/show-more-block/show-more-block.js',
             'category'          => 'custom-blocks',
-            'icon'              => 'admin-post',
         ));
+
+
+>>>>>>> a6f3490 (update pagination)
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');

@@ -7,9 +7,6 @@ $default_classes = [
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
     'partners-main-title' => 'partners-main-title',
-    'partners-pagination' => 'partners-pagination',
-    'page' => 'page',
-    'pagination-links' => 'pagination-links',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -68,18 +65,6 @@ if (file_exists($modules_file)) {
 
             wp_reset_postdata();
 
-
-            $total_pages = $query->max_num_pages;
-            echo '<ul class="' . esc_attr($classes['partners-pagination']) . '">';
-            for ($i = 1; $i <= $total_pages; $i++) {
-                if ($i == $paged) {
-                    echo '<li class="' . esc_attr($classes['page']) . '"><span>' . $i . '</span></li>';
-                } else {
-                    echo '<li><a href="#" class="' . esc_attr($classes['pagination-links']) . '" 
-                    data-page="' . esc_attr($i) . '">' . esc_html($i) . '</a></li>';
-                }
-            }
-            echo '</ul>';
 
         else :
             echo '<p>Немає записів.</p>';
