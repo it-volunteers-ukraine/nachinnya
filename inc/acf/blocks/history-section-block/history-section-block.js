@@ -183,5 +183,5 @@ if (trajectory) {
         }
     });
 } else {
-    console.warn("trajectory, trajectory1440 or trajectory768 not found.");
+    console.warn("trajectory, trajectory1440, trajectory768 or trajectory360 not found.");
 }
