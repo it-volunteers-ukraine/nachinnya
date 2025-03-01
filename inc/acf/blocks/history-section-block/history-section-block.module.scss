@@ -2,7 +2,7 @@
 
 .title-template-part {
     width: fit-content;
-    margin: 0 auto 288px;
+    margin: 0 auto 100px;
 }
 
 .content-with-animation-wrapper {
@@ -48,16 +48,21 @@
 
 .animation-container {
     position: absolute;
+    left: 402px;
+    top: -39px;
 }
 
-.content-container {
-    padding-top: 39px;
+.story1,
+.story2,
+.story3,
+.story4 {
+    display: flex;
+    margin-bottom: 210px;
 }
 
 .story1 {
     height: 509px;
     background-color: rgb(138, 176, 138);
-    margin-bottom: 210px;
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
@@ -71,8 +76,8 @@
 }
 
 .story2 {
+    justify-content: flex-end;
     height: 509px;
-    margin-bottom: 210px;
     background-color: rgb(192, 118, 118);
 
     @media screen and (max-width: 1919.9px) {
@@ -88,7 +93,6 @@
 
 .story3 {
     height: 616px;
-    margin-bottom: 210px;
     background-color: rgb(141, 131, 176);
 
     @media screen and (max-width: 1919.9px) {
@@ -102,8 +106,10 @@
 }
 
 .story4 {
+    justify-content: flex-end;
     height: 509px;
     background-color: rgb(172, 148, 168);
+    margin-bottom: 0px;
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
@@ -115,6 +121,23 @@
     }
 }
 
+.year-event {
+    width: 276px;
+    margin-right: 20px;
+    margin-left: 26px;
+}
+
 .year {
-    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.event-title {
+    color: $red;
+    font-weight: 500;
+}
+
+.event-description {
+    font-weight: 400;
+    width: 425px;
+    margin-right: 174px;
 }
