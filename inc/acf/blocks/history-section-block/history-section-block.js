@@ -1,203 +1,5 @@
 
-// // basic motion: some works
-
-// const year2022 = document.getElementById('year2022');
-// const year2023 = document.getElementById('year2023');
-// const year2024 = document.getElementById('year2024');
-// const year2025 = document.getElementById('year2025');
-// const point1 = document.querySelector('[class*="history-section-block-module__point1"]');
-// const point2 = document.querySelector('[class*="history-section-block-module__point2"]');
-// const point3 = document.querySelector('[class*="history-section-block-module__point3"]');
-// const point4 = document.querySelector('[class*="history-section-block-module__point4"]');
-// const ball = document.getElementById('ball');
-// const trajectory = document.getElementById('trajectory');
-
-// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
-
-// gsap.to(ball, {
-//     duration: 1.5,
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//     },
-//     repeat: 1,
-//     scrollTrigger: {
-//         trigger: year2022,
-//         endTrigger: year2024,
-//         start: 'top center',
-//         end: 'top center',
-//         markers: true,
-//         scrub: true,
-//     },
-// });
-
-
-
-// Pravie:
-
-// const year2022 = document.getElementById('year2022');
-// const year2023 = document.getElementById('year2023');
-// const year2024 = document.getElementById('year2024');
-// const year2025 = document.getElementById('year2025');
-// const point1 = document.querySelector('[class*="history-section-block-module__point1"]');
-// const point2 = document.querySelector('[class*="history-section-block-module__point2"]');
-// const point3 = document.querySelector('[class*="history-section-block-module__point3"]');
-// const point4 = document.querySelector('[class*="history-section-block-module__point4"]');
-// const ball = document.getElementById('ball');
-// const trajectory = document.getElementById('trajectory');
-
-// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
-
-// // 2022 - 2023
-// gsap.to(ball, {
-//     duration: 1.5,
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0,
-//         end: 0.33
-//     },
-//     scrollTrigger: {
-//         trigger: year2022,
-//         // endTrigger: year2023,
-//         start: 'top center',
-//         end: 'top 300px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-// // 2023 - 2024
-// gsap.to(ball, {
-//     duration: 1.5,
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0.33,
-//         end: 0.66
-//     },
-//     scrollTrigger: {
-//         trigger: year2023,
-//         // endTrigger: year2024,
-//         start: 'top center',
-//         end: 'top 350px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-// // 2024 - 2025
-// gsap.to(ball, {
-//     duration: 1.5,
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0.66,
-//         end: 1
-//     },
-//     scrollTrigger: {
-//         trigger: year2024,
-//         // endTrigger: year2025,
-//         start: 'top center',
-//         end: 'top 400px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-
-// work in dev tools on 1920
-// const year2022 = document.getElementById('year2022');
-// const year2023 = document.getElementById('year2023');
-// const year2024 = document.getElementById('year2024');
-// const year2025 = document.getElementById('year2025');
-// const point1 = document.querySelector('[class*="history-section-block-module__point1"]');
-// const point2 = document.querySelector('[class*="history-section-block-module__point2"]');
-// const point3 = document.querySelector('[class*="history-section-block-module__point3"]');
-// const point4 = document.querySelector('[class*="history-section-block-module__point4"]');
-// const ball = document.getElementById('ball');
-// const trajectory = document.getElementById('trajectory');
-
-// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
-
-// // 2022 - 2023
-// gsap.to(ball, {
-//     duration: 1.5,
-//     ease: "power1.inOut",
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0,
-//         end: 0.24
-//     },
-//     scrollTrigger: {
-//         trigger: year2022,
-//         // endTrigger: year2023,
-//         start: 'top center',
-//         end: 'top 400px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-// // 2023 - 2024
-// gsap.to(ball, {
-//     duration: 1.5,
-//     ease: "power1.inOut",
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0.24,
-//         end: 0.528
-//     },
-//     scrollTrigger: {
-//         trigger: year2023,
-//         // endTrigger: year2024,
-//         start: 'top center',
-//         end: 'top 450px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-// // 2024 - 2025
-// gsap.to(ball, {
-//     duration: 1.5,
-//     ease: "power1.inOut",
-//     motionPath: {
-//         path: trajectory,
-//         align: trajectory,
-//         alignOrigin: [0.5, 0.5],
-//         autoRotate: true,
-//         start: 0.528,
-//         end: 0.82
-//     },
-//     scrollTrigger: {
-//         trigger: year2024,
-//         // endTrigger: year2025,
-//         start: 'top center',
-//         end: 'top 500px',
-//         scrub: true,
-//         markers: true,
-//     }
-// });
-
-
-// **************************************************************************************
-// Finish variant, works on all resolutions and MY LINE
-
+// Final variant, works on all resolutions and structured line 1920
 // const year2022 = document.getElementById('year2022');
 // const year2023 = document.getElementById('year2023');
 // const year2024 = document.getElementById('year2024');
@@ -217,7 +19,7 @@
 //         alignOrigin: [0.5, 0.5],
 //         autoRotate: true,
 //         start: 0,
-//         end: 0.24
+//         end: 0.255
 //     },
 //     scrollTrigger: {
 //         trigger: year2022,
@@ -237,8 +39,8 @@
 //         align: trajectory,
 //         alignOrigin: [0.5, 0.5],
 //         autoRotate: true,
-//         start: 0.24,
-//         end: 0.528
+//         start: 0.255,
+//         end: 0.53
 //     },
 //     scrollTrigger: {
 //         trigger: year2023,
@@ -258,8 +60,8 @@
 //         align: trajectory,
 //         alignOrigin: [0.5, 0.5],
 //         autoRotate: true,
-//         start: 0.528,
-//         end: 0.82
+//         start: 0.53,
+//         end: 0.84
 //     },
 //     scrollTrigger: {
 //         trigger: year2024,
@@ -270,78 +72,109 @@
 //     }
 // });
 
-// ************************************************************************************
 
-// Tests with origin line
-// Finish variant, works on all resolutions and MY LINE
+
+
+// **********************************************************
 const year2022 = document.getElementById('year2022');
 const year2023 = document.getElementById('year2023');
 const year2024 = document.getElementById('year2024');
 const year2025 = document.getElementById('year2025');
 const ball = document.getElementById('ball');
-const trajectory = document.getElementById('trajectory');
 
-gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+let trajectory;
+let animationValues;
 
-// 2022 - 2023
-gsap.to(ball, {
-    duration: 1.5,
-    ease: "power1.inOut",
-    motionPath: {
-        path: trajectory,
-        align: trajectory,
-        alignOrigin: [0.5, 0.5],
-        autoRotate: true,
-        start: 0,
-        end: 0.255
-    },
-    scrollTrigger: {
-        trigger: year2022,
-        start: 'top 75%',
-        end: 'bottom 50%',
-        scrub: true,
-        markers: true,
-    }
-});
+const screenWidth = window.innerWidth;
 
-// 2023 - 2024
-gsap.to(ball, {
-    duration: 1.5,
-    ease: "power1.inOut",
-    motionPath: {
-        path: trajectory,
-        align: trajectory,
-        alignOrigin: [0.5, 0.5],
-        autoRotate: true,
-        start: 0.255,
-        end: 0.53
-    },
-    scrollTrigger: {
-        trigger: year2023,
-        start: 'top 75%',
-        end: 'bottom 50%',
-        scrub: true,
-        markers: true,
-    }
-});
+if (screenWidth >= 1920 && document.getElementById('trajectory')) {
+    trajectory = document.getElementById('trajectory');
+    animationValues = {
+        segment1: { start: 0, end: 0.255 },
+        segment2: { start: 0.255, end: 0.53 },
+        segment3: { start: 0.53, end: 0.84 }
+    };
+} else if (screenWidth < 1920 && screenWidth >= 1440 && document.getElementById('trajectory1440')) {
+    trajectory = document.getElementById('trajectory1440');
+    animationValues = {
+        segment1: { start: 0, end: 0.265 },
+        segment2: { start: 0.265, end: 0.54 },
+        segment3: { start: 0.54, end: 0.81 }
+    };
+} else if (screenWidth < 1440 && screenWidth >= 768 && document.getElementById('trajectory768')) {
+    trajectory = document.getElementById('trajectory768');
+    animationValues = {
+        segment1: { start: 0, end: 0.23 },
+        segment2: { start: 0.23, end: 0.49 },
+        segment3: { start: 0.49, end: 0.785 }
+    };
+}
 
-// 2024 - 2025
-gsap.to(ball, {
-    duration: 1.5,
-    ease: "power1.inOut",
-    motionPath: {
-        path: trajectory,
-        align: trajectory,
-        alignOrigin: [0.5, 0.5],
-        autoRotate: true,
-        start: 0.53,
-        end: 0.84
-    },
-    scrollTrigger: {
-        trigger: year2024,
-        start: 'top 75%',
-        end: 'bottom 25%',
-        scrub: true,
-        markers: true,
-    }
-});
+if (trajectory) {
+    gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+
+    // 2022 - 2023
+    gsap.to(ball, {
+        duration: 1.5,
+        ease: "power1.inOut",
+        motionPath: {
+            path: trajectory,
+            align: trajectory,
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true,
+            start: animationValues.segment1.start,
+            end: animationValues.segment1.end
+        },
+        scrollTrigger: {
+            trigger: year2022,
+            start: 'top 75%',
+            end: 'bottom 50%',
+            scrub: true,
+            markers: true,
+        }
+    });
+
+    // 2023 - 2024
+    gsap.to(ball, {
+        duration: 1.5,
+        ease: "power1.inOut",
+        motionPath: {
+            path: trajectory,
+            align: trajectory,
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true,
+            start: animationValues.segment2.start,
+            end: animationValues.segment2.end
+        },
+        scrollTrigger: {
+            trigger: year2023,
+            start: 'top 75%',
+            end: 'bottom 50%',
+            scrub: true,
+            markers: true,
+        }
+    });
+
+    // 2024 - 2025
+    gsap.to(ball, {
+        duration: 1.5,
+        ease: "power1.inOut",
+        motionPath: {
+            path: trajectory,
+            align: trajectory,
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true,
+            start: animationValues.segment3.start,
+            end: animationValues.segment3.end
+        },
+        scrollTrigger: {
+            trigger: year2024,
+            start: 'top 75%',
+            end: 'bottom 25%',
+            scrub: true,
+            markers: true,
+        }
+    });
+} else {
+    console.warn("trajectory, trajectory1440 or trajectory768 not found.");
+}
