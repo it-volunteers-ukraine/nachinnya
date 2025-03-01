@@ -68,6 +68,24 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_67c1b5e3b7cb8",
+            "label": "Telegram Bot",
+            "name": "telegram_bot",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_67b8ac76d8f84",
             "label": "Socseti block",
             "name": "socseti_block",
@@ -232,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740166970
+    "modified": 1740748347
 }
