@@ -1,0 +1,16 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .show-more {
+    border: 1px solid $red;
+    border-radius: 100px;
+    background: $yellow;
+    padding: 12px 36px;
+  }
+}
+
+
