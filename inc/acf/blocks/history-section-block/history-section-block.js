@@ -108,6 +108,13 @@ if (screenWidth >= 1920 && document.getElementById('trajectory')) {
         segment2: { start: 0.23, end: 0.49 },
         segment3: { start: 0.49, end: 0.785 }
     };
+} else if (screenWidth < 768 && document.getElementById('trajectory360')) {
+    trajectory = document.getElementById('trajectory360');
+    animationValues = {
+        segment1: { start: 0, end: 0.22 },
+        segment2: { start: 0.22, end: 0.452 },
+        segment3: { start: 0.452, end: 0.742 }
+    };
 }
 
 if (trajectory) {
