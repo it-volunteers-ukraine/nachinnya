@@ -11,9 +11,32 @@
 
 .animation-container,
 .ball-container,
-.path-container,
 .content-container {
     display: block;
+}
+
+.path-container,
+.path-container1440,
+.path-container768 {
+    display: none;
+}
+
+.path-container {
+    @media screen and (min-width: 1920px) {
+        display: block;
+    }
+}
+
+.path-container1440 {
+    @media screen and (max-width: 1919.9px) and (min-width: 1440px) {
+        display: block;
+    }
+}
+
+.path-container768 {
+    @media screen and (max-width: 1439.9px) and (min-width: 501px) {
+        display: block;
+    }
 }
 
 .animation-container {
@@ -24,28 +47,65 @@
     padding-top: 39px;
 }
 
-.point1 {
+.story1 {
     height: 509px;
     background-color: rgb(138, 176, 138);
     margin-bottom: 210px;
+
+    @media screen and (max-width: 1919.9px) {
+        height: 444px;
+        margin-bottom: 120px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        height: 605px;
+        margin-bottom: 100px;
+    }
 }
 
-.point2 {
+.story2 {
     height: 509px;
     margin-bottom: 210px;
     background-color: rgb(192, 118, 118);
+
+    @media screen and (max-width: 1919.9px) {
+        height: 444px;
+        margin-bottom: 120px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        height: 681px;
+        margin-bottom: 100px;
+    }
 }
 
-.point3 {
+.story3 {
     height: 616px;
     margin-bottom: 210px;
     background-color: rgb(141, 131, 176);
+
+    @media screen and (max-width: 1919.9px) {
+        height: 444px;
+        margin-bottom: 120px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        height: 820px;
+    }
 }
 
-.point4 {
+.story4 {
     height: 509px;
-    margin-bottom: 210px;
     background-color: rgb(172, 148, 168);
+
+    @media screen and (max-width: 1919.9px) {
+        height: 444px;
+        margin-bottom: 120px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        height: 643px;
+    }
 }
 
 .year1,
