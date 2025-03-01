@@ -148,7 +148,7 @@ if (trajectory) {
         },
         scrollTrigger: {
             trigger: year2023,
-            start: 'top 75%',
+            start: 'top 55%',
             end: 'bottom 5%',
             scrub: true,
             markers: true,
