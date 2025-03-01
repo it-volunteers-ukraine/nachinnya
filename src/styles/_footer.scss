@@ -1,14 +1,19 @@
 @use "./variables.scss" as *;
 
-
-
 // helpers start
+.link-main {
+}
+
+.link-main,
+.wrap-link-main a,
 .link-adv,
 .wrap-link-adv a {
   position: relative;
   transition: all $animations;
 }
 
+.link-main::after,
+.wrap-link-main a::after,
 .link-adv::after,
 .wrap-link-adv a::after {
   content: "";
@@ -20,28 +25,73 @@
   background-color: transparent;
   transition: all $animations;
 }
+
+/* link-adv hover for text red */
+.link-main:hover,
+.wrap-link-main a:hover {
+  color: $red;
+}
+
+/* link-adv hover for text yellow*/
 .link-adv:hover,
 .wrap-link-adv a:hover {
   color: $yellow-hover;
-  // border-color: $yellow;
 }
 
+/* link-main hover ::after red  */
+.link-main:hover::after,
+.wrap-link-main a:hover::after {
+  background-color: $red;
+}
+
+/* link-adv hover ::after yellow */
 .link-adv:hover::after,
 .wrap-link-adv a:hover::after {
   background-color: $yellow-hover;
 }
 
-.wrap-link-adv a:focus-visible{
+/* wrap-link-main focus red */
+.wrap-link-main a:focus-visible::after {
+  color: $red;
+}
+
+/* wrap-link-adv focus yellow */
+.wrap-link-adv a:focus-visible {
   color: $yellow-selected;
 }
-.wrap-link-adv a:focus-visible::after{
+
+/* wrap-link-main focus red */
+.wrap-link-main a:focus-visible::after,
+.link-main:focus-visible::after {
+  background-color: $red;
+}
+
+/* wrap-link-adv focus yellow */
+.wrap-link-adv a:focus-visible::after,
+.link-adv:focus-visible::after {
   background-color: $yellow-selected;
 }
 
+/* link-main active red */
+.link-main:active,
+.wrap-link-main a:active {
+  color: $black;
+}
+
+/* link-adv active yellow */
 .link-adv:active,
 .wrap-link-adv a:active {
   color: $yellow-pressed;
 }
+
+/* link-main active red */
+.link-main:active::after,
+.wrap-link-main a:active::after {
+  background-color: $black;
+  height: 2px;
+}
+
+/* link-adv active yellow */
 .link-adv:active::after,
 .wrap-link-adv a:active::after {
   background-color: $yellow-pressed;
@@ -49,7 +99,6 @@
 }
 
 // end helpers
-
 
 footer {
   color: $white;
@@ -155,8 +204,6 @@ footer {
   }
 }
 
-
-
 .copyright {
   display: block;
   text-align: center;
@@ -248,5 +295,4 @@ footer {
   .footer-menu {
     font-size: 16px;
   }
-
 }

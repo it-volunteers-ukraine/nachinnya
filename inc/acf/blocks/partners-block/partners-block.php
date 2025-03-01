@@ -6,9 +6,6 @@ $default_classes = [
     'partners' => 'partners',
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
-    'h2-title-wrapper' => 'h2-title-wrapper',
-    'h2-title-elements-container' => 'h2-title-elements-container',
-    'h2-title' => 'h2-title',
     'partners-main-title' => 'partners-main-title',
 ];
 
@@ -23,19 +20,19 @@ if (file_exists($modules_file)) {
 
 <section class="<?php echo esc_attr($classes['partners_section']); ?>">
 
-    <div class="<?php echo esc_attr($classes['h2-title-wrapper']); ?>">
-        <div class="<?php echo esc_attr($classes['h2-title-elements-container']); ?>">
-            <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
-        </div>
-    </div>
+    <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
 
     <div class="container">
+
         <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => -1,
+            'posts_per_page' => 6,
             'orderby' => 'date',
             'order' => 'ASC',
+            'paged' => $paged,
         );
 
         $query = new WP_Query($args);
@@ -62,8 +59,13 @@ if (file_exists($modules_file)) {
                 </div>
 
             <?php endwhile;
+
+
             echo '</div>';
+
             wp_reset_postdata();
+
+
         else :
             echo '<p>Немає записів.</p>';
         endif;

@@ -16,16 +16,16 @@
     margin-top: 32px;
     margin-left: auto;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         margin-top: 24px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         width: 300px;
         margin-top: 20px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 200px;
         margin-top: 12px;
     }
@@ -48,15 +48,15 @@
     background-repeat: no-repeat;
     margin-top: 5.5px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         margin-top: 2.5px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         margin-top: 0px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 36px;
         height: 36px;
     }
@@ -65,11 +65,11 @@
 .h2-title-elements-container::before {
     margin-right: 32px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         margin-right: 24px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         margin-right: 12px;
     }
 }
@@ -78,11 +78,11 @@
     transform: rotate(180deg);
     margin-left: 32px;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         margin-left: 24px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         margin-left: 12px;
     }
 }
