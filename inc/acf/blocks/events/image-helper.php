@@ -44,4 +44,26 @@ class ImageHelper {
 
         return $s;
     }
+
+    // Returns the url to the image in the highest size
+    public static function get_highest_size($image)
+    {
+        // Retrieving the available image sizes
+        $sizes = get_intermediate_image_sizes();
+        // Searching for the largest image size
+        $largest_size = 0;
+        $largest_url = '';
+        foreach ($sizes as $size) {
+            // Checking whether the size data exists in the provided $image
+            if (array_key_exists($size, $image['sizes']) && array_key_exists("$size-width", $image['sizes'])) {
+                $width = $image['sizes']["$size-width"];
+                if ($width > $largest_size) {
+                    $largest_size = $width;
+                    $largest_url = $image['sizes'][$size];
+                }
+            }
+        }
+
+        return $largest_url;
+    }
 }
