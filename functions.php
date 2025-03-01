@@ -162,6 +162,12 @@ function load_more()
         while ($query->have_posts()) {
             $query->the_post();
 
+            // add id for show data
+            $id = get_the_ID();
+            $partner_title = get_field('partner_title', $id);
+            $partner_image = get_field('partner_image', $id);
+            $partner_text = get_field('partner_text', $id);
+
             // change data for block by post-type
             switch ($post_type) {
                 case 'partners':
