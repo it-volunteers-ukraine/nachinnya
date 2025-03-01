@@ -1,10 +1,14 @@
 <?php
+    // Helper class to work with images
+    require_once(get_template_directory() . '/inc/acf/blocks/events/image-helper.php');
+
     // Loading classes
     $default_classes = [
         'item' => 'item',
 
         'item-upper-part' => 'item-upper-part',
         'item-upper-part-wrapper' => 'item-upper-part-wrapper',
+        'item-upper-part-link' => 'item-upper-part-link',
         'item-upper-part-image' => 'item-upper-part-image',
         'item-upper-part-blue' => 'item-upper-part-blue',
         'item-upper-part-yellow' => 'item-upper-part-yellow',
@@ -62,6 +66,7 @@
         $classes['item-upper-part-image'],
         '(max-width: 767.9px) 100vw, (max-width: 1439.9px) 50vw, 33.33vw'
     );
+    $image_highest_size_url = ImageHelper::get_highest_size($image);
 
     // The date
     $date = get_field('date', $current_id);
@@ -105,7 +110,14 @@
         <div class="<?= $classes["item-upper-part-wrapper"] ?>">
             <div class="<?= $classes["item-upper-part-yellow"] ?>"></div>
             <div class="<?= $classes["item-upper-part-blue"] ?>"></div>
-            <?= $image_tag ?>
+            <a
+                class="<?= $classes["item-upper-part-link"] ?>"
+                href="<?= $image_highest_size_url ?>"
+                data-lightbox="image<?= $current_id ?>"
+                data-alt=""
+            >
+                <?= $image_tag ?>
+            </a>
         </div> 
     </div>
     <!-- Text part -->
