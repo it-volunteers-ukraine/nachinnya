@@ -128,7 +128,7 @@ if (trajectory) {
         scrollTrigger: {
             trigger: year2022,
             start: 'top 75%',
-            end: 'bottom 50%',
+            end: 'bottom 5%',
             scrub: true,
             markers: true,
         }
@@ -149,7 +149,7 @@ if (trajectory) {
         scrollTrigger: {
             trigger: year2023,
             start: 'top 75%',
-            end: 'bottom 50%',
+            end: 'bottom 5%',
             scrub: true,
             markers: true,
         }
@@ -169,8 +169,8 @@ if (trajectory) {
         },
         scrollTrigger: {
             trigger: year2024,
-            start: 'top 75%',
-            end: 'bottom 25%',
+            start: 'top 55%',
+            end: 'bottom 5%',
             scrub: true,
             markers: true,
         }
