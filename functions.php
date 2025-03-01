@@ -204,3 +204,6 @@ function init_ajax_partners_blocks()
 }
 
 add_action('wp_enqueue_scripts', 'init_ajax_partners_blocks');
+
+// Helper class to work with images
+require get_template_directory() . '/parts/image-helper.php';
