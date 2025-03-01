@@ -85,6 +85,21 @@ function it_volunteers_acf_blocks_init()
             'category'          => 'custom-blocks',
         ));
 
+
+
+        // Register show-more-block ?
+        acf_register_block_type(array(
+            'name'              => 'show-more-block',
+            'title'             => __('show-more-block'),
+            'description'       => __('Block with button show more button'),
+            'render_template'   => acf_theme_blocks_path('show-more-block/show-more-block.php'),
+            'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/show-more-block/show-more-block.css',
+            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/show-more-block/show-more-block.js',
+            'category'          => 'custom-blocks',
+        ));
+
+
+
         // Register an events block
         acf_register_block_type(array(
             'name'              => 'events',

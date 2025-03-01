@@ -140,65 +140,106 @@ if (function_exists('acf_add_options_page')) {
 }
 
 
-// pagination partners-blocks
-function load_partners_blocks()
+// pagination button load-more
+function load_more()
 {
-    $paged = isset($_GET['paged']) ? absint($_GET['paged']) : 1;
+    $paged = $_POST['paged'];
+
+    $post_type = (isset($_POST['post_type'])) ? $_POST['post_type'] : '';
+
+    $width = $_POST['width'];
+    $countPosts = get_posts_per_page($width, $post_type);
+
 
     $args = array(
-        'post_type' => 'partners',
-        'posts_per_page' => 6,
+        'paged' => $paged,
+        'post_type' => $post_type,
         'orderby' => 'date',
         'order' => 'ASC',
-        'paged' => $paged,
+        'posts_per_page' => $countPosts,
     );
 
     $query = new WP_Query($args);
     ob_start();
 
-    if ($query->have_posts()) :
-        echo '<div class="partners">';
-        while ($query->have_posts()) : $query->the_post();
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            // add id for show data
             $id = get_the_ID();
             $partner_title = get_field('partner_title', $id);
             $partner_image = get_field('partner_image', $id);
             $partner_text = get_field('partner_text', $id);
-            ?>
-            <h3 class="partners-title">
-                <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
-            </h3>
-            <div class="post-item">
-                <?php if ($partner_image) : ?>
-                    <img class="partner-image"
-                         src="<?php echo esc_url($partner_image['url']); ?>"
-                         alt="<?php echo esc_attr($partner_title); ?>">
-                <?php endif; ?>
-                <p class="partner-text"><?php echo esc_html($partner_text); ?></p>
-            </div>
-        <?php endwhile;
-        echo '</div>';
-    else :
-        echo '<p>No posts</p>';
-    endif;
+
+            // change data for block by post-type
+            switch ($post_type) {
+                case 'partners':
+                    ?>
+                    <h3 class="partners-title">
+                        <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
+                    </h3>
+
+                    <div class="post-item">
+                        <?php if ($partner_image) : ?>
+                            <img class="partner-image"
+                                 src="<?php echo esc_url($partner_image['url']); ?>"
+                                 alt="<?php echo esc_attr($partner_title); ?>">
+                        <?php endif; ?>
+
+                        <p class="partner-text">
+                            <?php echo esc_html($partner_text); ?>
+                        </p>
+                    </div>
+                    <?php
+                    break;
+
+//                case 'events':
+//                    //
+//                    break;
+
+            }
+        }
+    } else {
+        echo 'No data';
+    }
 
     $html = ob_get_clean();
     wp_reset_postdata();
 
     $total_pages = $query->max_num_pages;
 
-    wp_send_json(array('html' => $html, 'total_pages' => $total_pages));
+    wp_send_json(array('html' => $html, 'total_pages' => $total_pages, 'postsPerPage' => $countPosts));
 
     wp_die();
 }
 
-add_action('wp_ajax_load_partners_blocks', 'load_partners_blocks');
-add_action('wp_ajax_nopriv_load_partners_blocks', 'load_partners_blocks');
+add_action('wp_ajax_load_more', 'load_more');
+add_action('wp_ajax_nopriv_load_more', 'load_more');
 
 
-function init_ajax_partners_blocks()
+function get_posts_per_page($width, $post_type)
+{
+
+
+    switch ($post_type) {
+        case 'partners':
+
+            return ($width > 767.98) ? 6 : 5;
+
+//        case 'events':
+//
+////            return ($width > 767.98) ? 8 : 4;
+
+
+    }
+}
+
+
+function init_ajax_load_more()
 {
     wp_enqueue_script('jquery');
-    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . 'inc/acf/blocks/partners-block/partners-block.js', array('jquery'), null, true);
+    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . 'inc/acf/blocks/show-more-block/show-more-block.js', array('jquery'), null, true);
 
     wp_localize_script('pagination-ajax', 'my_ajax', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
@@ -207,4 +248,4 @@ function init_ajax_partners_blocks()
 
 }
 
-add_action('wp_enqueue_scripts', 'init_ajax_partners_blocks');
+add_action('wp_enqueue_scripts', 'init_ajax_load_more');
