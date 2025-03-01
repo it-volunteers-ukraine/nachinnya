@@ -17,7 +17,8 @@
 
 .path-container,
 .path-container1440,
-.path-container768 {
+.path-container768,
+.path-container360 {
     display: none;
 }
 
@@ -34,7 +35,13 @@
 }
 
 .path-container768 {
-    @media screen and (max-width: 1439.9px) and (min-width: 501px) {
+    @media screen and (max-width: 1439.9px) and (min-width: 768px) {
+        display: block;
+    }
+}
+
+.path-container360 {
+    @media screen and (max-width: 767.9px) {
         display: block;
     }
 }
