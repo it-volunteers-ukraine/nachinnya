@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "KharkivTone";
-  src: url("../../fonts/KharkivTone.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'KharkivTone';
+    src: url('/wp-content/themes/nachinnya/fonts/KharkivTone.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
@@ -15,8 +15,8 @@ $red: #b74028;
 $dark_red: #351311;
 $blue: #3053a0;
 $yellow: #f2c857;
-$yellow-hover: #f2c857;
-$yellow-pressed: #efb330;
+$yellow-hover: #EFB330;
+$yellow-pressed: #E89319;
 $yellow-selected: #e89319;
 // $yellow_hover: #EFB330;
 // $yellow_pressed: #E89319;

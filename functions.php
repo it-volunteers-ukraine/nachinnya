@@ -28,6 +28,10 @@ function wp_it_volunteers_scripts()
     wp_enqueue_script('wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true);
     wp_enqueue_script('wp-it-volunteers-header-scripts', get_template_directory_uri() . '/assets/scripts/header.js');
 
+    // Load lightbox2 assets
+    wp_enqueue_style('lightbox2-styles', get_template_directory_uri() . '/assets/styles/vendors/lightbox2/lightbox.min.css', array('main'));
+    wp_enqueue_script('lightbox2-scripts', get_template_directory_uri() . '/assets/scripts/vendors/lightbox.min.js', array('jquery'));
+
     if (is_page_template('templates/home.php')) {
         wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
         wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true);
@@ -161,6 +165,12 @@ function load_more()
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+
+            // add id for show data
+            $id = get_the_ID();
+            $partner_title = get_field('partner_title', $id);
+            $partner_image = get_field('partner_image', $id);
+            $partner_text = get_field('partner_text', $id);
 
             // change data for block by post-type
             switch ($post_type) {
