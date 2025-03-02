@@ -13,30 +13,30 @@ const screenWidth = window.innerWidth;
 if (screenWidth >= 1920 && document.getElementById('trajectory')) {
     trajectory = document.getElementById('trajectory');
     animationValues = {
-        segment1: { start: 0, end: 0.255 },
-        segment2: { start: 0.255, end: 0.53 },
-        segment3: { start: 0.53, end: 0.84 }
+        segment1: { start: 0.01, end: 0.26 },
+        segment2: { start: 0.26, end: 0.54 },
+        segment3: { start: 0.54, end: 0.85 }
     };
 } else if (screenWidth < 1920 && screenWidth >= 1440 && document.getElementById('trajectory1440')) {
     trajectory = document.getElementById('trajectory1440');
     animationValues = {
-        segment1: { start: 0, end: 0.265 },
-        segment2: { start: 0.265, end: 0.54 },
-        segment3: { start: 0.54, end: 0.81 }
+        segment1: { start: 0.015, end: 0.265 },
+        segment2: { start: 0.265, end: 0.55 },
+        segment3: { start: 0.55, end: 0.82 }
     };
 } else if (screenWidth < 1440 && screenWidth >= 768 && document.getElementById('trajectory768')) {
     trajectory = document.getElementById('trajectory768');
     animationValues = {
-        segment1: { start: 0, end: 0.23 },
-        segment2: { start: 0.23, end: 0.49 },
-        segment3: { start: 0.49, end: 0.785 }
+        segment1: { start: 0, end: 0.24 },
+        segment2: { start: 0.24, end: 0.51 },
+        segment3: { start: 0.51, end: 0.785 }
     };
 } else if (screenWidth < 768 && document.getElementById('trajectory360')) {
     trajectory = document.getElementById('trajectory360');
     animationValues = {
-        segment1: { start: 0, end: 0.22 },
-        segment2: { start: 0.22, end: 0.452 },
-        segment3: { start: 0.452, end: 0.742 }
+        segment1: { start: 0.1, end: 0.33 },
+        segment2: { start: 0.33, end: 0.585 },
+        segment3: { start: 0.585, end: 0.885 }
     };
 }
 
