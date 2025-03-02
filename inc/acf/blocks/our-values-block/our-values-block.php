@@ -1,7 +1,8 @@
 <?php
 $default_classes = [
+    'background' => 'background',
     'title-template-part' => 'title-template-part',
-    
+    'values' => 'values',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -14,15 +15,20 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class='section'>
-    <div class='container'>
-        <!-- h2_title -->
-        <?php
-            $h2_title = get_field('h2_title');
-            if (!empty($h2_title)) : 
-        ?>
-            <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
-                <?php get_template_part('template-parts/h2-title-yellow'); ?>
+    <div class='<?php echo esc_attr($classes['background']); ?>'>
+        <div class='container'>
+            <!-- h2_title -->
+            <?php
+                $h2_title = get_field('h2_title');
+                if (!empty($h2_title)) : 
+            ?>
+                <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
+                    <?php get_template_part('template-parts/h2-title-yellow'); ?>
+                </div>
+            <?php endif; ?>
+            <div class='<?php echo esc_attr($classes['values']); ?>'>
+                <p>by repeater</p>
             </div>
-        <?php endif; ?>
+        </div>
     </div>
 </section>
