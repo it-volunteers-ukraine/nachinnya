@@ -3,6 +3,14 @@
 .title-template-part {
     width: fit-content;
     margin: 0 auto 100px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+    }
 }
 
 .content-with-animation-wrapper {
@@ -49,7 +57,20 @@
 .animation-container {
     position: absolute;
     left: 402px;
-    top: -39px;
+    top: -61px;
+
+    @media screen and (max-width: 1919.9px) {
+        left: 325px;
+        top: -28px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        left: 0;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        left: 16px;
+    }
 }
 
 .story1,
@@ -58,6 +79,22 @@
 .story4 {
     display: flex;
     margin-bottom: 210px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 120px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        flex-direction: column;
+        gap: 24px;
+        margin-left: 40px;
+        margin-bottom: 100px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        flex-direction: column-reverse;
+        gap: 33px;
+    }
 }
 
 .story1 {
@@ -66,12 +103,17 @@
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
-        margin-bottom: 120px;
     }
 
     @media screen and (max-width: 1439.9px) {
+        flex-direction: column-reverse;
+        justify-content: start;
         height: 605px;
-        margin-bottom: 100px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        flex-direction: column;
+        height: 650px;
     }
 }
 
@@ -82,12 +124,16 @@
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
-        margin-bottom: 120px;
     }
 
     @media screen and (max-width: 1439.9px) {
+        justify-content: unset;
         height: 681px;
-        margin-bottom: 100px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        height: 752px;
+        justify-content: start;
     }
 }
 
@@ -97,11 +143,17 @@
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
-        margin-bottom: 120px;
     }
 
     @media screen and (max-width: 1439.9px) {
+        flex-direction: column-reverse;
+        justify-content: start;
         height: 820px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        flex-direction: column;
+        height: 881px;
     }
 }
 
@@ -113,11 +165,42 @@
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
-        margin-bottom: 120px;
     }
 
     @media screen and (max-width: 1439.9px) {
+        justify-content: unset;
         height: 643px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        flex-direction: column-reverse;
+        justify-content: start;
+        height: 718px;
+    }
+}
+
+.photo {
+    @media screen and (max-width: 1919.9px) {
+        margin-top: 80px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-top: 0px;
+        margin-left: 408px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin: 0px auto;
+        max-width: 700px;
+    }
+}
+
+.story-info {
+    display: flex;
+
+    @media screen and (max-width: 767.9px) {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -125,6 +208,15 @@
     width: 276px;
     margin-right: 20px;
     margin-left: 26px;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 225px;
+        margin-right: 0px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-left: 0px;
+    }
 }
 
 .year {
@@ -134,10 +226,35 @@
 .event-title {
     color: $red;
     font-weight: 500;
+
+    @media screen and (max-width: 767.9px) {
+        font-size: 16px;
+    }
 }
 
 .event-description {
     font-weight: 400;
     width: 425px;
     margin-right: 174px;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 413px;
+        margin-right: 25px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        width: 336px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 100%;
+    }
+}
+
+.event-description a:hover {
+    color: #EFB330;
+}
+
+.event-description a:active {
+    color: #E89319;
 }

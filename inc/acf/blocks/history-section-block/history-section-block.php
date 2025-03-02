@@ -103,84 +103,100 @@ if (file_exists($modules_file)) {
             <!-- content -->
             <div class="<?php echo esc_attr($classes['content-container']); ?>">
                 <div class="<?php echo esc_attr($classes['story1']); ?>">
-                    <?php
-                    $photo_url = get_field('history_photo_1') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+                    <div class="<?php echo esc_attr($classes['photo']); ?>">
+                        <?php
+                        $photo_url = get_field('history_photo_1') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
 
-                    $photo_alt = get_the_title();
+                        $photo_alt = get_the_title();
 
-                    get_template_part('template-parts/photo-vertical', null, [
-                        'photo_url' => $photo_url,
-                        'photo_alt' => $photo_alt,
-                        'my_class' => 'history-photo'
-                    ]);
-                    ?>
-                    <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                        <h4 id='year2022' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_1'); ?> рік</h4>
-                        <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_1'); ?></p>
+                        get_template_part('template-parts/photo-vertical', null, [
+                            'photo_url' => $photo_url,
+                            'photo_alt' => $photo_alt,
+                            'my_class' => 'history-photo'
+                        ]);
+                        ?>
                     </div>
-                    <div class="<?php echo esc_attr($classes['event-description']); ?>">
-                        <p><?php echo the_field('history_description_1'); ?></p>
+                    <div class="<?php echo esc_attr($classes['story-info']); ?>">
+                        <div class="<?php echo esc_attr($classes['year-event']); ?>">
+                            <h4 id='year2022' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_1'); ?> рік</h4>
+                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_1'); ?></p>
+                        </div>
+                        <div class="<?php echo esc_attr($classes['event-description']); ?>">
+                            <p><?php echo the_field('history_description_1'); ?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="<?php echo esc_attr($classes['story2']); ?>">
-                    <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                        <h4 id='year2023' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_2'); ?> рік</h4>
-                        <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
+                    <div class="<?php echo esc_attr($classes['story-info']); ?>">
+                        <div class="<?php echo esc_attr($classes['year-event']); ?>">
+                            <h4 id='year2023' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_2'); ?> рік</h4>
+                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
+                        </div>
+                        <div class="<?php echo esc_attr($classes['event-description']); ?>">
+                            <p><?php echo the_field('history_description_2'); ?></p>
+                        </div>
                     </div>
-                    <div class="<?php echo esc_attr($classes['event-description']); ?>">
-                        <p><?php echo the_field('history_description_2'); ?></p>
+                    <div class="<?php echo esc_attr($classes['photo']); ?>">
+                        <?php
+                        $photo_url = get_field('history_photo_2') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                        $photo_alt = get_the_title();
+
+                        get_template_part('template-parts/photo-vertical', null, [
+                            'photo_url' => $photo_url,
+                            'photo_alt' => $photo_alt,
+                            'my_class' => 'history-photo'
+                        ]);
+                        ?>
                     </div>
-                    <?php
-                    $photo_url = get_field('history_photo_2') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
-
-                    $photo_alt = get_the_title();
-
-                    get_template_part('template-parts/photo-vertical', null, [
-                        'photo_url' => $photo_url,
-                        'photo_alt' => $photo_alt,
-                        'my_class' => 'history-photo'
-                    ]);
-                    ?>
                 </div>
                 <div class="<?php echo esc_attr($classes['story3']); ?>">
-                    <?php
-                    $photo_url = get_field('history_photo_3') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+                    <div class="<?php echo esc_attr($classes['photo']); ?>">
+                        <?php
+                        $photo_url = get_field('history_photo_3') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
 
-                    $photo_alt = get_the_title();
+                        $photo_alt = get_the_title();
 
-                    get_template_part('template-parts/photo-vertical', null, [
-                        'photo_url' => $photo_url,
-                        'photo_alt' => $photo_alt,
-                        'my_class' => 'history-photo'
-                    ]);
-                    ?>
-                    <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                        <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_3'); ?> рік</h4>
-                        <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_3'); ?></p>
+                        get_template_part('template-parts/photo-vertical', null, [
+                            'photo_url' => $photo_url,
+                            'photo_alt' => $photo_alt,
+                            'my_class' => 'history-photo'
+                        ]);
+                        ?>
                     </div>
-                    <div class="<?php echo esc_attr($classes['event-description']); ?>">
-                        <p><?php echo the_field('history_description_3'); ?></p>
+                    <div class="<?php echo esc_attr($classes['story-info']); ?>">
+                        <div class="<?php echo esc_attr($classes['year-event']); ?>">
+                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_3'); ?> рік</h4>
+                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_3'); ?></p>
+                        </div>
+                        <div class="<?php echo esc_attr($classes['event-description']); ?>">
+                            <p><?php echo the_field('history_description_3'); ?></p>
+                        </div>
                     </div>
                 </div>
                 <div class="<?php echo esc_attr($classes['story4']); ?>">
-                    <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                        <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_4'); ?> рік</h4>
-                        <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
+                    <div class="<?php echo esc_attr($classes['story-info']); ?>">
+                        <div class="<?php echo esc_attr($classes['year-event']); ?>">
+                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_4'); ?> рік</h4>
+                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
+                        </div>
+                        <div class="<?php echo esc_attr($classes['event-description']); ?>">
+                            <p><?php echo the_field('history_description_4'); ?></p>
+                        </div>
                     </div>
-                    <div class="<?php echo esc_attr($classes['event-description']); ?>">
-                        <p><?php echo the_field('history_description_4'); ?></p>
+                    <div class="<?php echo esc_attr($classes['photo']); ?>">
+                        <?php
+                        $photo_url = get_field('history_photo_4') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                        $photo_alt = get_the_title();
+
+                        get_template_part('template-parts/photo-vertical', null, [
+                            'photo_url' => $photo_url,
+                            'photo_alt' => $photo_alt,
+                            'my_class' => 'history-photo'
+                        ]);
+                        ?>
                     </div>
-                    <?php
-                    $photo_url = get_field('history_photo_4') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
-
-                    $photo_alt = get_the_title();
-
-                    get_template_part('template-parts/photo-vertical', null, [
-                        'photo_url' => $photo_url,
-                        'photo_alt' => $photo_alt,
-                        'my_class' => 'history-photo'
-                    ]);
-                    ?>
                 </div>
             </div>
         </div>
