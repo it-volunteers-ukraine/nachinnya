@@ -1,0 +1,96 @@
+@use "../variables.scss" as *;
+
+.h2-title-yellow-wrapper {
+    width: fit-content;
+    text-align: right;
+}
+
+.h2-title-yellow-wrapper::after {
+    content: "";
+    display: block;
+    width: 350px;
+    height: 20px;
+    background-image: url("../../../assets/images/title-element-yellow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 32px;
+    margin-left: auto;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-top: 24px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        width: 300px;
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 200px;
+        margin-top: 12px;
+    }
+}
+
+.h2-title-yellow-elements-container {
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+
+.h2-title-yellow-elements-container::before,
+.h2-title-yellow-elements-container::after {
+    content: "";
+    display: block;
+    width: 37px;
+    height: 37px;
+    background-image: url("../../../assets/images/rounded_elements-yellow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5.5px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-top: 2.5px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-top: 0px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+.h2-title-yellow-elements-container::before {
+    margin-right: 32px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-right: 24px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin-right: 12px;
+    }
+}
+
+.h2-title-yellow-elements-container::after {
+    transform: rotate(180deg);
+    margin-left: 32px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-left: 24px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin-left: 12px;
+    }
+}
+
+.h2-title-yellow {
+    display: block;
+    width: fit-content;
+    min-width: 0;
+    text-align: center;
+    color: $white;
+}
