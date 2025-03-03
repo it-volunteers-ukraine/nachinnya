@@ -66,7 +66,6 @@
         $classes['item-upper-part-image'],
         '(max-width: 767.9px) 100vw, (max-width: 1439.9px) 50vw, 33.33vw'
     );
-    $image_highest_size_url = ImageHelper::get_highest_size($image);
 
     // The date
     $date = get_field('date', $current_id);
@@ -112,7 +111,7 @@
             <div class="<?= $classes["item-upper-part-blue"] ?>"></div>
             <a
                 class="<?= $classes["item-upper-part-link"] ?>"
-                href="<?= $image_highest_size_url ?>"
+                href="<?= $image['url'] ?>"
                 data-lightbox="image<?= $current_id ?>"
                 data-alt=""
             >
