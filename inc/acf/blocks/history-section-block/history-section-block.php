@@ -178,7 +178,7 @@ if (file_exists($modules_file)) {
                     <div class="<?php echo esc_attr($classes['story-info']); ?>">
                         <div class="<?php echo esc_attr($classes['year-event']); ?>">
                             <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_4'); ?> рік</h4>
-                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
+                            <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_4'); ?></p>
                         </div>
                         <div class="<?php echo esc_attr($classes['event-description']); ?>">
                             <p><?php echo the_field('history_description_4'); ?></p>

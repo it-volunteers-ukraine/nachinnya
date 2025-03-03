@@ -1,11 +1,118 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 .background {
-    background: url("../../../../assets/images/our-values-background.jpg");
+    background: linear-gradient(rgba(37, 37, 37, 0.65), rgba(37, 37, 37, 0.65)), url("../../../../assets/images/our-values-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .title-template-part {
     width: fit-content;
     margin: 0px auto 88px;
     padding-top: 135px;
+
+    @media screen and (max-width: 1439.9px) {
+        padding-top: 54px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        padding-top: 135px;
+    }
+}
+
+.values {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 135px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1919.9px) {
+        gap: 20px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        row-gap: 96px;
+        column-gap: 48px;
+    }
+}
+
+.value-item {
+    width: 320px;
+    min-height: 326px;
+    padding: 40px 24px 26px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+
+    p {
+        @media screen and (max-width: 1919.9px) {
+            padding: 0px 9px;
+        }
+
+        @media screen and (max-width: 1439.9px) {
+            padding: 0px;
+        }
+    }
+
+    @media screen and (max-width: 1919.9px) {
+        width: 240px;
+        min-height: 305px;
+        padding: 40px 15px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        width: 320px;
+        min-height: 218px;
+        padding: 40px 24px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 328px;
+        min-height: 198px;
+        padding: 36px 24px;
+    }
+}
+
+.title-wrapper {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin-bottom: 24px;
+    }
+}
+
+.title-wrapper::before,
+.title-wrapper::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 54px;
+    background-image: url("../../../../assets/images/brace-l.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 21px;
+        height: 34px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        width: 26px;
+        height: 42px;
+    }
+}
+
+.title-wrapper::after {
+    transform: scaleX(-1);
+    will-change: transform;
 }
