@@ -1,7 +1,6 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 .background {
-    background: linear-gradient(rgba(37, 37, 37, 0.65), rgba(37, 37, 37, 0.65)), url("../../../../assets/images/our-values-background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -16,7 +16,9 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class='section'>
-    <div class='<?php echo esc_attr($classes['background']); ?>'>
+<div class="<?php echo esc_attr($classes['background']); ?>" 
+     style="background-image: linear-gradient(rgba(37, 37, 37, 0.65), rgba(37, 37, 37, 0.65)), 
+            url('<?php echo get_field('our_values_background'); ?>');">
         <div class='container'>
             <!-- h2_title -->
             <?php
