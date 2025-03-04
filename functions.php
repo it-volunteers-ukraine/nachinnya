@@ -108,6 +108,14 @@ function wp_it_volunteers_menus()
 
 add_action('init', 'wp_it_volunteers_menus');
 
+/** gsap scripts */
+function enqueue_gsap_scripts() {
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true);
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), null, true);
+    wp_enqueue_script('gsap-motionpath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js', array('gsap'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
+
 
 /** ACF add options page */
 if (function_exists('acf_add_options_page')) {

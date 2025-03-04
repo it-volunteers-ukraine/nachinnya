@@ -44,11 +44,13 @@ if (file_exists($modules_file)) {
 
         <!-- h2 title -->
         <?php
-        $h2_title = get_field('h2_title');
-        if (!empty($h2_title)) :
+            $h2_title = get_field('h2_title_main_section');
+            if (!empty($h2_title)) : 
         ?>
             <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
-                <?php get_template_part('template-parts/h2-title'); ?>
+                <?php get_template_part('template-parts/h2-title-v2', null,[
+                    'title' => $h2_title
+                    ]); ?>
             </div>
         <?php endif; ?>
 

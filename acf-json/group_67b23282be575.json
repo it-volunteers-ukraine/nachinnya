@@ -51,8 +51,8 @@
         },
         {
             "key": "field_67b77ef6fb2bf",
-            "label": "Заголовок h2",
-            "name": "h2_title",
+            "label": "Заголовок під фото",
+            "name": "h2_title_main_section",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -141,13 +141,6 @@
                 "operator": "==",
                 "value": "acf\/main-section-block"
             }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "28"
-            }
         ]
     ],
     "menu_order": 0,
@@ -159,5 +152,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740383762
+    "modified": 1741104048
 }
