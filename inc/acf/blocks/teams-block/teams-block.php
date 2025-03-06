@@ -94,7 +94,7 @@ $welcome  = get_field('welcome_to_command');
 
                 <?php if (count($team_block) < 5 && $welcome): ?>
                     <div class=" <?php echo esc_attr($classes['team-welcome-block']); ?> ">
-                        <a href="<?php echo get_field('telegram-bot', 'option'); ?>" class="link-main-red <?php echo esc_attr($classes['team-welcome-text']); ?> "><?php echo $welcome; ?></a>
+                        <a href="<?php echo get_field('telegram_bot', 'option'); ?>" class="link-main <?php echo esc_attr($classes['team-welcome-text']); ?> "><?php echo $welcome; ?></a>
                     </div>
                 <?php endif; ?>
 
