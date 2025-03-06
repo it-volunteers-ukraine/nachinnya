@@ -9,7 +9,7 @@ $socials = get_field('socials', 'options');
 ?>
 <style>
     .ornament {
-        background-image: url('https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/ornament1.svg');
+        background-image: url('<?php bloginfo('template_url'); ?>/assets/images/ornament1.svg');
         width: 100%;
         height: 42px;
         background-size: contain;
