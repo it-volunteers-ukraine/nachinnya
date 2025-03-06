@@ -8,7 +8,6 @@ $email = esc_html(get_field('email', 'options'));
 $socials = get_field('socials', 'options');
 ?>
 <style>
-    /* https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/symbol-defs.svg#icon-ornament1 */
     .ornament {
         background-image: url('https://nachinnya.loc/wp-content/themes/nachinnya/assets/images/ornament1.svg');
         width: 100%;
@@ -35,7 +34,7 @@ $socials = get_field('socials', 'options');
     <div class="ornament"></div>
     <div class="footer">
         <div class="footer-content">
-            <a href="" class="logo-footer-link">
+            <a href="/" class="logo-footer-link">
                 <svg class="logo-footer-img">
                     <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-logo-white"></use>
                 </svg>
