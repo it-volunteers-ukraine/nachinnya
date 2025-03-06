@@ -70,7 +70,6 @@ function it_volunteers_acf_blocks_init()
             'description'       => __('Block for partners title'),
             'render_template'   => acf_theme_blocks_path('partners-block/partners-block.php'),
             'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/partners-block/partners-block.css',
-            'enqueue_script'    => get_template_directory_uri() . '/assets/blocks/scripts/partners-block/partners-block.js',
             'category'          => 'posts-blocks',
             'icon'              => 'admin-post',
         ));
