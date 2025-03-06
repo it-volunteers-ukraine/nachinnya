@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Kharkiv Tone";
+  src: url("/wp-content/themes/nachinnya/fonts/KharkivTone.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home-title-block {
+  text-align: center;
+  padding: 40px 0;
+
+  .home-title {
+    text-align: center;
+    font-family: 'Kharkiv Tone', sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 88px;
+    letter-spacing: 0;
+    margin: 0;
+    color: #000000;
+  }
+
+  @media (max-width: 768px) {
+    .home-title {
+      font-size: 52px;
+      line-height: 57.2px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .home-title {
+      font-size: 30px;
+      line-height: 33px;
+    }
+  }
+
+}

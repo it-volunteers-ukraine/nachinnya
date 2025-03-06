@@ -48,6 +48,7 @@ $socials = get_field('socials', 'options');
                 'container'      => false, // Убираем контейнер (если не нужен)
                 "menu_id"        => "footer-menu", //
                 'items_wrap'      => '<ul id="%1$s" class="%2$s wrap-link-adv">%3$s</ul>',
+                'fallback_cb'    => '__return_false', // Вимикає автогенерацію меню
                 // 'list_item_class'  => 'nav-item',
                 // 'link_class' => 'aaaaa',
             ));

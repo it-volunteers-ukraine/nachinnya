@@ -1,0 +1,50 @@
+{
+    "key": "group_67be58e35792d",
+    "title": "Home Title Block Fields",
+    "fields": [
+        {
+            "key": "field_67be58fcb9f74",
+            "label": "home_title_text",
+            "name": "home_title_text",
+            "type": "text",
+            "instructions": "Заголовок головної сторінки",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/home-title-block"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1740528196
+}

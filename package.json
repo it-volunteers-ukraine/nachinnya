@@ -4,7 +4,9 @@
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "dev": "gulp watch"
   },
   "author": "",
   "license": "ISC",
@@ -12,13 +14,18 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
     "postcss-modules": "^6.0.1",
-    "sass": "^1.83.4"
+    "sass": "^1.85.0"
+  },
+  "dependencies": {
+    "cacheable-request": "^13.0.3",
+    "got": "^14.4.6",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^6.0.0",
+    "semver-regex": "^4.0.5"
   }
 }

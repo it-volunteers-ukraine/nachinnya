@@ -1,0 +1,89 @@
+.support-home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 80px 20px;
+  color: #ffffff;
+  width: 100%;
+  height: 882px;
+  margin: 40px auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.support-home__container {
+  position: relative;
+  z-index: 2;
+}
+
+.support-home__wave {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 839px;
+  height: 644px;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.support-home__title {
+  margin-bottom: 15px;
+  font-family: "Kharkive Tone", sans-serif;
+  font-size: 44px;
+  font-weight: 400px;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+.support-home__text {
+  font-family: "Raleway", sans-serif;
+  width: 425px;
+  height: 226px;
+  font-weight: 400px;
+  font-size: 20px;
+  line-height: 130%;
+  overflow: hidden;
+  color: #F5EFE6;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.support-home__text.expanded {
+  max-height: 500px;
+  /* Висота при розгортанні */
+}
+
+.support-home__button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  /* Жовта кнопка */
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+.support-home__button:hover {
+  background: #e6b800;
+  /* Темніший жовтий при наведенні */
+}
+
+.support-home__circlesleft-top,
+.support-home__circlesright-lower,
+.support-home__wavyline-tangle {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
