@@ -28,6 +28,10 @@ function wp_it_volunteers_scripts()
     wp_enqueue_script('wp-it-volunteers-scripts', get_template_directory_uri() . '/assets/scripts/main.js', array(), false, true);
     wp_enqueue_script('wp-it-volunteers-header-scripts', get_template_directory_uri() . '/assets/scripts/header.js');
 
+    // Load lightbox2 assets
+    wp_enqueue_style('lightbox2-styles', get_template_directory_uri() . '/assets/styles/vendors/lightbox2/lightbox.min.css', array('main'));
+    wp_enqueue_script('lightbox2-scripts', get_template_directory_uri() . '/assets/scripts/vendors/lightbox.min.js', array('jquery'));
+
     if (is_page_template('templates/home.php')) {
         wp_enqueue_style('home-style', get_template_directory_uri() . '/assets/styles/template-styles/home.css', array('main'));
         wp_enqueue_script('home-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/home.js', array(), false, true);
@@ -104,6 +108,14 @@ function wp_it_volunteers_menus()
 
 add_action('init', 'wp_it_volunteers_menus');
 
+/** gsap scripts */
+function enqueue_gsap_scripts() {
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true);
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), null, true);
+    wp_enqueue_script('gsap-motionpath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js', array('gsap'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
+
 
 /** ACF add options page */
 if (function_exists('acf_add_options_page')) {
@@ -135,18 +147,18 @@ if (function_exists('acf_add_options_page')) {
     ));
 }
 
-
 // pagination partners-blocks
 function load_partners_blocks()
 {
-    $paged = isset($_GET['paged']) ? absint($_GET['paged']) : 1;
+
+    $paged = isset($_GET['paged']) ? intval($_GET['paged']) : 1;
 
     $args = array(
+        'paged' => $paged,
         'post_type' => 'partners',
         'posts_per_page' => 6,
         'orderby' => 'date',
         'order' => 'ASC',
-        'paged' => $paged,
     );
 
     $query = new WP_Query($args);
@@ -155,11 +167,13 @@ function load_partners_blocks()
     if ($query->have_posts()) :
         echo '<div class="partners">';
         while ($query->have_posts()) : $query->the_post();
+
             $id = get_the_ID();
             $partner_title = get_field('partner_title', $id);
             $partner_image = get_field('partner_image', $id);
             $partner_text = get_field('partner_text', $id);
             ?>
+
             <h3 class="partners-title">
                 <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
             </h3>
@@ -191,16 +205,14 @@ add_action('wp_ajax_load_partners_blocks', 'load_partners_blocks');
 add_action('wp_ajax_nopriv_load_partners_blocks', 'load_partners_blocks');
 
 
-function init_ajax_partners_blocks()
-{
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . 'inc/acf/blocks/partners-block/partners-block.js', array('jquery'), null, true);
 
+function init_ajax_load_partners_blocks()
+{
+    wp_enqueue_script('pagination-ajax', get_template_directory_uri() . '/assets/blocks/scripts/partners-block/partners-block.js', array(), null, true);
     wp_localize_script('pagination-ajax', 'my_ajax', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('my_nonce'),
+        'nonce' => wp_create_nonce('my_nonce')
     ));
-
 }
 
-add_action('wp_enqueue_scripts', 'init_ajax_partners_blocks');
+add_action('wp_enqueue_scripts', 'init_ajax_load_partners_blocks');

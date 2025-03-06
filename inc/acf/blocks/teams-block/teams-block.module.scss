@@ -30,6 +30,10 @@
   text-align: center;
 }
 
+.team-item:nth-child(2){
+  order: -1;
+}
+
 .team-text {
   position: relative;
   width: 100%;
@@ -131,6 +135,11 @@
     width: 100%;
     width: 45%;
   }
+
+  .team-item:nth-child(2){
+    order: inherit;
+  }
+
   .team-item:nth-child(odd) {
     align-self: flex-end;
     padding-top: 97px;

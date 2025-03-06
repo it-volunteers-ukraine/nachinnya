@@ -1,22 +1,22 @@
 {
-    "key": "group_67b23282be575",
-    "title": "Головна секція з фото",
+    "key": "group_67b9942a95d6c",
+    "title": "Block Events",
     "fields": [
         {
-            "key": "field_67b6000adbadc",
-            "label": "Заголовок над фото",
-            "name": "main_section_upper_title",
+            "key": "field_67b9942af273b",
+            "label": "Заголовок",
+            "name": "header_text",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Події",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -24,46 +24,20 @@
             "append": ""
         },
         {
-            "key": "field_67b2328381a1d",
-            "label": "Головне фото",
-            "name": "main_section_photo",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 1,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_67b77ef6fb2bf",
-            "label": "Заголовок під фото",
-            "name": "h2_title_main_section",
+            "key": "field_67b9db0cc2001",
+            "label": "Підпис \"Вартість\"",
+            "name": "price_label_text",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Вартість:",
             "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
@@ -71,67 +45,88 @@
             "append": ""
         },
         {
-            "key": "field_67b8cb14254a2",
-            "label": "Слоган",
-            "name": "main_section_slogan",
+            "key": "field_67b9db2ac2002",
+            "label": "Підпис \"Тривалість\"",
+            "name": "duration_label_text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Тривалість:",
             "maxlength": "",
             "allow_in_bindings": 0,
-            "rows": "",
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_67b8c75dfde72",
-            "label": "Ліва колонка",
-            "name": "main_section_column_left",
+            "key": "field_67b9947b116c1",
+            "label": "Підпис до кнопки для реєстрації",
+            "name": "registration_button_text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Зареєструватись",
             "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": "",
+            "allow_in_bindings": 0,
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_67b8caa730c69",
-            "label": "Права колонка",
-            "name": "main_section_column_right",
+            "key": "field_67b994a4116c2",
+            "label": "Підпис для того, щоб показати більше тексту",
+            "name": "show_more_text",
             "aria-label": "",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Показати більше",
             "maxlength": "",
-            "allow_in_bindings": 1,
-            "rows": "",
+            "allow_in_bindings": 0,
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67b9e315b7ca9",
+            "label": "Підпис для того, щоб показати менше тексту",
+            "name": "show_less_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Показати менше",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -139,7 +134,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/main-section-block"
+                "value": "acf\/events"
             }
         ]
     ],
@@ -152,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741104048
+    "modified": 1740750040
 }
