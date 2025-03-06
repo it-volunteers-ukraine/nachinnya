@@ -175,6 +175,7 @@
 
       @media screen and (max-width: $mobile) {
         white-space: normal;
+        line-height: 19px;
       }
     }
   }
@@ -184,6 +185,7 @@
     flex-direction: row;
     list-style: none;
     justify-content: center;
+    margin-bottom: 100px;
 
     button {
       width: 48px;
