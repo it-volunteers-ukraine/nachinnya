@@ -1,0 +1,32 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.title-template-part {
+    width: fit-content;
+    margin-bottom: 88px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+    }
+}
+
+.variations-wrapper {
+    display: flex;
+    gap: 50px;
+
+    &.our-vision {
+        flex-direction: row-reverse;
+    }
+
+    &.follow-us {
+        color: red;
+    }
+
+    &.our-mission {
+        color: green;
+        gap: 150px;
+    }
+}
