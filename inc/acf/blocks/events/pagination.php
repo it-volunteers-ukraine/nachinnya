@@ -25,55 +25,61 @@
     $current_page = $args['current_page'];
 
     //
-    function getButton($classes, $btn_type, $current_page, $page_number, $inner) {
-        $btn_class = $classes[$btn_type];
-        //
-        if ($current_page != $page_number) {
-            $page_url = get_pagenum_link($page_number);
+    if (!function_exists('getButton')) {
+        function getButton($classes, $btn_type, $current_page, $page_number, $inner) {
+            $btn_class = $classes[$btn_type];
+            //
+            if ($current_page != $page_number) {
+                $page_url = get_pagenum_link($page_number);
+
+                return <<<BTN
+                    <a class="$btn_class" href="$page_url">$inner</a>
+                BTN;
+            }
+            $disabled_class = $classes["pagination-button-disabled"];
+            $selected_class = $btn_type == "pagination-number-button" ? $classes["pagination-button-selected"] : "";
 
             return <<<BTN
-                <a class="$btn_class" href="$page_url">$inner</a>
+                <span class="$btn_class $disabled_class $selected_class">$inner</span>
             BTN;
         }
-        $disabled_class = $classes["pagination-button-disabled"];
-        $selected_class = $btn_type == "pagination-number-button" ? $classes["pagination-button-selected"] : "";
-
-        return <<<BTN
-            <span class="$btn_class $disabled_class $selected_class">$inner</span>
-        BTN;
     }
 
     // Returns the button with the arrow
-    function getArrowButton($classes, $current_page, $page_number, $direction) {
-        //
-        $svg_class = $classes["pagination-button-svg"];
-        $href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-arrow-right";
-        $rotate_class = $direction == "left" ? $classes["rotate-180"] : "";
+    if (!function_exists('getArrowButton')) {
+        function getArrowButton($classes, $current_page, $page_number, $direction) {
+            //
+            $svg_class = $classes["pagination-button-svg"];
+            $href = get_bloginfo('template_url') . "/assets/images/symbol-defs.svg#icon-arrow-right";
+            $rotate_class = $direction == "left" ? $classes["rotate-180"] : "";
 
-        $svg = <<<SVG
-            <svg class="$svg_class $rotate_class">
-                <use xlink:href="$href"></use>
-            </svg>
-        SVG;
+            $svg = <<<SVG
+                <svg class="$svg_class $rotate_class">
+                    <use xlink:href="$href"></use>
+                </svg>
+            SVG;
 
-        return getButton(
-            $classes, 
-            "pagination-arrow-button", 
-            $current_page, 
-            $page_number, 
-            $svg
-        );
+            return getButton(
+                $classes, 
+                "pagination-arrow-button", 
+                $current_page, 
+                $page_number, 
+                $svg
+            );
+        }
     }
 
     // Returns the button with the number
-    function getNumberButton($classes, $current_page, $page_number) {
-        return getButton(
-            $classes,
-            "pagination-number-button", 
-            $current_page, 
-            $page_number, 
-            $page_number
-        );
+    if (!function_exists('getNumberButton')) {
+        function getNumberButton($classes, $current_page, $page_number) {
+            return getButton(
+                $classes,
+                "pagination-number-button", 
+                $current_page, 
+                $page_number, 
+                $page_number
+            );
+        }
     }
 
     //
