@@ -41,6 +41,42 @@ if (file_exists($modules_file)) {
 
         <!-- content -->
         <div class="<?php echo esc_attr(($classes['variations-wrapper'] ?? '') . ' ' . $style_variant); ?>">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="<?php echo esc_attr($classes['v-slide']); ?>">
+                            <?php
+                            $photo_url = get_field('v_foto_follow_us') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                            $photo_alt = get_the_title();
+
+                            get_template_part('template-parts/photo-vertical', null, [
+                                'photo_url' => $photo_url,
+                                'photo_alt' => $photo_alt,
+                                'my_class' => 'v_slide'
+                            ]);
+                            ?>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="<?php echo esc_attr($classes['h-slide']); ?>">
+                            <?php
+                            $photo_url = get_field('h_foto_follow_us') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                            $photo_alt = get_the_title();
+
+                            get_template_part('template-parts/photo-horizontal', null, [
+                                'photo_url' => $photo_url,
+                                'photo_alt' => $photo_alt,
+                                'my_class' => 'h_slide'
+                            ]);
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
             <!-- text -->
             <div class="<?php echo esc_attr(($classes['text-container'] ?? '') . ' ' . $style_variant); ?>">
                 <p><?php echo get_field('text_follow_us') ?></p>
