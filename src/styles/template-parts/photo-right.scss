@@ -1,0 +1,147 @@
+@use "../variables.scss" as *;
+
+/*
+360  212x274 (240x300)
+768  212x274 (240x300)
+1440 312x400 (350x430)
+1920 440x564 (494x610)
+
+angle - -14.2
+top - 3%
+left - 0.25%
+*/
+
+$right-img-w-360: 212px;
+$right-img-h-360: 274px;
+
+$right-img-w-768: 212px;
+$right-img-h-768: 274px;
+
+$right-img-w-1440: 312px;
+$right-img-h-1440: 400px;
+
+$right-img-w-1920: 440px;
+$right-img-h-1920: 564px;
+
+$right-angle-frame: -3.96deg;
+$right-angle-frame-before: 0deg;
+$right-angle-frame-after: 3.96deg;
+
+/* размер фото для макс устройства*/
+$right-img-width-template: 440px;
+$right-img-height-template: 564px;
+
+/* размер контейнера с фото и рамками */
+$right-img-frame-width-template: 494px;
+$right-img-frame-height-template: 610px;
+
+$k-right-frame-width: calc(
+  $right-img-width-template / $right-img-frame-width-template
+);
+$k-right-frame-height: calc(
+  $right-img-width-template / $right-img-frame-height-template
+);
+
+/* before top: 15px; left: 18px  */
+/* after top: 7px; left: -20pxpx  */
+
+/* при 494px ширине нужно контейнера фото нужно получить 18px 18/494 */
+$k-18-494: calc(18px / $right-img-frame-width-template);
+$k-21-494: calc(21px / $right-img-frame-width-template);
+$k-7-494: calc(7px / $right-img-frame-width-template);
+
+/* при 494px ширине нужно контейнера фото нужно получить 15px 15/494 */
+$k-13-494: calc(13px / $right-img-frame-width-template);
+$k-15-494: calc(15px / $right-img-frame-width-template);
+
+@mixin set-img-size($width, $height) {
+  .right-img-wrap {
+    width: $width;
+    height: $height;
+  }
+  .right-img-frame {
+    width: calc($width / $k-right-frame-width);
+    height: calc($width / $k-right-frame-height);
+  }
+}
+
+.right-img-frame {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.right-img-wrap {
+  position: relative;
+  border-radius: 4px;
+
+  transform: rotate($right-angle-frame);
+  top: 2.5%;
+  left: 1.45%;
+}
+
+@include set-img-size($right-img-w-360, $right-img-h-360);
+
+.right-img-wrap::before,
+.right-img-wrap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.right-img-wrap::before {
+  border-color: $yellow;
+
+  transform: rotate($right-angle-frame-before);
+  top: calc(100% * $k-13-494);
+  left: calc(-100% * $k-18-494);
+}
+.right-img-wrap::after {
+  border-color: $blue;
+
+  transform: rotate($right-angle-frame-after);
+  top: calc(100% * $k-7-494); /* 18px */
+  left: calc(-100% * $k-21-494); /* -20px */
+}
+
+.right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 4px;
+  transition: transform $animations;
+}
+
+.right-img:hover {
+  transform: $animation-rotate;
+}
+
+/*
+@media screen and (min-width: 768px) {
+}*/
+
+@media screen and (min-width: 768px) {
+  @include set-img-size($right-img-w-768, $right-img-h-768);
+}
+
+/*@media screen and (min-width: 1200px) {
+}*/
+
+@media screen and (min-width: 1440px) {
+  @include set-img-size($right-img-w-1440, $right-img-h-1440);
+}
+
+@media screen and (min-width: 1920px) {
+  @include set-img-size($right-img-w-1920, $right-img-h-1920);
+}
+/*
+@media screen and (min-width: 768px){
+  
+}
+*/

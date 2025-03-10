@@ -1,0 +1,146 @@
+@use "../variables.scss" as *;
+
+/*
+360  212x274 (240x300)
+768  212x274 (240x300)
+1440 312x400 (350x430)
+1920 440x564 (494x610)
+
+angle - -14.2
+top - 3%
+left - 0.25%
+*/
+
+$left-img-w-360: 212px;
+$left-img-h-360: 274px;
+
+$left-img-w-768: 212px;
+$left-img-h-768: 274px;
+
+$left-img-w-1440: 312px;
+$left-img-h-1440: 400px;
+
+$left-img-w-1920: 440px;
+$left-img-h-1920: 564px;
+
+$left-angle-frame: 4deg;
+$left-angle-frame-before: 0deg;
+$left-angle-frame-after: -4deg;
+
+/* размер фото для макс устройства*/
+$left-img-width-template: 440px;
+$left-img-height-template: 564px;
+
+/* размер контейнера с фото и рамками */
+$left-img-frame-width-template: 494px;
+$left-img-frame-height-template: 610px;
+
+$k-left-frame-width: calc(
+  $left-img-width-template / $left-img-frame-width-template
+);
+$k-left-frame-height: calc(
+  $left-img-width-template / $left-img-frame-height-template
+);
+
+/* before top: 15px; left: 18px  */
+/* after top: 7px; left: 7px  */
+
+/* при 494px ширине нужно контейнера фото нужно получить 18px 18/494 */
+$k-18-494: calc(18px / $left-img-frame-width-template);
+$k-7-494: calc(7px / $left-img-frame-width-template);
+
+/* при 494px ширине нужно контейнера фото нужно получить 15px 15/494 */
+$k-13-494: calc(13px / $left-img-frame-width-template);
+$k-15-494: calc(15px / $left-img-frame-width-template);
+
+@mixin set-img-size($width, $height) {
+  .left-img-wrap {
+    width: $width;
+    height: $height;
+  }
+  .left-img-frame {
+    width: calc($width / $k-left-frame-width);
+    height: calc($width / $k-left-frame-height);
+  }
+}
+
+.left-img-frame {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.left-img-wrap {
+  position: relative;
+  border-radius: 4px;
+
+  transform: rotate($left-angle-frame);
+  top: 2.5%;
+  left: -1.45%;
+}
+
+@include set-img-size($left-img-w-360, $left-img-h-360);
+
+.left-img-wrap::before,
+.left-img-wrap::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.left-img-wrap::before {
+  border-color: $yellow;
+
+  transform: rotate($left-angle-frame-before);
+  top: calc(100% * $k-13-494);
+  left: calc(100% * $k-18-494);
+}
+.left-img-wrap::after {
+  border-color: $blue;
+
+  transform: rotate($left-angle-frame-after);
+  top: calc(100% * $k-7-494); /* 18px */
+  left: calc(100% * $k-7-494); /* -4px */
+}
+
+.left-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  line-height: 0;
+  border-radius: 4px;
+  transition: transform $animations;
+}
+
+.left-img:hover {
+  transform: $animation-rotate;
+}
+
+/*
+@media screen and (min-width: 768px) {
+}*/
+
+@media screen and (min-width: 768px) {
+  @include set-img-size($left-img-w-768, $left-img-h-768);
+}
+
+/*@media screen and (min-width: 1200px) {
+}*/
+
+@media screen and (min-width: 1440px) {
+  @include set-img-size($left-img-w-1440, $left-img-h-1440);
+}
+
+@media screen and (min-width: 1920px) {
+  @include set-img-size($left-img-w-1920, $left-img-h-1920);
+}
+/*
+@media screen and (min-width: 768px){
+  
+}
+*/
