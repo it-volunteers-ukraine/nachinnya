@@ -256,11 +256,22 @@ footer {
 @media screen and (min-width: 1200px) {
   .footer-content {
     align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .logo-footer-link{
+    grid-column: 1 / span 2;
   }
   .footer-menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, max-content);
     grid-gap: 24px 65px;
+
+    grid-column: 4 / span 3;
+  }
+
+  .address {
+    grid-column: 9 / -1;
   }
 }
 
@@ -280,7 +291,7 @@ footer {
 
   .address {
     gap: 50px;
-    width: calc(46% - 591px + 350px);
+    /*  width: calc(46% - 591px + 350px); */
   }
 
   .address-contact{
