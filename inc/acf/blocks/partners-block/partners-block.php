@@ -6,9 +6,7 @@ $default_classes = [
     'partners' => 'partners',
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
-    'partners-main-title' => 'partners-main-title',
     'partners-pagination' => 'partners-pagination',
-    'pagination-links' => 'pagination-links',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -22,7 +20,16 @@ if (file_exists($modules_file)) {
 
 <section class="<?php echo esc_attr($classes['partners_section']); ?>">
 
-    <h2 class="<?php echo esc_attr($classes['partners-main-title']); ?>"><?php the_title() ?></h2>
+    <?php
+    $h2_title = get_field('h2_title_main_section');
+    if (!empty($h2_title)) :
+        ?>
+        <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
+            <?php get_template_part('template-parts/h2-title-v2', null,[
+                'title' => $h2_title
+            ]); ?>
+        </div>
+    <?php endif; ?>
 
     <div class="container">
 
@@ -66,37 +73,26 @@ if (file_exists($modules_file)) {
             echo '</div>';
 
             wp_reset_postdata();
-
-            $total_pages = $query->max_num_pages;
             ?>
-            <div class="<?php echo esc_attr($classes['partners-pagination']); ?>">
 
-                <button>
-                    <a class="<?php echo esc_attr($classes['pagination-links']); ?>" href="#"">
-                    <svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="<?php echo esc_attr($classes['partners-pagination']);?>">
+                <?php
+                $big = 999999999;
+                echo paginate_links( array(
+                    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                    'format' => '?paged=%#%',
+                    'current' => max( 1, get_query_var('paged') ),
+                    'total' => $query->max_num_pages,
+                    'prev_text' => '<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5 1.44922L1.5 10.4492L10.5 19.4492" stroke="#B74028" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    </a>
-                </button>
-
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <button>
-                        <a class="<?php echo esc_attr($classes['pagination-links']); ?>" href="#" data-page="<?php echo esc_attr($i); ?>">
-                            <?php echo esc_html($i); ?>
-                        </a>
-                    </button>
-                <?php endfor; ?>
-
-                <button>
-                    <a class="<?php echo esc_attr($classes['pagination-links']); ?>" href="#">
-                        <svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </svg>',
+                    'next_text' => '<svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 1.92031L1.48725 0.449219L9.58796 8.46664C9.71853 8.59511 9.82216 8.74788 9.89288 8.91615C9.96359 9.08442 10 9.26488 10 9.44714C10 9.62939 9.96359 9.80985 9.89288 9.97812C9.82216 10.1464 9.71853 10.2992 9.58796 10.4276L1.48725 18.4492L0.0014019 16.9781L7.60448 9.44922L0 1.92031Z" fill="#B74028"/>
-                        </svg>
-                    </a>
-                </button>
+                        </svg>'
+                ));
+                ?>
             </div>
         <?php
-
         else :
             echo '<p>Немає записів.</p>';
         endif;

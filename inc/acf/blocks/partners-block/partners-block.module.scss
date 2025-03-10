@@ -1,24 +1,9 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 .partners_section {
-  padding: 0 0;
-
-  .partners-main-title {
-    text-align: center;
-    margin-bottom: 100px;
-
-    @media screen and (max-width: $tablet) {
-      margin-bottom: 84px;
-    }
-    @media screen and (max-width: $mobile) {
-      margin-bottom: 104px;
-    }
-  }
-
   .partners {
     display: flex;
     flex-direction: column;
-    gap: 62px;
     padding: 0 146px;
 
     @media screen and (max-width: $tablet) {
@@ -141,25 +126,28 @@
       transform: scale(1.5);
     }
 
+    .post-item:nth-of-type(odd):first-of-type .partner-text::before {
+      right: 370px;
+    }
+
     .post-item .partner-text::after {
       @media screen and (max-width: $mobile) {
         content: "";;
         position: absolute;
         width: 99.41px;
         height: 49.4px;
-        top: 320px;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(../../../../assets/images/element-red-mobile.svg);
         transform: translate(50%, 50%);
         right: 171px;
-        margin-top: 17px;
       }
     }
 
     .post-item:nth-of-type(odd) .partner-text::after {
       @media screen and (max-width: $mobile) {
         background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+        margin-top: 30px;
       }
     }
 
@@ -187,27 +175,33 @@
     justify-content: center;
     margin-bottom: 100px;
 
-    button {
+    a {
+      font-size: 20px;
+      color: rgb(183, 64, 40);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 48px;
       height: 48px;
       border-radius: 45px;
       border: 1px solid rgb(183, 64, 40);
       margin: 0 8px;
+    }
 
-      a {
-        font-size: 20px;
-        color: rgb(183, 64, 40);
-        width: 100%;
-        height: 100%;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      &:hover {
-        background: $yellow;
-      }
+    span {
+      font-size: 20px;
+      color: rgb(183, 64, 40);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 45px;
+      border: 1px solid rgb(183, 64, 40);
+      margin: 0 8px;
+      background: $yellow;
     }
   }
 }
