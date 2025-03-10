@@ -77,8 +77,8 @@
         },
         {
             "key": "field_67c0a7ed4f951",
-            "label": "background_image",
-            "name": "background_image",
+            "label": "background_image_field",
+            "name": "background_image_field",
             "type": "image",
             "instructions": "Основний фон блоку",
             "required": 0,
@@ -88,7 +88,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -117,5 +117,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1740679505
+    "modified": 1741627497
 }

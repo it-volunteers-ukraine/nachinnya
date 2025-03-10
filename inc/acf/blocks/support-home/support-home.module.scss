@@ -1,53 +1,52 @@
-.support-home {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 80px 20px;
-  color: #ffffff;
-  width: 100%;
-  height: 882px;
-  margin: 40px auto;
+@use "./../../../../src/styles/variables.scss" as *;
+
+/* Image Background Support Home Block */
+.support-home-module.background-home-support {
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 100vw;
+  height: 882px;
 }
 
-.support-home__container {
-  position: relative;
-  z-index: 2;
+
+/* Wave Background Support Home Block */
+.container .wave-wrapper {
+  display: block;
+  width: 644px;
+  height: 839px;
+  padding-top: 119px;
 }
 
-.support-home__wave {
+.wave {
   position: absolute;
   bottom: 0;
   left: 50%;
-  width: 839px;
-  height: 644px;
-  object-fit: cover;
-  z-index: 1;
-  pointer-events: none;
   transform: translateX(-50%);
+  width: 644px;
+  height: 839px;
+  background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/wave-top.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
 }
 
-.support-home__title {
-  margin-bottom: 15px;
-  font-family: "Kharkive Tone", sans-serif;
-  font-size: 44px;
-  font-weight: 400px;
-  line-height: 48px;
-  color: #ffffff;
+/* Title Support Home Block */
+.title-template-part {
+  width: fit-content;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding-top: 80px;
+  z-index: 5;
 }
 
-.support-home__text {
-  font-family: "Raleway", sans-serif;
+/* Text Support Home Block */
+.text-content {
+  position: relative;
   width: 425px;
   height: 226px;
-  font-weight: 400px;
   font-size: 20px;
   line-height: 130%;
   overflow: hidden;

@@ -47,7 +47,7 @@ function styles() {
     .pipe(dest("assets/styles"));
 }
 
-function blockStyles() {
+function blockStyles(done) {
   return src("inc/acf/blocks/**/*.module.scss")
     .pipe(
       postcss([
@@ -93,6 +93,7 @@ function blockStyles() {
     })
     .on("end", () => {
       console.log("✅ blockStyles завершена успешно!");
+      done();
       // resolve();
     });
   // .on("end", done);
