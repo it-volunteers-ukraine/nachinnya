@@ -2,7 +2,7 @@
 $default_classes = [
     'projects-title' => 'projects-title',
     'test-wrap' => 'test-wrap',
-    
+
 
 
     // 'team-sky-s' => 'team-sky-s',
@@ -50,6 +50,11 @@ $team_block = null;
                 get_template_part('template-parts/photo-right', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'debug-blue']);
                 ?>
             </div>
+            <?php
+            $photo_url = get_template_directory_uri() . "/assets/images/teams/t6-g.jpg";
+            $photo_alt = "Team member photo";
+            get_template_part('template-parts/photo-hor-small', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => 'debug-blue']);
+            ?>
 
             <? if ($team_block) : ?>
                 <?php $count_res = 'count-' . count($team_block); ?>
