@@ -1,6 +1,6 @@
 {
     "key": "group_67be58e35792d",
-    "title": "Home Title Block Fields",
+    "title": "Home Title Block",
     "fields": [
         {
             "key": "field_67be58fcb9f74",
@@ -29,13 +29,6 @@
                 "operator": "==",
                 "value": "acf\/home-title-block"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
         ]
     ],
     "menu_order": 0,
@@ -46,5 +39,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1740528196
+    "modified": 1741648943
 }

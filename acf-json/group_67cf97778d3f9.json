@@ -1,11 +1,11 @@
 {
-    "key": "group_67cda48e7138e",
+    "key": "group_67cf97778d3f9",
     "title": "Contacts Home Block",
     "fields": [
         {
-            "key": "field_67cda4a07a5c1",
-            "label": "contacts_title",
-            "name": "contacts_title",
+            "key": "field_67cf979d0d81a",
+            "label": "title-template-part",
+            "name": "title-template-part",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -22,10 +22,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_67cda5537a5c2",
-            "label": "contacts_text",
-            "name": "contacts_text",
-            "type": "textarea",
+            "key": "field_67cf97f40d81b",
+            "label": "text-content",
+            "name": "text-content",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -36,9 +36,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -58,5 +58,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1741532828
+    "modified": 1741658572
 }

@@ -1,10 +1,9 @@
 <?php
 acf_register_block_type(array(
-  'name'            => 'home-hero-block',
-  'title'           => __('Home Hero Block'),
-  'description'     => __('Блок секції Hero'),
-  'render_template' => acf_theme_blocks_path('home-hero-block/home-hero-block.php'),
-  'enqueue_style'   => get_template_directory_uri() . '/assets/blocks/styles/home-hero-block/home-hero-block.css',
-  'enqueue_script'  => get_template_directory_uri() . '/assets/blocks/scripts/home-hero-block/home-title-block.js',
-  'category'        => 'custom-blocks',
+  'name'              => 'hero-home-block',
+  'title'             => __('Hero Home Block'),
+  'render_template'   => get_template_directory() . '/inc/acf/blocks/hero-section-block/hero-home.php',
+  'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/hero-section-home/contacts-home.css',
+  'category'          => 'custom-blocks',
+  'icon'              => 'admin-comments',
 ));
