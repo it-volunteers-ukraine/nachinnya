@@ -181,7 +181,7 @@
     max-width: 920px;
     max-height: 564px;
     object-fit: cover;
-    object-position: center -85px;
+    object-position: center;
     width: 100%;
     display: block;
     border-radius: 4px;
@@ -189,7 +189,6 @@
     animation: rotateToNormal 0.5s ease-out 1 forwards;
 
     @media screen and (max-width: $desktop) {
-        object-position: center;
         max-width: 596px;
         max-height: 364px;
     }
