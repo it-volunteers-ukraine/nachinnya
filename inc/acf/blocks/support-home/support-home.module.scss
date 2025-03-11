@@ -1,0 +1,88 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+/* Image Background Support Home Block */
+.support-home-module.background-home-support {
+  background-size: cover;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 100vw;
+  height: 882px;
+}
+
+
+/* Wave Background Support Home Block */
+.container .wave-wrapper {
+  display: block;
+  width: 644px;
+  height: 839px;
+  padding-top: 119px;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 644px;
+  height: 839px;
+  background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/wave-top.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Title Support Home Block */
+.title-template-part {
+  width: fit-content;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding-top: 80px;
+  z-index: 5;
+}
+
+/* Text Support Home Block */
+.text-content {
+  position: relative;
+  width: 425px;
+  height: 226px;
+  font-size: 20px;
+  line-height: 130%;
+  overflow: hidden;
+  color: #F5EFE6;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.support-home__text.expanded {
+  max-height: 500px;
+  /* Висота при розгортанні */
+}
+
+.support-home__button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffcc00;
+  /* Жовта кнопка */
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+.support-home__button:hover {
+  background: #e6b800;
+  /* Темніший жовтий при наведенні */
+}
+
+.support-home__circlesleft-top,
+.support-home__circlesright-lower,
+.support-home__wavyline-tangle {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
