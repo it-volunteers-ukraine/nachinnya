@@ -116,6 +116,13 @@ function enqueue_gsap_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
 
+/** swiper scripts */
+function my_enqueue_scripts() {
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+
 
 /** ACF add options page */
 if (function_exists('acf_add_options_page')) {
