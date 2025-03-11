@@ -1,260 +1,36 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
-.team-title {
-  margin-top: 64px;
-  margin-bottom: 40px;
+
+.icon-open-close{
+  width: 48px;
+  height: 48px;
+  
 }
 
-.team-wrap {
-  position: relative;
+.toggle-posts-btn {
+  transform: rotateX(-180deg);
+  transition: all $animations-long;
 }
 
-.team-list {
-  display: flex;
-  gap: 40px 0;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.team-item {
-  display: flex;
-  width: 100%;
-  max-width: 324px;
-  flex-direction: column;
-  align-items: center;
-
-  font-family: $primary-font;
-  text-align: center;
-}
-
-.team-item:nth-child(2){
-  order: -1;
-}
-
-.team-text {
-  position: relative;
-  width: 100%;
-  text-transform: uppercase;
-}
-.team-text-wrap {
-  margin-top: 40px;
-  height: 59px;
-}
-.team-item-fullname {
-  color: $red;
-}
-
-.team-item-jobtitle {
-  color: $dark_red;
-}
-
-.team-welcome-block {
-  display: flex;
-  justify-content: center;
-  padding-top: 24px;
-  padding-bottom: 64px;
-}
-
-.team-welcome-text {
-  display: block;
-  font-family: $primary-font;
-  font-size: 18px;
-  text-transform: uppercase;
-  line-height: 1.4;
-  color: $red;
-  text-align: center;
-}
-
-.team-sky-s,
-.team-sky-xl,
-.team-sky-l,
-.team-sky-m {
-  display: none;
-  position: absolute;
-  width: 100%;
-  z-index: -2;
-}
-
-.team-sky-s {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0px;
+.toggle-posts-btn.open {
+  transform: rotateX(0deg);
+  
 }
 
 @media screen and (min-width: 768px) {
-  .team-title {
-    margin-top: 0;
-    margin-bottom: 88px;
-  }
-  .team-sky-s {
-    display: none;
-  }
-  .team-sky-m {
-    display: block;
-    left: 0;
-    bottom: 0;
-    height: 354px;
-    width: 180%;
-  }
-
-  @for $i from 1 through 10 {
-    @if $i == 1 {
-      .team-sky-m:nth-child(#{$i + 1}) {
-        top: calc(#{$i} * (380px));
-      }
-    } @else {
-      .team-sky-m:nth-child(#{$i + 1}) {
-        top: calc(#{$i} * (380px + 88px));
-      }
-    }
-  }
-
-  .team-sky-m-one {
-    top: 380px;
-  }
-  .team-sky-m-two {
-    bottom: -20px;
-  }
-
-  .team-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: normal;
-    justify-content: space-around;
-    row-gap: 88px;
-    padding-bottom: 220px;
-  }
-
-  .team-item {
-    max-height: 500px; /* height: 480 */
-    /* max-width: 264px; */
-    width: 100%;
-    width: 45%;
-  }
-
-  .team-item:nth-child(2){
-    order: inherit;
-  }
-
-  .team-item:nth-child(odd) {
-    align-self: flex-end;
-    padding-top: 97px;
-  }
-
-  .team-item:nth-child(4n + 2) {
-    margin-right: 5%;
-  }
-
-  .team-item:nth-child(3) {
-    margin-left: 5%;
-  }
-  .team-welcome-block {
-    padding-top: 0;
-    padding-bottom: 40px;
-  }
-  .team-welcome-text {
-    font-size: 20px;
-  }
+  
 }
 
 @media screen and (min-width: 960px) {
-  .team-list {
-    column-gap: 170px;
-    column-gap: 13%;
-  }
+
 }
 
 @media screen and (min-width: 1440px) {
-  .team-title {
-    margin-top: 80px;
-    margin-bottom: 88px;
-  }
-  .team-sky-m {
-    display: none;
-  }
-
-  .team-sky-l {
-    display: block;
-    height: 370px;
-    top: 412px;
-  }
-  .team-list {
-    gap: unset;
-    padding-bottom: 200px;
-  }
-
-  .team-item {
-    min-width: 300px;
-    max-width: 21%;
-    max-height: 620px;
-  }
-
-  .team-item:nth-child(odd) {
-    align-self: unset;
-    padding-top: unset;
-  }
-  .team-item:nth-child(2) {
-    margin-right: unset;
-  }
-
-  .team-item:nth-child(1),
-  .team-item:nth-child(4) {
-    padding-top: 124px;
-  }
-  .team-item:nth-child(5),
-  .team-item:nth-child(6) {
-    margin-top: -80px;
-  }
-
-  .count-5 .team-item:nth-child(5) {
-    margin-right: 25%;
-  }
-  .count-6 .team-item:nth-child(6) {
-    margin-right: 25%;
-  }
-  .count-6 .team-item:nth-child(5) {
-    margin-left: 25%;
-  }
-  .team-item:nth-child(3) {
-    margin-left: unset;
-  }
-
-  .team-welcome-block {
-    position: relative;
-    top: -110px;
-    padding-bottom: 0;
-  }
-  .team-welcome-text {
-    font-size: 20px;
-  }
+  
 }
 
 @media screen and (min-width: 1920px) {
-  .team-sky-l {
-    display: none;
-  }
-
-  .team-sky-xl {
-    display: block;
-    height: 357px;
-    top: 590px;
-  }
-
-  .team-item {
-    min-width: 419px;
-    max-height: 850px;
-  }
-  .team-item:nth-child(5),
-  .team-item:nth-child(6) {
-    margin-top: -40px;
-  }
-
-  .team-welcome-text {
-    font-size: 30px;
-  }
+  
 }
 
 

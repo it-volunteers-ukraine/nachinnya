@@ -1,16 +1,16 @@
 {
     "key": "taxonomy_67cac02f374c3",
-    "title": "test tax acf",
+    "title": "Projects Category",
     "menu_order": 0,
     "active": true,
-    "taxonomy": "test-tax-acf",
+    "taxonomy": "project-category",
     "object_type": "",
     "advanced_configuration": 0,
     "import_source": "",
     "import_date": "",
     "labels": {
-        "name": "test tax acf",
-        "singular_name": "test tax acf",
+        "name": "Projects Category",
+        "singular_name": "Project Category",
         "menu_name": "test tax acf",
         "all_items": "All test tax acf",
         "edit_item": "Edit test tax acf",
@@ -69,5 +69,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1741340752
+    "modified": 1741644002
 }

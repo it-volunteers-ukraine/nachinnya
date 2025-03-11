@@ -1,6 +1,6 @@
 {
     "key": "group_67bb51735284c",
-    "title": "Teams",
+    "title": "Teams Block",
     "fields": [
         {
             "key": "field_67bb5173480d7",
@@ -63,7 +63,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Добавить",
+            "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -179,5 +179,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740745049
+    "modified": 1741642006
 }

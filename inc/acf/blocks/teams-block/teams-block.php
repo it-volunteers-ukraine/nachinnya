@@ -41,17 +41,23 @@ $team_block = get_field('team_block');
 $welcome  = get_field('welcome_to_command');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 
+// $category_list = get_field('category_gallery', $current_id);
 // echo '<pre>';
+// echo var_dump($category_list);
 // echo var_dump($team_block);
 // print_r($team_block);
 // var_export($team_block);
 // echo '</pre>';
+// echo var_dump()
 ?>
 
 <section class="section">
     <div class="container <?php echo $is_debug ? 'debug-red ' : ''; ?>">
         <div class="<?php echo esc_attr($classes['team-title']); ?>">
             <?php get_template_part('template-parts/h2-title', null, []); ?>
+        </div>
+        <div class="projects-gr">
+
         </div>
         <div class="<?php echo $is_debug ? 'debug-blue ' : '';
                     echo esc_attr($classes['team-wrap']); ?>">

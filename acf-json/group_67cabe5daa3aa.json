@@ -1,7 +1,28 @@
 {
     "key": "group_67cabe5daa3aa",
-    "title": "Projects",
+    "title": "Projects Page",
     "fields": [
+        {
+            "key": "field_67cebf0c2acc5",
+            "label": "debug page",
+            "name": "debug_page",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
         {
             "key": "field_67cb16f6f25b5",
             "label": "Category Gallery",
@@ -34,11 +55,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "test-tax-acf",
+                    "taxonomy": "project-category",
                     "add_term": 1,
                     "save_terms": 0,
                     "load_terms": 0,
@@ -61,12 +82,12 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array",
-                    "library": "all",
+                    "library": "uploadedTo",
                     "min": 1,
                     "max": 5,
                     "min_width": "",
@@ -81,27 +102,6 @@
                     "parent_repeater": "field_67cb16f6f25b5"
                 }
             ]
-        },
-        {
-            "key": "field_67cebf0c2acc5",
-            "label": "debug page",
-            "name": "debug_page",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 1,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
         }
     ],
     "location": [
@@ -122,5 +122,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741602684
+    "modified": 1741642020
 }
