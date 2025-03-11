@@ -42,7 +42,7 @@ if (file_exists($modules_file)) {
         <!-- content -->
         <div class="<?php echo esc_attr(($classes['variations-wrapper'] ?? '') . ' ' . $style_variant); ?>">
             <!-- Swiper -->
-            <div class="swiper-container">
+            <div class="swiper-container <?php echo esc_attr($classes['swiper-container']); ?>">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="<?php echo esc_attr($classes['v-slide']); ?>">
@@ -75,7 +75,9 @@ if (file_exists($modules_file)) {
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination-wrapper <?php echo esc_attr($classes['swiper-pagination-wrapper']); ?>">
+                    <div class="swiper-pagination <?php echo esc_attr($classes['swiper-pagination']); ?>"></div>
+                </div>
             </div>
             <!-- text -->
             <div class="<?php echo esc_attr(($classes['text-container'] ?? '') . ' ' . $style_variant); ?>">
