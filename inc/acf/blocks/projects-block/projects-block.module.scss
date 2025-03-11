@@ -1,0 +1,40 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+
+.icon-open-close{
+  width: 48px;
+  height: 48px;
+  
+}
+
+.toggle-posts-btn {
+  transform: rotateX(-180deg);
+  transition: all $animations-long;
+}
+
+.toggle-posts-btn.open {
+  transform: rotateX(0deg);
+  
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+
+@media screen and (min-width: 960px) {
+
+}
+
+@media screen and (min-width: 1440px) {
+  
+}
+
+@media screen and (min-width: 1920px) {
+  
+}
+
+
+.test-wrap{
+  display: flex;
+  gap: 40px;
+}

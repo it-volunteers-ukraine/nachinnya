@@ -1,11 +1,12 @@
 @use "./variables.scss" as *;
 
 // helpers start
-.link-main {
+.link-main-red {
 }
-
 .link-main,
-.wrap-link-main a,
+.wrap-link-main,
+.link-main-red,
+.wrap-link-main-red a,
 .link-adv,
 .wrap-link-adv a {
   position: relative;
@@ -14,6 +15,8 @@
 
 .link-main::after,
 .wrap-link-main a::after,
+.link-main-red::after,
+.wrap-link-main-red a::after,
 .link-adv::after,
 .wrap-link-adv a::after {
   content: "";
@@ -26,10 +29,64 @@
   transition: all $animations;
 }
 
-/* link-adv hover for text red */
+/* link-main color black */
+.link-main,
+.wrap-link-main a {
+  color: $black;
+}
+
+/* link-main hover for text black */
 .link-main:hover,
 .wrap-link-main a:hover {
+  color: $black;
+}
+
+/* link-main-red color red */
+.link-main-red,
+.wrap-link-main-red a {
   color: $red;
+}
+
+/* link-main-red hover for text red */
+.link-main-red:hover,
+.wrap-link-main-red a:hover {
+  color: $red;
+}
+
+/* link-main-red hover ::after red  */
+.link-main-red:hover::after,
+.wrap-link-main-red a:hover::after {
+  background-color: $red;
+}
+
+/* wrap-link-main-red focus red */
+.wrap-link-main-red a:focus-visible::after {
+  color: $red;
+}
+
+/* wrap-link-main-red focus red */
+.wrap-link-main-red a:focus-visible::after,
+.link-main-red:focus-visible::after {
+  background-color: $red;
+}
+
+/* link-main-red active red */
+.link-main-red:active,
+.wrap-link-main-red a:active {
+  color: $dark_red;
+}
+
+/* link-main-red active red */
+.link-main-red:active::after,
+.wrap-link-main-red a:active::after {
+  background-color: $dark_red;
+  height: 2px;
+}
+
+/* link-adv color yellow */
+.link-main-adv,
+.wrap-link-main-adv a {
+  color: $yellow;
 }
 
 /* link-adv hover for text yellow*/
@@ -38,32 +95,15 @@
   color: $yellow-hover;
 }
 
-/* link-main hover ::after red  */
-.link-main:hover::after,
-.wrap-link-main a:hover::after {
-  background-color: $red;
-}
-
 /* link-adv hover ::after yellow */
 .link-adv:hover::after,
 .wrap-link-adv a:hover::after {
   background-color: $yellow-hover;
 }
 
-/* wrap-link-main focus red */
-.wrap-link-main a:focus-visible::after {
-  color: $red;
-}
-
 /* wrap-link-adv focus yellow */
 .wrap-link-adv a:focus-visible {
   color: $yellow-selected;
-}
-
-/* wrap-link-main focus red */
-.wrap-link-main a:focus-visible::after,
-.link-main:focus-visible::after {
-  background-color: $red;
 }
 
 /* wrap-link-adv focus yellow */
@@ -72,23 +112,10 @@
   background-color: $yellow-selected;
 }
 
-/* link-main active red */
-.link-main:active,
-.wrap-link-main a:active {
-  color: $black;
-}
-
 /* link-adv active yellow */
 .link-adv:active,
 .wrap-link-adv a:active {
   color: $yellow-pressed;
-}
-
-/* link-main active red */
-.link-main:active::after,
-.wrap-link-main a:active::after {
-  background-color: $black;
-  height: 2px;
 }
 
 /* link-adv active yellow */
