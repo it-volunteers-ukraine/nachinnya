@@ -1,11 +1,11 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 /* Image Background Support Home Block */
-.support-home-module.background-home-support {
+.support-home-module .background-home-support {
   background-size: cover;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1920px;
   height: 882px;
 }
 
@@ -15,7 +15,8 @@
   display: block;
   width: 644px;
   height: 839px;
-  padding-top: 119px;
+  padding-top: 20px;
+  z-index: 5;
 }
 
 .wave {
@@ -54,11 +55,6 @@
   transition: max-height 0.3s ease-in-out;
 }
 
-.support-home__text.expanded {
-  max-height: 500px;
-  /* Висота при розгортанні */
-}
-
 .support-home__button {
   display: inline-block;
   margin-top: 20px;
@@ -76,13 +72,4 @@
 
 .support-home__button:hover {
   background: #e6b800;
-  /* Темніший жовтий при наведенні */
-}
-
-.support-home__circlesleft-top,
-.support-home__circlesright-lower,
-.support-home__wavyline-tangle {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
 }

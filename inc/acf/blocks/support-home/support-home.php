@@ -37,17 +37,12 @@ if (file_exists($modules_file)) {
         </div>
       <?php endif; ?>
 
-      <div class="support-home__container">
-        <img src="<?php echo esc_url($circlesleft_image); ?>" alt="Орнамент кола зліва зверху" class="support-home__circlesleft-top">
-        <h2 class="support-home__title"><?php echo esc_html($title); ?></h2>
-        <img src="<?php echo esc_url($circlesright_image); ?>" alt="Орнамент кола справа знизу" class="support-home__circlesright-lower">
-        <img src="<?php echo esc_url($wavyline_image); ?>" alt="Орнамент хвиаяста лінія з клубком" class="support-home__wavyline-tangle">
-        <p class="support-home__text"><?php echo esc_html($text); ?></p>
+      <p class="support-home__text"><?php echo esc_html($text); ?></p>
 
-        <?php if ($button_text && $button_link) : ?>
-          <a href="<?php echo esc_url($button_link); ?>" class="support-home__button">
-            <?php echo esc_html($button_text); ?>
-          </a>
-        <?php endif; ?>
-      </div>
+      <?php if ($button_text && $button_link) : ?>
+        <a href="<?php echo esc_url($button_link); ?>" class="support-home__button">
+          <?php echo esc_html($button_text); ?>
+        </a>
+      <?php endif; ?>
+    </div>
 </section>
