@@ -255,7 +255,7 @@
     max-width: 870px;
     margin: 0 auto;
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         max-width: 628px;
         gap: 18px;
     }
@@ -264,7 +264,7 @@
         padding-bottom: 118px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         max-width: 688px;
         gap: 20px;
         padding-bottom: 118px;
@@ -274,7 +274,7 @@
         flex-direction: column;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         max-width: 328px;
         gap: 16px;
         padding-bottom: 70px;
@@ -297,7 +297,7 @@
         left: -200px;
     }
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (max-width: 1919.9px) {
         width: 280px;
         height: 140px;
         left: -328px;
@@ -309,7 +309,7 @@
         left: 0px;
     }
 
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
         width: 200px;
         height: 100px;
         top: auto;
@@ -317,7 +317,7 @@
         left: 0px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
         width: 100px;
         height: 50px;
     }
