@@ -80,6 +80,13 @@
                         >
                             УКР
                         </button>
+                        <button
+                            id="headerLanguageSwitcherOverlay"
+                            class="header__language-switcher-overlay header__language-switcher-overlay-hidden"
+                            type="button"
+                            onclick="toggleHeaderLanguageSwitcherDropdown();"
+                        >
+                        </button>
                         <ul
                             id="headerLanguageSwitcherDropdown"
                             class="header__language-switcher-dropdown header__language-switcher-dropdown-hidden"

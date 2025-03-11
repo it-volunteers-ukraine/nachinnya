@@ -108,6 +108,20 @@
     border-bottom: 1px solid variables.$black;
 }
 
+.header__language-switcher-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: block;
+}
+
+.header__language-switcher-overlay.header__language-switcher-overlay-hidden {
+    display: none;
+}
+
 .header__language-switcher-dropdown {
     position: fixed;
     background-color: variables.$BG;

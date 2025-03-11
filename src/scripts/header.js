@@ -1,5 +1,9 @@
 // Toggle the state of the language switcher dropdown menu
 const toggleHeaderLanguageSwitcherDropdown = () => {
+  //
+  const overlay = document.getElementById("headerLanguageSwitcherOverlay");
+  overlay.classList.toggle("header__language-switcher-overlay-hidden");
+  //
   const el = document.getElementById("headerLanguageSwitcherDropdown");
   el.classList.toggle("header__language-switcher-dropdown-hidden");
 };
