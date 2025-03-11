@@ -121,19 +121,23 @@
     position: relative;
     margin: 41px auto 63px;
     max-width: 920px;
+    max-height: 564px;
 
     @media screen and (max-width: $desktop) {
         max-width: 596px;
+        max-height: 364px;
         margin: 2px auto 47px;
     }
 
     @media screen and (max-width: $tablet) {
         max-width: 482px;
+        max-height: 294px;
         margin: 21px auto 25px;
     }
 
     @media screen and (max-width: $mobile) {
         max-width: 284px;
+        max-height: 173px;
         margin: 23px auto 19px;
     }
 }
@@ -175,21 +179,29 @@
 
 .main_photo {
     max-width: 920px;
+    max-height: 564px;
+    object-fit: cover;
+    object-position: center -85px;
     width: 100%;
     display: block;
+    border-radius: 4px;
     transform: rotate(-0.5deg);
     animation: rotateToNormal 0.5s ease-out 1 forwards;
 
     @media screen and (max-width: $desktop) {
+        object-position: center;
         max-width: 596px;
+        max-height: 364px;
     }
 
     @media screen and (max-width: $tablet) {
         max-width: 482px;
+        max-height: 294px;
     }
 
     @media screen and (max-width: $mobile) {
         max-width: 284px;
+        max-height: 173px;
     }
 }
 
