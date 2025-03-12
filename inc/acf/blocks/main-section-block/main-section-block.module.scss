@@ -1,117 +1,43 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
-.upper-title-wrapper {
+.main-section {
+    padding: 0px 0px 80px;
+
+    @media screen and (max-width: 1439.9px) {
+        padding: 0px 0px 64px;
+    }
+}
+
+.upper-title-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @media screen and (max-width: 1439.9px) {
+        padding: 0 32.5px;
+    }
+
+    @media screen and (max-width: 767.7px) {
+        padding: 0 16px;
+    }
+}
+
+:global(.upper-title-tpl-part) {
     width: fit-content;
     margin: 0 auto;
-    position: relative;
-    padding-bottom: 88px;
+    padding: 24px 0 16px;
 
     @media screen and (max-width: 1919.9px) {
-        padding-bottom: 84px;
+        padding-top: 28px;
+        padding-bottom: 4px;
     }
 
     @media screen and (max-width: 1439.9px) {
-        padding-bottom: 24px;
+        padding-bottom: 0px;
     }
 
     @media screen and (max-width: 767.9px) {
-        padding-bottom: 40px;
-    }
-}
-
-.upper-title-wrapper::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 350px;
-    height: 20px;
-    background-image: url("../../../../assets/images/title_element.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    right: -33px;
-    bottom: 88px;
-
-    @media screen and (max-width: 1919.9px) {
-        bottom: 85px;
-    }
-
-    @media screen and (max-width: 1439.9px) {
-        width: 300px;
-        bottom: 24px;
-        right: -25px;
-    }
-
-    @media screen and (max-width: 767.9px) {
-        width: 200px;
-        bottom: 32px;
-        right: 0px;
-    }
-}
-
-.title {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    padding: 0 40px;
-    margin-bottom: 52px;
-
-    @media screen and (max-width: 1919.9px) {
-        margin-bottom: 44px;
-    }
-
-    @media screen and (max-width: 1439.9px) {
-        margin-bottom: 40px;
-    }
-
-    @media screen and (max-width: 767.9px) {
-        margin-bottom: 32px;
-    }
-}
-
-.title::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 37px;
-    height: 37px;
-    background-image: url("../../../../assets/images/rounded_elements.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    left: -32px;
-    top: 5px;
-
-    @media screen and (max-width: 1919.9px) {
-        left: -24px;
-    }
-
-    @media screen and (max-width: 767.9px) {
-        width: 36px;
-        height: 36px;
-        left: 0px;
-    }
-}
-
-.title::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 37px;
-    height: 37px;
-    background-image: url("../../../../assets/images/rounded_elements.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(180deg);
-    right: -32px;
-    top: 10px;
-
-    @media screen and (max-width: 1919.9px) {
-        right: -24px;
-    }
-
-    @media screen and (max-width: 767.9px) {
-        width: 36px;
-        height: 36px;
-        right: 0px;
+        padding-bottom: 12px;
     }
 }
 
@@ -119,26 +45,26 @@
     display: flex;
     justify-content: center;
     position: relative;
-    margin: 41px auto 63px;
+    margin: 32px auto;
     max-width: 920px;
     max-height: 564px;
 
     @media screen and (max-width: $desktop) {
         max-width: 596px;
         max-height: 364px;
-        margin: 2px auto 47px;
+        margin: 82px auto 28px;
     }
 
     @media screen and (max-width: $tablet) {
         max-width: 482px;
         max-height: 294px;
-        margin: 21px auto 25px;
+        margin: 49px auto 25px;
     }
 
     @media screen and (max-width: $mobile) {
         max-width: 284px;
         max-height: 173px;
-        margin: 23px auto 19px;
+        margin: 51px auto 19px;
     }
 }
 
@@ -149,7 +75,7 @@
     top: 0px;
     width: 100%;
     height: 100%;
-    transform: rotate(6.68deg);
+    transform: rotate(4deg);
     z-index: -1;
 }
 
@@ -226,7 +152,7 @@
 
 .title-template-part {
     width: fit-content;
-    padding-top: 32px;
+    padding-top: 20px;
     margin: 0px auto 36px;
 
     @media screen and (max-width: $desktop) {
