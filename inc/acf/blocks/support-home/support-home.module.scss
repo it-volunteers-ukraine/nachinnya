@@ -1,24 +1,33 @@
-@use "./../../../../src/styles/variables.scss" as *;
+/* Контейнер для фону і хвилі */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+}
 
-/* Image Background Support Home Block */
-.support-home-module .background-home-support {
+/* Хвиля, між фоном і контентом */
+.wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 644px;
+  height: 839px;
+}
+
+/* Фон */
+.background {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 1920px;
+  width: 100%;
   height: 882px;
+  z-index: 1;
 }
 
-
-/* Wave Background Support Home Block */
-.container .wave-wrapper {
-  display: block;
-  width: 644px;
-  height: 839px;
-  padding-top: 20px;
-  z-index: 5;
-}
-
+/* Хвиля */
 .wave {
   position: absolute;
   bottom: 0;
@@ -26,50 +35,88 @@
   transform: translateX(-50%);
   width: 644px;
   height: 839px;
-  background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/wave-top.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* Title Support Home Block */
-.title-template-part {
-  width: fit-content;
+/* Заголовок Support Home Block */
+.support-home-module__title-template-part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
   position: relative;
-  width: fit-content;
-  margin: 0 auto 20px;
+  z-index: 5;
+}
+
+.title-template-part {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   padding-top: 80px;
   z-index: 5;
 }
 
-/* Text Support Home Block */
+/* Текст Support Home Block */
 .text-content {
   position: relative;
   width: 425px;
-  height: 226px;
   font-size: 20px;
   line-height: 130%;
-  overflow: hidden;
   color: #F5EFE6;
+  overflow: hidden;
   transition: max-height 0.3s ease-in-out;
+  z-index: 6;
+  padding: 20px;
+  margin: 0 auto;
 }
 
+/* Обгортка для центрування кнопки */
+support-home__button-wrapper.support-home__button-wrapper--dynamically-classed {
+  text-align: center;
+  margin-top: 20px;
+  width: 203px !important;
+}
+
+/* Сама кнопка */
 .support-home__button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #ffcc00;
-  /* Жовта кнопка */
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
   border: none;
+  position: relative;
+  z-index: 5;
+  text-decoration: none;
+  /* Прибираємо підкреслення */
 }
 
+/* Ховер-ефект */
 .support-home__button:hover {
   background: #e6b800;
+  transform: scale(1.05);
+}
+
+/* Адаптація для мобільних */
+@media screen and (max-width: 1024px) {
+  .support-home__button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .support-home__button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

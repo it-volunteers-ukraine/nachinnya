@@ -1,9 +1,10 @@
 <?php
 $default_classes = [
-  'background' => 'background-home-support',
+  'background' => 'background',
   'title-template-part' => 'title-template-part',
   'text-content' => 'text-content',
-  'button' => 'button',
+  'button' => 'support-home__button',
+  'wave' => 'wave',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -16,7 +17,7 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class="section">
-  <div class="<?php echo esc_attr($classes['background-home-support']); ?>"
+  <div class="<?php echo esc_attr($classes['background']); ?>"
     style="background-image: linear-gradient(rgba(20, 20, 20, 0.65), rgba(20, 20, 20, 0.65)), 
                 url('<?php echo get_field('background_image_field'); ?>');">
     <div class="container wave-wrapper">
@@ -37,12 +38,24 @@ if (file_exists($modules_file)) {
         </div>
       <?php endif; ?>
 
-      <p class="support-home__text"><?php echo esc_html($text); ?></p>
+      <p class="<?php echo esc_attr($classes['text-content']); ?>"><?php echo esc_html($text); ?></p>
 
-      <?php if ($button_text && $button_link) : ?>
-        <a href="<?php echo esc_url($button_link); ?>" class="support-home__button">
-          <?php echo esc_html($button_text); ?>
-        </a>
+
+      <?php
+      $button_text = get_field('support_button_text');
+      $button_link = get_field('support_button_link');
+
+      // Генеруємо динамічний клас для кнопки та контейнера
+      $button_class = 'support-home__button-' . uniqid();
+      $button_wrapper_class = 'support-home__button-wrapper-' . uniqid();
+
+      if ($button_text && $button_link) : ?>
+        <div class="<?php echo esc_attr($button_wrapper_class); ?>">
+          <a href="<?php echo esc_url($button_link); ?>" class="<?php echo esc_attr($default_classes['button'] . ' ' . $button_class); ?>">
+            <?php echo esc_html($button_text); ?>
+          </a>
+        </div>
       <?php endif; ?>
+
     </div>
 </section>
