@@ -1,5 +1,6 @@
 <?php
 $default_classes = [
+    'main-section' => 'main-section',
     'main_photo' => 'main_photo',
     'image-container' => 'image-container',
     'upper-title-wrapper' => 'upper-title-wrapper',
@@ -20,19 +21,23 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class='section'>
-    <div class='container'>
+<section class='<?php echo esc_attr($classes['main-section']); ?>'>
+    <div class='<?php echo esc_attr($classes['upper-title-container']); ?>'>
 
         <!-- If h2 title is above the image -->
         <?php
         $main_section_upper_title = get_field('main_section_upper_title');
         if (!empty($main_section_upper_title)) :
         ?>
-            <div class="<?php echo esc_attr($classes['upper-title-wrapper']); ?>">
-                <h2 class="<?php echo esc_attr($classes['title']); ?>"><?php echo esc_html($main_section_upper_title); ?></h2>
+            <div class="<?php echo esc_attr($classes['upper-title-template-part-wrapper']); ?>">
+                <?php get_template_part('template-parts/h2-title-v2', null,[
+                    'title' => $main_section_upper_title,
+                    'custom_elements_class' => 'upper-title-tpl-part'
+                    ]); ?>
             </div>
         <?php endif; ?>
-
+    </div>
+    <div class='container'>
         <!-- Image -->
         <?php
         $image = get_field('main_section_photo');
