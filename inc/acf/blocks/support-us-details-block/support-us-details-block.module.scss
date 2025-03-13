@@ -1,0 +1,78 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.bg-wrapper {
+    background-color: $red;
+    padding: 87px 0;
+}
+
+.ornament-wrapper::before,
+.ornament-wrapper::after {
+    content: '';
+    display: block;
+    height: 48px;
+}
+
+.ornament-wrapper::before {
+    background: url('../../../../assets/images/small_element-section-ornament.svg') repeat-x;
+}
+
+.ornament-wrapper::after {
+    background: url('../../../../assets/images/small_element-section-ornament.svg') repeat-x;
+    transform: rotate(180deg);
+}
+
+.title-template-part {
+    width: fit-content;
+    margin: 0 auto 100px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle-column-text {
+    max-width: 574px;
+    color: $white;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: $primary-font;
+    font-size: 16px;
+    margin-top: 44px;
+}
+
+.details-flex-container {
+    display: flex;
+    gap: 32.5px;
+}
+
+.details-title {
+    min-width: 132px;
+    max-width: 160px;
+}
+
+.details-value {
+    display: flex;
+    justify-content: space-between;
+    min-width: 410px;
+}
+
+.details-value::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../../assets/images/copy_to_clipboard_icon.svg');
+}
