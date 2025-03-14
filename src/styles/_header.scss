@@ -116,6 +116,7 @@
     height: 100vh;
     background-color: transparent;
     display: block;
+    cursor: default;
 }
 
 .header__language-switcher-overlay.header__language-switcher-overlay-hidden {
@@ -123,7 +124,7 @@
 }
 
 .header__language-switcher-dropdown {
-    position: fixed;
+    position: absolute;
     background-color: variables.$BG;
     padding: 16px;
     margin-left: -16px;
@@ -277,6 +278,7 @@
     width: 100%;
     height: 100%;
     z-index: 99;
+    cursor: default;
 
     visibility: visible;
     opacity: 1;
