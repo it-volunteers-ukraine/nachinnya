@@ -47,6 +47,10 @@ function wp_it_volunteers_scripts()
         wp_enqueue_script('contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true);
     }
 
+    if (is_404()) {
+        wp_enqueue_style('404-style', get_template_directory_uri() . '/assets/styles/template-styles/404.css', array('main'));
+    }
+
     // Enqueue scripts and styles of blocks
     function register_acf_block_assets()
     {
@@ -150,6 +154,12 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_sub_page(array(
         'page_title' => 'Theme Common Info Settings',
         'menu_title' => 'Common Info',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => '404 Page Settings',
+        'menu_title' => '404 Page',
         'parent_slug' => 'theme-general-settings',
     ));
 }
