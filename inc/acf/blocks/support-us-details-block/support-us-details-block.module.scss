@@ -37,11 +37,23 @@
 .flex-container {
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 1919.9px) {
+        align-items: center;
+    }
 }
 
 .middle-column-text {
     max-width: 574px;
     color: $white;
+    margin-top: 12px;
+}
+
+.text {
+    @media screen and (max-width: 1919.9px) {
+        max-width: 395px;
+        margin: 0 auto;
+    }
 }
 
 .details {
@@ -51,22 +63,53 @@
     font-family: $primary-font;
     font-size: 16px;
     margin-top: 44px;
+
+    @media screen and (max-width: 1919.9px) {
+        font-family: $secondary-font;
+    }
 }
 
 .details-flex-container {
     display: flex;
     gap: 32.5px;
+
+    @media screen and (max-width: 1919.9px) {
+        gap: 27px;
+    }
 }
 
 .details-title {
     min-width: 132px;
     max-width: 160px;
+
+    @media screen and (max-width: 1919.9px) {
+        min-width: 104px;
+        max-width: 106px;
+    }
+}
+
+/* IBAN */
+.details-flex-container:nth-of-type(3) {
+    @media screen and (min-width: 1440px) and (max-width: 1919.9px) {
+        .details-title {
+            min-width: 40px;
+            max-width: 45px;
+        }
+
+        .details-value {
+            min-width: 330px;
+        }
+    }
 }
 
 .details-value {
     display: flex;
     justify-content: space-between;
     min-width: 410px;
+
+    @media screen and (min-width: 1440px) and (max-width: 1919.9px) {
+        min-width: 265px;
+    }
 }
 
 .details-value::after {

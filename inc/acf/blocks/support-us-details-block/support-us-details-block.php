@@ -42,7 +42,7 @@ if (file_exists($modules_file)) {
                             <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
                                 <?php get_template_part('template-parts/h2-title-v2', null,[
                                     'title' => $h2_title,
-                                    'custom_text_class' => 'yellow-yellow-title',
+                                    'custom_text_class' => 'yellow-white-title',
                                     'custom_elements_class' => 'yellow-elements'
                                     ]); ?>
                             </div>
@@ -50,22 +50,26 @@ if (file_exists($modules_file)) {
                         <!-- slider -->
                         <div class="slider"></div>
                         <!-- Text -->
-                        <div>
-                            <p><?php echo get_field('motivational_text') ?></p>
-                        </div>
-                        <div class="<?php echo esc_attr($classes['details']); ?>">
-                            <?php if (have_rows('details')) :
-                            while (have_rows('details')) : the_row(); ?>
-                                <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
-                                    <div class="<?php echo esc_attr($classes['details-title']); ?>">
-                                        <p><?php echo the_sub_field('details_title') ?></p>
+                        <div class="<?php echo esc_attr($classes['text']); ?>">
+                            <div>
+                                <p><?php echo get_field('motivational_text') ?></p>
+                            </div>
+                            <div class="<?php echo esc_attr($classes['details']); ?>">
+                                <?php if (have_rows('details')) :
+                                while (have_rows('details')) : the_row(); ?>
+                                    <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
+                                        <div class="<?php echo esc_attr($classes['details-title']); ?>">
+                                            <p><?php echo the_sub_field('details_title') ?></p>
+                                        </div>
+                                        <div class="<?php echo esc_attr($classes['details-value']); ?>">
+                                            <p><?php echo the_sub_field('details_value') ?></p>
+                                        </div>
                                     </div>
-                                    <div class="<?php echo esc_attr($classes['details-value']); ?>">
-                                        <p><?php echo the_sub_field('details_value') ?></p>
-                                    </div>
-                                </div>
-                            <?php endwhile;
-                            endif; ?>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                            <!-- optional link -->
+                            <div></div>
                         </div>
                     </div>
                     <!-- Right-photo -->
