@@ -7,23 +7,27 @@
     gap: 40px;
 }
 
+@media screen and (max-width: calc(variables.$tablet - 0.1px)) {
+    .section {
+        padding-top: 24px;
+        padding-bottom: 64px;
+    }
+}
+
 @media screen and (min-width: variables.$tablet) {
     .section {
-        padding: 80px 0px;
+        padding-top: 0px;
+        padding-bottom: 64px;
     }
 }
 
 @media screen and (min-width: variables.$desktop) {
     .section {
-        padding: 64px 0px;
+        padding-bottom: 80px;
     }
 }
 
 @media screen and (min-width: variables.$full) {
-    .section {
-        padding: 80px 0px;
-    }
-
     .container {
         gap: 160px;
     }
@@ -32,7 +36,6 @@
 /* Title styles */
 
 .title-d-wrapper {
-    padding: 80px;
     display: none;
     justify-content: center;
 }
