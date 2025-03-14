@@ -1,6 +1,7 @@
 <?php
     // Loading classes
     $default_classes = [
+        'section' => 'section',
         'list' => 'list',
         'item' => 'item',
         'selected' => 'selected',
@@ -23,7 +24,7 @@
     $active_title = get_the_title();
 ?>
 
-<section class="section">
+<section class="section <?= $classes["section"] ?>">
     <div class="container">
         <nav>
             <ul class="<?= $classes["list"] ?>">

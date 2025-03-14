@@ -37,18 +37,33 @@
 }
 
 @media screen and (max-width: calc(variables.$tablet - 0.1px)) {
+    .section {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
     .item {
         font-size: 14px;
     }
 }
 
 @media screen and (min-width: variables.$tablet) {
+    .section {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
     .item {
         font-size: 16px;
     }
 }
 
 @media screen and (min-width: variables.$full) {
+    .section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     .item {
         font-size: 20px;
     }
