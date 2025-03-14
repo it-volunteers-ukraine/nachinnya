@@ -124,7 +124,7 @@
 }
 
 .header__language-switcher-dropdown {
-    position: fixed;
+    position: absolute;
     background-color: variables.$BG;
     padding: 16px;
     margin-left: -16px;
