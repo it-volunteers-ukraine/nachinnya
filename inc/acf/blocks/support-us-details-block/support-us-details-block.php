@@ -37,7 +37,7 @@ if (file_exists($modules_file)) {
                         <!-- h2_title -->
                         <?php
                             $h2_title = get_field('h2_title_support_us_details');
-                            if (!empty($h2_title)) : 
+                            if (!empty($h2_title)) :
                         ?>
                             <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
                                 <?php get_template_part('template-parts/h2-title-v2', null,[
@@ -48,7 +48,9 @@ if (file_exists($modules_file)) {
                             </div>
                         <?php endif; ?>
                         <!-- slider -->
-                        <div class="slider"></div>
+                        <div class="slider">
+                            <p>Slider</p>
+                        </div>
                         <!-- Text -->
                         <div class="<?php echo esc_attr($classes['text']); ?>">
                             <div>
