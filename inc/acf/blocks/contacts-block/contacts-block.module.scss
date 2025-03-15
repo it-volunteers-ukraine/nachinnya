@@ -152,6 +152,7 @@ section {
         font-weight: 400;
         color: rgb(53, 19, 17);
         margin-bottom: 20px;
+        font-family: 'KharkivTone', sans-serif;
         @media screen and (max-width: $tablet) {
           font-size: 16px;
           margin-bottom: 11px;
@@ -161,8 +162,11 @@ section {
         }
       }
 
-      .social-wrap-advanced {
-        .social-icon {
+      .social {
+        display: flex;
+        flex-direction: row;
+
+        svg {
           fill: rgb(183, 64, 40);
         }
       }
