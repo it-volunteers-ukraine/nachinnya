@@ -17,6 +17,59 @@ if (file_exists($modules_file)) {
     <div class="<?php echo esc_attr($classes['ornament-wrapper']); ?>">
         <div class="<?php echo esc_attr($classes['bg-wrapper']); ?>">
             <div class='container'>
+                <!-- h2 & slider -->
+
+                <?php
+                    $h2_title = get_field('h2_title_support_us_details');
+                    if (!empty($h2_title)) :
+                ?>
+                    <div class="<?php echo esc_attr($classes['title-template-part-above-slider']); ?>">
+                        <?php get_template_part('template-parts/h2-title-v2', null,[
+                            'title' => $h2_title,
+                            'custom_text_class' => 'yellow-white-title',
+                            'custom_elements_class' => 'yellow-elements'
+                            ]); ?>
+                    </div>
+                <?php endif; ?>
+
+                <div class="swiper-container-support <?php echo esc_attr($classes['swiper-container']); ?>">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="<?php echo esc_attr($classes['slide-1']); ?>">
+                                <?php
+                                $photo_url = get_field('left_foto_support_details') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                                $photo_alt = get_the_title();
+
+                                get_template_part('template-parts/photo-left', null, [
+                                    'photo_url' => $photo_url,
+                                    'photo_alt' => $photo_alt,
+                                    'my_class' => 'slide_1'
+                                ]);
+                                ?>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="<?php echo esc_attr($classes['slide-2']); ?>">
+                                <?php
+                                $photo_url = get_field('right_foto_support_details') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
+
+                                $photo_alt = get_the_title();
+
+                                get_template_part('template-parts/photo-right', null, [
+                                    'photo_url' => $photo_url,
+                                    'photo_alt' => $photo_alt,
+                                    'my_class' => 'slide_2'
+                                ]);
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination-wrapper <?php echo esc_attr($classes['swiper-pagination-wrapper']); ?>">
+                        <div class="swiper-pagination <?php echo esc_attr($classes['swiper-pagination']); ?>"></div>
+                    </div>
+                </div>
+                
                 <div class="<?php echo esc_attr($classes['flex-container']); ?>">
                     <!-- left-photo -->
                     <div class="<?php echo esc_attr($classes['image-left-wrapper']); ?>">
@@ -32,7 +85,7 @@ if (file_exists($modules_file)) {
                         ]);
                         ?>
                     </div>
-                    <!-- middle texsts & slider -->
+                    <!-- middle texsts -->
                     <div class="<?php echo esc_attr($classes['middle-column-text']); ?>">
                         <!-- h2_title -->
                         <?php
@@ -47,10 +100,6 @@ if (file_exists($modules_file)) {
                                     ]); ?>
                             </div>
                         <?php endif; ?>
-                        <!-- slider -->
-                        <div class="slider">
-                            <p>Slider</p>
-                        </div>
                         <!-- Text -->
                         <div class="<?php echo esc_attr($classes['text']); ?>">
                             <div>

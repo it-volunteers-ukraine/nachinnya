@@ -285,6 +285,12 @@
     margin-top: 30px;
 }
 
+:global(.swiper-pagination-bullet) {
+    background-color: $grey;
+    opacity: unset;
+}
+
+
 :global(.swiper-pagination-bullet-active) {
     background-color: $yellow;
     transform: scale(1.5);
