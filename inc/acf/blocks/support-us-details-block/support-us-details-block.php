@@ -101,26 +101,32 @@ if (file_exists($modules_file)) {
                             </div>
                         <?php endif; ?>
                         <!-- Text -->
-                        <div class="<?php echo esc_attr($classes['text']); ?>">
-                            <div>
+                        <?php 
+                        $has_details = have_rows('details'); 
+                        ?>
+                        <div class="<?php echo esc_attr($has_details ? $classes['text'] : $classes['text_no_IBAN']); ?>">
+
+                            <?php 
+                            $has_details = have_rows('details'); 
+                            ?>
+                            <div class="<?php echo esc_attr($has_details ? $classes['paragraph'] : $classes['paragraph_no_IBAN']); ?>">
                                 <p><?php echo get_field('motivational_text') ?></p>
                             </div>
-                            
-                            <?php if (have_rows('details')) :
-                            while (have_rows('details')) : the_row(); ?>
+
                             <div class="<?php echo esc_attr($classes['details']); ?>">
-                                <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
-                                    <div class="<?php echo esc_attr($classes['details-title']); ?>">
-                                        <p><?php echo the_sub_field('details_title') ?></p>
+                                <?php if (have_rows('details')) :
+                                while (have_rows('details')) : the_row(); ?>
+                                    <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
+                                        <div class="<?php echo esc_attr($classes['details-title']); ?>">
+                                            <p><?php echo the_sub_field('details_title') ?></p>
+                                        </div>
+                                        <div class="<?php echo esc_attr($classes['details-value']); ?>">
+                                            <p><?php echo the_sub_field('details_value') ?></p>
+                                        </div>
                                     </div>
-                                    <div class="<?php echo esc_attr($classes['details-value']); ?>">
-                                        <p><?php echo the_sub_field('details_value') ?></p>
-                                    </div>
-                                </div>
-                                </div>
-                            <?php endwhile;
-                            endif; ?>
-                            
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
                             <!-- optional link -->
                             <?php
                                 $optional_link = get_field('support_us_details_optional_link');
