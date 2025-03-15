@@ -9,6 +9,9 @@ $default_classes = [
     'contacts-row' => 'contacts-row',
     'contacts-center' => 'contacts-center',
     'title-left' => 'title-left',
+    'contacts-social-media' => 'contacts-social-media',
+    'contacts-text' => 'contacts-text',
+    'contacts-text2' => 'contacts-text2',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -58,8 +61,12 @@ if (file_exists($modules_file)) {
                      alt="image">
 
                 <div class="<?php echo esc_attr($classes['text-content']); ?>">
-                    <p><?php the_field('contacts_text'); ?></p>
-                    <p><?php the_field('contacts_text2'); ?></p>
+                    <p class="<?php echo esc_attr($classes['contacts-text']); ?>">
+                        <?php the_field('contacts_text'); ?>
+                    </p>
+                    <p class="<?php echo esc_attr($classes['contacts-text2']); ?>">
+                        <?php the_field('contacts_text2'); ?>
+                    </p>
                     <div class="<?php echo esc_attr($classes['icons-contacts']); ?>">
                         <?php
                         $email = get_field('contacts-email');
@@ -82,10 +89,14 @@ if (file_exists($modules_file)) {
                             </a>
                         </div>
                     </div>
+                    <div class="<?php echo esc_attr($classes['contacts-social-media']); ?>">
+                        <div>
+                            <p><?php the_field('social-media-title'); ?></p>
+                            <?php get_template_part('template-parts/socblock'); ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="contacts-social-media">
-                    <?php get_template_part('template-parts/socblock'); ?>
-                </div>
+
             </div>
         </div>
     </div>
