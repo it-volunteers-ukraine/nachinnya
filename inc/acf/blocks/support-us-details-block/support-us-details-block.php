@@ -105,22 +105,36 @@ if (file_exists($modules_file)) {
                             <div>
                                 <p><?php echo get_field('motivational_text') ?></p>
                             </div>
+                            
+                            <?php if (have_rows('details')) :
+                            while (have_rows('details')) : the_row(); ?>
                             <div class="<?php echo esc_attr($classes['details']); ?>">
-                                <?php if (have_rows('details')) :
-                                while (have_rows('details')) : the_row(); ?>
-                                    <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
-                                        <div class="<?php echo esc_attr($classes['details-title']); ?>">
-                                            <p><?php echo the_sub_field('details_title') ?></p>
-                                        </div>
-                                        <div class="<?php echo esc_attr($classes['details-value']); ?>">
-                                            <p><?php echo the_sub_field('details_value') ?></p>
-                                        </div>
+                                <div class="<?php echo esc_attr($classes['details-flex-container']); ?>">
+                                    <div class="<?php echo esc_attr($classes['details-title']); ?>">
+                                        <p><?php echo the_sub_field('details_title') ?></p>
                                     </div>
-                                <?php endwhile;
-                                endif; ?>
-                            </div>
+                                    <div class="<?php echo esc_attr($classes['details-value']); ?>">
+                                        <p><?php echo the_sub_field('details_value') ?></p>
+                                    </div>
+                                </div>
+                                </div>
+                            <?php endwhile;
+                            endif; ?>
+                            
                             <!-- optional link -->
-                            <div></div>
+                            <?php
+                                $optional_link = get_field('support_us_details_optional_link');
+                                if (!empty($optional_link)) :
+
+                                    $link_class = isset($classes['link']) ? esc_attr($classes['link']) : '';
+                                    get_template_part('template-parts/yellow-link', null, [
+                                        'link' => $optional_link['url'],
+                                        'link_text' => $optional_link['title'],
+                                        'link_class' => $link_class
+                                    ]);
+                                    
+                                endif;
+                            ?>
                         </div>
                     </div>
                     <!-- Right-photo -->

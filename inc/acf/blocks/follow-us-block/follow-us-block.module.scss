@@ -183,29 +183,23 @@
     }
 }
 
-.link {
+.link-container {
     width: fit-content;
-    text-transform: uppercase;
-    background-color: $yellow;
-    border: 1px solid $red;
-    border-radius: 100px;
-    text-align: center;
-    padding: 12px 36px;
     margin-top: 50px;
     margin-left: auto;
 
     @media screen and (max-width: 1919.9px) {
         margin-top: 10px;
         width: 100%;
-        font-size: 20px;
     }
 
     @media screen and (max-width: 1439.9px) {
         margin-top: 20px;
     }
 
-    @media screen and (max-width: 767px) {
-        margin-top: 40px;
+    @media screen and (max-width: 767.9px) {
+        max-width: 328px;
+        margin: 40px auto 0;
     }
 }
 
