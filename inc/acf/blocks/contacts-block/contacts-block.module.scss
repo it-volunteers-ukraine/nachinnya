@@ -21,6 +21,9 @@
 
 .text-content {
   width: 425px;
+  @media screen and (max-width: $tablet) {
+    margin-top: 40px
+  }
 }
 
 section {
@@ -57,6 +60,11 @@ section {
     .icons-contacts {
       display: flex;
       flex-direction: column;
+      margin-bottom: 45px;
+
+      @media screen and (max-width: $mobile) {
+        margin-bottom: 20px;
+      }
 
       .contacts-row {
         display: flex;
@@ -75,8 +83,11 @@ section {
       @media screen and (max-width: $tablet) {
         width: 200px;
         position: absolute;
-        bottom: 23px;
-        right: 300px;
+        bottom: 99px;
+        right: 391px;
+      }
+      @media screen and (max-width: $mobile) {
+        display: none;
       }
     }
 
@@ -92,7 +103,13 @@ section {
       }
 
       @media screen and (max-width: $mobile) {
-        white-space: pre;
+        font-size: 14px;
+      }
+    }
+
+    .contacts-text2 {
+      @media screen and (max-width: $mobile) {
+        white-space: nowrap;
       }
     }
 
@@ -123,6 +140,56 @@ section {
     }
   }
 
+  .contacts-social-media {
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: rgb(53, 19, 17);
+        margin-bottom: 20px;
+        @media screen and (max-width: $tablet) {
+          font-size: 16px;
+          margin-bottom: 11px;
+        }
+        @media screen and (max-width: $mobile) {
+          font-size: 14px;
+        }
+      }
+
+      .social-wrap-advanced {
+        .social-icon {
+          fill: rgb(183, 64, 40);
+        }
+      }
+    }
+  }
+
+  .text-content::before {
+    @media screen and (max-width: $mobile) {
+      content: "";
+      position: absolute;
+      width: 99.41px;
+      height: 49.4px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(50%, 50%);
+      right: 180px;
+      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+      margin-top: -72px;
+    }
+  }
+
+  .contacts-text {
+    @media screen and (max-width: $mobile) {
+      margin-top: 40px;
+      white-space: normal;
+    }
+  }
 }
 
 
