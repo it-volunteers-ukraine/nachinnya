@@ -1,0 +1,136 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.title-center {
+  text-align: -webkit-center;
+  margin-bottom: 171px;
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.title-left {
+  text-align: left;
+  margin-bottom: 88px;
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: $mobile) {
+    text-align: -webkit-center;
+  }
+}
+
+.text-content {
+  width: 425px;
+}
+
+section {
+  @media screen and (max-width: $tablet) {
+    position: relative;
+  }
+}
+
+
+.contacts-center {
+  padding: 0 147px;
+
+  @media screen and (max-width: $tablet) {
+    padding: 0 0;
+  }
+
+
+  .contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 92px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 64px;
+      gap: 207px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .icons-contacts {
+      display: flex;
+      flex-direction: column;
+
+      .contacts-row {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 22px;
+        align-items: center;
+      }
+
+
+    }
+
+    .elem-yellow {
+      object-fit: contain;
+
+      @media screen and (max-width: $tablet) {
+        width: 200px;
+        position: absolute;
+        bottom: 23px;
+        right: 300px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 45px;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+        white-space: normal;
+        width: 248px;
+        margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        white-space: pre;
+      }
+    }
+
+    a {
+      font-size: 20px;
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+      }
+    }
+
+    .photo img {
+      width: auto;
+      position: absolute;
+      right: -1.66px;
+      top: -3px;
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    .photo {
+      @media screen and (max-width: $tablet) {
+        display: flex;
+        justify-content: center;;
+      }
+    }
+
+    .photo:hover img {
+      transform: scale(1.05) rotate(-1deg);
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
