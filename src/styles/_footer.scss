@@ -114,7 +114,7 @@ footer {
 }
 
 .footer {
-  font-size: 14px;
+  font-size: 16px;
   padding: 72px 16px 32px 16px;
   background-color: $red;
 }
@@ -208,7 +208,8 @@ footer {
 .copyright {
   display: block;
   text-align: center;
-  line-height: 1.27;
+  font-size: 14px;
+  line-height: 1.2;
   font-family: $secondary-font;
 
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -232,7 +233,6 @@ footer {
   }
 
   .footer {
-    font-size: 16px;
     padding: 72px 40px 32px 40px;
   }
 
