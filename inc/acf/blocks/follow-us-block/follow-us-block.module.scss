@@ -3,6 +3,19 @@
 .title-template-part {
     width: fit-content;
 
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+        margin-left: auto;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin: 0 auto 40px;
+    }
+
     &.our-vision {
         max-width: 722px;
         margin-left: auto;
@@ -15,19 +28,10 @@
         @media screen and (max-width: 1439.9px) {
             margin-right: 0px;
         }
-    }
 
-    @media screen and (max-width: 1919.9px) {
-        margin-bottom: 64px;
-    }
-
-    @media screen and (max-width: 1439.9px) {
-        margin-bottom: 40px;
-        margin-left: auto;
-    }
-
-    @media screen and (max-width: 767.9px) {
-        margin: 0 auto 40px;
+        @media screen and (max-width: 767.9px) {
+            margin: 0 auto 65px;
+        }
     }
 }
 
