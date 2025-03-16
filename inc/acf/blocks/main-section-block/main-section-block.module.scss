@@ -191,7 +191,7 @@
     width: 100%;
     display: block;
     border-radius: 4px;
-    transform: rotate(-0.5deg);
+    transform: scale(1.2) rotate(-0.5deg);
     animation: rotateToNormal 0.5s ease-out 1 forwards;
 
     @media screen and (max-width: $desktop) {
