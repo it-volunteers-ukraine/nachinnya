@@ -141,7 +141,7 @@ footer {
 }
 
 .footer {
-  font-size: 14px;
+  font-size: 16px;
   padding: 72px 16px 32px 16px;
   background-color: $red;
 }
@@ -231,20 +231,19 @@ footer {
     display: block;
   }
 }
-
-.copyright {
-  display: block;
-  text-align: center;
-  line-height: 1.27;
-  font-family: $secondary-font;
-
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .copyright-wrap {
   display: flex;
   justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: $secondary-font;
 }
+
+.copyright {
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 @media screen and (min-width: 410px) {
   .footer-content {
@@ -259,10 +258,7 @@ footer {
   }
 
   .footer {
-    font-size: 16px;
     padding: 72px 40px 32px 40px;
-  }
-  .ornament {
   }
 
   .footer-content {
@@ -285,6 +281,8 @@ footer {
     align-items: flex-start;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    gap: unset;
+    column-gap: 20px;
   }
   .logo-footer-link{
     grid-column: 1 / span 2;
@@ -292,7 +290,8 @@ footer {
   .footer-menu {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    grid-gap: 24px 65px;
+    grid-gap: 24px 44px;
+    justify-content: center;
 
     grid-column: 4 / span 3;
   }
@@ -313,7 +312,9 @@ footer {
   }
 
   .footer-menu {
+    justify-content: flex-start;
     justify-content: unset;
+    grid-column: 4 / span 4;
   }
 
   .address {

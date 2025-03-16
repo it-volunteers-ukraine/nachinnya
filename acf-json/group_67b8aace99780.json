@@ -4,8 +4,29 @@
     "fields": [
         {
             "key": "field_67b8abc6856a3",
-            "label": "copyright",
-            "name": "copyright",
+            "label": "Copyright one part",
+            "name": "copyright_one_part",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67d7043ba33b7",
+            "label": "copyright two part",
+            "name": "copyright_two_part",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -42,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740155861
+    "modified": 1742144703
 }
