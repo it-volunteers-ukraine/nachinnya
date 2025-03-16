@@ -28,6 +28,7 @@ $socials = get_field('socials', 'options');
             height: 72px;
         }
     }
+
     @media screen and (min-width: 1920px) {
         .ornament {
             height: 89px;
@@ -84,7 +85,12 @@ $socials = get_field('socials', 'options');
         </div>
 
         <div class="copyright-wrap">
-            <a href="https://it-volunteers.com/" class="copyright link-adv" target="_blank"><?php echo esc_html(get_field('copyright', 'option')); ?></a>
+            <p>
+                <?php echo (get_field('copyright_one_part', 'option')); ?>
+                <a href="https://it-volunteers.com/" class="copyright link-adv" target="_blank">IT Volunteers</a>
+                &copy;<?php echo date('Y'); ?>
+                <?php echo (get_field('copyright_two_part', 'option')); ?>
+            </p>
         </div>
     </div>
 </footer>
