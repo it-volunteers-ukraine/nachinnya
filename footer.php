@@ -25,6 +25,11 @@ $socials = get_field('socials', 'options');
 
     @media screen and (min-width: 1440px) {
         .ornament {
+            height: 72px;
+        }
+    }
+    @media screen and (min-width: 1920px) {
+        .ornament {
             height: 89px;
         }
     }

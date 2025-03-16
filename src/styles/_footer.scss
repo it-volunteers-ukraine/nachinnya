@@ -235,8 +235,6 @@ footer {
     font-size: 16px;
     padding: 72px 40px 32px 40px;
   }
-  .ornament {
-  }
 
   .footer-content {
     flex-direction: row;
@@ -258,6 +256,8 @@ footer {
     align-items: flex-start;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    gap: unset;
+    column-gap: 20px;
   }
   .logo-footer-link{
     grid-column: 1 / span 2;
@@ -265,7 +265,8 @@ footer {
   .footer-menu {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    grid-gap: 24px 65px;
+    grid-gap: 24px 44px;
+    justify-content: center;
 
     grid-column: 4 / span 3;
   }
@@ -286,7 +287,9 @@ footer {
   }
 
   .footer-menu {
+    justify-content: flex-start;
     justify-content: unset;
+    grid-column: 4 / span 4;
   }
 
   .address {
