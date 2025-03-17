@@ -21,24 +21,24 @@
       padding: 0;
     }
 
-    .partners-title {
+    .partners-title:nth-child(1) {
       text-align: center;
-      margin-bottom: 88px;
-
-      @media screen and (max-width: $tablet) {
-        margin-bottom: 48px;
-      }
     }
 
-    .partners-title:nth-of-type(2) {
-      text-align: right;
+    .partners-title {
+      margin-bottom: 88px;
+    }
 
+    .partners-title:not(:nth-child(1)) {
+      max-width: 50%;
+      white-space: nowrap;
+      padding-left: 43%;
       @media screen and (max-width: $tablet) {
-        text-align: center;
+        max-width: none;
+        padding-left: 0;
       }
-
       @media screen and (max-width: $mobile) {
-        text-align: center;
+        white-space: normal;
       }
     }
 
