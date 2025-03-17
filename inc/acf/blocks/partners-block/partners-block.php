@@ -38,7 +38,7 @@ if (file_exists($modules_file)) {
 
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => 6,
+            'posts_per_page' => 4,
             'orderby' => 'date',
             'order' => 'ASC',
             'paged' => $paged,
