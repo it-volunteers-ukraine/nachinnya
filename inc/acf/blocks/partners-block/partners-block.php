@@ -2,7 +2,6 @@
 $default_classes = [
     'partners-title' => 'partners-title',
     'partner-text' => 'partner-text',
-    'partners_section' => 'partners_section',
     'partners' => 'partners',
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
@@ -18,8 +17,7 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class="<?php echo esc_attr($classes['partners_section']); ?>">
-
+<section class="section">
     <?php
     $h2_title = get_field('h2_title_main_section');
     if (!empty($h2_title)) :
@@ -38,7 +36,7 @@ if (file_exists($modules_file)) {
 
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => 6,
+            'posts_per_page' => 4,
             'orderby' => 'date',
             'order' => 'ASC',
             'paged' => $paged,
@@ -68,7 +66,6 @@ if (file_exists($modules_file)) {
                 </div>
 
             <?php endwhile;
-
 
             echo '</div>';
 
