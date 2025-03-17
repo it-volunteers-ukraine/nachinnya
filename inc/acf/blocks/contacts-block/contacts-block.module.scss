@@ -141,11 +141,6 @@ section {
   }
 
   .contacts-social-media {
-
-    div {
-      display: flex;
-      flex-direction: column;
-
       p {
         text-transform: uppercase;
         font-size: 20px;
@@ -161,7 +156,6 @@ section {
           font-size: 14px;
         }
       }
-    }
   }
 
   .text-content::before {
