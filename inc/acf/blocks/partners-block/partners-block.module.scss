@@ -53,6 +53,7 @@
       margin-bottom: 88px;
       position: relative;
       padding: 0 146px;
+      max-width: 100%;
 
       @media screen and (max-width: $tablet) {
         gap: 54px;
@@ -61,7 +62,7 @@
       }
 
       @media screen and (max-width: $desktop) {
-        padding: 0 0 160px 0;
+       padding: 0 0;
       }
 
       @media screen and (max-width: $mobile) {
@@ -89,7 +90,6 @@
         @media screen and (max-width: $desktop) {
           font-size: 16px;
           width: 425px;
-          white-space: normal;
           line-height: 130%;
         }
 
@@ -99,7 +99,15 @@
           line-height: 20px;
           white-space: normal;
           padding: 0 30px;
+          width: 100%;
         }
+
+        @media screen and (max-width: 400px) {
+          width: 100%;
+          white-space: normal;
+          padding: 0 58px;
+        }
+
       }
 
       .partner-image {
@@ -132,6 +140,10 @@
         display: none;
       }
 
+      @media screen and (max-width: 770px) {
+        display: none;
+      }
+
       @media screen and (max-width: $desktop) {
         right: 459px;
       }
@@ -142,9 +154,16 @@
       background-image: url(../../../../assets/images/element-yellow.svg);
       transform: scale(1.5);
       right: 745px;
+
+
       @media screen and (max-width: $tablet) {
         display: none;
       }
+
+      @media screen and (max-width: 770px) {
+        display: none;
+      }
+
       @media screen and (max-width: $desktop) {
         right: 460px;
       }
@@ -195,9 +214,11 @@
     }
 
     .post-item:nth-of-type(1) .partner-text {
-      margin-top: 30px;
       white-space: pre-wrap;
 
+      @media screen and (max-width: $tablet) {
+        white-space: normal;
+      }
 
       @media screen and (max-width: $mobile) {
         white-space: normal;
