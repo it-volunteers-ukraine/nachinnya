@@ -5,7 +5,12 @@
     // Loading classes
     $default_classes = [
         'item' => 'item',
+
         'item-upper-part' => 'item-upper-part',
+        'item-upper-part-wrapper' => 'item-upper-part-wrapper',
+        'item-upper-part-yellow' => 'item-upper-part-yellow',
+        'item-upper-part-blue' => 'item-upper-part-blue',
+        'item-upper-part-link' => 'item-upper-part-link',
         'item-upper-part-image' => 'item-upper-part-image',
     ];
 
@@ -72,6 +77,17 @@
 ?>
 <div class="<?= $classes["item"] ?>">
     <div class="<?= $classes["item-upper-part"] ?>">
-        123
+        <div class="<?= $classes["item-upper-part-wrapper"] ?>">
+            <div class="<?= $classes["item-upper-part-yellow"] ?>"></div>
+            <div class="<?= $classes["item-upper-part-blue"] ?>"></div>
+            <a
+                class="<?= $classes["item-upper-part-link"] ?>"
+                href="<?= $image['url'] ?>"
+                data-lightbox="image<?= $current_id ?>"
+                data-alt=""
+            >
+                <?= $image_tag ?>
+            </a>
+        </div> 
     </div>
 </div>
