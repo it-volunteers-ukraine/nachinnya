@@ -1,40 +1,134 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
-
-.icon-open-close{
+.icon-open-close {
   width: 48px;
   height: 48px;
-  
 }
 
 .toggle-posts-btn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.toggle-posts-btn img {
   transform: rotateX(-180deg);
   transition: all $animations-long;
 }
 
-.toggle-posts-btn.open {
+.toggle-posts-btn.open img {
   transform: rotateX(0deg);
-  
+}
+
+.category-header-wrap {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 22.5px 69px 22.5px 16px;
+  border: 2px dotted $red;
+  border-radius: 24px;
+}
+
+.category-header {
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.category-gallery {
+  display: none;
+}
+
+.project__item {
+  margin-bottom: 40px;  
+}
+
+.project-slider {
+  align-items: center;
+}
+
+.project-slider > div {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 24px;
+}
+
+.item-title {
+  margin-bottom: 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.item-date-location {
+  margin-bottom: 12px;
+  padding: 0 12px;
+  border-left: 2px solid $red;
+  font-family: $primary-font;
+}
+
+.item-date {
+  margin-bottom: 8px;
+  color: $red;
+  text-transform: uppercase;
+}
+.item-location {
+  text-transform: uppercase;
+}
+.item-text{
+  position: relative;
+}
+.text-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 424px;
+  margin-left: auto;
+  padding-bottom: 50px;
+  padding-bottom: calc(-12.2549vw + 94.1176px);
+  & ul {
+    list-style-type: disc;
+    margin-left: 1.4rem;
+  }
+  & li {
+  }
+}
+
+.item-text-more {
+  margin-top: 4px;
+  margin-left: auto;
+  padding: 0 4px;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.3;
+  color: $red;
+
+}
+.item-text-more::after{
+  border-color: $red;
+  border-bottom: 1px;
+}
+
+.item-element {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100px;
+  min-width: 100px;
+  width: clamp(100px, calc(24.51vw + 11.77px), 200px);
 }
 
 @media screen and (min-width: 768px) {
-  
 }
 
 @media screen and (min-width: 960px) {
-
 }
 
 @media screen and (min-width: 1440px) {
-  
 }
 
 @media screen and (min-width: 1920px) {
-  
 }
 
-
-.test-wrap{
+.test-wrap {
   display: flex;
   gap: 40px;
 }
