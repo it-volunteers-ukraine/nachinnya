@@ -1,1 +1,39 @@
 @use "../../../../src/styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.title-header-image {
+    width: 36px;
+    height: 36px;
+}
+
+.title-header-text {
+    min-width: 204px;
+    text-align: center;
+}
+
+.title-header-image:nth-of-type(2) {
+    rotate: -180deg;
+}
+
+.title-decoration-image {
+    width: 200px;
+    align-self: flex-end;
+}
