@@ -11,12 +11,6 @@ function initSwiper() {
             360: {
                 spaceBetween: 40,
             },
-            768: {
-                spaceBetween: 40,
-            },
-            1040: {
-                spaceBetween: 100,
-            },
             1440: {
                 spaceBetween: 64,
             },
