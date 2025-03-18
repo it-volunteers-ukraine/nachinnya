@@ -1,5 +1,6 @@
 <?php
 $default_classes = [
+    'projects' => 'projects',
     'projects-title' => 'projects-title',
     'test-wrap' => 'test-wrap',
     'toggle-posts-btn' => 'toggle-posts-btn',
@@ -10,6 +11,8 @@ $default_classes = [
     'project__item' => 'project__item',
     'category-gallery' => 'category-gallery',
     'project-slider' => 'project-slider',
+    'item-content' => 'item-content',
+    'item-title-wrap' => 'item-title-wrap',
     'item-title' => 'item-title',
     'item-date-location' => 'item-date-location',
     'item-date' => 'item-date',
@@ -50,7 +53,7 @@ $category_list = get_field('category_gallery', $current_id);
 ?>
 
 <section class="section">
-    <div class="container <?php echo $is_debug ? 'debug-red ' : ''; ?>">
+    <div class="container <?php echo $is_debug ? 'debug-red ' : ''; ?> <?php echo esc_attr($classes['projects']); ?>">
         <div class="<?php echo esc_attr($classes['projects-title']); ?>">
             <?php get_template_part('template-parts/h2-title', null, []); ?>
         </div>
@@ -111,7 +114,6 @@ $category_list = get_field('category_gallery', $current_id);
                         <h3><?php echo esc_html($category_name); ?></h3>
 
                         <button class="<?php echo $class_btn; ?>" type="button" onclick="projectsCategoryHidden(event, '<?php echo $class_open; ?>' )">
-
                             <img id="icon-open" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_open-close.svg" class="<?php echo esc_attr($classes['icon-open-close']); ?>" data-open="">
                         </button>
                     </div>
@@ -120,7 +122,6 @@ $category_list = get_field('category_gallery', $current_id);
                     <div class="<?php echo esc_attr($classes['category-gallery']); ?>">
                         <?php if (!empty($gallery_list)) :
                             foreach ($gallery_list as $image) : ?>
-
                                 <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                         <?php endforeach;
                         endif; ?>
@@ -164,18 +165,22 @@ $category_list = get_field('category_gallery', $current_id);
                                     get_template_part('template-parts/photo-left', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => '']);
                                     ?>
                                 </div>
-                                <h4 class="<?php echo esc_attr($classes['item-title']); ?>"><?php echo esc_html($title); ?></h4>
-                                <div class="<?php echo esc_attr($classes['item-date-location']); ?>">
-                                    <p class="<?php echo esc_attr($classes['item-date']); ?>"><?php echo esc_html($date); ?></p>
-                                    <p class="<?php echo esc_attr($classes['item-location']); ?>"><?php echo esc_html($location); ?></p>
-
-                                </div>
-                                <div class="<?php echo esc_attr($classes['item-text']); ?>">
-                                    <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
-                                        <?php echo $text; ?>
-                                        <button class="<?php echo esc_attr($classes['item-text-more']); ?>"><?php echo esc_html($project_text_more) ?></button>
+                                <div class="<?php echo esc_attr($classes['item-content']); ?>">
+                                    <div class="<?php echo esc_attr($classes['item-title-wrap']); ?>">
+                                        <h4 class="<?php echo esc_attr($classes['item-title']); ?>"><?php echo esc_html($title); ?></h4>
+                                        <div class="<?php echo esc_attr($classes['item-date-location']); ?>">
+                                            <p class="<?php echo esc_attr($classes['item-date']); ?>"><?php echo esc_html($date); ?></p>
+                                            <p class="<?php echo esc_attr($classes['item-location']); ?>"><?php echo esc_html($location); ?></p>
+                                        </div>
+    
                                     </div>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loop-arrow-yellow.svg" class="<?php echo esc_attr($classes['item-element']); ?>" alt="">
+                                    <div class="<?php echo esc_attr($classes['item-text']); ?>">
+                                        <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
+                                            <?php echo $text; ?>
+                                            <button class="<?php echo esc_attr($classes['item-text-more']); ?>"><?php echo esc_html($project_text_more) ?></button>
+                                        </div>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loop-arrow-yellow.svg" class="<?php echo esc_attr($classes['item-element']); ?>" alt="">
+                                    </div>
                                 </div>
 
                             </div>
