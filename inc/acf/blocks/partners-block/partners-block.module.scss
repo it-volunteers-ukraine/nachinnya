@@ -4,16 +4,10 @@
   .partners {
     display: flex;
     flex-direction: column;
-    padding: 0 146px;
 
     @media screen and (max-width: $tablet) {
-      padding: 0;
       align-items: center;
       gap: 0;
-    }
-
-    @media screen and (max-width: $desktop) {
-      padding: 0 0;
     }
 
     @media screen and (max-width: $mobile) {
@@ -27,6 +21,9 @@
 
     .partners-title {
       margin-bottom: 88px;
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 40px;
+      }
     }
 
     .partners-title:not(:nth-child(1)) {
@@ -36,8 +33,13 @@
       @media screen and (max-width: $tablet) {
         max-width: none;
         padding-left: 0;
+        text-align: center;
       }
       @media screen and (max-width: $mobile) {
+        white-space: normal;
+        text-align: center;
+      }
+      @media screen and (max-width: 400px) {
         white-space: normal;
         text-align: center;
       }
@@ -50,18 +52,24 @@
       justify-content: space-between;
       margin-bottom: 88px;
       position: relative;
+      padding: 0 146px;
 
       @media screen and (max-width: $tablet) {
-        gap: 40px;
+        gap: 54px;
         align-items: center;
-        justify-content: center;
+        margin-bottom: 120px;
       }
 
       @media screen and (max-width: $desktop) {
-        justify-content: space-between;
+        padding: 0 0 160px 0;
       }
 
       @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 400px) {
         flex-direction: column;
         gap: 20px;
       }
@@ -73,12 +81,16 @@
 
         @media screen and (max-width: $tablet) {
           font-size: 16px;
-          white-space: pre-wrap;
-          line-height: 12px;
+          width: 249px;
+          white-space: normal;
+          line-height: 19px;
         }
 
         @media screen and (max-width: $desktop) {
           font-size: 16px;
+          width: 425px;
+          white-space: normal;
+          line-height: 130%;
         }
 
         @media screen and (max-width: $mobile) {
@@ -112,7 +124,7 @@
       height: 167px;
       background-size: contain;
       background-repeat: no-repeat;
-      right: 500px;
+      right: 775px;
       top: 100px;
       background-image: url(../../../../assets/images/loop-arrow.svg);
 
@@ -120,27 +132,53 @@
         display: none;
       }
 
+      @media screen and (max-width: $desktop) {
+        right: 459px;
+      }
+
     }
 
     .post-item:nth-of-type(odd) .partner-text::before {
       background-image: url(../../../../assets/images/element-yellow.svg);
       transform: scale(1.5);
+      right: 745px;
+      @media screen and (max-width: $tablet) {
+        display: none;
+      }
+      @media screen and (max-width: $desktop) {
+        right: 460px;
+      }
     }
 
     .post-item:nth-of-type(odd):first-of-type .partner-text::before {
-      right: 370px;
+      right: 652px;
+
+      @media screen and (max-width: $desktop) {
+        right: 328px;
+      }
     }
 
     .post-item .partner-text::after {
       @media screen and (max-width: $mobile) {
-        content: "";;
+        content: "";
         position: absolute;
         width: 99.41px;
         height: 49.4px;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(../../../../assets/images/element-red-mobile.svg);
-        transform: translate(50%, 50%);
+        transform: translate(50%, 98%);
+        right: 171px;
+      }
+      @media screen and (max-width: 400px) {
+        content: "";
+        position: absolute;
+        width: 99.41px;
+        height: 49.4px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(../../../../assets/images/element-red-mobile.svg);
+        transform: translate(50%, 98%);
         right: 171px;
       }
     }
@@ -148,7 +186,11 @@
     .post-item:nth-of-type(odd) .partner-text::after {
       @media screen and (max-width: $mobile) {
         background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-        margin-top: 30px;
+        margin-top: 12px;
+      }
+      @media screen and (max-width: 400px) {
+        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+        margin-top: 12px;
       }
     }
 
@@ -156,11 +198,6 @@
       margin-top: 30px;
       white-space: pre-wrap;
 
-      @media screen and (max-width: $tablet) {
-        margin-top: 0;
-        line-height: 12px;
-        white-space: pre-wrap;
-      }
 
       @media screen and (max-width: $mobile) {
         white-space: normal;
@@ -175,6 +212,10 @@
     list-style: none;
     justify-content: center;
     margin-bottom: 100px;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 80px;
+    }
 
     a {
       font-size: 20px;
