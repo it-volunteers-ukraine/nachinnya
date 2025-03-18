@@ -49,6 +49,22 @@ if (file_exists($modules_file)) {
                     endwhile;
                     wp_reset_postdata();
                     endif;
+
+                    // x2 numbers of slides
+                    if ($partners->have_posts()) :
+                        while ($partners->have_posts()) : $partners->the_post();
+                        $image = get_field('partner_image', get_the_ID());
+                        if ($image): 
+                    ?>
+                        <div class="swiper-slide">
+                            <img class="<?php echo esc_attr($classes['partner-image']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        </div>
+                        
+                    <?php
+                    endif;
+                    endwhile;
+                    wp_reset_postdata();
+                    endif;
                     ?>
                 </div>
             </div>
