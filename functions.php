@@ -113,19 +113,37 @@ function wp_it_volunteers_menus()
 add_action('init', 'wp_it_volunteers_menus');
 
 /** gsap scripts */
+// function enqueue_gsap_scripts() {
+//     wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true);
+//     wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), null, true);
+//     wp_enqueue_script('gsap-motionpath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js', array('gsap'), null, true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
 function enqueue_gsap_scripts() {
+    if (has_block('acf/history-section-block')) {
     wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js', array(), null, true);
     wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js', array('gsap'), null, true);
     wp_enqueue_script('gsap-motionpath', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js', array('gsap'), null, true);
+    }
 }
 add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
 
 /** swiper scripts */
-function my_enqueue_scripts() {
-    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
-    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
+// function my_enqueue_scripts() {
+//     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
+//     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
+// }
+// add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+function enqueue_slider_scripts() {
+    if (has_block('acf/follow-us-block')
+        || has_block('acf/home-parthers-slider-block')
+        || has_block('acf/support-us-details-block')) {
+        
+        wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
+        wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
+    }
 }
-add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'enqueue_slider_scripts');
 
 
 /** ACF add options page */
