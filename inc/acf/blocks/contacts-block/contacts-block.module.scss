@@ -24,6 +24,9 @@
   @media screen and (max-width: $tablet) {
     margin-top: 40px
   }
+  @media screen and (max-width: $tablet) {
+   max-width: 100%;
+  }
 }
 
 section {
@@ -104,6 +107,7 @@ section {
 
       @media screen and (max-width: $mobile) {
         font-size: 14px;
+        width: 100%;
       }
     }
 
