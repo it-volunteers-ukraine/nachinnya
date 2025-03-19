@@ -2,6 +2,8 @@
 $default_classes = [
     'projects' => 'projects',
     'projects-title' => 'projects-title',
+    'category-block' => 'category-block',
+    'category-posts' => 'category-posts',
     'test-wrap' => 'test-wrap',
     'toggle-posts-btn' => 'toggle-posts-btn',
     'icon-open-close' => 'icon-open-close',
@@ -59,12 +61,12 @@ $category_list = get_field('category_gallery', $current_id);
         </div>
 
         <?php
+
         $counter = 0; // счетчик категорий 
         $project_text_more = get_field('buttont_more_text');
         $project_text_less = get_field('buttont_less_text');
         // echo 'projects_text_more: ' . $projects_text_more . '<br>';
         ?>
-
 
         <?php foreach ($category_list as $category_item) : ?>
             <?php
@@ -82,6 +84,9 @@ $category_list = get_field('category_gallery', $current_id);
                         'taxonomy' => 'project-category',
                         'field'    => 'term_id',
                         'terms'    => $category_id,
+                        'post_status'    => 'publish',  // только опубликованные!
+                        'orderby'        => 'date',     // сортировка по дате
+                        'order'          => 'DESC',     // от новых к старым (убывание)
                     ]
                 ]
             ]);
@@ -108,7 +113,7 @@ $category_list = get_field('category_gallery', $current_id);
             // $str_class = echo $class_open;
             ?>
 
-            <div class="category-block <?php echo esc_attr($is_open); ?>">
+            <div class="<?php echo esc_attr($classes['category-block']); ?> <?php echo esc_attr($is_open); ?> ">
                 <div class="<?php echo esc_attr($classes['category-header-wrap']); ?>">
                     <div class="<?php echo esc_attr($classes['category-header']); ?>">
                         <h3><?php echo esc_html($category_name); ?></h3>
@@ -129,7 +134,7 @@ $category_list = get_field('category_gallery', $current_id);
                 </div>
 
                 <!-- Список постов этой категории -->
-                <div class="category-posts" style="<?php echo $is_open ? 'display:block;' : 'display:none;'; ?>">
+                <div class="<?php echo esc_attr($classes['category-posts']); ?>" style="<?php echo $is_open ? 'display:block;' : 'display:none;'; ?>">
                     <?php if (!empty($posts)) : ?>
                         <?php foreach ($posts as $post) : ?>
                             <?php
