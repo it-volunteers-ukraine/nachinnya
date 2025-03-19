@@ -61,12 +61,12 @@
       position: relative;
       padding: 0 146px;
       max-width: 100%;
-      gap: 137px;
+      gap: 56px;
 
 
       @media screen and (max-width: $desktop) {
         padding: 0 0;
-        gap: 119px;
+        gap: 63px;
       }
 
       @media (min-width: $tablet) and (max-width: 1024px) {
@@ -123,7 +123,7 @@
       .partner-text {
         font-size: 20px;
         line-height: 14px;
-        white-space: pre-wrap;
+        white-space: pre;
 
         @media screen and (max-width: $desktop) {
           font-size: 16px;
