@@ -1,4 +1,6 @@
 <?php
+$title = get_field('home_title_text');
+
 $modules_json = get_template_directory() . '/assets/blocks/styles/modules.json';
 $styles = [];
 

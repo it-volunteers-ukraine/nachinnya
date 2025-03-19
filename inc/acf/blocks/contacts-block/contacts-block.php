@@ -90,10 +90,10 @@ if (file_exists($modules_file)) {
                         </div>
                     </div>
                     <div class="<?php echo esc_attr($classes['contacts-social-media']); ?>">
-                        <div>
                             <p><?php the_field('social-media-title'); ?></p>
-                            <?php get_template_part('template-parts/socblock'); ?>
-                        </div>
+                            <?php
+                            get_template_part('template-parts/socblock', null, ['is_main' => true, 'is_title' => false]);
+                            ?>
                     </div>
                 </div>
 

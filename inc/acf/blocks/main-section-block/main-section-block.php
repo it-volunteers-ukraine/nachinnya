@@ -38,11 +38,26 @@ if (file_exists($modules_file)) {
         <?php endif; ?>
     </div>
     <div class='container'>
+        <!-- Image margin variations -->
+        <?php
+        $margin = get_field('margin_size') ?: 'about-page';
+        $margin_variant = '';
+        if ($margin === 'main-page') {
+            $margin_variant = $classes['main-page'] ?? 'main-page';
+        } elseif ($margin === 'team-page') {
+            $margin_variant = $classes['team-page'] ?? 'team-page';
+        } elseif ($margin === 'support-page') {
+            $margin_variant = $classes['support-page'] ?? 'support-page';
+        } elseif ($margin === 'about-page') {
+            $margin_variant = $classes['about-page'] ?? 'about-page';
+        }
+        ?>
+
         <!-- Image -->
         <?php
         $image = get_field('main_section_photo');
         if (!empty($image)): ?>
-            <div class="<?php echo esc_attr($classes['image-container']); ?>">
+            <div class="<?php echo esc_attr(($classes['image-container'] ?? '') . ' ' . $margin_variant); ?>">
                 <img class="<?php echo esc_attr($classes['main_photo']); ?>" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             </div>
         <?php endif; ?>

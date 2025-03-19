@@ -50,6 +50,35 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_67d6f0a50e7c5",
+            "label": "Відступ для фото",
+            "name": "margin_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "main-page": "main-page",
+                "team-page": "team-page",
+                "support-page": "support-page",
+                "about-page": "about-page"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_67b77ef6fb2bf",
             "label": "Заголовок під фото",
             "name": "h2_title_main_section",
@@ -152,5 +181,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741104048
+    "modified": 1742141167
 }

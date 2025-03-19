@@ -24,7 +24,7 @@ $is_title = isset($args['is_title']) ? (bool) $args['is_title'] : false;
         <?php endif; ?>
         <div class="social footer__social">
             <?php foreach ($socseti as $item) : ?>
-                <a href="<?php echo $item['url']; ?>" class="social-link">
+                <a href="<?php echo $item['url']; ?>" class="social-link" target="_blank">
                     <?php
                     $social_sprite_url = esc_url(get_field('social_sprite', 'options')) . "#" . $item['sprite_icon_name'];
                     ?>

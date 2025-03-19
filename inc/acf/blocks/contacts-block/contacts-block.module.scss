@@ -24,6 +24,9 @@
   @media screen and (max-width: $tablet) {
     margin-top: 40px
   }
+  @media screen and (max-width: $tablet) {
+   max-width: 100%;
+  }
 }
 
 section {
@@ -104,6 +107,7 @@ section {
 
       @media screen and (max-width: $mobile) {
         font-size: 14px;
+        width: 100%;
       }
     }
 
@@ -141,11 +145,6 @@ section {
   }
 
   .contacts-social-media {
-
-    div {
-      display: flex;
-      flex-direction: column;
-
       p {
         text-transform: uppercase;
         font-size: 20px;
@@ -161,16 +160,6 @@ section {
           font-size: 14px;
         }
       }
-
-      .social {
-        display: flex;
-        flex-direction: row;
-
-        svg {
-          fill: rgb(183, 64, 40);
-        }
-      }
-    }
   }
 
   .text-content::before {

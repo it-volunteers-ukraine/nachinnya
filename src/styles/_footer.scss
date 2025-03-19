@@ -274,6 +274,9 @@ footer {
     gap: 34px;
     justify-content: space-between;
   }
+  .copyright-wrap{
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -329,6 +332,9 @@ footer {
   .footer .social-wrap{
     margin-bottom: 26px;
   }
+  .copyright-wrap{
+    line-height: 1.3;
+  }
 }
 
 @media screen and (min-width: 1920px) {
@@ -351,5 +357,8 @@ footer {
   
   .footer .social-wrap{
     margin-bottom: 11px;
+  }
+  .copyright-wrap{
+    font-size: 20px;
   }
 }
