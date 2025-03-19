@@ -31,9 +31,16 @@
       white-space: nowrap;
       padding-left: 43%;
 
-      @media screen and (max-width: $tablet) {
+      @media (min-width: $tablet) and (max-width: 1024px) {
         max-width: none;
         padding-left: 0;
+        text-align: center;
+      }
+
+      @media screen and (max-width: $mobile) {
+        padding-left: 0;
+        max-width: none;
+        white-space: normal;
         text-align: center;
       }
 
@@ -54,10 +61,12 @@
       position: relative;
       padding: 0 146px;
       max-width: 100%;
+      gap: 137px;
 
 
       @media screen and (max-width: $desktop) {
         padding: 0 0;
+        gap: 119px;
       }
 
       @media (min-width: $tablet) and (max-width: 1024px) {
@@ -68,10 +77,47 @@
         padding: 0 146px;
       }
 
+      @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
       @media (min-width: $mobile) and (max-width: 600px) {
         flex-direction: column;
         gap: 20px;
         align-items: center;
+      }
+
+
+      .elem-yellow{
+        @media (min-width: $tablet) and (max-width: 1024px) {
+          display: none;
+        }
+
+        @media screen and (max-width: $mobile) {
+          display: none;
+        }
+
+        @media (min-width: $mobile) and (max-width: 600px) {
+          display: none;
+        }
+      }
+
+      .even {
+        filter: brightness(0) saturate(100%) invert(26%) sepia(49%) saturate(2263%) hue-rotate(346deg) brightness(102%) contrast(84%);
+
+        @media (min-width: $tablet) and (max-width: 1024px) {
+          display: none;
+        }
+
+        @media screen and (max-width: $mobile) {
+          display: none;
+        }
+
+        @media (min-width: $mobile) and (max-width: 600px) {
+          display: none;
+        }
       }
 
       .partner-text {
@@ -102,6 +148,15 @@
           width: 100%;
         }
 
+        @media (min-width: $mobile) and (max-width: 600px) {
+          margin-top: 20px;
+          font-size: 20px;
+          line-height: 20px;
+          white-space: normal;
+          padding: 0 26px;
+          width: 100%;
+        }
+
       }
 
       .partner-image {
@@ -117,46 +172,9 @@
           margin: auto;
         }
 
-        @media (min-width: 360px) and (max-width: 600px){
+        @media (min-width: 360px) and (max-width: 600px) {
           width: 210px;
         }
-      }
-    }
-
-    .post-item .partner-text::before {
-      position: absolute;
-      content: "";
-      display: inline-block;
-      width: 310px;
-      height: 167px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      right: 775px;
-      top: 100px;
-      background-image: url(../../../../assets/images/loop-arrow.svg);
-
-      @media (min-width: $tablet) and (max-width: 1024px) {
-        content: none;
-      }
-
-    }
-
-    .post-item:nth-of-type(odd) .partner-text::before {
-      background-image: url(../../../../assets/images/element-yellow.svg);
-      transform: scale(1.5);
-      right: 745px;
-
-      @media (min-width: $tablet) and (max-width: 1024px) {
-        content: none;
-      }
-
-    }
-
-    .post-item:nth-of-type(odd):first-of-type .partner-text::before {
-      right: 652px;
-
-      @media screen and (max-width: $desktop) {
-        right: 328px;
       }
     }
 
