@@ -20,6 +20,8 @@ $default_classes = [
     'item-date' => 'item-date',
     'item-location' => 'item-location',
     'item-text' => 'item-text',
+    'text-content' => 'text-content',
+    'collapse' => 'collapse',
     'item-text-more' => 'item-text-more',
     'item-element' => 'item-element',
 
@@ -105,6 +107,8 @@ $category_list = get_field('category_gallery', $current_id);
             $class_open = esc_attr($classes['open']);
 
             $is_open = $counter === 0 ? $class_open : '';
+            $is_open = $class_open;
+
             // $is_open = $counter === 0 ? ' open' : '';
             // $class_is_open = esc_attr($classes[$is_open]); 
             // echo 'is_open: '. $is_open. '<br>';
@@ -181,7 +185,9 @@ $category_list = get_field('category_gallery', $current_id);
                                     </div>
                                     <div class="<?php echo esc_attr($classes['item-text']); ?>">
                                         <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
-                                            <?php echo $text; ?>
+                                            <div class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
+                                                <?php echo $text; ?>
+                                            </div>
                                             <button class="<?php echo esc_attr($classes['item-text-more']); ?>"><?php echo esc_html($project_text_more) ?></button>
                                         </div>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loop-arrow-yellow.svg" class="<?php echo esc_attr($classes['item-element']); ?>" alt="">
