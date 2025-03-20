@@ -2,80 +2,69 @@ function projectsCategoryHidden(event, classOpen) {
     event.currentTarget.classList.toggle(classOpen);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Ищем все элементы карточек по data-атрибуту
-    const textBlocks = document.querySelectorAll('[data-item-text]');
+function toggleTextMore(event) {
+    const button = event.currentTarget;
+    const card = button.closest('[data-item-text]');
+    const content = card.querySelector('[data-text-content]');
   
-    textBlocks.forEach(block => {
-      const content = block.querySelector('[data-text-content]');
-      const button = block.querySelector('[data-btn-more]');
+    const showMoreText = button.getAttribute('data-text-more') || 'Показать ещё';
+    const showLessText = button.getAttribute('data-text-less') || 'Показать меньше';
   
-      const clampValue = button.getAttribute('data-clamp') || 3;
-      const showMoreText = 'Показать ещё';
-      const showLessText = 'Показать меньше';
+    const isExpanded = content.classList.toggle('expanded');
   
-      // Устанавливаем изначальный clamp в CSS переменную или inline (если нужно)
-      content.style.webkitLineClamp = clampValue;
+    if (isExpanded) {
+      content.style.webkitLineClamp = 'unset';
+      content.style.display = 'block';
+      button.textContent = showLessText;
+      button.setAttribute('data-clamping', 'no');
+    } else {
       content.style.display = '-webkit-box';
+      content.style.webkitLineClamp = button.getAttribute('data-clamp');
+      button.textContent = showMoreText;
+      button.setAttribute('data-clamping', 'yes');
+      checkOverflow(card);
+    }
+  }
   
-      // Основная функция переключения
-      button.addEventListener('click', () => {
-        const isExpanded = content.classList.toggle('expanded');
-  
-        if (isExpanded) {
-          content.style.webkitLineClamp = 'unset';
-          content.style.display = 'block';
-          button.textContent = showLessText;
-          button.setAttribute('data-clamping', 'no');
-        } else {
-          content.style.webkitLineClamp = clampValue;
-          content.style.display = '-webkit-box';
-          button.textContent = showMoreText;
-          button.setAttribute('data-clamping', 'yes');
-  
-          // Проверяем, показывать ли кнопку снова
-          checkOverflow(block);
-        }
-      });
-  
-      // Проверка переполнения
-      checkOverflow(block);
-  
-      // При изменении размера окна
-      window.addEventListener('resize', () => {
-        checkOverflow(block);
-      });
-    });
-  
-    // Проверка overflow-а одного блока
-    function checkOverflow(block) {
-      const content = block.querySelector('[data-text-content]');
-      const button = block.querySelector('[data-btn-more]');
-  
-      // Сохраняем текущее состояние
-      const wasExpanded = content.classList.contains('expanded');
-  
-      // Временно "закрываем" текст, чтобы проверить переполнение
-      if (wasExpanded) {
+
+function checkOverflow(card) {
+    const content = card.querySelector('[data-text-content]');
+    const button = card.querySelector('[data-btn-more]');
+
+    const wasExpanded = content.classList.contains('expanded');
+
+    if (wasExpanded) {
         content.classList.remove('expanded');
         content.style.display = '-webkit-box';
         content.style.webkitLineClamp = button.getAttribute('data-clamp');
-      }
-  
-      const isOverflowing = content.scrollHeight > content.clientHeight;
-  
-      if (!isOverflowing) {
-        button.style.display = 'none';
-      } else {
-        button.style.display = 'inline-block';
-      }
-  
-      // Возвращаем "открытое" состояние, если было
-      if (wasExpanded) {
+    }
+
+    const isOverflowing = content.scrollHeight > content.clientHeight;
+
+    button.style.display = isOverflowing ? 'inline-block' : 'none';
+
+    if (wasExpanded) {
         content.classList.add('expanded');
         content.style.display = 'block';
         content.style.webkitLineClamp = 'unset';
-      }
     }
-  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const textBlocks = document.querySelectorAll('[data-item-text]');
   
+    textBlocks.forEach(block => {
+      const button = block.querySelector('[data-btn-more]');
+      const content = block.querySelector('[data-text-content]');
+  
+      const clampValue = button.getAttribute('data-clamp') || 3;
+      content.style.webkitLineClamp = clampValue;
+      content.style.display = '-webkit-box';
+  
+      checkOverflow(block);
+    });
+  
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('[data-item-text]').forEach(block => checkOverflow(block));
+    });
+  });

@@ -132,7 +132,7 @@ $category_list = get_field('category_gallery', $current_id);
                     <div class="<?php echo esc_attr($classes['category-gallery']); ?>">
                         <?php if (!empty($gallery_list)) :
                             foreach ($gallery_list as $image) : ?>
-                                <?php 
+                                <?php
                                 $photo_item = $image;
                                 $photo_url = $photo_item['sizes']['medium_large'];
                                 $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
@@ -187,19 +187,21 @@ $category_list = get_field('category_gallery', $current_id);
                                             <p class="<?php echo esc_attr($classes['item-date']); ?>"><?php echo esc_html($date); ?></p>
                                             <p class="<?php echo esc_attr($classes['item-location']); ?>"><?php echo esc_html($location); ?></p>
                                         </div>
-    
+
                                     </div>
                                     <div data-item-text class="<?php echo esc_attr($classes['item-text']); ?>">
                                         <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
                                             <div data-text-content class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
                                                 <?php echo $text; ?>
                                             </div>
-                                            <button 
-                                            class="<?php echo esc_attr($classes['item-text-more']); ?>"
-                                            data-btn-more
-                                            onclick="toggleTextMore(event, '');"
-                                            data-clamp=10
-                                            data-clamping=yes>
+                                            <button
+                                                class="<?php echo esc_attr($classes['item-text-more']); ?>"
+                                                data-btn-more
+                                                onclick="toggleTextMore(event, '');"
+                                                data-clamp=10
+                                                data-text-more="<?php echo esc_attr($project_text_more); ?>"
+                                                data-text-less="<?php echo esc_attr($project_text_less); ?>"
+                                                data-clamping=yes>
                                                 <?php echo esc_html($project_text_more) ?>
                                             </button>
                                         </div>
