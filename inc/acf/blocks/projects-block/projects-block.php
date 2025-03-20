@@ -12,6 +12,7 @@ $default_classes = [
     'category-header-wrap' => 'category-header-wrap',
     'project__item' => 'project__item',
     'category-gallery' => 'category-gallery',
+    'category-gallery-img' => 'category-gallery-img',
     'project-slider' => 'project-slider',
     'item-content' => 'item-content',
     'item-title-wrap' => 'item-title-wrap',
@@ -131,7 +132,13 @@ $category_list = get_field('category_gallery', $current_id);
                     <div class="<?php echo esc_attr($classes['category-gallery']); ?>">
                         <?php if (!empty($gallery_list)) :
                             foreach ($gallery_list as $image) : ?>
-                                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                                <?php 
+                                $photo_item = $image;
+                                $photo_url = $photo_item['sizes']['medium_large'];
+                                $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
+                                $photo_class = esc_attr($classes['category-gallery-img']);
+                                get_template_part('template-parts/photo-hor-small', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => $photo_class]); ?>
+                                <!-- <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="<?php echo esc_attr($classes['category-gallery-img']); ?>"> -->
                         <?php endforeach;
                         endif; ?>
                     </div>
@@ -168,7 +175,6 @@ $category_list = get_field('category_gallery', $current_id);
                                     <?php
                                     $photo_item = $gallery[0];
                                     $photo_url = $photo_item['sizes']['medium_large'];
-                                    $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
                                     $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
 
                                     get_template_part('template-parts/photo-left', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => '']);
