@@ -15,6 +15,7 @@
   height: 882px;
   z-index: 1;
   position: relative;
+
 }
 
 /* Wave Support Home Block */
@@ -39,6 +40,21 @@
   background-size: cover;
   background-position: center;
   z-index: 3;
+
+  @media screen and (max-width: 1440px) {
+    width: 697px;
+    height: 538px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 498px;
+    height: 501px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 328px;
+    height: 453px;
+  }
 }
 
 /* Title Support Home Block */
@@ -50,6 +66,22 @@
   margin-right: auto;
   padding-top: 80px;
   padding-bottom: 88px;
+
+  @media screen and (max-width: 1440px) {
+    padding-top: 80px;
+    padding-bottom: 64px;
+    font-size: 38px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (max-width: 360px) {
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
 }
 
 .h2-title-v2-wrapper {
@@ -72,6 +104,22 @@
   padding-bottom: 20px;
   margin: 0 auto;
   text-align: left;
+
+  @media screen and (max-width: 1440px) {
+    width: 305px;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 305px;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 248px;
+    height: 217 px;
+    font-size: 14px;
+  }
 }
 
 /* Button Support Home Block*/
@@ -96,25 +144,26 @@
   font-weight: 500px;
   background: #ffcc00;
   color: #B74028;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 16px;
+    left: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 248px;
+    left: 30px;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 360px) {
+    padding-top: 16px;
+    left: 0;
+  }
 }
 
 /* Button hover */
 .support-home__button:hover {
   background: #e6b800;
   transform: scale(1.05);
-}
-
-/* Mobile Support Home Block */
-@media screen and (max-width: 1024px) {
-  .support-home__button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .support-home__button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
 }
