@@ -189,12 +189,19 @@ $category_list = get_field('category_gallery', $current_id);
                                         </div>
     
                                     </div>
-                                    <div class="<?php echo esc_attr($classes['item-text']); ?>">
+                                    <div data-item-text class="<?php echo esc_attr($classes['item-text']); ?>">
                                         <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
-                                            <div class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
+                                            <div data-text-content class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
                                                 <?php echo $text; ?>
                                             </div>
-                                            <button class="<?php echo esc_attr($classes['item-text-more']); ?>"><?php echo esc_html($project_text_more) ?></button>
+                                            <button 
+                                            class="<?php echo esc_attr($classes['item-text-more']); ?>"
+                                            data-btn-more
+                                            onclick="toggleTextMore(event, '');"
+                                            data-clamp=10
+                                            data-clamping=yes>
+                                                <?php echo esc_html($project_text_more) ?>
+                                            </button>
                                         </div>
                                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/loop-arrow-yellow.svg" class="<?php echo esc_attr($classes['item-element']); ?>" alt="">
                                     </div>
