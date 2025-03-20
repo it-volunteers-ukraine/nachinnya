@@ -108,7 +108,7 @@ $category_list = get_field('category_gallery', $current_id);
             $class_open = esc_attr($classes['open']);
 
             $is_open = $counter === 0 ? $class_open : '';
-            $is_open = $class_open;
+            // $is_open = $class_open;
 
             // $is_open = $counter === 0 ? ' open' : '';
             // $class_is_open = esc_attr($classes[$is_open]); 
@@ -118,18 +118,19 @@ $category_list = get_field('category_gallery', $current_id);
             // $str_class = echo $class_open;
             ?>
 
-            <div class="<?php echo esc_attr($classes['category-block']); ?> <?php echo esc_attr($is_open); ?> ">
+            <div class="<?php echo esc_attr($classes['category-block']); ?> " data-category-block>
                 <div class="<?php echo esc_attr($classes['category-header-wrap']); ?>">
                     <div class="<?php echo esc_attr($classes['category-header']); ?>">
                         <h3><?php echo esc_html($category_name); ?></h3>
 
-                        <button class="<?php echo $class_btn; ?>" type="button" onclick="projectsCategoryHidden(event, '<?php echo $class_open; ?>' )">
+                        <button class="<?php echo $class_btn; ?>" type="button"
+                            onclick="projectsCategoryHidden(event, '<?php echo esc_attr($class_open); ?>')">
                             <img id="icon-open" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_open-close.svg" class="<?php echo esc_attr($classes['icon-open-close']); ?>" data-open="">
                         </button>
                     </div>
 
                     <!-- Галерея категории -->
-                    <div class="<?php echo esc_attr($classes['category-gallery']); ?>">
+                    <div class="<?php echo esc_attr($classes['category-gallery']); ?> <?php echo esc_attr($is_open); ?> " data-category-gallery>
                         <?php if (!empty($gallery_list)) :
                             foreach ($gallery_list as $image) : ?>
                                 <?php
@@ -145,7 +146,9 @@ $category_list = get_field('category_gallery', $current_id);
                 </div>
 
                 <!-- Список постов этой категории -->
-                <div class="<?php echo esc_attr($classes['category-posts']); ?>" style="<?php echo $is_open ? 'display:block;' : 'display:none;'; ?>">
+                <div class="<?php echo esc_attr($classes['category-posts']); ?> <?php echo esc_attr($is_open); ?> "
+                    data-category-posts>
+
                     <?php if (!empty($posts)) : ?>
                         <?php foreach ($posts as $post) : ?>
                             <?php

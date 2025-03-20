@@ -20,7 +20,16 @@
 
 .category-posts {
   padding-top: 40px;
+  height: 0;
+  overflow: hidden;
+  transition: all 1000ms linear;
 }
+
+.category-posts.open{
+  height: auto;
+  overflow: unset;
+}
+
 .icon-open-close {
   width: 48px;
   height: 48px;
@@ -185,6 +194,19 @@
   .category-gallery{
     display: flex;
     justify-content: space-between;
+    transition: all 2000ms linear;
+  }
+
+  .category-gallery:not(.open){
+    height: 0;
+    overflow: hidden;
+    transition: all 2000ms linear;
+  }
+
+  .category-gallery.open{
+    height: auto;
+    overflow: unset;
+    transition: all 2000ms linear;
   }
 
   .category-gallery-img:nth-child(1n + 4) {

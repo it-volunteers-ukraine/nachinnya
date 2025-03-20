@@ -1,6 +1,33 @@
 function projectsCategoryHidden(event, classOpen) {
-    event.currentTarget.classList.toggle(classOpen);
+    const button = event.currentTarget;
+
+    // Переключаем класс на самой кнопке (опционально)
+    button.classList.toggle(classOpen);
+
+    // Находим родителя по data-атрибуту
+    const wrapper = button.closest('[data-category-block]');
+    console.log("Wrapper: ", wrapper);
+    if (!wrapper) return;
+
+    // Галерея внутри wrapper
+    const gallery = wrapper.querySelector('[data-category-gallery]');
+
+    // Посты после wrapper
+    const posts = wrapper.querySelector('[data-category-posts]');
+
+    console.log("Posts: ", posts);
+
+    // Переключаем классы скрытия/показа
+    if (gallery) {
+        gallery.classList.toggle(classOpen);
+    }
+
+    if (posts) {
+        posts.classList.toggle(classOpen);
+    }
 }
+
+
 
 function toggleTextMore(event) {
     const button = event.currentTarget;
