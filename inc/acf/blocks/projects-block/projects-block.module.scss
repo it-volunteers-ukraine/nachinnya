@@ -20,17 +20,18 @@
 
 .category-posts {
   padding-top: 40px;
-  height: 0;
   overflow: hidden;
-  transition: all 1000ms linear;
+  opacity: 1;
+  transition: max-height 1000ms linear, opacity 500ms linear;
 }
 
-.category-posts.open{
-  height: auto;
-  overflow: unset;
+.category-posts.close{
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
 }
 
-.icon-open-close {
+.icon-close-close {
   width: 48px;
   height: 48px;
 }
@@ -39,12 +40,12 @@
 }
 
 .toggle-posts-btn img {
-  transform: rotateX(-180deg);
+  transform: rotateX(0deg);
   transition: all $animations-long;
 }
 
-.toggle-posts-btn.open img {
-  transform: rotateX(0deg);
+.toggle-posts-btn.close img {
+  transform: rotateX(-180deg);
 }
 
 .category-header-wrap {
@@ -187,27 +188,28 @@
     border: 2px dotted $red;
     border-radius: 24px;
   }
+  
   .category-header {
-    margin-bottom: 32px;
     gap: 23px;
+    margin-bottom: 32px;
   }
+  
   .category-gallery{
     display: flex;
     justify-content: space-between;
-    transition: all 2000ms linear;
   }
 
-  .category-gallery:not(.open){
+  /*
+  .category-gallery:not(.close){
     height: 0;
     overflow: hidden;
-    transition: all 2000ms linear;
   }
 
-  .category-gallery.open{
+  .category-gallery.close{
     height: auto;
     overflow: unset;
-    transition: all 2000ms linear;
-  }
+  } 
+  */
 
   .category-gallery-img:nth-child(1n + 4) {
     display: none;

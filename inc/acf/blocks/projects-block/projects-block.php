@@ -7,7 +7,7 @@ $default_classes = [
     'test-wrap' => 'test-wrap',
     'toggle-posts-btn' => 'toggle-posts-btn',
     'icon-open-close' => 'icon-open-close',
-    'open' => 'open',
+    'close' => 'close',
     'category-header' => 'category-header',
     'category-header-wrap' => 'category-header-wrap',
     'project__item' => 'project__item',
@@ -105,17 +105,17 @@ $category_list = get_field('category_gallery', $current_id);
             // var_export($team_block);
             // echo '</pre>';
 
-            $class_open = esc_attr($classes['open']);
+            $class_close = esc_attr($classes['close']);
 
-            $is_open = $counter === 0 ? $class_open : '';
-            // $is_open = $class_open;
+            $is_close = $counter > 0 ? $class_close : '';
+            // $is_close = $class_close;
 
-            // $is_open = $counter === 0 ? ' open' : '';
-            // $class_is_open = esc_attr($classes[$is_open]); 
-            // echo 'is_open: '. $is_open. '<br>';
+            // $is_close = $counter === 0 ? ' close' : '';
+            // $class_is_close = esc_attr($classes[$is_close]); 
+            // echo 'is_close: '. $is_close. '<br>';
             // echo 'counter: '. $counter. '<br>';
-            $class_btn = esc_attr($classes['toggle-posts-btn']) . ' ' . $is_open;
-            // $str_class = echo $class_open;
+            $class_btn = esc_attr($classes['toggle-posts-btn']) . ' ' . $is_close;
+            // $str_class = echo $class_close;
             ?>
 
             <div class="<?php echo esc_attr($classes['category-block']); ?> " data-category-block>
@@ -124,13 +124,13 @@ $category_list = get_field('category_gallery', $current_id);
                         <h3><?php echo esc_html($category_name); ?></h3>
 
                         <button class="<?php echo $class_btn; ?>" type="button"
-                            onclick="projectsCategoryHidden(event, '<?php echo esc_attr($class_open); ?>')">
+                            onclick="projectsCategoryHidden(event, '<?php echo esc_attr($class_close); ?>')">
                             <img id="icon-open" src="<?php echo get_template_directory_uri(); ?>/assets/images/icon_open-close.svg" class="<?php echo esc_attr($classes['icon-open-close']); ?>" data-open="">
                         </button>
                     </div>
 
                     <!-- Галерея категории -->
-                    <div class="<?php echo esc_attr($classes['category-gallery']); ?> <?php echo esc_attr($is_open); ?> " data-category-gallery>
+                    <div class="<?php echo esc_attr($classes['category-gallery']); ?> <?php echo esc_attr($is_close); ?> " data-category-gallery>
                         <?php if (!empty($gallery_list)) :
                             foreach ($gallery_list as $image) : ?>
                                 <?php
@@ -146,8 +146,7 @@ $category_list = get_field('category_gallery', $current_id);
                 </div>
 
                 <!-- Список постов этой категории -->
-                <div class="<?php echo esc_attr($classes['category-posts']); ?> <?php echo esc_attr($is_open); ?> "
-                    data-category-posts>
+                <div class="<?php echo esc_attr($classes['category-posts']); ?> <?php echo esc_attr($is_close); ?>" data-category-posts>
 
                     <?php if (!empty($posts)) : ?>
                         <?php foreach ($posts as $post) : ?>
