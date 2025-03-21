@@ -337,6 +337,10 @@
     gap: 24px;
 }
 
+.header__prevent-scrolling {
+    position: fixed;
+}
+
 // The scroll to top button
 .header__scroll-to-top-button {
     position: fixed;
