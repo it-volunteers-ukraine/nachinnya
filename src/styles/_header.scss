@@ -431,6 +431,10 @@
 
 // The styles for the desktops
 @media screen and (min-width: variables.$desktop) {
+    .header {
+        padding: 12px 80px;
+    }
+
     .header__dropdown-menu {
         padding: 34px 80px 40px 80px;
     }
