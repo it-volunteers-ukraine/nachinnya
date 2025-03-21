@@ -1,3 +1,5 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
 @font-face {
   font-family: "Kharkiv Tone";
   src: url("/wp-content/themes/nachinnya/fonts/KharkivTone.woff") format("woff");
@@ -8,14 +10,21 @@
 .home-title {
   display: block;
   text-align: center;
-  padding-left: 297.5px;
-  padding-right: 297.5px;
-  padding-top: 28px;
-  padding-bottom: 32px;
+  padding: 28px 297.5px 0px;
   font-family: 'Kharkiv Tone', sans-serif;
   font-weight: 400;
-  font-size: 80px;
-  line-height: 88px;
   letter-spacing: 0;
-  color: #000000;
+  color: $black;
+
+  @media screen and (max-width: 1919.9px) {
+    padding: 28px 57.5px 0px;
+  }
+
+  @media screen and (max-width: 1439.9px) {
+    padding: 28px 63px 0px;
+  }
+
+  @media screen and (max-width: 767.9px) {
+    padding: 28px 16px 0px;
+  }
 }

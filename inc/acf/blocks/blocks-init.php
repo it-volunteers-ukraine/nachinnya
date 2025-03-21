@@ -67,7 +67,7 @@ function it_volunteers_acf_blocks_init()
         acf_register_block_type(array(
             'name'              => 'partners-block',
             'title'             => __('partners-block'),
-            'description'       => __('Block for partners title'),
+            'description'       => __('Block for partners'),
             'render_template'   => acf_theme_blocks_path('partners-block/partners-block.php'),
             'enqueue_style'     => get_template_directory_uri() . '/assets/blocks/styles/partners-block/partners-block.css',
             'category'          => 'posts-blocks',
@@ -96,6 +96,19 @@ function it_volunteers_acf_blocks_init()
             'category'          => 'custom-blocks',
             'icon'              => 'admin-post',
         ));
+
+
+       // Register contacts block
+        acf_register_block_type(array(
+            'name' => 'contacts-block',
+            'title' => __('Contacts Block'),
+            'description'       => __('Block contacts'),
+            'render_template' =>  acf_theme_blocks_path('contacts-block/contacts-block.php'),
+            'enqueue_style' => get_template_directory_uri() . '/assets/blocks/styles/contacts-block/contacts-block.css',
+            'category' => 'custom-blocks',
+        ));
+
+
     }
 }
 add_action('acf/init', 'it_volunteers_acf_blocks_init');

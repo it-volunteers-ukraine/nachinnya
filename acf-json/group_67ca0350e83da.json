@@ -77,7 +77,7 @@
             "label": "Посилання на бот (опціонально)",
             "name": "link_follow_us",
             "aria-label": "",
-            "type": "url",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -86,30 +86,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "allow_in_bindings": 1,
-            "placeholder": ""
-        },
-        {
-            "key": "field_67cdcce917ab7",
-            "label": "Текст посилання",
-            "name": "link_follow_title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_67cc7a5e56d1e",
@@ -182,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741540681
+    "modified": 1742062257
 }

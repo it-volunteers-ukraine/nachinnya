@@ -1,0 +1,113 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.title-template-part {
+    width: fit-content;
+    margin-bottom: 88px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin: 0px auto 40px;
+    }
+}
+
+.partners-slider-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+    margin-bottom: 88px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 64px;
+        gap: 60px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+        padding: 17.5px 0;
+        gap: 40px;
+    }
+}
+
+:global(.partnersSwiper .swiper-slide) {
+    width: auto;
+}
+
+.partner-image {
+    height: 100px;
+
+    @media screen and (max-width: 1439.9px) {
+        height: 64px;
+    }
+}
+
+.slide-next,
+.slide-prev {
+    width: 48px;
+    height: 48px;
+    padding: 0 24px;
+    background-image: url('../../../../assets/images/icon_open-close.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-90deg);
+
+    @media screen and (max-width: 767.9px) {
+        display: none;
+    }
+}
+
+.slide-next {
+    transform: rotate(90deg);
+}
+
+.slide-next:hover {
+    background-image: url('../../../../assets/images/slider_arrow-left_hover.svg');
+    transform: rotate(180deg);
+}
+
+.slide-prev:hover {
+    background-image: url('../../../../assets/images/slider_arrow-left_hover.svg');
+    transform: rotate(0deg);
+}
+
+.partners-text-column {
+    width: 425px;
+    margin-left: auto;
+    margin-right: 148px;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 305px;
+        margin-right: 108px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-right: 0px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 328px;
+        margin: 0 auto;
+    }
+}
+
+.link {
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 20px;
+
+    @media screen and (max-width: 1439.9px) {
+        margin-top: 16px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        width: 328px;
+    }
+}

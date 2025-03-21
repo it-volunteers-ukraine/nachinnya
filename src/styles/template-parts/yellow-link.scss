@@ -1,0 +1,31 @@
+@use "../variables.scss" as *;
+
+.optional-link {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $red;
+    background-color: $yellow;
+    padding: 12px 36px;
+    border: 1px solid $red;
+    border-radius: 100px;
+
+    @media screen and (max-width: 1919.9px) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        padding: 12px 32px;
+    }
+}
+
+.optional-link:hover {
+    background-color: $yellow-hover;
+}
+
+.optional-link:active {
+    color: $white;
+    background-color: $yellow-pressed;
+    border: 2px solid $yellow;
+}

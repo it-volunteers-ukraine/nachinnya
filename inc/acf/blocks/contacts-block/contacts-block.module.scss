@@ -1,0 +1,196 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.title-center {
+  text-align: -webkit-center;
+  margin-bottom: 171px;
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.title-left {
+  text-align: left;
+  margin-bottom: 88px;
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: $mobile) {
+    text-align: -webkit-center;
+  }
+}
+
+.text-content {
+  width: 425px;
+  @media screen and (max-width: $tablet) {
+    margin-top: 40px
+  }
+  @media screen and (max-width: $tablet) {
+   max-width: 100%;
+  }
+}
+
+section {
+  @media screen and (max-width: $tablet) {
+    position: relative;
+  }
+}
+
+
+.contacts-center {
+  padding: 0 147px;
+
+  @media screen and (max-width: $tablet) {
+    padding: 0 0;
+  }
+
+
+  .contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 92px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 64px;
+      gap: 207px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .icons-contacts {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 45px;
+
+      @media screen and (max-width: $mobile) {
+        margin-bottom: 20px;
+      }
+
+      .contacts-row {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 22px;
+        align-items: center;
+      }
+
+
+    }
+
+    .elem-yellow {
+      object-fit: contain;
+
+      @media screen and (max-width: $tablet) {
+        width: 200px;
+        position: absolute;
+        bottom: 99px;
+        right: 391px;
+      }
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 45px;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+        white-space: normal;
+        width: 248px;
+        margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+
+    .contacts-text2 {
+      @media screen and (max-width: $mobile) {
+        white-space: nowrap;
+      }
+    }
+
+    a {
+      font-size: 20px;
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+      }
+    }
+
+    .photo img {
+      width: auto;
+      position: absolute;
+      right: -1.66px;
+      top: -3px;
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    .photo {
+      @media screen and (max-width: $tablet) {
+        display: flex;
+        justify-content: center;;
+      }
+    }
+
+    .photo:hover img {
+      transform: scale(1.05) rotate(-1deg);
+    }
+  }
+
+  .contacts-social-media {
+      p {
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: rgb(53, 19, 17);
+        margin-bottom: 20px;
+        font-family: 'KharkivTone', sans-serif;
+        @media screen and (max-width: $tablet) {
+          font-size: 16px;
+          margin-bottom: 11px;
+        }
+        @media screen and (max-width: $mobile) {
+          font-size: 14px;
+        }
+      }
+  }
+
+  .text-content::before {
+    @media screen and (max-width: $mobile) {
+      content: "";
+      position: absolute;
+      width: 99.41px;
+      height: 49.4px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(50%, 50%);
+      right: 180px;
+      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+      margin-top: -72px;
+    }
+  }
+
+  .contacts-text {
+    @media screen and (max-width: $mobile) {
+      margin-top: 40px;
+      white-space: normal;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

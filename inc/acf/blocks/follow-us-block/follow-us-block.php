@@ -84,12 +84,21 @@ if (file_exists($modules_file)) {
                 <p><?php echo get_field('text_follow_us') ?></p>
                 <!-- link -->
                 <?php
-                    $follow_link = get_field('link_follow_us');
-                    if (!empty($follow_link)):
+                $optional_link = get_field('link_follow_us');
+                if (!empty($optional_link)) :
                 ?>
-                <div class="<?php echo esc_attr($classes['link']); ?>">
-                    <a href="<?php echo $follow_link; ?>" target="_blank"><?php echo the_field('link_follow_title') ?></a>
+
+                <div class="<?php echo esc_attr($classes['link-container']); ?>">
+                    <?php
+                    $link_class = isset($classes['link']) ? esc_attr($classes['link']) : '';
+                    get_template_part('template-parts/yellow-link', null, [
+                        'link' => $optional_link['url'],
+                        'link_text' => $optional_link['title'],
+                        'link_class' => $link_class
+                    ]);
+                    ?>
                 </div>
+
                 <?php endif; ?>
             </div>
             <!-- images -->
