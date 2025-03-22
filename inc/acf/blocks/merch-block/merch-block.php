@@ -31,18 +31,22 @@ if (file_exists($modules_file)) {
         <div class='<?php echo esc_attr($classes['flex-container']); ?>'>
             <!-- Photo -->
             <?php
-            $photo_url = get_field('merch_image') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
 
+            $photo_url = get_field('merch_image') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
             $photo_alt = get_the_title();
             
             if(!empty ($photo_url)) :
-            get_template_part('template-parts/photo-left', null, [
-                'photo_url' => $photo_url,
-                'photo_alt' => $photo_alt,
-                'my_class' => esc_attr($classes['merch_photo']),
-            ]);
-            endif;
             ?>
+                <a href="<?php echo $photo_url; ?>" data-lightbox="gallery">
+                <?php
+                get_template_part('template-parts/photo-left', null, [
+                    'photo_url' => $photo_url,
+                    'photo_alt' => $photo_alt,
+                    'my_class' => esc_attr($classes['merch_photo']),
+                ]);
+                ?>
+                </a>
+            <?php endif; ?>
             <div class="<?php echo esc_attr($classes['loop-arrow']); ?>"></div>
             <!-- Text-wrapper -->
             <div class='<?php echo esc_attr($classes['text-wrapper']); ?>'>
