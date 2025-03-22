@@ -1,3 +1,19 @@
+function calcHeight(domBlock){
+  let currentHeight = domBlock.scrollHeight;
+  // console.log('currnetHeihjt: ', currentHeight);
+  const allTextBlock = domBlock.querySelectorAll('[data-text-content');
+  // let additiuonHeight = 0;
+  for (item of allTextBlock){
+    console.log('item: ', item);
+    console.log('item offsetHeight: ', item.offsetHeight);
+    console.log('item scrolHeight: ', item.scrollHeight);
+    // currentHeight += item.scrollHeight - item.offsetHeight;
+    currentHeight += item.scrollHeight ;
+  }
+  // console.log('currentHeight after text: ', currentHeight);
+  return currentHeight;
+}
+
 function projectsCategoryHidden(event, classClose) {
   const button = event.currentTarget;
 
@@ -18,11 +34,8 @@ function projectsCategoryHidden(event, classClose) {
   // Посты после wrapper
   const posts = wrapper.querySelector('[data-category-posts]');
 
-  // console.log("Posts: ", posts);
-  // console.log('getBoundingClientRect: ', posts.getBoundingClientRect().height)
-  // console.log('scrollHeight: ', posts.scrollHeight);
-
-  postsHeight = (posts.scrollHeight * 1.2) + 'px';
+  // let postsHeight = (posts.scrollHeight) + 'px';
+  const postsHeight = calcHeight(posts) + 'px';
 
 
   // Переключаем классы скрытия/показа
@@ -40,27 +53,35 @@ function projectsCategoryHidden(event, classClose) {
   }
 }
 
-function initialPosts() {
+
+function initialPostsHeight() {
   const allPosts = document.querySelectorAll('[data-category-posts]');
-  console.log('allPosts: ', allPosts);
-  let hasClose = false;
-  allPosts.classList.forEach(className => {
-    if (className.includes('close')){
-      hasClose = true;
-    }
-  })
+  // console.log('allPosts: ', allPosts);
+  
   allPosts.forEach(block => {
-    blockHeight = (block.scrollHeight * 2) + 'px';
-    if (block.classList.contains('*close*')) {
+    // console.log('block height: ', block.scrollHeight);
+    totalBlockHeight = calcHeight(block);
+    // console.log('block height after calc: ', totalBlockHeight);
+
+    let hasClose = false;
+  
+    block.classList.forEach(className => {
+      if (className.includes('close')){
+        hasClose = true;
+      }
+    })
+    blockHeight = (block.scrollHeight) + 'px';
+    // if (block.classList.contains('*close*')) {
+      if (hasClose) {
       block.style.maxHeight = '0px';
     } else {
-      block.style.maxHeight = blockHeight;
+      block.style.maxHeight = totalBlockHeight + 'px';
     }
   })
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  initialPosts();
+  initialPostsHeight();
 });
 
 function toggleTextMore(event) {
@@ -71,7 +92,7 @@ function toggleTextMore(event) {
   const showMoreText = button.getAttribute('data-text-more') || 'Показать ещё';
   const showLessText = button.getAttribute('data-text-less') || 'Показать меньше';
 
-  const isExpanded = content.classList.toggle('expanded');
+  const isExpanded = content.toggle('expanded');
 
   if (isExpanded) {
     content.style.webkitLineClamp = 'unset';
@@ -113,6 +134,7 @@ function checkOverflow(card) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Кнопки скрытия/показа категории
   const textBlocks = document.querySelectorAll('[data-item-text]');
 
   textBlocks.forEach(block => {

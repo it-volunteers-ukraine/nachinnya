@@ -22,7 +22,7 @@
   padding-top: 40px;
   overflow: hidden;
   opacity: 1;
-  transition: max-height 1000ms linear, opacity 500ms linear;
+  transition: max-height $animations-very-long, opacity $animations-long, padding-top $animations-long;
 }
 
 .category-posts.close{
