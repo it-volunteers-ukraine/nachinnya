@@ -94,7 +94,8 @@ if (file_exists($modules_file)) {
                     get_template_part('template-parts/yellow-link', null, [
                         'link' => $optional_link['url'],
                         'link_text' => $optional_link['title'],
-                        'link_class' => $link_class
+                        'link_class' => $link_class,
+                        'target' => $optional_link['target']
                     ]);
                     ?>
                 </div>
