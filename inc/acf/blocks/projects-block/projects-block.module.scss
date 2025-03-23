@@ -137,16 +137,16 @@
 }
 
 .text-content {
-  display: -webkit-box;
-  -webkit-line-clamp: 10; /* Количество строк */
-  -webkit-box-orient: vertical;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 10; 
+  -webkit-box-orient: vertical; */
   overflow: hidden; 
-  transition: all 1s linear;
+  transition: max-height $animations-long;
 }
 
 /*.text-content.collapse { */
 .text-content[data-expandet='true'] {
-  -webkit-line-clamp: unset !important;
+  /* -webkit-line-clamp: unset !important; */
 }
 
 .text-wrap {
@@ -242,8 +242,8 @@
     }
   }
   .text-content.collapse {
-    display: -webkit-box;
-    -webkit-line-clamp: 9;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 9; */
   }
 
   .item-element {
@@ -291,8 +291,8 @@
   }
 
   .text-content.collapse {
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 6; */
   }
 
   .item-element {
@@ -348,8 +348,8 @@
   }
 
   .text-content.collapse {
-    display: -webkit-box;
-    -webkit-line-clamp: 11;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 11; */
   }
 
   .item-element {
@@ -408,8 +408,8 @@
   }
 
   .text-content.collapse {
-    display: -webkit-box;
-    -webkit-line-clamp: 16;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 16; */
   }
 
   .item-element {

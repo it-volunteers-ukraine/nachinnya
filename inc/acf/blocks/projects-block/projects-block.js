@@ -88,7 +88,30 @@ window.addEventListener('DOMContentLoaded', () => {
   initialPostsHeight();
 });
 
+function calculateCollapsedHeight(content) {
+  // 360 - 10 line
+  // 768 - 9 line
+  // 1440 - 11 line
+  // 1920 - 16 line
+  const lineHeight = parseFloat(getComputedStyle(content).lineHeight);
+  let clampLines = 10; // дефолт
+
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    clampLines = 10; // мобилка
+  } else if (screenWidth < 1440) {
+    clampLines = 9; // планшет
+  }else if (screenWidth < 1920) {
+    clampLines = 11; // планшет
+  } else {
+    clampLines = 16; // десктоп
+  }
+  return lineHeight * clampLines;
+}
+
 function checkOverflow(card) {
+
   const content = card.querySelector('[data-text-content]');
   const button = card.querySelector('[data-btn-more]');
 
@@ -115,29 +138,18 @@ function toggleTextMore(event) {
   const button = event.currentTarget;
   const card = button.closest('[data-item-text]');
   const content = card.querySelector('[data-text-content]');
-
   const showMoreText = button.getAttribute('data-text-more') || 'Показать больше';
   const showLessText = button.getAttribute('data-text-less') || 'Показать меньше';
 
-  // console.log(`offsetHeight: ${content.offsetHeight} \n scrolHeight: ${content.scrollHeight} \n`)
-  // console.log('toggle', content.dataset.expandet);
   content.dataset.expandet = content.dataset.expandet === 'true' ? 'false' : 'true';
-  // content.setAttribute('data-expandet', content.dataset.expandet === 'true' ? 'false' : 'true');
-  // console.log(`dataset.expandet: ${content.dataset.expandet}\ngetAttribute: ${content.getAttribute('data-expandet')} `)
-
   const isExpandet = content.dataset.expandet === 'true';
 
   if (isExpandet) {
-    // content.style.webkitLineClamp = 'unset';
-    // content.style.display = 'block';
-    console.log('to Expandet', content.dataset.maxHeight)
+    // console.log('to Expandet', content.dataset.maxHeight)
     content.style.maxHeight = content.dataset.maxHeight;
     button.textContent = showLessText;
     button.setAttribute('data-clamping', 'no');
   } else {
-    // content.style.display = '-webkit-box';
-    // content.style.webkitLineClamp = button.getAttribute('data-clamp');
-    console.log('not Expandet', content.dataset.height)
     content.style.maxHeight = content.dataset.height;
     button.textContent = showMoreText;
     button.setAttribute('data-clamping', 'yes');
@@ -158,16 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log(`offsetHeight: ${content.offsetHeight} \n scrolHeight: ${content.scrollHeight} \n`)
     // content.style.maxHeight = (content.offsetHeight + content.scrollHeight) + 'px';
-    content.style.maxHeight = (content.offsetHeight) + 'px';
-    content.dataset.height = content.offsetHeight + 'px';
-    content.dataset.maxHeight = (content.offsetHeight + content.scrollHeight) + 'px';
+    content.dataset.height = calculateCollapsedHeight(content) + 'px';
+    content.style.maxHeight = content.dataset.height ;
+    content.dataset.maxHeight = (content.scrollHeight) + 'px';
 
-    // const clampValue = button.getAttribute('data-clamp') || 3;
-    // content.style.webkitLineClamp = clampValue;
-    // content.style.display = '-webkit-box';
     content.dataset.expandet = 'false';
-    // content.classList.add('collapse');
-
     // checkOverflow(block);
   });
 
