@@ -193,7 +193,7 @@ $category_list = get_field('category_gallery', $current_id);
                                     </div>
                                     <div data-item-text class="<?php echo esc_attr($classes['item-text']); ?>">
                                         <div class="<?php echo esc_attr($classes['text-wrap']); ?>">
-                                            <div data-text-content class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
+                                            <div data-text-content data-isClamp='true' class="<?php echo esc_attr($classes['collapse']); ?> <?php echo esc_attr($classes['text-content']); ?>">
                                                 <?php echo $text; ?>
                                             </div>
                                             <button

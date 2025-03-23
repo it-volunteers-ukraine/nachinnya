@@ -22,10 +22,11 @@
   padding-top: 40px;
   overflow: hidden;
   opacity: 1;
-  transition: max-height $animations-very-long, opacity $animations-long, padding-top $animations-long;
+  transition: max-height $animations-very-long, opacity $animations-long,
+    padding-top $animations-long;
 }
 
-.category-posts.close{
+.category-posts.close {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -136,14 +137,16 @@
 }
 
 .text-content {
-  transition: all 0.3s ease;
-}
-
-.text-content.collapse {
   display: -webkit-box;
   -webkit-line-clamp: 10; /* Количество строк */
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: hidden; 
+  transition: all 1s linear;
+}
+
+/*.text-content.collapse { */
+.text-content[data-expandet='true'] {
+  -webkit-line-clamp: unset !important;
 }
 
 .text-wrap {
@@ -188,13 +191,13 @@
     border: 2px dotted $red;
     border-radius: 24px;
   }
-  
+
   .category-header {
     gap: 23px;
     margin-bottom: 32px;
   }
-  
-  .category-gallery{
+
+  .category-gallery {
     display: flex;
     justify-content: space-between;
   }
@@ -247,13 +250,12 @@
     width: clamp(200px, calc(11.9vw + 108.9px), 280px);
     left: clamp(0px, calc(100vw - 820px), 820px);
   }
-
 }
 .category-header {
 }
 
 @media screen and (min-width: 960px) {
-  .category-gallery{
+  .category-gallery {
     justify-content: space-around;
   }
 
@@ -283,9 +285,7 @@
     margin-bottom: 20px;
   }
 
-
-
-  .text-wrap{
+  .text-wrap {
     width: clamp(424px, calc(64.37vw - 400px), 527px);
     max-width: 680px;
   }
@@ -295,14 +295,13 @@
     -webkit-line-clamp: 6;
   }
 
-  .item-element{
+  .item-element {
     left: 0;
   }
-  
 }
 
 @media screen and (min-width: 1440px) {
-  .category-gallery{
+  .category-gallery {
     justify-content: space-between;
   }
 
@@ -328,7 +327,7 @@
     margin-bottom: 32px;
   }
 
-  .item-title-wrap{
+  .item-title-wrap {
     max-width: 1230px;
     width: calc(81.25vw - 330px);
   }
@@ -346,7 +345,6 @@
       font-size: 16px;
       line-height: 1.2;
     }
-
   }
 
   .text-content.collapse {
@@ -363,7 +361,6 @@
 }
 
 @media screen and (min-width: 1920px) {
-
   .category-gallery-img:nth-child(5) {
     display: unset;
   }
