@@ -1,22 +1,4 @@
-function calcHeightTextContent(textContent) {
 
-}
-
-function calcHeight(domBlock) {
-  let currentHeight = domBlock.scrollHeight;
-  // console.log('currnetHeihjt: ', currentHeight);
-  const allTextBlock = domBlock.querySelectorAll('[data-text-content');
-  // let additiuonHeight = 0;
-  for (item of allTextBlock) {
-    console.log('item: ', item);
-    console.log('item offsetHeight: ', item.offsetHeight);
-    console.log('item scrolHeight: ', item.scrollHeight);
-    // currentHeight += item.scrollHeight - item.offsetHeight;
-    currentHeight += item.scrollHeight;
-  }
-  // console.log('currentHeight after text: ', currentHeight);
-  return currentHeight;
-}
 
 function projectsCategoryHidden(event, classClose) {
   const button = event.currentTarget;
@@ -88,6 +70,17 @@ window.addEventListener('DOMContentLoaded', () => {
   initialPostsHeight();
 });
 
+// text more 
+function calcHeight(domBlock) {
+  let currentHeight = domBlock.scrollHeight;
+  // console.log('currnetHeihjt: ', currentHeight);
+  const allTextBlock = domBlock.querySelectorAll('[data-text-content');
+  for (item of allTextBlock) {
+    currentHeight += item.scrollHeight;
+  }
+  return currentHeight;
+}
+
 function calculateCollapsedHeight(content) {
   // 360 - 10 line
   // 768 - 9 line
@@ -126,27 +119,11 @@ function checkOverflow(card) {
   const content = card.querySelector('[data-text-content]');
   const button = card.querySelector('[data-btn-more]');
 
-  
-  // const wasExpanded = content.classList.contains('expanded');
   const wasExpanded = content.dataset.expandet === 'true';
-
   textMoreSetMaxHeight(content, wasExpanded);
 
-  // if (wasExpanded) {
-  //   content.classList.remove('expanded');
-  //   content.style.display = '-webkit-box';
-  //   content.style.webkitLineClamp = button.getAttribute('data-clamp');
-  // }
-
   const isOverflowing = content.scrollHeight > content.clientHeight;
-
   button.style.display = (isOverflowing || wasExpanded)  ? 'inline-block' : 'none';
-
-  // if (wasExpanded) {
-  //   content.classList.add('expanded');
-  //   content.style.display = 'block';
-  //   content.style.webkitLineClamp = 'unset';
-  // }
 }
 
 function toggleTextMore(event) {
@@ -178,12 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Кнопки скрытия/показа категории
   const textBlocks = document.querySelectorAll('[data-item-text]');
-  console.log('textBlock: ', textBlocks)
+  // console.log('textBlock: ', textBlocks)
   textBlocks.forEach(block => {
     const button = block.querySelector('[data-btn-more]');
     const content = block.querySelector('[data-text-content]');
 
-    console.log(`offsetHeight: ${content.offsetHeight} \n scrolHeight: ${content.scrollHeight} \n`)
+    // console.log(`offsetHeight: ${content.offsetHeight} \n scrolHeight: ${content.scrollHeight} \n`)
     textMoreSetMaxHeight(content);
 
     content.dataset.expandet = 'false';
