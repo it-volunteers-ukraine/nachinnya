@@ -99,6 +99,7 @@ $category_list = get_field('category_gallery', $current_id);
             // echo 'category_term: '. var_dump($category_term) . '<br>';
             // echo 'posts:' . var_dump($posts);
             // var_dump($category_id);
+            // var_dump($gallery_list);
             // echo var_dump($category_list);
             // echo var_dump($team_block);
             // print_r($team_block);
@@ -136,10 +137,17 @@ $category_list = get_field('category_gallery', $current_id);
                                 <?php
                                 $photo_item = $image;
                                 $photo_url = $photo_item['sizes']['medium_large'];
+                                $photo_full_url = $photo_item['url'];
                                 $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
                                 $photo_class = esc_attr($classes['category-gallery-img']);
-                                get_template_part('template-parts/photo-hor-small', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => $photo_class]); ?>
-                                <!-- <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="<?php echo esc_attr($classes['category-gallery-img']); ?>"> -->
+                                $photo_id = esc_html($category_name);
+                                get_template_part('template-parts/photo-hor-small', null, [
+                                    'id' => $photo_id,
+                                    'photo_url' => $photo_url,
+                                    'photo_full_url' => $photo_full_url,
+                                    'photo_alt' => $photo_alt,
+                                    'my_class' => $photo_class
+                                ]); ?>
                         <?php endforeach;
                         endif; ?>
                     </div>
@@ -175,11 +183,19 @@ $category_list = get_field('category_gallery', $current_id);
                             <div class="<?php echo esc_attr($classes['project__item']); ?>">
                                 <div class="<?php echo esc_attr($classes['project-slider']); ?>">
                                     <?php
+                                    $photo_id = esc_html($title);
                                     $photo_item = $gallery[0];
                                     $photo_url = $photo_item['sizes']['medium_large'];
+                                    $photo_full_url = $photo_item['url'];
                                     $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
-
-                                    get_template_part('template-parts/photo-left', null, ['photo_url' => $photo_url, 'photo_alt' => $photo_alt, 'my_class' => '']);
+                                    // $photo_class = esc_attr($classes['category-gallery-img']);
+                                    
+                                    get_template_part('template-parts/photo-left', null, [
+                                        'id' => $photo_id,
+                                        'photo_url' => $photo_url, 
+                                        'photo_full_url' => $photo_full_url,
+                                        'photo_alt' => $photo_alt, 
+                                        'my_class' => '']);
                                     ?>
                                 </div>
                                 <div class="<?php echo esc_attr($classes['item-content']); ?>">
