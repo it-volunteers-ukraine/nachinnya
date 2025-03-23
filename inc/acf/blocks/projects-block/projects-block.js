@@ -102,7 +102,7 @@ function calculateCollapsedHeight(content) {
     clampLines = 10; // мобилка
   } else if (screenWidth < 1440) {
     clampLines = 9; // планшет
-  }else if (screenWidth < 1920) {
+  } else if (screenWidth < 1920) {
     clampLines = 11; // планшет
   } else {
     clampLines = 16; // десктоп
@@ -110,28 +110,43 @@ function calculateCollapsedHeight(content) {
   return lineHeight * clampLines;
 }
 
+function textMoreSetMaxHeight(content, isExpandet = false) {
+  content.dataset.height = calculateCollapsedHeight(content) + 'px';
+  content.dataset.maxHeight = (content.scrollHeight) + 'px';
+  if (isExpandet) {
+    content.style.maxHeight = content.dataset.maxHeight;
+  } else {
+    content.style.maxHeight = content.dataset.height;
+  }
+
+}
+
 function checkOverflow(card) {
 
   const content = card.querySelector('[data-text-content]');
   const button = card.querySelector('[data-btn-more]');
 
-  const wasExpanded = content.classList.contains('expanded');
+  
+  // const wasExpanded = content.classList.contains('expanded');
+  const wasExpanded = content.dataset.expandet === 'true';
 
-  if (wasExpanded) {
-    content.classList.remove('expanded');
-    content.style.display = '-webkit-box';
-    content.style.webkitLineClamp = button.getAttribute('data-clamp');
-  }
+  textMoreSetMaxHeight(content, wasExpanded);
+
+  // if (wasExpanded) {
+  //   content.classList.remove('expanded');
+  //   content.style.display = '-webkit-box';
+  //   content.style.webkitLineClamp = button.getAttribute('data-clamp');
+  // }
 
   const isOverflowing = content.scrollHeight > content.clientHeight;
 
-  button.style.display = isOverflowing ? 'inline-block' : 'none';
+  button.style.display = (isOverflowing || wasExpanded)  ? 'inline-block' : 'none';
 
-  if (wasExpanded) {
-    content.classList.add('expanded');
-    content.style.display = 'block';
-    content.style.webkitLineClamp = 'unset';
-  }
+  // if (wasExpanded) {
+  //   content.classList.add('expanded');
+  //   content.style.display = 'block';
+  //   content.style.webkitLineClamp = 'unset';
+  // }
 }
 
 function toggleTextMore(event) {
@@ -169,16 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = block.querySelector('[data-text-content]');
 
     console.log(`offsetHeight: ${content.offsetHeight} \n scrolHeight: ${content.scrollHeight} \n`)
-    // content.style.maxHeight = (content.offsetHeight + content.scrollHeight) + 'px';
-    content.dataset.height = calculateCollapsedHeight(content) + 'px';
-    content.style.maxHeight = content.dataset.height ;
-    content.dataset.maxHeight = (content.scrollHeight) + 'px';
+    textMoreSetMaxHeight(content);
 
     content.dataset.expandet = 'false';
-    // checkOverflow(block);
+    checkOverflow(block);
   });
 
-  // window.addEventListener('resize', () => {
-  //   document.querySelectorAll('[data-item-text]').forEach(block => checkOverflow(block));
-  // });
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('[data-item-text]').forEach(block => checkOverflow(block));
+  });
 });
