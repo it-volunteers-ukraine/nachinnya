@@ -88,6 +88,9 @@ $socials = get_field('socials', 'options');
             <p>
                 <?php echo (get_field('copyright_one_part', 'option')); ?>
                 <a href="https://it-volunteers.com/" class="copyright link-adv" target="_blank">IT Volunteers</a>
+                &nbsp
+            </p>
+            <p>
                 &copy;<?php echo date('Y'); ?>
                 <?php echo (get_field('copyright_two_part', 'option')); ?>
             </p>
