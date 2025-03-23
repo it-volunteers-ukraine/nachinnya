@@ -44,7 +44,8 @@
 
 .events {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    transition: all variables.$animations;
 }
 
 /* Item */
@@ -53,6 +54,8 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100vw;
+    padding: 0px 16px;
 }
 
 .item-upper-part {
@@ -65,7 +68,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 73.17%;
+    width: 66.66vw;
 }
 
 .item-upper-part-link {
@@ -103,4 +106,418 @@
     border-radius: 4px;
     border: 2px solid variables.$yellow;
     transform: translateX(3px) translateY(6px) rotate(4deg);
+}
+
+/* Buttons */
+
+.item-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-buttons-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: variables.$red;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    user-select: none;
+
+    transition: all variables.$animations;
+}
+
+.item-buttons-button {
+    padding: 6px 2px;
+}
+
+.item-buttons-button:hover {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow;
+    color: variables.$yellow;
+}
+
+.item-buttons-button:active {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow_pressed;
+    color: variables.$yellow;
+}
+
+.item-buttons-button-svg {
+    width: 10px;
+    height: 18px;
+    fill: variables.$red;
+}
+
+.item-buttons-button:hover .item-buttons-button-svg {
+    fill: variables.$yellow;
+}
+
+.item-buttons-button:active .item-buttons-button-svg {
+    fill: variables.$yellow_pressed;
+}
+
+.rotate-180 {
+    rotate: 180deg;
+}
+
+/* Text part */
+
+.item-text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-text-part-title {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+}
+
+.item-text-part-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-text-part-card-info-price,
+.item-text-part-card-info-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.item-text-part-card-info-price-label,
+.item-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-info-price-value,
+.item-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-text-part-card-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-text-part-mt-register-block {
+    display: flex;
+}
+
+.item-text-part-register-button {
+    position: relative;
+    width: 100%;
+    border-radius: 100px;
+    padding: 12px 32px;
+    background-color: variables.$yellow;
+    border: 2px solid variables.$BG;
+
+    text-align: center;
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-text-part-register-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-text-part-register-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.item-text-part-register-button:active {
+    background-color: variables.$yellow_pressed;
+    color: variables.$white;
+}
+
+.item-text-part-register-button:active::after {
+    border: 2px solid variables.$yellow;
+}
+
+.item-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.item-text-part-card-show-more-button {
+    position: relative;
+    padding: 0px 4px;
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+    transition: all variables.$animations;
+}
+
+.item-text-part-card-show-more-button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all variables.$animations;
+}
+
+.item-text-part-card-show-more-button:active {
+    color: variables.$dark-red;
+}
+
+.item-text-part-card-show-more-button:hover::after {
+    border-bottom-color: variables.$red;
+}
+
+.item-text-part-card-show-more-button:active::after {
+    border-bottom-color: variables.$dark-red;
+}
+
+.item-text-part-card-main-text {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}
+
+.item-text-part-card-main-text.item-text-part-card-main-text-visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 1500ms ease-out;
+}
+
+/* Layouts */
+
+@media screen and (min-width: variables.$tablet) {
+    .item {
+        padding: 64px 40px;
+    }
+
+    .item-upper-part {
+        height: 39.06vw;
+    }
+
+    .item-upper-part-wrapper {
+        width: 31.25vw;
+    }
+
+    .item-text-part {
+        align-items: flex-end;
+        gap: 40px;
+    }
+
+    .item-text-part-title {
+        width: 66.66vw;
+        font-size: 20px;
+    }
+
+    .item-text-part-card-info {
+        width: 66.66vw;
+        gap: 16px;
+    }
+
+    .item-text-part-card-info-date,
+    .item-text-part-card-info-time,
+    .item-text-part-card-info-address,
+    .item-text-part-card-info-location,
+    .item-text-part-card-info-price-label,
+    .item-text-part-card-info-price-value,
+    .item-text-part-card-info-duration-label,
+    .item-text-part-card-info-duration-value {
+        font-size: 16px;
+    }
+
+    .item-text-part-register-button {
+        width: auto;
+    }
+
+    .item-text-part-card-texts {
+        width: 32.29vw;
+    }
+
+    .item-text-part-card-intro-text,
+    .item-text-part-card-main-text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: variables.$desktop) {
+    .item {
+        flex-direction: row;
+        gap: 92px;
+    }
+
+    .item-upper-part {
+        height: 29.86vw;
+    }
+
+    .item-upper-part-wrapper {
+        width: 24.3vw;
+    }
+
+    .item-upper-part-yellow,
+    .item-upper-part-blue,
+    .item-upper-part-link {
+        width: 89.42%;
+        height: 92.79%;
+    }
+
+    .item-text-part {
+        width: 43.75vw;
+        align-items: flex-start;
+    }
+
+    .item-text-part-title {
+        width: auto;
+    }
+
+    .item-text-part-card {
+        width: 100%;
+    }
+
+    .item-text-part-card-info {
+        width: auto;
+    }
+
+    .item-text-part-card-texts {
+        width: 21.18vw;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (min-width: variables.$full) {
+    .item {
+        padding: 0;
+        width: 76.25vw;
+    }
+
+    .item-upper-part {
+        height: 31.77vw;
+    }
+
+    .item-upper-part-wrapper {
+        width: 25.62vw;
+    }
+
+    .item-upper-part-yellow,
+    .item-upper-part-blue,
+    .item-upper-part-link {
+        width: 89.43%;
+        height: 92.459%;
+    }
+
+    .item-text-part {
+        width: 45.312vw;
+    }
+
+    .item-text-part-title {
+        font-size: 30px;
+        min-height: 78px;
+    }
+
+    .item-text-part-card-info-date,
+    .item-text-part-card-info-time,
+    .item-text-part-card-info-address,
+    .item-text-part-card-info-location,
+    .item-text-part-card-info-price-label,
+    .item-text-part-card-info-price-value,
+    .item-text-part-card-info-duration-label,
+    .item-text-part-card-info-duration-value,
+    .item-text-part-register-button {
+        font-size: 20px;
+    }
+
+    .item-text-part-card-texts {
+        width: 22.135vw;
+    }
+
+    .item-text-part-card-intro-text,
+    .item-text-part-card-show-more-button,
+    .item-text-part-card-main-text {
+        font-size: 20px;
+    }
 }

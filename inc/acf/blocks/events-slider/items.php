@@ -18,14 +18,11 @@
     $show_more_text = get_field('show_more_text');
     $show_less_text = get_field('show_less_text');
 
-    //
-    $paged = max(get_query_var('paged'), 1);
     // Basic args for query
     $args = array(
         'post_type'             => 'event',
 
-        'posts_per_page'        => 3,
-        'paged'                 => $paged,
+        'posts_per_page'        => 5,
 
         'meta_query'            => array(
             'relation'          => 'AND',
@@ -47,7 +44,7 @@
     );
     $query = new WP_Query($args);
 ?>
-<div class="<?= $classes["events"] ?>">
+<div id="eventsItems" class="<?= $classes["events"] ?>" data-items-count="<?= $query->post_count ?>">
     <?php
         if ($query->have_posts()):
             //
