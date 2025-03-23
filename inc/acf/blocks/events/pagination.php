@@ -91,12 +91,14 @@
         $s = '<div class="' . $classes["pagination"] . '">';
 
         // The previous arrow button
-        $s .= getArrowButton(
-            $classes, 
-            $current_page, 
-            $current_page > 1 ? $current_page - 1 : 1,
-            "left"
-        );
+        if ($current_page > 1) {
+            $s .= getArrowButton(
+                $classes, 
+                $current_page, 
+                $current_page - 1,
+                "left"
+            );
+        }
 
         // The start of the numeric pages group
         $s .= '<div class="' . $classes["pagination-numeric"] . '">';
@@ -128,12 +130,14 @@
         $s .= '</div>';
 
         // The next arrow button
-        $s .= getArrowButton(
-            $classes, 
-            $current_page, 
-            $current_page < $max_num_pages ? $current_page + 1 : $max_num_pages,
-            "right"
-        );
+        if ($current_page < $max_num_pages) {
+            $s .= getArrowButton(
+                $classes, 
+                $current_page, 
+                $current_page + 1,
+                "right"
+            );
+        }
 
         // End of pagination
         $s .= '</div>';

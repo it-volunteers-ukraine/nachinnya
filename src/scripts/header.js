@@ -16,6 +16,8 @@ const toggleHeaderDropdownMenu = () => {
   //
   const menu = document.getElementById("headerDropdownMenu");
   menu.classList.toggle("header__dropdown-menu-hidden");
+  //
+  document.body.classList.toggle("header__prevent-scrolling");
 };
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -7,6 +7,8 @@ $default_classes = [
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
     'partners-pagination' => 'partners-pagination',
+    'elem-yellow' => 'elem-yellow',
+    'even' => 'even',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -25,7 +27,7 @@ if (file_exists($modules_file)) {
     if (!empty($h2_title)) :
         ?>
         <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
-            <?php get_template_part('template-parts/h2-title-v2', null,[
+            <?php get_template_part('template-parts/h2-title-v2', null, [
                 'title' => $h2_title
             ]); ?>
         </div>
@@ -44,11 +46,13 @@ if (file_exists($modules_file)) {
             'paged' => $paged,
         );
 
+        $i = 0;
         $query = new WP_Query($args);
         if ($query->have_posts()) :
             echo '<div id="partners-block" class="' . esc_attr($classes['partners']) . '">';
             while ($query->have_posts()) : $query->the_post();
 
+                $i++;
                 $id = get_the_ID();
                 $partner_title = get_field('partner_title', $id);
                 $partner_image = get_field('partner_image', $id);
@@ -64,6 +68,11 @@ if (file_exists($modules_file)) {
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
 
+                    <img class="<?php echo esc_attr($classes['elem-yellow']); ?>
+                        <?php echo ($i % 2 == 0) ? esc_attr($classes['even']) : ''; ?>"
+                         src="<?php echo get_template_directory_uri() . '/assets/images/element-yellow.svg' ?>"
+                         alt="image">
+
                     <p class="<?php echo esc_attr($classes['partner-text']); ?>"><?php echo esc_html($partner_text); ?></p>
                 </div>
 
@@ -75,13 +84,13 @@ if (file_exists($modules_file)) {
             wp_reset_postdata();
             ?>
 
-            <div class="<?php echo esc_attr($classes['partners-pagination']);?>">
+            <div class="<?php echo esc_attr($classes['partners-pagination']); ?>">
                 <?php
                 $big = 999999999;
-                echo paginate_links( array(
-                    'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                echo paginate_links(array(
+                    'base' => str_replace($big, '%#%', get_pagenum_link($big)),
                     'format' => '?paged=%#%',
-                    'current' => max( 1, get_query_var('paged') ),
+                    'current' => max(1, get_query_var('paged')),
                     'total' => $query->max_num_pages,
                     'prev_text' => '<svg width="12" height="21" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5 1.44922L1.5 10.4492L10.5 19.4492" stroke="#B74028" stroke-width="2" stroke-linecap="round"/>
