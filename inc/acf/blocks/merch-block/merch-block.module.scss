@@ -1,0 +1,120 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
+.title-template-part {
+    width: fit-content;
+    margin-bottom: 88px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin: 0px auto 64px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        margin-bottom: 40px;
+    }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 148px 41px 163px;
+
+    @media screen and (max-width: 1919.9px) {
+        padding: 0px 108px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        padding: 0;
+    }
+
+    @media screen and (max-width: 767.8px) {
+        flex-direction: column;
+    }
+}
+
+.merch_photo {
+    @media screen and (max-width: 767.8px) {
+        margin: 0 auto 40px;
+    }
+}
+
+.loop-arrow {
+    @media screen and (max-width: 1439.9px) {
+        position: relative;
+    }
+
+    @media screen and (max-width: 767.8px) {
+        order: 3;
+    }
+}
+
+.loop-arrow::before {
+    content: '';
+    display: block;
+    background-image: url("../../../../assets/images/loop-arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 340px;
+    height: 167px;
+    margin: 255px 108px 0 87px;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 280px;
+        height: 140px;
+        margin: 290px 19px 0 0;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        margin: 0;
+        bottom: 50%;
+        right: -100px;
+    }
+
+    @media screen and (max-width: 850px) {
+        bottom: 0px;
+        right: 8px;
+    }
+
+    @media screen and (max-width: 767.8px) {
+        position: relative;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto;
+    }
+}
+
+.text-wrapper {
+    width: 425px;
+    padding-top: 21px;
+
+    @media screen and (max-width: 1919.9px) {
+        width: 305px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        width: 248px;
+        padding-bottom: 36px;
+    }
+
+    @media screen and (max-width: 767.8px) {
+        width: 100%;
+    }
+}
+
+.merch_text {
+    margin-bottom: 44px;
+
+    @media screen and (max-width: 1919.9px) {
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        margin-bottom: 40px;
+    }
+}
+
+.merch-socials {
+    font-family: $primary-font;
+}
