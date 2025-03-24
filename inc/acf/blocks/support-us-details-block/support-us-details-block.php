@@ -120,8 +120,9 @@ if (file_exists($modules_file)) {
                                         <div class="<?php echo esc_attr($classes['details-title']); ?>">
                                             <p><?php echo the_sub_field('details_title') ?></p>
                                         </div>
-                                        <div class="<?php echo esc_attr($classes['details-value']); ?>">
-                                            <p><?php echo the_sub_field('details_value') ?></p>
+                                        <div class="<?php echo esc_attr($classes['details-value']); ?>" data-class="<?php echo esc_attr($classes['details-value']); ?>">
+                                            <p class="details-text"><?php echo the_sub_field('details_value') ?></p>
+                                            <div class="<?php echo esc_attr($classes['copy-value']); ?>" onclick="copyToClipboard(this)"></div>
                                         </div>
                                     </div>
                                 <?php endwhile;
