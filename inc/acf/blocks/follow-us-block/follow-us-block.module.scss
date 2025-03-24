@@ -212,6 +212,14 @@
     }
 }
 
+.link {
+    @media screen and (max-width: 1919.9px) {
+        font-size: 20px !important;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
 .images-container {
     display: flex;
     margin-top: 25px;
