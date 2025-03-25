@@ -194,7 +194,21 @@
                             class="header__dropdown-menu-language-switcher-button header__dropdown-menu-language-switcher-button-selected"
                             type="button"
                         >
-                            УКР
+                            <!-- УКР -->
+        <!-- ############################################ -->
+                            <?php
+                                $languages = pll_the_languages(array(
+                                    'dropdown' => 0,
+                                    'show_flags' => 0,
+                                    'show_names' => 1,
+                                    'hide_current' => 1,
+                                    'echo' => 0
+                                ));
+
+                                $languages = str_replace(['Українська', 'English'], ['УКР', 'ENG'], $languages);
+                                echo $languages;
+                            ?>
+        <!-- ################################################## -->
                         </button>
                     </div>
                 </div>

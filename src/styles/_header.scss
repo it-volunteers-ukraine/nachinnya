@@ -42,8 +42,8 @@
     padding: 0px 4px;
 }
 
-.header__menu__list .menu-item a, 
-.header__dropdown-menu__list .menu-item a{
+.header__menu__list .menu-item a,
+.header__dropdown-menu__list .menu-item a {
     position: relative;
     border-bottom: 1px solid transparent;
     transition: all variables.$animations;
@@ -106,6 +106,10 @@
 .header__dropdown-menu-language-switcher-button-selected {
     color: variables.$black;
     border-bottom: 1px solid variables.$black;
+}
+
+.header__dropdown-menu-language-switcher-button li {
+    list-style-type: none;
 }
 
 .header__language-switcher-overlay {
