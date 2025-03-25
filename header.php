@@ -72,7 +72,7 @@
                         ]); ?>
                     </nav>
                     <!-- The language switcher -->
-                    <div class="header__language-switcher">
+                    <!-- <div class="header__language-switcher">
                         <button
                             class="header__language-switcher-button header__dropdown-menu-language-switcher-button-selected"
                             type="button"
@@ -94,7 +94,46 @@
                             <li><button class="header__language-switcher-button" type="button">УКР</button></li>
                             <li><button class="header__language-switcher-button" type="button">ENG</button></li>
                         </ul>
+                    </div> -->
+    <!-- ############################################################### -->
+                    <div class="header__language-switcher">
+                        <?php
+                        $current_lang = pll_current_language();
+                        $display_lang = ($current_lang === 'uk') ? 'УКР' : 'ENG';
+                        ?>
+                        
+                        <button
+                            class="header__language-switcher-button header__dropdown-menu-language-switcher-button-selected"
+                            type="button"
+                            onclick="toggleHeaderLanguageSwitcherDropdown();"
+                        >
+                            <?php echo esc_html($display_lang); ?>
+                        </button>
+
+                        <button
+                            id="headerLanguageSwitcherOverlay"
+                            class="header__language-switcher-overlay header__language-switcher-overlay-hidden"
+                            type="button"
+                            onclick="toggleHeaderLanguageSwitcherDropdown();"
+                        ></button>
+
+                        <ul id="headerLanguageSwitcherDropdown" class="header__language-switcher-dropdown header__language-switcher-dropdown-hidden">
+                            <?php
+                            $languages = pll_the_languages(array(
+                                'dropdown' => 0,
+                                'show_flags' => 0,
+                                'show_names' => 1,
+                                'hide_current' => 0,
+                                'echo' => 0
+                            ));
+
+                            $languages = str_replace(['Українська', 'English'], ['УКР', 'ENG'], $languages);
+                            echo $languages;
+                            ?>
+                        </ul>
                     </div>
+    <!-- ############################################################### -->
+
                     <!-- The social icons -->
                     <?= $socials_elements ?>
                     <!-- The dropdown menu toggle button for the mobile screens -->
