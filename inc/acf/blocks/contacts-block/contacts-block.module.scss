@@ -25,7 +25,7 @@
     margin-top: 40px
   }
   @media screen and (max-width: $tablet) {
-   max-width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -37,7 +37,11 @@ section {
 
 
 .contacts-center {
-  padding: 0 147px;
+  padding: 0 148px;
+
+  @media screen and (max-width: $desktop) {
+    padding: 0 0;
+  }
 
   @media screen and (max-width: $tablet) {
     padding: 0 0;
@@ -48,7 +52,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 92px;
+    gap: 109px;
     @media screen and (max-width: $tablet) {
       margin-bottom: 64px;
       gap: 207px;
@@ -95,7 +99,6 @@ section {
     }
 
     p {
-      font-size: 20px;
       margin-bottom: 45px;
 
       @media screen and (max-width: $tablet) {
@@ -145,35 +148,41 @@ section {
   }
 
   .contacts-social-media {
-      p {
-        text-transform: uppercase;
-        font-size: 20px;
-        font-weight: 400;
-        color: rgb(53, 19, 17);
-        margin-bottom: 20px;
-        font-family: 'KharkivTone', sans-serif;
-        @media screen and (max-width: $tablet) {
-          font-size: 16px;
-          margin-bottom: 11px;
-        }
-        @media screen and (max-width: $mobile) {
-          font-size: 14px;
-        }
+    p {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 400;
+      color: rgb(53, 19, 17);
+      margin-bottom: 20px;
+      font-family: 'KharkivTone', sans-serif;
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+        margin-bottom: 11px;
       }
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+      }
+    }
   }
 
   .text-content::before {
+    content: "";
+    position: absolute;
+    width: 99.41px;
+    height: 49.4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(50%, 50%);
+    right: 180px;
+    margin-top: -72px;
     @media screen and (max-width: $mobile) {
-      content: "";
-      position: absolute;
-      width: 99.41px;
-      height: 49.4px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      transform: translate(50%, 50%);
-      right: 180px;
       background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-      margin-top: -72px;
+    }
+  }
+
+  .text-content.red-mobile::before {
+    @media screen and (max-width: $mobile) {
+      background-image: url(../../../../assets/images/element-red-mobile.svg);
     }
   }
 
