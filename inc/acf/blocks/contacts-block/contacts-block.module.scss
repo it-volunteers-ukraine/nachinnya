@@ -25,19 +25,29 @@
     margin-top: 40px
   }
   @media screen and (max-width: $tablet) {
-   max-width: 100%;
+    max-width: 100%;
   }
 }
 
 section {
-  @media screen and (max-width: $tablet) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     position: relative;
+  }
+}
+
+.custom-container {
+  @media screen and (min-width: 920px) and (max-width: 1024px) {
+    padding: 0 80px;
   }
 }
 
 
 .contacts-center {
-  padding: 0 147px;
+  padding: 0 148px;
+
+  @media screen and (max-width: $desktop) {
+    padding: 0 0;
+  }
 
   @media screen and (max-width: $tablet) {
     padding: 0 0;
@@ -48,13 +58,24 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 92px;
-    @media screen and (max-width: $tablet) {
+
+    @media screen and (max-width: $full) {
+      gap: 109px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: 1024px) {
       margin-bottom: 64px;
-      gap: 207px;
+      gap: 208px;
+      padding-bottom: 64px;
     }
 
     @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media (min-width: 360px) and (max-width: 500px) {
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -76,29 +97,31 @@ section {
         margin-bottom: 22px;
         align-items: center;
       }
-
-
     }
+
 
     .elem-yellow {
       object-fit: contain;
 
-      @media screen and (max-width: $tablet) {
+      @media (min-width: 768px) and (max-width: 1024px) {
         width: 200px;
         position: absolute;
-        bottom: 99px;
-        right: 391px;
+        bottom: 157px;
+        left: 175px;
       }
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767px) {
         display: none;
+      }
+      @media screen and (min-width: $desktop) {
+        display: flex;
       }
     }
 
+
     p {
-      font-size: 20px;
       margin-bottom: 45px;
 
-      @media screen and (max-width: $tablet) {
+      @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 16px;
         white-space: normal;
         width: 248px;
@@ -108,12 +131,6 @@ section {
       @media screen and (max-width: $mobile) {
         font-size: 14px;
         width: 100%;
-      }
-    }
-
-    .contacts-text2 {
-      @media screen and (max-width: $mobile) {
-        white-space: nowrap;
       }
     }
 
@@ -145,35 +162,48 @@ section {
   }
 
   .contacts-social-media {
-      p {
-        text-transform: uppercase;
-        font-size: 20px;
-        font-weight: 400;
-        color: rgb(53, 19, 17);
-        margin-bottom: 20px;
-        font-family: 'KharkivTone', sans-serif;
-        @media screen and (max-width: $tablet) {
-          font-size: 16px;
-          margin-bottom: 11px;
-        }
-        @media screen and (max-width: $mobile) {
-          font-size: 14px;
-        }
+    p {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 400;
+      color: rgb(53, 19, 17);
+      margin-bottom: 20px;
+      font-family: 'KharkivTone', sans-serif;
+      @media screen and (max-width: $tablet) {
+        font-size: 16px;
+        margin-bottom: 11px;
       }
+      @media screen and (max-width: $mobile) {
+        font-size: 14px;
+      }
+    }
   }
 
+
   .text-content::before {
+    content: "";
+    position: absolute;
+    width: 99.41px;
+    height: 49.4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(50%, 50%);
+    right: 180px;
+    margin-top: -72px;
     @media screen and (max-width: $mobile) {
-      content: "";
-      position: absolute;
-      width: 99.41px;
-      height: 49.4px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      transform: translate(50%, 50%);
-      right: 180px;
       background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-      margin-top: -72px;
+    }
+    @media (min-width: 360px) and (max-width: 500px) {
+      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+    }
+  }
+
+  .text-content.red-mobile::before {
+    @media screen and (max-width: $mobile) {
+      background-image: url(../../../../assets/images/element-red-mobile.svg);
+    }
+    @media (min-width: 360px) and (max-width: 500px) {
+      background-image: url(../../../../assets/images/element-red-mobile.svg);
     }
   }
 
@@ -182,6 +212,15 @@ section {
       margin-top: 40px;
       white-space: normal;
     }
+    @media (min-width: 360px) and (max-width: 500px) {
+      margin-top: 40px;
+    }
+  }
+}
+
+.merch_photo {
+  @media screen and (max-width: 767.8px) {
+    margin: 0 auto 40px;
   }
 }
 
