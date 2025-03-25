@@ -12,6 +12,7 @@ $default_classes = [
     'contacts-social-media' => 'contacts-social-media',
     'contacts-text' => 'contacts-text',
     'contacts-text2' => 'contacts-text2',
+    'red-mobile' => 'red-mobile',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -27,6 +28,10 @@ if (file_exists($modules_file)) {
     <div class="container">
         <?php
         $contacts_title = get_field('contacts_title');
+        $checked = get_field('use-custom-template');
+        $image_src = $checked ? get_template_directory_uri() . '/assets/images/loop-arrow.svg' : get_template_directory_uri() .
+            '/assets/images/element-yellow.svg';
+
         if (is_front_page()) :
             if (!empty($contacts_title)) : ?>
                 <div class="<?php echo esc_attr($classes['title-left']); ?>">
@@ -57,10 +62,11 @@ if (file_exists($modules_file)) {
                 </div>
 
                 <img class="<?php echo esc_attr($classes['elem-yellow']); ?>"
-                     src="<?php echo get_template_directory_uri() . '/assets/images/element-yellow.svg' ?>"
+                     src="<?php echo esc_url($image_src); ?>"
                      alt="image">
 
-                <div class="<?php echo esc_attr($classes['text-content']); ?>">
+                <div class="<?php echo esc_attr($classes['text-content'])
+                    . ' ' . ($checked ? $classes['red-mobile'] : ''); ?>">
                     <p class="<?php echo esc_attr($classes['contacts-text']); ?>">
                         <?php the_field('contacts_text'); ?>
                     </p>
@@ -73,27 +79,32 @@ if (file_exists($modules_file)) {
                         $phone = get_field('phone');
                         ?>
                         <div class="<?php echo esc_attr($classes['contacts-row']); ?>">
-                            <a href="tel:<?php the_field('phone') ?>" rel="noopener noreferrer" class="icon">
-                                <img src="<?php the_field('icon-phone') ?>" alt="phone">
-                            </a>
-                            <a href=tel:<?php echo esc_attr($phone); ?> rel="noopener noreferrer">
-                                <?php echo esc_html($phone); ?>
-                            </a>
+                            <?php if (!empty($phone)): ?>
+                                <a href="tel:<?php echo esc_attr($phone); ?>" rel="noopener noreferrer" class="icon">
+                                    <img src="<?php the_field('icon-phone') ?>" alt="phone">
+                                </a>
+                                <a href=tel:<?php echo esc_attr($phone); ?> rel="noopener noreferrer">
+                                    <?php echo esc_html($phone); ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
+
                         <div class="<?php echo esc_attr($classes['contacts-row']); ?>">
-                            <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
-                                <img src="<?php the_field('icon-email') ?>" alt="email">
-                            </a>
-                            <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
-                                <?php echo esc_html($email); ?>
-                            </a>
+                            <?php if (!empty($email)): ?>
+                                <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
+                                    <img src="<?php the_field('icon-email') ?>" alt="email">
+                                </a>
+                                <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
+                                    <?php echo esc_html($email); ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="<?php echo esc_attr($classes['contacts-social-media']); ?>">
-                            <p><?php the_field('social-media-title'); ?></p>
-                            <?php
-                            get_template_part('template-parts/socblock', null, ['is_main' => true, 'is_title' => false]);
-                            ?>
+                        <p><?php the_field('social-media-title'); ?></p>
+                        <?php
+                        get_template_part('template-parts/socblock', null, ['is_main' => true, 'is_title' => false]);
+                        ?>
                     </div>
                 </div>
 
