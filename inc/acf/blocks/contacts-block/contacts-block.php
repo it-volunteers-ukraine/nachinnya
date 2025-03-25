@@ -13,6 +13,7 @@ $default_classes = [
     'contacts-text' => 'contacts-text',
     'contacts-text2' => 'contacts-text2',
     'red-mobile' => 'red-mobile',
+    'custom-container' => 'custom-container',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -25,12 +26,14 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class="section">
-    <div class="container">
+    <div class="container <?php echo esc_attr($classes['custom-container']); ?>">
         <?php
         $contacts_title = get_field('contacts_title');
         $checked = get_field('use-custom-template');
         $image_src = $checked ? get_template_directory_uri() . '/assets/images/loop-arrow.svg' : get_template_directory_uri() .
             '/assets/images/element-yellow.svg';
+
+        $photo = get_field('contacts-image') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
 
         if (is_front_page()) :
             if (!empty($contacts_title)) : ?>
@@ -41,8 +44,10 @@ if (file_exists($modules_file)) {
                 </div>
             <?php endif;
         else :
-            if (!empty($contacts_title)) : ?>
-                <div class="<?php echo esc_attr($classes['title-center']); ?>">
+            if (!empty($contacts_title)) :
+                $class = $checked ? $classes['title-left'] : $classes['title-center'];
+                ?>
+                <div class="<?php echo esc_attr($class); ?>">
                     <?php get_template_part('template-parts/h2-title-v2', null, [
                         'title' => $contacts_title,
                     ]); ?>
@@ -54,11 +59,40 @@ if (file_exists($modules_file)) {
             <div class="<?php echo esc_attr($classes['contacts']); ?>">
                 <div class="<?php echo esc_attr($classes['photo']); ?>">
                     <?php
-                    $photo = get_field('contacts-image');
-                    get_template_part('template-parts/photo-left', null, [
-                        'photo_url' => $photo,
-                    ]);
+                    if (!empty($photo)) :
+                        if ($checked) :
+                            ?>
+                            <a href="<?php echo $photo; ?>" data-lightbox="gallery">
+                                <?php
+                                get_template_part('template-parts/photo-left', null, [
+                                    'photo_url' => $photo,
+                                    'my_class' => esc_attr($classes['merch_photo']),
+                                ]);
+                                ?>
+                            </a>
+                        <?php
+                        else :
+                            get_template_part('template-parts/photo-left', null, [
+                                'photo_url' => $photo,
+                            ]);
+                        endif;
+                    endif;
                     ?>
+
+                    <!--                        --><?php
+                    //                        get_template_part('template-parts/photo-left', null, [
+                    //                            'photo_url' => $photo,
+                    //                            'my_class' => esc_attr($classes['merch_photo']),
+                    //                        ]);
+                    //                        ?>
+
+                    <!--                    --><?php
+                    //                    $photo = get_field('contacts-image');
+                    //                    get_template_part('template-parts/photo-left', null, [
+                    //                        'photo_url' => $photo,
+                    //                        'my_class' => esc_attr($classes['merch_photo']),
+                    //                    ]);
+                    //                    ?>
                 </div>
 
                 <img class="<?php echo esc_attr($classes['elem-yellow']); ?>"
@@ -107,7 +141,6 @@ if (file_exists($modules_file)) {
                         ?>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

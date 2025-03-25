@@ -30,8 +30,14 @@
 }
 
 section {
-  @media screen and (max-width: $tablet) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     position: relative;
+  }
+}
+
+.custom-container {
+  @media screen and (min-width: 920px) and (max-width: 1024px) {
+    padding: 0 80px;
   }
 }
 
@@ -52,13 +58,24 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 109px;
-    @media screen and (max-width: $tablet) {
+
+    @media screen and (max-width: $full) {
+      gap: 109px;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: 1024px) {
       margin-bottom: 64px;
-      gap: 207px;
+      gap: 208px;
+      padding-bottom: 64px;
     }
 
     @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media (min-width: 360px) and (max-width: 500px) {
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -80,28 +97,31 @@ section {
         margin-bottom: 22px;
         align-items: center;
       }
-
-
     }
+
 
     .elem-yellow {
       object-fit: contain;
 
-      @media screen and (max-width: $tablet) {
+      @media (min-width: 768px) and (max-width: 1024px) {
         width: 200px;
         position: absolute;
-        bottom: 99px;
-        right: 391px;
+        bottom: 157px;
+        left: 175px;
       }
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767px) {
         display: none;
       }
+      @media screen and (min-width: $desktop) {
+        display: flex;
+      }
     }
+
 
     p {
       margin-bottom: 45px;
 
-      @media screen and (max-width: $tablet) {
+      @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 16px;
         white-space: normal;
         width: 248px;
@@ -111,12 +131,6 @@ section {
       @media screen and (max-width: $mobile) {
         font-size: 14px;
         width: 100%;
-      }
-    }
-
-    .contacts-text2 {
-      @media screen and (max-width: $mobile) {
-        white-space: nowrap;
       }
     }
 
@@ -165,6 +179,7 @@ section {
     }
   }
 
+
   .text-content::before {
     content: "";
     position: absolute;
@@ -178,10 +193,16 @@ section {
     @media screen and (max-width: $mobile) {
       background-image: url(../../../../assets/images/element-yellow-mobile.svg);
     }
+    @media (min-width: 360px) and (max-width: 500px) {
+      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
+    }
   }
 
   .text-content.red-mobile::before {
     @media screen and (max-width: $mobile) {
+      background-image: url(../../../../assets/images/element-red-mobile.svg);
+    }
+    @media (min-width: 360px) and (max-width: 500px) {
       background-image: url(../../../../assets/images/element-red-mobile.svg);
     }
   }
@@ -191,6 +212,15 @@ section {
       margin-top: 40px;
       white-space: normal;
     }
+    @media (min-width: 360px) and (max-width: 500px) {
+      margin-top: 40px;
+    }
+  }
+}
+
+.merch_photo {
+  @media screen and (max-width: 767.8px) {
+    margin: 0 auto 40px;
   }
 }
 
