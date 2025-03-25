@@ -14,6 +14,12 @@ $default_classes = [
     'category-gallery' => 'category-gallery',
     'category-gallery-img' => 'category-gallery-img',
     'project-slider' => 'project-slider',
+    'swipper-wrapper' => 'swipper-wrapper',
+    'swiper-pagination' => 'swiper-pagination',
+    'swiper-button-prev' => 'swiper-button-prev',
+    'swiper-button-next' => 'swiper-button-next',
+    'swiper-wrapper' => 'swiper-wrapper',
+    'slider-btn-icon' => 'slider-btn-icon',
     'item-content' => 'item-content',
     'item-title-wrap' => 'item-title-wrap',
     'item-title' => 'item-title',
@@ -181,22 +187,42 @@ $category_list = get_field('category_gallery', $current_id);
                             // setup_postdata($post); 
                             ?>
                             <div class="<?php echo esc_attr($classes['project__item']); ?>">
-                                <div class="<?php echo esc_attr($classes['project-slider']); ?>">
-                                    <?php
-                                    $photo_id = esc_html($title);
-                                    $photo_item = $gallery[0];
-                                    $photo_url = $photo_item['sizes']['medium_large'];
-                                    $photo_full_url = $photo_item['url'];
-                                    $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
-                                    // $photo_class = esc_attr($classes['category-gallery-img']);
-                                    
-                                    get_template_part('template-parts/photo-left', null, [
-                                        'id' => $photo_id,
-                                        'photo_url' => $photo_url, 
-                                        'photo_full_url' => $photo_full_url,
-                                        'photo_alt' => $photo_alt, 
-                                        'my_class' => '']);
-                                    ?>
+                                <div class="<?php echo esc_attr($classes['swipper-wrapper']); ?>">
+                                    <div class="swiper <?php echo esc_attr($classes['project-slider']); ?>">
+                                        <div class="swiper-wrapper <?php echo esc_attr($classes['swiper-wrapper']); ?>">
+                                            <?php foreach ($gallery as $item_img) : ?>
+                                                <?php
+
+                                                $photo_id = esc_html($title);
+                                                // $photo_item = $gallery[0];
+                                                $photo_item = $item_img;
+                                                $photo_url = $photo_item['sizes']['medium_large'];
+                                                $photo_full_url = $photo_item['url'];
+                                                $photo_alt = $photo_item['alt'] ? $photo_item['alt'] : $photo_item['title'];
+                                                // $photo_class = esc_attr($classes['category-gallery-img']);
+
+                                                get_template_part('template-parts/photo-left', null, [
+                                                    'id' => $photo_id,
+                                                    'photo_url' => $photo_url,
+                                                    'photo_full_url' => $photo_full_url,
+                                                    'photo_alt' => $photo_alt,
+                                                    'my_class' => 'swiper-slide'
+                                                ]);
+                                                ?>
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <div class="swiper-pagination <?php echo esc_attr($classes['swiper-pagination']); ?>"></div>
+                                        <div class="swiper-button-left <?php echo esc_attr($classes['swiper-button-prev']); ?>">
+                                            <svg class="<?php echo esc_attr($classes['slider-btn-icon']); ?>">
+                                                <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-nav-arrow-left"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-button-right <?php echo esc_attr($classes['swiper-button-next']); ?>">
+                                            <svg class="<?php echo esc_attr($classes['slider-btn-icon']); ?>">
+                                                <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-nav-arrow-right"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="<?php echo esc_attr($classes['item-content']); ?>">
                                     <div class="<?php echo esc_attr($classes['item-title-wrap']); ?>">

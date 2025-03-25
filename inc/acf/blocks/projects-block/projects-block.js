@@ -150,8 +150,37 @@ function toggleTextMore(event) {
 }
 
 
+// const initSwiper = () => {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      prevEl: '.swiper-button-left',
+      nextEl: '.swiper-button-right',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      // dynamicBullets: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    // breakpoints: {
+    //   640: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 20
+    //   },
+    //   1024: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 30
+    //   }
+    // }
+  });
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // initSwiper();
+
 
   // Кнопки скрытия/показа категории
   const textBlocks = document.querySelectorAll('[data-item-text]');
