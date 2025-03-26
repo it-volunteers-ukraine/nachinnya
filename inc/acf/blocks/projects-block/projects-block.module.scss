@@ -27,8 +27,7 @@
 }
 
 
-@media screen and (min-width: 410px) {
-}
+
 
 .swiper-button-prev, 
 .swiper-button-next{
@@ -128,6 +127,9 @@
   align-self: flex-start;
   margin-bottom: 24px;
 }
+.project-slider .btn-in-circle{
+  display: none;
+}
 
 .project-slider > div {
   margin-right: auto;
@@ -193,6 +195,20 @@
   transition: max-height $animations-long;
 }
 
+.text-content a {
+  text-decoration: underline;
+}
+
+.text-content a:hover {
+  color: $yellow;
+  text-decoration: none;
+}
+
+.text-content a:active {
+  color: $yellow-pressed;
+  text-decoration: none;
+}
+
 /*.text-content.collapse { */
 .text-content[data-expandet="true"] {
   /* -webkit-line-clamp: unset !important; */
@@ -250,8 +266,11 @@
 }
 
 
-
-
+@media screen and (min-width: 410px) {
+  .project-slider .btn-in-circle{
+    display: flex;
+  }
+}
 
 
 @media screen and (min-width: 768px) {
