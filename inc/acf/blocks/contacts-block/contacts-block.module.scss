@@ -2,7 +2,8 @@
 
 .title-center {
   text-align: -webkit-center;
-  margin-bottom: 171px;
+  margin-bottom: 196px;
+  margin-top: 75px;
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
   }
@@ -30,18 +31,10 @@
 .text-content {
   width: 425px;
   @media screen and (max-width: $tablet) {
-    margin-top: 40px
-  }
-  @media screen and (max-width: $tablet) {
     max-width: 100%;
   }
 }
 
-section {
-  @media (min-width: 768px) and (max-width: 1024px) {
-    position: relative;
-  }
-}
 
 .custom-container {
   @media screen and (min-width: 920px) and (max-width: 1024px) {
@@ -50,10 +43,10 @@ section {
 }
 
 .contacts-center {
-  padding: 0 148px;
+  padding: 0 192px 0 148px;
 
   @media screen and (max-width: $desktop) {
-    padding: 0 0;
+    padding: 0 108.59px;
   }
 
   @media screen and (max-width: $tablet) {
@@ -65,13 +58,19 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
+    padding-bottom: 121px;
 
     @media screen and (max-width: $full) {
-      gap: 109px;
+      gap: 79px;
+    }
+
+    @media screen and (max-width: $desktop) {
+      gap: 70px;
     }
 
     @media screen and (min-width: $tablet) and (max-width: 1024px) {
-      margin-bottom: 64px;
+      margin-bottom: 68px;
       gap: 208px;
       padding-bottom: 64px;
     }
@@ -91,7 +90,7 @@ section {
     .icons-contacts {
       display: flex;
       flex-direction: column;
-      margin-bottom: 45px;
+      margin-bottom: 17px;
 
       @media screen and (max-width: $mobile) {
         margin-bottom: 20px;
@@ -100,30 +99,52 @@ section {
       .contacts-row {
         display: flex;
         flex-direction: row;
-        gap: 10px;
         margin-bottom: 22px;
-        align-items: center;
+        gap: 6px;
+        @media screen and (max-width: $desktop) {
+          gap: 15px;
+        }
       }
     }
 
-
     .elem-yellow {
       object-fit: contain;
+      margin-top: -91px;
+      width: 333.51px;
+      margin-left: -54px;
 
+      @media screen and (max-width: $desktop) {
+        margin-top: 137px;
+        margin-left: -11px;
+        width: 278.35px;
+      }
+    }
+
+    .elem-yellow.red {
+      filter: brightness(0) saturate(100%) invert(26%) sepia(49%) saturate(2263%) hue-rotate(346deg) brightness(102%) contrast(84%);
       @media (min-width: 768px) and (max-width: 1024px) {
         width: 200px;
         position: absolute;
-        bottom: 157px;
-        left: 175px;
+        bottom: 144px;
+        left: 144px;
       }
       @media screen and (max-width: 767px) {
         display: none;
       }
-      @media screen and (min-width: $desktop) {
-        display: flex;
-      }
     }
 
+    .elem-yellow.yellow {
+      filter: brightness(0) saturate(100%) invert(92%) sepia(11%) saturate(6050%) hue-rotate(322deg) brightness(117%) contrast(90%);
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 144px;
+      }
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
 
     p {
 
@@ -142,6 +163,9 @@ section {
 
     a {
       font-size: 20px;
+      @media screen and (max-width: $desktop) {
+        font-size: 16px;
+      }
       @media screen and (max-width: $tablet) {
         font-size: 16px;
       }
@@ -151,7 +175,7 @@ section {
       width: auto;
       position: absolute;
       right: -1.66px;
-      top: -3px;
+      top: -22px;
       transform: scale(1.05) rotate(-3deg);
     }
 
@@ -167,6 +191,17 @@ section {
     }
   }
 
+  .icon-email {
+    margin-right: 10px;
+    padding-left: 8px;
+    @media screen and (max-width: $desktop) {
+      margin-top: -8px;
+    }
+    @media screen and (max-width: $tablet) {
+      padding-left: 0;
+    }
+  }
+
   .contacts-social-media {
     p {
       text-transform: uppercase;
@@ -175,6 +210,10 @@ section {
       color: rgb(53, 19, 17);
       margin-bottom: 20px;
       font-family: 'KharkivTone', sans-serif;
+      @media screen and (max-width: $desktop) {
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
       @media screen and (max-width: $tablet) {
         font-size: 16px;
         margin-bottom: 11px;
@@ -182,6 +221,10 @@ section {
       @media screen and (max-width: $mobile) {
         font-size: 14px;
       }
+    }
+
+    div {
+      gap: 20px;
     }
   }
 
@@ -214,7 +257,13 @@ section {
   }
 
   .contacts-text {
-    margin-bottom: 45px;
+    margin-left: -1px;
+    margin-top: -10px;
+    margin-bottom: 44px;
+    @media screen and (max-width: $desktop) {
+      white-space: normal;
+      margin-bottom: 24px;
+    }
     @media screen and (max-width: $mobile) {
       margin-top: 40px;
       white-space: normal;
@@ -231,6 +280,32 @@ section {
     margin: 0 auto 40px;
   }
 }
+
+.contacts-photo {
+  div:after {
+    top: -3.582996%;
+    left: 1.4170040486%;
+    @media screen and (max-width: $desktop) {
+      top: -8.582996;
+    }
+  }
+
+  div:before {
+    left: 3.643725%;
+    top: -1.368421%;
+    @media screen and (max-width: $desktop) {
+      top: -7.368421%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
