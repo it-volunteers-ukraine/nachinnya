@@ -55,9 +55,10 @@ $team_block = null;
 // $welcome  = get_field('welcome_to_command');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 
-$category_list = get_field('category_gallery', $current_id);
+$category_list = get_field('category_gallery');
 
 // echo '<pre>';
+// echo var_dump($category_list);
 // echo var_dump($category_list);
 // echo var_dump($team_block);
 // print_r($team_block);
