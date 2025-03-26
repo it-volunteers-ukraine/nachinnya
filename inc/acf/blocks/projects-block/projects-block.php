@@ -1,5 +1,6 @@
 <?php
 $default_classes = [
+    'projects__section' => 'projects__section',
     'projects' => 'projects',
     'projects-title' => 'projects-title',
     'category-block' => 'category-block',
@@ -66,7 +67,7 @@ $category_list = get_field('category_gallery');
 // echo '</pre>';
 ?>
 
-<section class="section">
+<section class="section <?php echo esc_attr($classes['projects__section']); ?>">
     <div class="container <?php echo $is_debug ? 'debug-red ' : ''; ?> <?php echo esc_attr($classes['projects']); ?>">
         <div class="<?php echo esc_attr($classes['projects-title']); ?>">
             <?php get_template_part('template-parts/h2-title', null, []); ?>
