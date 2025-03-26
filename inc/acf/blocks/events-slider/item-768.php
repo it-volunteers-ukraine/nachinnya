@@ -7,15 +7,15 @@
         'item-768' => 'item-768',
 
         'item-768-upper-part' => 'item-768-upper-part',
+        'item-768-buttons' => 'item-768-buttons',
+        'item-768-buttons-button' => 'item-768-buttons-button',
+        'item-768-buttons-button-svg' => 'item-768-buttons-button-svg',
+        'item-768-upper-part-yellow-arrow-svg' => 'item-768-upper-part-yellow-arrow-svg',
         'item-768-upper-part-wrapper' => 'item-768-upper-part-wrapper',
         'item-768-upper-part-yellow' => 'item-768-upper-part-yellow',
         'item-768-upper-part-blue' => 'item-768-upper-part-blue',
         'item-768-upper-part-link' => 'item-768-upper-part-link',
         'item-768-upper-part-image' => 'item-768-upper-part-image',
-
-        'item-768-buttons' => 'item-768-buttons',
-        'item-768-buttons-button' => 'item-768-buttons-button',
-        'item-768-buttons-button-svg' => 'item-768-buttons-button-svg',
 
         'item-768-text-part' => 'item-768-text-part',
         'item-768-text-part-title' => 'item-768-text-part-title',
@@ -123,6 +123,9 @@
                 <use xlink:href="<?= $slider_svg_href ?>"></use>
             </svg>
         </button>
+        <svg class="<?= $classes["item-768-upper-part-yellow-arrow-svg"] ?>">
+            <use href="<?= $yellow_arrow_768_svg_href ?>"></use>
+        </svg>
         <div class="<?= $classes["item-768-upper-part-wrapper"] ?>">
             <div class="<?= $classes["item-768-upper-part-yellow"] ?>"></div>
             <div class="<?= $classes["item-768-upper-part-blue"] ?>"></div>

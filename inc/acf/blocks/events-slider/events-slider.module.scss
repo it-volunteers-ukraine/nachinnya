@@ -387,13 +387,19 @@
     flex-direction: column;
     gap: 28px;
     width: 100vw;
-    padding: 0px 16px;
+    padding: 0px 40px;
 }
 
 .item-768-upper-part {
     display: flex;
     justify-content: space-between;
     height: 39.06vw;
+}
+
+.item-768-upper-part-yellow-arrow-svg {
+    position: absolute;
+    width: 200px;
+    height: 100px;
 }
 
 .item-768-upper-part-wrapper {
@@ -494,15 +500,19 @@
 .item-768-text-part {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-end;
+    gap: 40px;
+    width: 79.16vw;
 }
 
 .item-768-text-part-title {
+    width: 66.66vw;
     font-family: variables.$primary-font;
     font-size: 14px;
 }
 
 .item-768-text-part-card {
+    width: 66.66vw;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -512,7 +522,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 76px 12px 0px 12px;
+    padding: 0px 12px;
     border-left: 2px solid variables.$red;
 }
 
@@ -580,21 +590,14 @@
     color: variables.$red;
 }
 
-.item-768-text-part-card-texts {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
 .item-768-text-part-mt-register-block {
     display: flex;
 }
 
 .item-768-text-part-register-button {
     position: relative;
-    width: 100%;
     border-radius: 100px;
-    padding: 12px 32px;
+    padding: 12px 36px;
     background-color: variables.$yellow;
     border: 2px solid variables.$BG;
 
@@ -676,6 +679,13 @@
 
 .item-768-text-part-card-show-more-button:active::after {
     border-bottom-color: variables.$dark-red;
+}
+
+.item-768-text-part-card-texts {
+    width: 32.29vw;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .item-768-text-part-card-main-text {
