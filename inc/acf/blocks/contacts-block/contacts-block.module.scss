@@ -19,6 +19,14 @@
   }
 }
 
+.title-merch {
+  text-align: left;
+  margin-bottom: 88px;
+  @media screen and (max-width: $desktop) {
+    text-align: -webkit-center;
+  }
+}
+
 .text-content {
   width: 425px;
   @media screen and (max-width: $tablet) {
@@ -37,10 +45,9 @@ section {
 
 .custom-container {
   @media screen and (min-width: 920px) and (max-width: 1024px) {
-    padding: 0 80px;
+    padding: 0 110px;
   }
 }
-
 
 .contacts-center {
   padding: 0 148px;
@@ -119,7 +126,6 @@ section {
 
 
     p {
-      margin-bottom: 45px;
 
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 16px;
@@ -208,9 +214,11 @@ section {
   }
 
   .contacts-text {
+    margin-bottom: 45px;
     @media screen and (max-width: $mobile) {
       margin-top: 40px;
       white-space: normal;
+      margin-bottom: 25px;
     }
     @media (min-width: 360px) and (max-width: 500px) {
       margin-top: 40px;

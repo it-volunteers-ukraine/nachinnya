@@ -11,9 +11,9 @@ $default_classes = [
     'title-left' => 'title-left',
     'contacts-social-media' => 'contacts-social-media',
     'contacts-text' => 'contacts-text',
-    'contacts-text2' => 'contacts-text2',
     'red-mobile' => 'red-mobile',
     'custom-container' => 'custom-container',
+    'title-merch' => 'title-merch',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -45,7 +45,7 @@ if (file_exists($modules_file)) {
             <?php endif;
         else :
             if (!empty($contacts_title)) :
-                $class = $checked ? $classes['title-left'] : $classes['title-center'];
+                $class = $checked ? $classes['title-merch'] : $classes['title-center'];
                 ?>
                 <div class="<?php echo esc_attr($class); ?>">
                     <?php get_template_part('template-parts/h2-title-v2', null, [
@@ -57,7 +57,6 @@ if (file_exists($modules_file)) {
         ?>
         <div class="<?php echo esc_attr($classes['contacts-center']); ?>">
             <div class="<?php echo esc_attr($classes['contacts']); ?>">
-                <div class="<?php echo esc_attr($classes['photo']); ?>">
                     <?php
                     if (!empty($photo)) :
                         if ($checked) :
@@ -72,28 +71,14 @@ if (file_exists($modules_file)) {
                             </a>
                         <?php
                         else :
+                            echo '<div class="' . esc_attr($classes['photo']) . '">';
                             get_template_part('template-parts/photo-left', null, [
                                 'photo_url' => $photo,
                             ]);
+                              echo '</div>';
                         endif;
                     endif;
                     ?>
-
-                    <!--                        --><?php
-                    //                        get_template_part('template-parts/photo-left', null, [
-                    //                            'photo_url' => $photo,
-                    //                            'my_class' => esc_attr($classes['merch_photo']),
-                    //                        ]);
-                    //                        ?>
-
-                    <!--                    --><?php
-                    //                    $photo = get_field('contacts-image');
-                    //                    get_template_part('template-parts/photo-left', null, [
-                    //                        'photo_url' => $photo,
-                    //                        'my_class' => esc_attr($classes['merch_photo']),
-                    //                    ]);
-                    //                    ?>
-                </div>
 
                 <img class="<?php echo esc_attr($classes['elem-yellow']); ?>"
                      src="<?php echo esc_url($image_src); ?>"
@@ -103,9 +88,6 @@ if (file_exists($modules_file)) {
                     . ' ' . ($checked ? $classes['red-mobile'] : ''); ?>">
                     <p class="<?php echo esc_attr($classes['contacts-text']); ?>">
                         <?php the_field('contacts_text'); ?>
-                    </p>
-                    <p class="<?php echo esc_attr($classes['contacts-text2']); ?>">
-                        <?php the_field('contacts_text2'); ?>
                     </p>
                     <div class="<?php echo esc_attr($classes['icons-contacts']); ?>">
                         <?php
