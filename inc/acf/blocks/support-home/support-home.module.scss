@@ -1,3 +1,5 @@
+@use "./../../../../src/styles/variables.scss" as *;
+
 .container {
   position: relative;
   width: 100%;
@@ -76,11 +78,13 @@
   @media screen and (max-width: 768px) {
     padding-top: 64px;
     padding-bottom: 40px;
+    font-size: 32px;
   }
 
   @media screen and (max-width: 360px) {
     padding-top: 64px;
     padding-bottom: 40px;
+    font-size: 24px;
   }
 }
 
@@ -106,18 +110,17 @@
   text-align: left;
 
   @media screen and (max-width: 1440px) {
-    width: 305px;
-    font-size: 20px;
+    width: 400px;
+    font-size: 16px;
   }
 
   @media screen and (max-width: 768px) {
-    width: 305px;
+    width: 248px;
     font-size: 16px;
   }
 
   @media screen and (max-width: 360px) {
     width: 248px;
-    height: 217 px;
     font-size: 14px;
   }
 }
@@ -146,17 +149,22 @@
   color: #B74028;
 
   @media screen and (max-width: 1440px) {
+    width: 177px;
+    height: 45px;
     font-size: 16px;
-    left: 50px;
+    left: 110px;
   }
 
   @media screen and (max-width: 768px) {
-    width: 248px;
-    left: 30px;
+    width: 177px;
+    height: 45px;
+    left: 35px;
     font-size: 16px;
   }
 
   @media screen and (max-width: 360px) {
+    width: 248px;
+    height: 45px;
     padding-top: 16px;
     left: 0;
   }
