@@ -3,6 +3,27 @@
     "title": "Poject post-type",
     "fields": [
         {
+            "key": "field_67d7453baebb2",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67d747548c1f2",
             "label": "Category",
             "name": "category",
@@ -55,27 +76,6 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_67d7453baebb2",
-            "label": "Title",
-            "name": "title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_67d74561aebb3",
@@ -177,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742165575
+    "modified": 1742975356
 }
