@@ -126,7 +126,8 @@ add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
 function enqueue_slider_scripts() {
     if (has_block('acf/follow-us-block')
         || has_block('acf/home-parthers-slider-block')
-        || has_block('acf/support-us-details-block')) {
+        || has_block('acf/support-us-details-block')
+        || has_block('acf/projects-block')) {
         
         wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
         wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
