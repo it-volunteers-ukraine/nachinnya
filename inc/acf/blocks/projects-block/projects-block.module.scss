@@ -1,5 +1,50 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
+.btn-in-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border: 1px solid $red;
+  border-radius: 50%;
+  fill: $red;
+  cursor: pointer;
+  transition: all $animations;
+  
+  .icon-arrow {
+    width: 10px;
+    height: 18px;
+  }
+  
+  &:hover {
+    fill: $yellow;
+    border-color: $yellow;
+    background-color: $red;
+  }
+}
+
+
+@media screen and (min-width: 410px) {
+}
+
+.swiper-button-prev, 
+.swiper-button-next{
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 10;
+  top: 50%;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
+
 .projects {
 }
 
@@ -27,10 +72,13 @@
 }
 
 .category-posts.close {
+  padding-top: 0;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
+  
 }
+
 
 .icon-close-close {
   width: 48px;
@@ -40,13 +88,13 @@
 .toggle-posts-btn {
 }
 
-.toggle-posts-btn img {
-  transform: rotateX(0deg);
-  transition: all $animations-long;
+.toggle-posts-btn svg {
+  transform: rotate(-90deg);
+  transition: transform $animations-long;
 }
 
-.toggle-posts-btn.close img {
-  transform: rotateX(-180deg);
+.toggle-posts-btn.close svg {
+  transform: rotate(90deg);
 }
 
 .category-header-wrap {
@@ -201,45 +249,10 @@
   background-color: $red;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid $red;
-  border-radius: 50%;
-  fill: $red;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  cursor: pointer;
-  
-  transition: all $animations;
-  @media screen and (min-width: 410px) {
-    display: flex;
-  }
 
-  &:hover {
-    fill: $yellow;
-    border-color: $yellow;
-    background-color: $red;
-  }
-}
 
-.swiper-button-prev {
-  left: 0;
-}
-.swiper-button-next {
-  right: 0;
-}
 
-.slider-btn-icon {
-  width: 9px;
-  height: 18px;
-}
+
 
 @media screen and (min-width: 768px) {
   .category-header-wrap {
