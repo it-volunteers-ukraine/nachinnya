@@ -18,6 +18,7 @@ html {
 
 html,
 body {
+  height: 100%;
   scroll-behavior: auto;
   overflow-x: hidden;
   color: $black;
@@ -229,6 +230,7 @@ input {
 .debug-blue {
   outline: 1px dashed blue;
 }
+
 .debug-green {
   outline: 1px dashed green;
 }
