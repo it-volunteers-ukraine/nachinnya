@@ -14,6 +14,10 @@ $default_classes = [
     'red-mobile' => 'red-mobile',
     'custom-container' => 'custom-container',
     'title-merch' => 'title-merch',
+    'yellow' => 'yellow',
+    'red' => 'red',
+    'contacts-photo' => 'photo',
+    'icon-email' => 'icon-email',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -30,9 +34,7 @@ if (file_exists($modules_file)) {
         <?php
         $contacts_title = get_field('contacts_title');
         $checked = get_field('use-custom-template');
-        $image_src = $checked ? get_template_directory_uri() . '/assets/images/loop-arrow.svg' : get_template_directory_uri() .
-            '/assets/images/element-yellow.svg';
-
+        $colorArrow = $checked ? $classes['red'] : $classes['yellow'];
         $photo = get_field('contacts-image') ?: get_template_directory_uri() . '/assets/images/no_image_available_500_x_500.svg';
 
         if (is_front_page()) :
@@ -74,14 +76,15 @@ if (file_exists($modules_file)) {
                             echo '<div class="' . esc_attr($classes['photo']) . '">';
                             get_template_part('template-parts/photo-left', null, [
                                 'photo_url' => $photo,
+                                'my_class' => esc_attr($classes['contacts-photo']),
                             ]);
                               echo '</div>';
                         endif;
                     endif;
                     ?>
 
-                <img class="<?php echo esc_attr($classes['elem-yellow']); ?>"
-                     src="<?php echo esc_url($image_src); ?>"
+                <img class="<?php echo esc_attr($classes['elem-yellow'] . ' ' . $colorArrow); ?>"
+                     src="<?php echo get_template_directory_uri() . '/assets/images/element-yellow.svg' ?>"
                      alt="image">
 
                 <div class="<?php echo esc_attr($classes['text-content'])
@@ -108,7 +111,7 @@ if (file_exists($modules_file)) {
                         <div class="<?php echo esc_attr($classes['contacts-row']); ?>">
                             <?php if (!empty($email)): ?>
                                 <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
-                                    <img src="<?php the_field('icon-email') ?>" alt="email">
+                                    <img class="<?php echo esc_attr($classes['icon-email']); ?>" src="<?php the_field('icon-email') ?>" alt="email">
                                 </a>
                                 <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
                                     <?php echo esc_html($email); ?>
