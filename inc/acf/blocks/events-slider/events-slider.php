@@ -23,6 +23,7 @@
     //
     $title_decoration_360_href = get_bloginfo('template_url') . '/assets/images/title_element_360.svg';
     $title_decoration_768_href = get_bloginfo('template_url') . '/assets/images/title_element_768.svg';
+    $title_decoration_1440_href = get_bloginfo('template_url') . '/assets/images/title_element_1440.svg';
 ?>
 <section class="section <?= $classes["section"] ?>">
     <div class="container <?= $classes["container"] ?>">
@@ -34,6 +35,7 @@
             </div>
             <img class="<?= $classes["title-decoration-image-mobile"] ?>" src="<?= $title_decoration_360_href ?>">
             <img class="<?= $classes["title-decoration-image-tablet"] ?>" src="<?= $title_decoration_768_href ?>">
+            <img class="<?= $classes["title-decoration-image-desktop"] ?>" src="<?= $title_decoration_1440_href ?>">
         </div>
 
         <?php get_template_part('inc/acf/blocks/events-slider/items');?>

@@ -5,6 +5,7 @@
 
         'item-360-text-part-card-main-text-visible' => 'item-360-text-part-card-main-text-visible',
         'item-768-text-part-card-main-text-visible' => 'item-768-text-part-card-main-text-visible',
+        'item-1440-text-part-card-main-text-visible' => 'item-1440-text-part-card-main-text-visible',
     ];
 
     $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -15,9 +16,6 @@
     }
 
     // Retrieving the texts from the arguments
-    $price_label_text = $args['price_label_text'];
-    $duration_label_text = $args['duration_label_text'];
-    $registration_button_text = $args['registration_button_text'];
     $show_more_text = $args['show_more_text'];
     $show_less_text = $args['show_less_text'];
 
@@ -31,6 +29,7 @@
     data-show-less-text="<?= $show_less_text ?>"
     data-text-class-to-show-mobile="<?= $classes["item-360-text-part-card-main-text-visible"] ?>"
     data-text-class-to-show-tablet="<?= $classes["item-768-text-part-card-main-text-visible"] ?>"
+    data-text-class-to-show-desktop="<?= $classes["item-1440-text-part-card-main-text-visible"] ?>"
 >
     <?php 
         get_template_part(
@@ -42,6 +41,11 @@
             'inc/acf/blocks/events-slider/item-768',
             null,
             $args
-        ); 
+        );
+        get_template_part(
+            'inc/acf/blocks/events-slider/item-1440',
+            null,
+            $args
+        );
     ?>
 </div>
