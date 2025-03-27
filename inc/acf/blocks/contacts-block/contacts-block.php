@@ -16,7 +16,7 @@ $default_classes = [
     'title-merch' => 'title-merch',
     'yellow' => 'yellow',
     'red' => 'red',
-    'contacts-photo' => 'photo',
+    'contacts-photo' => 'contacts-photo',
     'icon-email' => 'icon-email',
 ];
 

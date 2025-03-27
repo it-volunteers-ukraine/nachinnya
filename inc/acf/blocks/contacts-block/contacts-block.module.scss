@@ -174,17 +174,13 @@
       }
     }
 
-
-    .photo {
-      margin-left: 10px;
-    }
-
     .photo img {
       position: absolute;
       top: -22px;
       right: -50.66px;
       transform: rotate(-3deg);
       width: auto;
+      height: auto;
     }
 
     .photo {
@@ -195,7 +191,7 @@
     }
 
     .photo:hover img {
-      transform: scale(1.05) rotate(-1deg);
+      transform: rotate(-1deg);
     }
   }
 
@@ -289,24 +285,24 @@
 }
 
 .contacts-photo {
-  div:after {
-    top: -4.582996%;
-    left: 11.417004%;
+  div::after {
+    top: -5.582996%;
+    left: 8.417004%;
     @media screen and (max-width: $desktop) {
       top: -8.582996%;
     }
   }
 
-  div:before {
-    left: 13.643725%;
-    top: -2.368421%;
+  div::before {
+    left: 10.643725%;
+    top: -4.368421%;
     @media screen and (max-width: $desktop) {
       top: -7.368421%;
     }
   }
 }
 
-.breadcrumbs-module__section___NPwQy {
+.section {
   padding-bottom: 80px;
   padding-top: 80px;
 }
