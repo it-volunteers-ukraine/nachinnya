@@ -400,6 +400,7 @@
     position: absolute;
     width: 200px;
     height: 100px;
+    top: 10.67vw;
 }
 
 .item-768-upper-part-wrapper {
@@ -508,7 +509,7 @@
 .item-768-text-part-title {
     width: 66.66vw;
     font-family: variables.$primary-font;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .item-768-text-part-card {
@@ -534,13 +535,13 @@
 
 .item-768-text-part-card-info-date {
     font-family: variables.$primary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$dark-red;
 }
 
 .item-768-text-part-card-info-time {
     font-family: variables.$secondary-font;
-    font-size: 20px;
+    font-size: 16px;
     color: variables.$red;
 }
 
@@ -552,14 +553,14 @@
 
 .item-768-text-part-card-info-address {
     font-family: variables.$primary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$dark-red;
     text-transform: uppercase;
 }
 
 .item-768-text-part-card-info-location {
     font-family: variables.$secondary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$red;
 }
 
@@ -579,14 +580,14 @@
 .item-768-text-part-card-info-price-label,
 .item-768-text-part-card-info-duration-label {
     font-family: variables.$secondary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$dark-red;
 }
 
 .item-768-text-part-card-info-price-value,
 .item-768-text-part-card-info-duration-value {
     font-family: variables.$secondary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$red;
 }
 
@@ -639,7 +640,7 @@
 
 .item-768-text-part-card-intro-text {
     font-family: variables.$secondary-font;
-    font-size: 14px;
+    font-size: 16px;
     color: variables.$dark-red;
 }
 

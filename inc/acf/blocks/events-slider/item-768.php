@@ -123,9 +123,10 @@
                 <use xlink:href="<?= $slider_svg_href ?>"></use>
             </svg>
         </button>
-        <svg class="<?= $classes["item-768-upper-part-yellow-arrow-svg"] ?>">
-            <use href="<?= $yellow_arrow_768_svg_href ?>"></use>
-        </svg>
+        <img 
+            class="<?= $classes["item-768-upper-part-yellow-arrow-svg"] ?>"
+            src="<?= $yellow_arrow_768_svg_href ?>"
+        >
         <div class="<?= $classes["item-768-upper-part-wrapper"] ?>">
             <div class="<?= $classes["item-768-upper-part-yellow"] ?>"></div>
             <div class="<?= $classes["item-768-upper-part-blue"] ?>"></div>
