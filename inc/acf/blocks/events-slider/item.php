@@ -47,5 +47,10 @@
             null,
             $args
         );
+        get_template_part(
+            'inc/acf/blocks/events-slider/item-1920',
+            null,
+            $args
+        );
     ?>
 </div>
