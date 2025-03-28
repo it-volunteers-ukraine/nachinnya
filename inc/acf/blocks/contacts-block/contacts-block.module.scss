@@ -2,9 +2,9 @@
 
 .title-center {
   text-align: -webkit-center;
-  margin-bottom: 196px;
+  margin-bottom: 199px;
   margin-right: -12px;
-  margin-top: -4px;
+  margin-top: -14px;
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
   }
@@ -175,12 +175,8 @@
     }
 
     .photo img {
-      position: absolute;
-      top: -52px;
-      right: -50.66px;
-      transform: rotate(-3deg);
-      width: auto;
-      height: auto;
+      transform: scaleX(1.08) scaleY(1.05) rotate(-5deg);
+      object-fit: contain;
     }
 
     .photo {
@@ -191,7 +187,7 @@
     }
 
     .photo:hover img {
-      transform: rotate(-1deg);
+      transform: scaleX(1.08) scaleY(1.05) rotate(-3deg);
     }
   }
 
@@ -284,23 +280,6 @@
   }
 }
 
-.contacts-photo {
-  div::after {
-    top: -5.582996%;
-    left: 9.417004%;
-    @media screen and (max-width: $desktop) {
-      top: -8.582996%;
-    }
-  }
-
-  div::before {
-    left: 12.643725%;
-    top: -4.368421%;
-    @media screen and (max-width: $desktop) {
-      top: -7.368421%;
-    }
-  }
-}
 
 
 
