@@ -5,6 +5,10 @@
   margin-bottom: 168px;
   margin-right: -12px;
   margin-top: -87px;
+  @media screen and (max-width: $desktop) {
+    margin-top: -83px;
+    margin-bottom: 64px;
+  }
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
   }
@@ -31,6 +35,9 @@
 
 .text-content {
   width: 425px;
+  @media screen and (max-width: $desktop) {
+    width: 305px;
+  }
   @media screen and (max-width: $tablet) {
     max-width: 100%;
   }
@@ -47,7 +54,7 @@
   padding: 0 148px 0 192px;
 
   @media screen and (max-width: $desktop) {
-    padding: 0 108.59px;
+    padding: 0 108px;
   }
 
   @media screen and (max-width: $tablet) {
@@ -64,7 +71,7 @@
 
 
     @media screen and (max-width: $desktop) {
-      gap: 70px;
+      padding-bottom: 0;
     }
 
     @media screen and (min-width: $tablet) and (max-width: 1024px) {
@@ -99,7 +106,9 @@
         flex-direction: row;
         margin-bottom: 22px;
         @media screen and (max-width: $desktop) {
-          gap: 15px;
+          gap: 9px;
+          margin-bottom: 19px;
+          padding-top: 8px;
         }
       }
     }
@@ -107,14 +116,11 @@
     .elem-yellow {
       object-fit: contain;
       width: 335.5px;
-      position: absolute;
-      left: 548px;
-      top: 164px;
 
       @media screen and (max-width: $desktop) {
-        margin-top: 137px;
+        margin-top: 214px;
         margin-left: -11px;
-        width: 278.35px;
+        width: 280px;
       }
     }
 
@@ -162,7 +168,7 @@
     a {
       font-size: 20px;
       margin-top: -3px;
-      margin-right: 4px;
+      margin-right: -1px;
       @media screen and (max-width: $desktop) {
         font-size: 16px;
       }
@@ -190,9 +196,6 @@
 
   .icon-email {
     margin-right: 6px;
-    @media screen and (max-width: $desktop) {
-      margin-top: -8px;
-    }
     @media screen and (max-width: $tablet) {
       padding-left: 0;
     }
@@ -206,7 +209,8 @@
       margin-bottom: 22px;
       font-family: 'KharkivTone', sans-serif;
       @media screen and (max-width: $desktop) {
-        margin-bottom: 14px;
+        margin-bottom: 15px;
+        margin-top: 19px;
         font-size: 16px;
       }
       @media screen and (max-width: $tablet) {
@@ -216,10 +220,6 @@
       @media screen and (max-width: $mobile) {
         font-size: 14px;
       }
-    }
-
-    div {
-      gap: 20px;
     }
   }
 
@@ -257,7 +257,9 @@
     white-space: pre-line;
     @media screen and (max-width: $desktop) {
       white-space: normal;
-      margin-bottom: 24px;
+      font-size: 16px;
+      margin-bottom: 18px;
+      padding-top: 29px;
     }
     @media screen and (max-width: $mobile) {
       margin-top: 40px;
