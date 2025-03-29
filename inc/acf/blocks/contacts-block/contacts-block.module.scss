@@ -2,9 +2,9 @@
 
 .title-center {
   text-align: -webkit-center;
-  margin-bottom: 199px;
+  margin-bottom: 168px;
   margin-right: -12px;
-  margin-top: -14px;
+  margin-top: -87px;
   @media screen and (max-width: $tablet) {
     margin-bottom: 40px;
   }
@@ -44,7 +44,7 @@
 }
 
 .contacts-center {
-  padding: 0 163px 0 148px;
+  padding: 0 148px 0 192px;
 
   @media screen and (max-width: $desktop) {
     padding: 0 108.59px;
@@ -60,12 +60,8 @@
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    padding-bottom: 6px;
-    padding-top: 10px;
+    padding-bottom: 125.5px;
 
-    @media screen and (max-width: $full) {
-      gap: 115px;
-    }
 
     @media screen and (max-width: $desktop) {
       gap: 70px;
@@ -92,7 +88,7 @@
     .icons-contacts {
       display: flex;
       flex-direction: column;
-      margin-bottom: 19px;
+      margin-bottom: 22px;
 
       @media screen and (max-width: $mobile) {
         margin-bottom: 20px;
@@ -102,7 +98,6 @@
         display: flex;
         flex-direction: row;
         margin-bottom: 22px;
-        gap: 6px;
         @media screen and (max-width: $desktop) {
           gap: 15px;
         }
@@ -111,9 +106,10 @@
 
     .elem-yellow {
       object-fit: contain;
-      margin-top: -107px;
       width: 335.5px;
-      margin-left: -16px;
+      position: absolute;
+      left: 548px;
+      top: 164px;
 
       @media screen and (max-width: $desktop) {
         margin-top: 137px;
@@ -165,7 +161,8 @@
 
     a {
       font-size: 20px;
-      margin-top: -2px;
+      margin-top: -3px;
+      margin-right: 4px;
       @media screen and (max-width: $desktop) {
         font-size: 16px;
       }
@@ -204,10 +201,9 @@
   .contacts-social-media {
     p {
       text-transform: uppercase;
-      font-size: 20px;
       font-weight: 400;
       color: rgb(53, 19, 17);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       font-family: 'KharkivTone', sans-serif;
       @media screen and (max-width: $desktop) {
         margin-bottom: 14px;
@@ -256,9 +252,9 @@
   }
 
   .contacts-text {
-    margin-left: -1px;
-    margin-bottom: 39px;
-    margin-top: -13px;
+    margin-bottom: 45px;
+    font-size: 20px;
+    white-space: pre-line;
     @media screen and (max-width: $desktop) {
       white-space: normal;
       margin-bottom: 24px;
