@@ -118,7 +118,7 @@ if (file_exists($modules_file)) {
                     </div>
                     <div class="<?php echo esc_attr($classes['story-info']); ?>">
                         <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                            <h4 id='year2022' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_1'); ?> рік</h4>
+                            <h4 id='year2022' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_1'); ?></h4>
                             <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_1'); ?></p>
                         </div>
                         <div class="<?php echo esc_attr($classes['event-description']); ?>">
@@ -129,7 +129,7 @@ if (file_exists($modules_file)) {
                 <div class="<?php echo esc_attr($classes['story2']); ?>">
                     <div class="<?php echo esc_attr($classes['story-info']); ?>">
                         <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                            <h4 id='year2023' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_2'); ?> рік</h4>
+                            <h4 id='year2023' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_2'); ?></h4>
                             <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_2'); ?></p>
                         </div>
                         <div class="<?php echo esc_attr($classes['event-description']); ?>">
@@ -166,7 +166,7 @@ if (file_exists($modules_file)) {
                     </div>
                     <div class="<?php echo esc_attr($classes['story-info']); ?>">
                         <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_3'); ?> рік</h4>
+                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_3'); ?></h4>
                             <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_3'); ?></p>
                         </div>
                         <div class="<?php echo esc_attr($classes['event-description']); ?>">
@@ -177,7 +177,7 @@ if (file_exists($modules_file)) {
                 <div class="<?php echo esc_attr($classes['story4']); ?>">
                     <div class="<?php echo esc_attr($classes['story-info']); ?>">
                         <div class="<?php echo esc_attr($classes['year-event']); ?>">
-                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_4'); ?> рік</h4>
+                            <h4 id='year2024' class="<?php echo esc_attr($classes['year']); ?>"><?php echo the_field('history_year_4'); ?></h4>
                             <p class="<?php echo esc_attr($classes['event-title']); ?>"><?php echo the_field('history_event_4'); ?></p>
                         </div>
                         <div class="<?php echo esc_attr($classes['event-description']); ?>">

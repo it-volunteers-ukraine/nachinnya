@@ -11,20 +11,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function copyToClipboard(element) {
-    let parentDiv = element.closest(`[data-class]`);
+    let parent = element.closest(`[data-class]`);
+    if (!parent) return;
 
-    if (!parentDiv) return;
+    let textElement = parent.querySelector('.details-text');
+    if (!textElement) return;
 
-    let textElement = parentDiv.querySelector('.details-text');
+    let text = textElement.textContent || textElement.innerText;
 
-    if (textElement) {
-        let text = textElement.innerText || textElement.textContent;
+    document.querySelectorAll('[data-original-class]').forEach(el => {
+        el.className = el.getAttribute('data-original-class');
+    });
 
-        let tempInput = document.createElement("textarea");
-        tempInput.value = text;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-    }
+    navigator.clipboard.writeText(text).then(() => {
+        element.className = element.getAttribute('data-copied-class');
+    }).catch(err => {
+        console.error('Copying error:', err);
+    });
 }

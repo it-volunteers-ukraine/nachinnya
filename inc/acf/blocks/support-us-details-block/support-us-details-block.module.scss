@@ -226,6 +226,17 @@
     height: 24px;
     background-image: url('../../../../assets/images/copy_to_clipboard_icon.svg');
     cursor: pointer;
+    transition: background-image 0.3s ease;
+}
+
+.copied-value {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../../../../assets/images/copy_to_clipboard_icon_done.svg');
+    cursor: pointer;
+    transition: background-image 0.3s ease;
 }
 
 /* --------------Swiper--------------- */
