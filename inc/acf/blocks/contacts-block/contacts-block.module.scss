@@ -38,16 +38,13 @@
   width: 425px;
   @media screen and (max-width: $desktop) {
     width: 305px;
+    align-self: flex-start;
   }
   @media screen and (max-width: $tablet) {
     max-width: 100%;
   }
-}
-
-
-.custom-container {
-  @media screen and (min-width: 920px) and (max-width: 1024px) {
-    padding: 0 110px;
+  @media screen and (max-width: $mobile) {
+    position: relative;
   }
 }
 
@@ -58,28 +55,26 @@
     padding: 0 108px;
   }
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     padding: 0 0;
   }
 
 
   .contacts {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
     position: relative;
     padding-bottom: 125.5px;
-
 
     @media screen and (max-width: $desktop) {
       padding-bottom: 0;
     }
 
-    @media screen and (min-width: $tablet) and (max-width: 1024px) {
-      margin-bottom: 68px;
-      gap: 208px;
-      padding-bottom: 64px;
+    @media screen and (max-width: $tablet) {
+      gap: 0;
     }
+
 
     @media screen and (max-width: $mobile) {
       display: flex;
@@ -92,6 +87,7 @@
       flex-direction: column;
       gap: 40px;
     }
+
 
     .icons-contacts {
       display: flex;
@@ -118,45 +114,83 @@
       }
     }
 
-    .elem-yellow {
-      object-fit: contain;
-      width: 335.5px;
+    .yellow {
+      align-self: center;
 
       @media screen and (max-width: $desktop) {
-        margin-top: 205px;
-        margin-left: -17px;
+        align-self: end;
+      }
+
+      @media screen and (max-width: 1439.9px) {
+        transform: translate(-104px, 35px);
+      }
+
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+
+      @media (min-width: 360px) and (max-width: 500px) {
+        display: none;
+      }
+
+    }
+
+    svg {
+      width: 360px;
+
+      @media screen and (max-width: 1919.9px) {
         width: 280px;
       }
+
+      @media screen and (max-width: 1439.9px) {
+        width: 200px;
+      }
     }
 
-    .elem-yellow.red {
+    .red {
       filter: brightness(0) saturate(100%) invert(26%) sepia(49%) saturate(2263%) hue-rotate(346deg) brightness(102%) contrast(84%);
-      @media (min-width: 768px) and (max-width: 1024px) {
-        width: 200px;
+    }
+
+    .text-content::before {
+      @media screen and (max-width: $mobile) {
+        content: "";
         position: absolute;
-        bottom: 144px;
-        left: 144px;
+        width: 99.41px;
+        height: 49.4px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
       }
-      @media screen and (max-width: 767px) {
-        display: none;
+      @media (min-width: 360px) and (max-width: 500px) {
+        content: "";
+        position: absolute;
+        width: 99.41px;
+        height: 49.4px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
       }
     }
 
-    .elem-yellow.yellow {
-      filter: brightness(0) saturate(100%) invert(92%) sepia(11%) saturate(6050%) hue-rotate(322deg) brightness(117%) contrast(90%);
-      @media (min-width: 768px) and (max-width: 1024px) {
-        width: 200px;
+    .text-content.red-mobile::before {
+      @media (min-width: 360px) and (max-width: 500px) {
+        content: "";
         position: absolute;
-        bottom: 0;
-        left: 144px;
-      }
-      @media screen and (max-width: 767px) {
-        display: none;
+        width: 99.41px;
+        height: 49.4px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        background-image: url(../../../../assets/images/element-red-mobile.svg);
       }
     }
 
     p {
-
       @media (min-width: 768px) and (max-width: 1024px) {
         font-size: 16px;
         white-space: normal;
@@ -171,9 +205,7 @@
     }
 
     a {
-      font-size: 20px;
       margin-top: -3px;
-      margin-right: -1px;
       @media screen and (max-width: $desktop) {
         font-size: 16px;
         margin-right: 0;
@@ -232,37 +264,8 @@
     }
   }
 
-
-  .text-content::before {
-    content: "";
-    position: absolute;
-    width: 99.41px;
-    height: 49.4px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: translate(50%, 50%);
-    right: 180px;
-    margin-top: -72px;
-    @media screen and (max-width: $mobile) {
-      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-    }
-    @media (min-width: 360px) and (max-width: 500px) {
-      background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-    }
-  }
-
-  .text-content.red-mobile::before {
-    @media screen and (max-width: $mobile) {
-      background-image: url(../../../../assets/images/element-red-mobile.svg);
-    }
-    @media (min-width: 360px) and (max-width: 500px) {
-      background-image: url(../../../../assets/images/element-red-mobile.svg);
-    }
-  }
-
   .contacts-text {
     margin-bottom: 45px;
-    font-size: 20px;
     white-space: pre-line;
     @media screen and (max-width: $desktop) {
       white-space: normal;
