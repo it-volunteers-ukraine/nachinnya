@@ -1,0 +1,1438 @@
+@use "../../../../src/styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+}
+
+.title-header {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.title-header-image {
+    width: 36px;
+    height: 36px;
+}
+
+.title-header-text {
+    min-width: 204px;
+    text-align: center;
+}
+
+.title-header-image:nth-of-type(2) {
+    rotate: -180deg;
+}
+
+.title-decoration-image-mobile {
+    width: 200px;
+    align-self: flex-end;
+}
+
+.title-decoration-image-tablet,
+.title-decoration-image-desktop {
+    display: none;
+    align-self: flex-end;
+}
+
+/* Items */
+
+.events {
+    display: flex;
+    flex-direction: row;
+    transition: all variables.$animations;
+}
+
+/* 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    360px 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+/* Item */
+
+.item-360 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100vw;
+    padding: 0px 16px;
+}
+
+.item-360-upper-part {
+    display: flex;
+    justify-content: center;
+    height: 83.33vw;
+}
+
+.item-360-upper-part-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 66.66vw;
+}
+
+.item-360-upper-part-link {
+    position: absolute;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    border: 1px solid #4E4A4A;
+    transform: translateX(-5px) translateY(-5px) rotate(4deg);
+    transition: all variables.$animations;
+}
+
+.item-360-upper-part-link:hover {
+    transform: translateX(-5px) translateY(-5px) rotate(3deg);
+}
+
+.item-360-upper-part-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.item-360-upper-part-blue {
+    position: absolute;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    border: 2px solid variables.$blue;
+}
+
+.item-360-upper-part-yellow {
+    position: absolute;
+    width: 89.16%;
+    height: 91%;
+    border-radius: 4px;
+    border: 2px solid variables.$yellow;
+    transform: translateX(3px) translateY(6px) rotate(4deg);
+}
+
+/* Buttons */
+
+.item-360-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-360-buttons-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+    padding: 6px 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: variables.$red;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    user-select: none;
+
+    transition: all variables.$animations;
+}
+
+.item-360-buttons-button:hover {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow;
+    color: variables.$yellow;
+}
+
+.item-360-buttons-button:active {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow_pressed;
+    color: variables.$yellow;
+}
+
+.item-360-buttons-button-svg {
+    width: 10px;
+    height: 18px;
+    fill: variables.$red;
+}
+
+.item-360-buttons-button:hover .item-360-buttons-button-svg {
+    fill: variables.$yellow;
+}
+
+.item-360-buttons-button:active .item-360-buttons-button-svg {
+    fill: variables.$yellow_pressed;
+}
+
+/* Text part */
+
+.item-360-text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-360-text-part-title {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+}
+
+.item-360-text-part-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-360-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 76px 12px 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-360-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-360-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-360-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$red;
+}
+
+.item-360-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-360-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-360-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-360-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-360-text-part-card-info-price,
+.item-360-text-part-card-info-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.item-360-text-part-card-info-price-label,
+.item-360-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-360-text-part-card-info-price-value,
+.item-360-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$red;
+}
+
+.item-360-text-part-card-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-360-text-part-mt-register-block {
+    display: flex;
+}
+
+.item-360-text-part-register-button {
+    position: relative;
+    width: 100%;
+    border-radius: 100px;
+    padding: 12px 32px;
+    background-color: variables.$yellow;
+    border: 2px solid variables.$BG;
+
+    text-align: center;
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-360-text-part-register-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-360-text-part-register-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.item-360-text-part-register-button:active {
+    background-color: variables.$yellow_pressed;
+    color: variables.$white;
+}
+
+.item-360-text-part-register-button:active::after {
+    border: 2px solid variables.$yellow;
+}
+
+.item-360-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 14px;
+    color: variables.$dark-red;
+}
+
+.item-360-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.item-360-text-part-card-show-more-button {
+    position: relative;
+    padding: 0px 4px;
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+    transition: all variables.$animations;
+}
+
+.item-360-text-part-card-show-more-button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all variables.$animations;
+}
+
+.item-360-text-part-card-show-more-button:active {
+    color: variables.$dark-red;
+}
+
+.item-360-text-part-card-show-more-button:hover::after {
+    border-bottom-color: variables.$red;
+}
+
+.item-360-text-part-card-show-more-button:active::after {
+    border-bottom-color: variables.$dark-red;
+}
+
+.item-360-text-part-card-main-text {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}
+
+.item-360-text-part-card-main-text.item-360-text-part-card-main-text-visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 1500ms ease-out;
+}
+
+/* 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    768px 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+/* Item */
+
+.item-768 {
+    display: none;
+    flex-direction: column;
+    gap: 28px;
+    width: 100vw;
+    padding: 0px 40px;
+}
+
+.item-768-upper-part {
+    display: flex;
+    justify-content: space-between;
+    height: 39.06vw;
+}
+
+.item-768-upper-part-yellow-arrow-svg {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 10.67vw;
+}
+
+.item-768-upper-part-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 66.66vw;
+}
+
+.item-768-upper-part-link {
+    position: absolute;
+    width: 27.86vw;
+    height: 35.54vw;
+    border-radius: 4px;
+    border: 1px solid #4E4A4A;
+    transform: translateX(-5px) translateY(-5px) rotate(4deg);
+    transition: all variables.$animations;
+}
+
+.item-768-upper-part-link:hover {
+    transform: translateX(-5px) translateY(-5px) rotate(3deg);
+}
+
+.item-768-upper-part-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.item-768-upper-part-blue {
+    position: absolute;
+    width: 27.86vw;
+    height: 35.54vw;
+    border-radius: 4px;
+    border: 2px solid variables.$blue;
+}
+
+.item-768-upper-part-yellow {
+    position: absolute;
+    width: 27.86vw;
+    height: 35.54vw;
+    border-radius: 4px;
+    border: 2px solid variables.$yellow;
+    transform: translateX(3px) translateY(6px) rotate(4deg);
+}
+
+/* Buttons */
+
+.item-768-upper-part-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+    padding: 6px 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-bottom: 12px;
+
+    color: variables.$red;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    user-select: none;
+
+    transition: all variables.$animations;
+}
+
+.item-768-upper-part-button:hover {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow;
+    color: variables.$yellow;
+}
+
+.item-768-upper-part-button:active {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow_pressed;
+    color: variables.$yellow;
+}
+
+.item-768-upper-part-button-svg {
+    width: 10px;
+    height: 18px;
+    fill: variables.$red;
+}
+
+.item-768-upper-part-button:hover .item-768-upper-part-button-svg {
+    fill: variables.$yellow;
+}
+
+.item-768-upper-part-button:active .item-768-upper-part-button-svg {
+    fill: variables.$yellow_pressed;
+}
+
+/* Text part */
+
+.item-768-text-part {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+    width: 79.16vw;
+}
+
+.item-768-text-part-title {
+    width: 66.66vw;
+    font-family: variables.$primary-font;
+    font-size: 20px;
+}
+
+.item-768-text-part-card {
+    width: 66.66vw;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-768-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-768-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-768-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-768-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-768-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-768-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-768-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-768-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-768-text-part-card-info-price,
+.item-768-text-part-card-info-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.item-768-text-part-card-info-price-label,
+.item-768-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-768-text-part-card-info-price-value,
+.item-768-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-768-text-part-mt-register-block {
+    display: flex;
+}
+
+.item-768-text-part-register-button {
+    position: relative;
+    border-radius: 100px;
+    padding: 12px 36px;
+    background-color: variables.$yellow;
+    border: 2px solid variables.$BG;
+
+    text-align: center;
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-768-text-part-register-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-768-text-part-register-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.item-768-text-part-register-button:active {
+    background-color: variables.$yellow_pressed;
+    color: variables.$white;
+}
+
+.item-768-text-part-register-button:active::after {
+    border: 2px solid variables.$yellow;
+}
+
+.item-768-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-768-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.item-768-text-part-card-show-more-button {
+    position: relative;
+    padding: 0px 4px;
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+    transition: all variables.$animations;
+}
+
+.item-768-text-part-card-show-more-button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all variables.$animations;
+}
+
+.item-768-text-part-card-show-more-button:active {
+    color: variables.$dark-red;
+}
+
+.item-768-text-part-card-show-more-button:hover::after {
+    border-bottom-color: variables.$red;
+}
+
+.item-768-text-part-card-show-more-button:active::after {
+    border-bottom-color: variables.$dark-red;
+}
+
+.item-768-text-part-card-texts {
+    width: 32.29vw;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-768-text-part-card-main-text {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}
+
+.item-768-text-part-card-main-text.item-768-text-part-card-main-text-visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 1500ms ease-out;
+}
+
+/* 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    1440px 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+/* Item */
+
+.item-1440 {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    gap: 28px;
+    width: 100vw;
+    padding: 0px 40px;
+}
+
+.item-1440-upper-part {
+    display: flex;
+    justify-content: space-between;
+    height: 39.06vw;
+    margin-left: 44px;
+}
+
+.item-1440-upper-part-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 24.3vw;
+}
+
+.item-1440-upper-part-link {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 1px solid #4E4A4A;
+    transform: translateX(-5px) translateY(-5px) rotate(4deg);
+    transition: all variables.$animations;
+}
+
+.item-1440-upper-part-link:hover {
+    transform: translateX(-5px) translateY(-5px) rotate(3deg);
+}
+
+.item-1440-upper-part-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.item-1440-upper-part-blue {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 2px solid variables.$blue;
+}
+
+.item-1440-upper-part-yellow {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 2px solid variables.$yellow;
+    transform: translateX(3px) translateY(6px) rotate(4deg);
+}
+
+/* Buttons */
+
+.item-1440-upper-part-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+    padding: 6px 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 12px;
+
+    color: variables.$red;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    user-select: none;
+
+    transition: all variables.$animations;
+}
+
+.item-1440-upper-part-button:hover {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow;
+    color: variables.$yellow;
+}
+
+.item-1440-upper-part-button:active {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow_pressed;
+    color: variables.$yellow;
+}
+
+.item-1440-upper-part-button-svg {
+    width: 10px;
+    height: 18px;
+    fill: variables.$red;
+}
+
+.item-1440-upper-part-button:hover .item-1440-upper-part-button-svg {
+    fill: variables.$yellow;
+}
+
+.item-1440-upper-part-button:active .item-1440-upper-part-button-svg {
+    fill: variables.$yellow_pressed;
+}
+
+/* Text part */
+
+.item-1440-text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 43.75vw;
+    margin-left: 100px;
+    margin-right: 59px;
+}
+
+.item-1440-text-part-title {
+    font-family: variables.$primary-font;
+    font-size: 20px;
+}
+
+.item-1440-text-part-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-1440-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-1440-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1440-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-1440-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-1440-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1440-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-1440-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-1440-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1440-text-part-card-info-price,
+.item-1440-text-part-card-info-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.item-1440-text-part-card-info-price-label,
+.item-1440-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-1440-text-part-card-info-price-value,
+.item-1440-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$red;
+}
+
+.item-1440-text-part-mt-register-block {
+    display: flex;
+}
+
+.item-1440-text-part-register-button {
+    position: relative;
+    border-radius: 100px;
+    padding: 12px 36px;
+    background-color: variables.$yellow;
+    border: 2px solid variables.$BG;
+
+    text-align: center;
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-1440-text-part-register-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-1440-text-part-register-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.item-1440-text-part-register-button:active {
+    background-color: variables.$yellow_pressed;
+    color: variables.$white;
+}
+
+.item-1440-text-part-register-button:active::after {
+    border: 2px solid variables.$yellow;
+}
+
+.item-1440-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 16px;
+    color: variables.$dark-red;
+}
+
+.item-1440-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.item-1440-text-part-card-show-more-button {
+    position: relative;
+    padding: 0px 4px;
+    font-family: variables.$primary-font;
+    font-size: 16px;
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+    transition: all variables.$animations;
+}
+
+.item-1440-text-part-card-show-more-button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all variables.$animations;
+}
+
+.item-1440-text-part-card-show-more-button:active {
+    color: variables.$dark-red;
+}
+
+.item-1440-text-part-card-show-more-button:hover::after {
+    border-bottom-color: variables.$red;
+}
+
+.item-1440-text-part-card-show-more-button:active::after {
+    border-bottom-color: variables.$dark-red;
+}
+
+.item-1440-text-part-card-texts {
+    width: 21.18vw;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self:flex-end;
+}
+
+.item-1440-text-part-card-main-text {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}
+
+.item-1440-text-part-card-main-text.item-1440-text-part-card-main-text-visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 1500ms ease-out;
+}
+
+.item-1440-yellow-arrow-svg {
+    position: absolute;
+    width: 280px;
+    height: 140px;
+    top: 35.2vw;
+    left: 37.84vw;
+}
+
+/* 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    1920px 
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
+
+/* Item */
+
+.item-1920 {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    gap: 28px;
+    width: 100vw;
+    padding: 0px 40px;
+}
+
+.item-1920-upper-part {
+    display: flex;
+    justify-content: space-between;
+    height: 31.77vw;
+    margin-left: 44px;
+}
+
+.item-1920-upper-part-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 24.3vw;
+}
+
+.item-1920-upper-part-link {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 1px solid #4E4A4A;
+    transform: translateX(-5px) translateY(-5px) rotate(4deg);
+    transition: all variables.$animations;
+}
+
+.item-1920-upper-part-link:hover {
+    transform: translateX(-5px) translateY(-5px) rotate(3deg);
+}
+
+.item-1920-upper-part-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.item-1920-upper-part-blue {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 2px solid variables.$blue;
+}
+
+.item-1920-upper-part-yellow {
+    position: absolute;
+    width: 21.73vw;
+    height: 27.70vw;
+    border-radius: 4px;
+    border: 2px solid variables.$yellow;
+    transform: translateX(3px) translateY(6px) rotate(4deg);
+}
+
+/* Buttons */
+
+.item-1920-upper-part-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+    padding: 6px 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 12px;
+
+    color: variables.$red;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    user-select: none;
+
+    transition: all variables.$animations;
+}
+
+.item-1920-upper-part-button:hover {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow;
+    color: variables.$yellow;
+}
+
+.item-1920-upper-part-button:active {
+    background-color: variables.$red;
+    border: 1px solid variables.$yellow_pressed;
+    color: variables.$yellow;
+}
+
+.item-1920-upper-part-button-svg {
+    width: 10px;
+    height: 18px;
+    fill: variables.$red;
+}
+
+.item-1920-upper-part-button:hover .item-1920-upper-part-button-svg {
+    fill: variables.$yellow;
+}
+
+.item-1920-upper-part-button:active .item-1920-upper-part-button-svg {
+    fill: variables.$yellow_pressed;
+}
+
+/* Text part */
+
+.item-1920-text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+    width: 43.75vw;
+    margin-left: 100px;
+    margin-right: 59px;
+    z-index: 10;
+}
+
+.item-1920-text-part-title {
+    font-family: variables.$primary-font;
+    font-size: 30px;
+}
+
+.item-1920-text-part-card {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-1920-text-part-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 12px;
+    border-left: 2px solid variables.$red;
+}
+
+.item-1920-text-part-card-info-datetime {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1920-text-part-card-info-date {
+    font-family: variables.$primary-font;
+    font-size: 20px;
+    color: variables.$dark-red;
+}
+
+.item-1920-text-part-card-info-time {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$red;
+}
+
+.item-1920-text-part-card-info-address-and-location {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1920-text-part-card-info-address {
+    font-family: variables.$primary-font;
+    font-size: 20px;
+    color: variables.$dark-red;
+    text-transform: uppercase;
+}
+
+.item-1920-text-part-card-info-location {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$red;
+}
+
+.item-1920-text-part-card-info-price-and-duration {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-1920-text-part-card-info-price,
+.item-1920-text-part-card-info-duration {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.item-1920-text-part-card-info-price-label,
+.item-1920-text-part-card-info-duration-label {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$dark-red;
+}
+
+.item-1920-text-part-card-info-price-value,
+.item-1920-text-part-card-info-duration-value {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$red;
+}
+
+.item-1920-text-part-mt-register-block {
+    display: flex;
+}
+
+.item-1920-text-part-register-button {
+    position: relative;
+    border-radius: 100px;
+    padding: 12px 36px;
+    background-color: variables.$yellow;
+    border: 2px solid variables.$BG;
+
+    text-align: center;
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-1920-text-part-register-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 1px solid variables.$red;
+
+    transition: all variables.$animations;
+}
+
+.item-1920-text-part-register-button:hover {
+    background-color: variables.$yellow_hover;
+}
+
+.item-1920-text-part-register-button:active {
+    background-color: variables.$yellow_pressed;
+    color: variables.$white;
+}
+
+.item-1920-text-part-register-button:active::after {
+    border: 2px solid variables.$yellow;
+}
+
+.item-1920-text-part-card-intro-text {
+    font-family: variables.$secondary-font;
+    font-size: 20px;
+    color: variables.$dark-red;
+}
+
+.item-1920-text-part-card-show-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.item-1920-text-part-card-show-more-button {
+    position: relative;
+    padding: 0px 4px;
+    font-family: variables.$primary-font;
+    font-size: 20px;
+    color: variables.$red;
+    border-bottom: 1px solid variables.$red;
+    transition: all variables.$animations;
+}
+
+.item-1920-text-part-card-show-more-button::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: all variables.$animations;
+}
+
+.item-1920-text-part-card-show-more-button:active {
+    color: variables.$dark-red;
+}
+
+.item-1920-text-part-card-show-more-button:hover::after {
+    border-bottom-color: variables.$red;
+}
+
+.item-1920-text-part-card-show-more-button:active::after {
+    border-bottom-color: variables.$dark-red;
+}
+
+.item-1920-text-part-card-texts {
+    width: 22.13vw;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self:flex-end;
+}
+
+.item-1920-text-part-card-main-text {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+}
+
+.item-1920-text-part-card-main-text.item-1920-text-part-card-main-text-visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 1500ms ease-out;
+}
+
+.item-1920-yellow-arrow-svg {
+    position: absolute;
+    width: 340px;
+    height: 167px;
+    top: 6.92vw;
+    left: 65.57vw;
+}
+
+/* Layouts */
+
+.rotate-180 {
+    rotate: 180deg;
+}
+
+@media screen and (min-width: variables.$tablet) {
+    /* Title */
+
+    .title {
+        align-self: flex-start;
+    }
+
+    .title-header {
+        align-self: flex-end;
+        gap: 24px;
+    }
+
+    .title-header-text {
+        min-width: auto;
+    }
+
+    .title-decoration-image-mobile {
+        display: none;
+    }
+
+    .title-decoration-image-tablet {
+        display: block;
+    }
+
+    .item-360 {
+        display: none;
+    }
+
+    .item-768 {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: variables.$desktop) {
+    .title-decoration-image-tablet {
+        display: none;
+    }
+
+    .title-decoration-image-desktop {
+        display: block;
+    }
+
+    .item-768 {
+        display: none;
+    }
+
+    .item-1440 {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: variables.$full) {
+    .container {
+        gap: 111.27px;
+    }
+
+    .item-1440 {
+        display: none;
+    }
+
+    .item-1920 {
+        display: flex;
+    }
+}
