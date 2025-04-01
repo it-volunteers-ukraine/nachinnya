@@ -1,8 +1,6 @@
 @use "./variables.scss" as *;
 
 // helpers start
-.link-main-red {
-}
 .link-main,
 .wrap-link-main,
 .link-main-red,
@@ -26,7 +24,7 @@
   left: 0;
   bottom: 0;
   background-color: transparent;
-  transition: all $animations;
+  transition: background-color $animations;
 }
 
 /* link-main color black */
@@ -48,10 +46,12 @@
 }
 
 /* link-main-red hover for text red */
+/*
 .link-main-red:hover,
 .wrap-link-main-red a:hover {
-  color: $red;
+  color: $red; 
 }
+*/
 
 /* link-main-red hover ::after red  */
 .link-main-red:hover::after,
@@ -61,20 +61,23 @@
 
 /* wrap-link-main-red focus red */
 .wrap-link-main-red a:focus-visible::after {
-  color: $red;
+  /* color: $red; */
 }
 
 /* wrap-link-main-red focus red */
+/*
 .wrap-link-main-red a:focus-visible::after,
 .link-main-red:focus-visible::after {
   background-color: $red;
 }
+*/
 
 /* link-main-red active red */
 .link-main-red:active,
 .wrap-link-main-red a:active {
   color: $dark_red;
 }
+
 
 /* link-main-red active red */
 .link-main-red:active::after,
