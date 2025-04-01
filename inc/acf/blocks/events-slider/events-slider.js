@@ -52,11 +52,11 @@ const eventsSliderToggleShowMoreText = (id) => {
     const eventItem = document.getElementById(`${id}EventItem`);
     const showMoreText = eventItem.dataset.showMoreText;
     const showLessText = eventItem.dataset.showLessText;
-    const textBlockClassToShow = eventItem.dataset.textClassToShow;
+    const textBlockClassToShow = eventItem.dataset.textClassToShowMobile;
 
     // Retrieving the related elements
-    const btn = document.getElementById(`eventsToggleMoreTextButton${id}`);
-    const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}`);
+    const btn = document.getElementById(`eventsToggleMoreTextButton${id}Mobile`);
+    const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}Mobile`);
     
     // Checking the current state: does it show more text?
     if (('eventsShowMoreText' in btn) && (!btn.eventsShowMoreText)) {
@@ -170,7 +170,7 @@ const eventsSlideTo = (currentEventId, index) => {
     const itemsCount = Number(itemsElement.dataset.itemsCount);
     if (itemsCount > 0) {
         //
-        const translateX = window.innerWidth * (itemsCount - 1) / 2 - window.innerWidth * index;
+        const translateX = window.screen.width * (itemsCount - 1) / 2 - window.screen.width * index;
         itemsElement.style.transform = `translateX(${translateX}px)`;
         //
         itemsElement.dataset.currentIndex = index;
