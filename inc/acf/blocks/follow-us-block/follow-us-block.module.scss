@@ -12,6 +12,10 @@
         margin-left: auto;
     }
 
+    @media screen and (max-width: 1439.9px) and (min-width: 800px) {
+        margin-right: 10%;
+    }
+
     @media screen and (max-width: 767.9px) {
         margin: 0 auto 40px;
     }
@@ -29,6 +33,10 @@
             margin-right: 0px;
         }
 
+        @media screen and (max-width: 1439.9px) and (min-width: 800px) {
+            margin-right: 10%;
+        }
+
         @media screen and (max-width: 767.9px) {
             margin: 0 auto 65px;
         }
@@ -38,6 +46,8 @@
 .variations-wrapper {
     display: flex;
     gap: 91px;
+    max-width: fit-content;
+    margin: 0 auto;
 
     &.our-vision {
         flex-direction: row-reverse;
@@ -58,6 +68,8 @@
 
     @media screen and (max-width: 1439.9px) {
         justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
 
         &.follow-us {
             flex-direction: row-reverse;
@@ -87,7 +99,14 @@
         @media screen and (max-width: 1919.9px) {
             margin-right: 112px;
             margin-top: 90px;
+        }
+
+        @media screen and (max-width: 1439.9px) {
             margin-right: 0px;
+        }
+
+        @media screen and (max-width: 767.9px) {
+            margin: 90px auto 0;
         }
     }
 
@@ -104,8 +123,8 @@
     }
 
     @media screen and (max-width: 767.9px) {
-        max-width: 100%;
-        margin-top: 75px;
+        max-width: 440px;
+        margin: 75px auto 0;
         padding-bottom: 90px;
     }
 }
@@ -132,7 +151,7 @@
     @media screen and (max-width: 1439.9px) {
         width: 200px;
         height: 100px;
-        left: -35vw;
+        left: -125%;
         bottom: 81px;
     }
 
@@ -158,6 +177,10 @@
             height: 100px;
             left: -261px;
             bottom: -80px;
+        }
+
+        @media screen and (max-width: 1439.9px) and (min-width: 1100px) {
+            left: -125%;
         }
 
         @media screen and (max-width: 767.9px) {
@@ -244,6 +267,10 @@
         flex-direction: column;
         gap: 52px;
         margin-top: 0px;
+    }
+
+    @media screen and (max-width: 1439.9px) and (min-width: 1000px) {
+        flex-direction: row;
     }
 
     @media screen and (max-width: 767.9px) {
