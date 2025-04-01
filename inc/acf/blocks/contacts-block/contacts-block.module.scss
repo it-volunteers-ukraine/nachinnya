@@ -92,7 +92,7 @@
     .icons-contacts {
       display: flex;
       flex-direction: column;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
 
       @media screen and (max-width: $desktop) {
         margin-bottom: 19px;
@@ -116,9 +116,12 @@
 
     .yellow {
       align-self: center;
+      margin-top: 82px;
+      margin-left: -7px;
 
       @media screen and (max-width: $desktop) {
         align-self: end;
+        margin-bottom: -18px;
       }
 
       @media screen and (max-width: 1439.9px) {
@@ -133,17 +136,15 @@
         display: none;
       }
 
-    }
+      svg {
 
-    svg {
-      width: 360px;
+        @media screen and (max-width: 1919.9px) {
+          width: 280px;
+        }
 
-      @media screen and (max-width: 1919.9px) {
-        width: 280px;
-      }
-
-      @media screen and (max-width: 1439.9px) {
-        width: 200px;
+        @media screen and (max-width: 1439.9px) {
+          width: 200px;
+        }
       }
     }
 
@@ -206,9 +207,13 @@
 
     a {
       margin-top: -3px;
+      margin-left: 3px;
+      margin-right: -6px;
       @media screen and (max-width: $desktop) {
         font-size: 16px;
         margin-right: 0;
+        margin-top: -2px;
+        margin-left: 3px;
       }
       @media screen and (max-width: $tablet) {
         font-size: 16px;
@@ -233,7 +238,7 @@
   }
 
   .icon-email {
-    margin-right: 6px;
+    margin-right: 9px;
     @media screen and (max-width: $desktop) {
       margin-top: 5px;
       padding-left: 3px;
@@ -265,7 +270,7 @@
   }
 
   .contacts-text {
-    margin-bottom: 45px;
+    margin-bottom: 44px;
     white-space: pre-line;
     @media screen and (max-width: $desktop) {
       white-space: normal;

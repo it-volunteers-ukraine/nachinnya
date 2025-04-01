@@ -17,6 +17,7 @@ $default_classes = [
     'red' => 'red',
     'contacts-photo' => 'contacts-photo',
     'icon-email' => 'icon-email',
+    'contacts-text2' => 'contacts-text2',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -93,6 +94,9 @@ if (file_exists($modules_file)) {
                     . ' ' . ($checked ? $classes['red-mobile'] : ''); ?>">
                     <p class="<?php echo esc_attr($classes['contacts-text']); ?>">
                         <?php the_field('contacts_text'); ?>
+                    </p>
+                    <p class="<?php echo esc_attr($classes['contacts-text2']); ?>">
+                        <?php the_field('contacts_text2'); ?>
                     </p>
                     <div class="<?php echo esc_attr($classes['icons-contacts']); ?>">
                         <?php
