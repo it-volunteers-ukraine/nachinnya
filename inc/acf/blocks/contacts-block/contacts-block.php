@@ -11,7 +11,6 @@ $default_classes = [
     'contacts-social-media' => 'contacts-social-media',
     'contacts-text' => 'contacts-text',
     'red-mobile' => 'red-mobile',
-    'custom-container' => 'custom-container',
     'title-merch' => 'title-merch',
     'yellow' => 'yellow',
     'red' => 'red',
@@ -30,7 +29,7 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class="section">
-    <div class="container <?php echo esc_attr($classes['custom-container']); ?>">
+    <div class="container">
         <?php
         $contacts_title = get_field('contacts_title');
         $checked = get_field('use-custom-template');
