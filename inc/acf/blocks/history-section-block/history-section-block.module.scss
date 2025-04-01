@@ -15,6 +15,20 @@
 
 .content-with-animation-wrapper {
     position: relative;
+    max-width: 1760px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1919.9px) {
+        max-width: 1284px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        max-width: 688px;
+    }
+
+    @media screen and (max-width: 767.9px) {
+        max-width: 500px;
+    }
 }
 
 .animation-container,
@@ -93,13 +107,18 @@
 
     @media screen and (max-width: 767.9px) {
         flex-direction: column-reverse;
+        margin-bottom: 50px;
+        gap: 83px;
+    }
+
+    @media screen and (max-width: 430px) {
+        margin-bottom: 100px;
         gap: 33px;
     }
 }
 
 .story1 {
     height: 509px;
-    /* background-color: rgb(138, 176, 138); */
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
@@ -120,7 +139,6 @@
 .story2 {
     justify-content: flex-end;
     height: 509px;
-    /* background-color: rgb(192, 118, 118); */
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
@@ -139,7 +157,6 @@
 
 .story3 {
     height: 616px;
-    /*  background-color: rgb(141, 131, 176); */
 
     @media screen and (max-width: 1919.9px) {
         height: 444px;
@@ -160,7 +177,6 @@
 .story4 {
     justify-content: flex-end;
     height: 509px;
-    /* background-color: rgb(172, 148, 168); */
     margin-bottom: 0px;
 
     @media screen and (max-width: 1919.9px) {
