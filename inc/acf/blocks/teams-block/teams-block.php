@@ -61,7 +61,7 @@ $welcome  = get_field('welcome_to_command');
         </div>
         <div class="<?php echo $is_debug ? 'debug-blue ' : '';
                     echo esc_attr($classes['team-wrap']); ?>">
-            <? if ($team_block) : ?>
+            <?php if ($team_block) : ?>
                 <?php $count_res = 'count-' . count($team_block); ?>
                 <ul class="<?php echo esc_attr(implode(' ', [$classes['team-list'], $classes[$count_res]])); ?>">
                     <?php foreach ($team_block as $team) : ?>
@@ -84,7 +84,6 @@ $welcome  = get_field('welcome_to_command');
                                 <div class="<?php echo esc_attr($classes["team-text-wrap"]); ?>">
                                     <p class='<?php echo esc_attr($classes["team-item-fullname"]); ?>'><?php echo $full_name; ?></p>
                                     <p class='<?php echo esc_attr($classes["team-item-jobtitle"]); ?>'><?php echo $job_title; ?></p>
-
                                 </div>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_360.svg" alt="sky-360" class='<?php echo esc_attr($classes["team-sky-s"]); ?> '>
 
@@ -92,23 +91,19 @@ $welcome  = get_field('welcome_to_command');
                         </li>
                     <?php endforeach; ?>
                 </ul>
-                <!-- <?php endif; ?> -->
-                <!-- <?php if ($team_block) : ?> -->
                 <?php for ($i = 1; $i <= ceil(count($team_block) / 2); $i++) : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_768.svg" alt="sky-768" class='<?php echo esc_attr(implode(' ', [$classes["team-sky-m"]])); ?> '>
                 <?php endfor; ?>
 
                 <?php if (count($team_block) < 5 && $welcome): ?>
                     <div class=" <?php echo esc_attr($classes['team-welcome-block']); ?> ">
-                        <a href="<?php echo get_field('telegram_bot', 'option'); ?>" class="link-main <?php echo esc_attr($classes['team-welcome-text']); ?>" target="_blank"><?php echo $welcome; ?></a>
+                        <a href="<?php echo get_field('telegram_bot', 'option'); ?>" class="link-main-red <?php echo esc_attr($classes['team-welcome-text']); ?>" target="_blank"><?php echo $welcome; ?></a>
                     </div>
                 <?php endif; ?>
-
             <?php endif; ?>
 
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1440.svg" alt="sky-1440" class='<?php echo esc_attr($classes["team-sky-l"]); ?> '>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sky_1920.svg" alt="sky-1920" class='<?php echo esc_attr($classes["team-sky-xl"]); ?> '>
         </div>
     </div>
-
 </section>
