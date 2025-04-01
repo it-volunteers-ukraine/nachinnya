@@ -63,19 +63,27 @@
 .flex-container {
     display: flex;
     justify-content: space-between;
+    max-width: 1760px;
+    margin: 0 auto;
 
     @media screen and (max-width: 1919.9px) {
         align-items: center;
+        max-width: 1500px;
     }
 
     @media screen and (max-width: 1439.9px) {
+        justify-content: space-between;
+        max-width: 1100px;
+    }
+
+    @media screen and (max-width: 1000px) {
         justify-content: center;
     }
 }
 
 .image-left-wrapper,
 .image-right-wrapper {
-    @media screen and (max-width: 1439.9px) {
+    @media screen and (max-width: 1000px) {
         display: none;
     }
 }

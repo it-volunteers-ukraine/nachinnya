@@ -17,13 +17,17 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 148px 41px 163px;
+    max-width: 1760px;
+    margin: 0 auto;
 
     @media screen and (max-width: 1919.9px) {
         padding: 0px 108px;
+        max-width: 1500px;
     }
 
     @media screen and (max-width: 1439.9px) {
         padding: 0;
+        max-width: 1000px;
     }
 
     @media screen and (max-width: 767.8px) {
