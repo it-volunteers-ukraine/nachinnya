@@ -90,7 +90,7 @@ if (file_exists($modules_file)) {
         $main_section_column_right = get_field('main_section_column_right');
         if (!empty($main_section_column_left) && !empty($main_section_column_right)) :
         ?>
-            <div class="<?php echo esc_attr($classes['main_section_columns-text']); ?>">
+            <div class="<?php echo esc_attr(($classes['main_section_columns-text'] ?? '') . ' ' . $margin_variant); ?>">
                 <div class="<?php echo esc_attr($classes['left']); ?>">
                     <p><?php echo wp_kses_post($main_section_column_left); ?></p>
                 </div>

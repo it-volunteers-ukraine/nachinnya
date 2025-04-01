@@ -330,6 +330,32 @@
     }
 }
 
+.main_section_columns-text {
+    &.main-page {
+        &::before {
+            top: -188px;
+            left: -445px;
+
+            @media screen and (max-width: 1919.9px) {
+                top: 150px;
+                left: -313px;
+            }
+
+            @media screen and (max-width: 1330px) {
+                top: auto;
+                bottom: 0px;
+                left: 0px;
+            }
+
+            @media screen and (max-width: 1439.9px) {
+                top: auto;
+                bottom: 0px;
+                left: 0px;
+            }
+        }
+    }
+}
+
 .left,
 .right {
     flex: 1;
