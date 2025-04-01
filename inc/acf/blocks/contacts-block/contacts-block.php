@@ -11,7 +11,6 @@ $default_classes = [
     'contacts-social-media' => 'contacts-social-media',
     'contacts-text' => 'contacts-text',
     'red-mobile' => 'red-mobile',
-    'custom-container' => 'custom-container',
     'title-merch' => 'title-merch',
     'yellow' => 'yellow',
     'red' => 'red',
@@ -30,7 +29,7 @@ if (file_exists($modules_file)) {
 ?>
 
 <section class="section">
-    <div class="container <?php echo esc_attr($classes['custom-container']); ?>">
+    <div class="container">
         <?php
         $contacts_title = get_field('contacts_title');
         $checked = get_field('use-custom-template');
@@ -83,12 +82,9 @@ if (file_exists($modules_file)) {
                     endif;
                     ?>
 
-                <div class="<?php echo esc_attr($classes['yellow'] . ' ' . $colorArrow); ?>">
-             <svg width="336" height="166" viewBox="0 0 336 166" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.988281 1.62891C7.82729 43.0427 49.0068 123.342 159.013 113.228C269.019 103.114 220.128 30.4006 184.768 23.8615C158.867 18.3397 117.455 28.4825 159.013 113.228C190.734 149.701 270.241 202.769 334.499 123.255M334.499 123.255H322.713M334.499 123.255V134.589" stroke="#F2C857" stroke-width="2"/>
-                </svg>
-            </div>
-
+                <img class="<?php echo esc_attr($classes['yellow'] . ' ' . $colorArrow); ?>"
+                     src="<?php echo get_template_directory_uri() . '/assets/images/element-yellow.svg' ?>"
+                     alt="image">
 
                 <div class="<?php echo esc_attr($classes['text-content'])
                     . ' ' . ($checked ? $classes['red-mobile'] : ''); ?>">
