@@ -1,13 +1,21 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 .partners_section {
+
   .partners {
     display: flex;
     flex-direction: column;
+    padding: 0 146px 0 295px;
 
-    @media screen and (max-width: $tablet) {
-      align-items: center;
-      gap: 0;
+
+    @media screen and (max-width: $desktop) {
+      padding: 0 108px 0 217px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+      padding: 0 111px;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
     }
 
     @media screen and (max-width: $mobile) {
@@ -55,13 +63,10 @@
     .post-item {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       margin-bottom: 88px;
-      position: relative;
-      padding: 0 146px;
       max-width: 100%;
-      gap: 56px;
 
 
       @media screen and (max-width: $desktop) {
@@ -69,12 +74,11 @@
         gap: 63px;
       }
 
-      @media (min-width: $tablet) and (max-width: 1024px) {
+      @media screen and (max-width: 1439.9px) {
         gap: 54px;
         align-items: center;
-        margin-bottom: 120px;
+        margin-bottom: 80px;
         max-width: none;
-        padding: 0 146px;
       }
 
       @media screen and (max-width: $mobile) {
@@ -87,37 +91,6 @@
         flex-direction: column;
         gap: 20px;
         align-items: center;
-      }
-
-
-      .elem-yellow{
-        @media (min-width: $tablet) and (max-width: 1024px) {
-          display: none;
-        }
-
-        @media screen and (max-width: $mobile) {
-          display: none;
-        }
-
-        @media (min-width: $mobile) and (max-width: 600px) {
-          display: none;
-        }
-      }
-
-      .even {
-        filter: brightness(0) saturate(100%) invert(26%) sepia(49%) saturate(2263%) hue-rotate(346deg) brightness(102%) contrast(84%);
-
-        @media (min-width: $tablet) and (max-width: 1024px) {
-          display: none;
-        }
-
-        @media screen and (max-width: $mobile) {
-          display: none;
-        }
-
-        @media (min-width: $mobile) and (max-width: 600px) {
-          display: none;
-        }
       }
 
       .partner-text {
@@ -160,67 +133,26 @@
       }
 
       .partner-image {
-        margin-bottom: 20px;
+        width: 220px;
 
-        @media (min-width: 768px) and (max-width: 1024px) {
-          width: 210px;
-          margin-bottom: 0;
-        }
-
-        @media screen and (max-width: $mobile) {
-          width: 210px;
-          margin: auto;
-        }
-
-        @media (min-width: 360px) and (max-width: 600px) {
-          width: 210px;
+        @media screen and (max-width: 1439.9px) {
+          width: 164px;
         }
       }
     }
 
-    .post-item .partner-text::after {
-      @media screen and (max-width: $mobile) {
-        content: "";
-        position: absolute;
-        width: 99.41px;
-        height: 49.4px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(../../../../assets/images/element-red-mobile.svg);
-        transform: translate(50%, 98%);
-        right: 171px;
-      }
-      @media screen and (max-width: 400px) {
-        content: "";
-        position: absolute;
-        width: 99.41px;
-        height: 49.4px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(../../../../assets/images/element-red-mobile.svg);
-        transform: translate(50%, 98%);
-        right: 171px;
-      }
-    }
-
-    .post-item:nth-of-type(odd) .partner-text::after {
-      @media screen and (max-width: $mobile) {
-        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-        margin-top: 12px;
-      }
-      @media screen and (max-width: 400px) {
-        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-        margin-top: 12px;
-      }
-    }
   }
 
   .partners-pagination {
-    display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: center;
     margin-bottom: 100px;
+    display: none;
+
+    @media screen and (max-width: 1439.9px) {
+      display: flex;
+    }
 
     @media screen and (max-width: $mobile) {
       margin-top: 80px;
