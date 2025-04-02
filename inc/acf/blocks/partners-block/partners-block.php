@@ -7,8 +7,6 @@ $default_classes = [
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
     'partners-pagination' => 'partners-pagination',
-    'elem-yellow' => 'elem-yellow',
-    'even' => 'even',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -20,7 +18,7 @@ if (file_exists($modules_file)) {
 }
 ?>
 
-<section class="<?php echo esc_attr($classes['partners_section']); ?>">
+<section class="section <?php echo esc_attr($classes['partners_section']); ?>">
 
     <?php
     $h2_title = get_field('h2_title_main_section');
@@ -40,7 +38,7 @@ if (file_exists($modules_file)) {
 
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => 4,
+            'posts_per_page' => -1,
             'orderby' => 'date',
             'order' => 'ASC',
             'paged' => $paged,
@@ -67,11 +65,6 @@ if (file_exists($modules_file)) {
                              src="<?php echo esc_url($partner_image['url']); ?>"
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
-
-                    <img class="<?php echo esc_attr($classes['elem-yellow']); ?>
-                        <?php echo ($i % 2 == 0) ? esc_attr($classes['even']) : ''; ?>"
-                         src="<?php echo get_template_directory_uri() . '/assets/images/element-yellow.svg' ?>"
-                         alt="image">
 
                     <p class="<?php echo esc_attr($classes['partner-text']); ?>"><?php echo esc_html($partner_text); ?></p>
                 </div>
