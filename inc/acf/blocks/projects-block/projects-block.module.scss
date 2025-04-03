@@ -18,13 +18,27 @@
     width: 10px;
     height: 18px;
   }
-  
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
+      fill: $yellow;
+      border-color: $yellow;
+      background-color: $red;
+    }
+  }
+  &:active {
     fill: $yellow;
     border-color: $yellow;
     background-color: $red;
+    transition: border 0, background-color 0, fill 0;
   }
+  /*
+  &:focus-within{
+    fill: $red;
+    border-color: red;
+    background-color: unset;
+  }*/
 }
+
 
 .projects__section{
   padding-top: 0;
