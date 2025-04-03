@@ -14,6 +14,11 @@
 
 .header__logo-img {
     max-height: 100%;
+    width: 128px;
+
+    @media screen and (max-width: 767.9px) {
+        width: 56px;
+    }
 }
 
 .header__group {
@@ -39,7 +44,7 @@
 
     font-family: variables.$primary-font;
     font-size: 16px;
-    padding: 0px 4px;
+    padding: 0px;
 }
 
 .header__menu__list .menu-item a,
@@ -86,7 +91,7 @@
 .header__dropdown-menu-language-switcher-button {
     font-family: variables.$primary-font;
     font-size: 16px;
-    padding: 0px 4px;
+    padding: 0px;
     border-bottom: 1px solid transparent;
     transition: all variables.$animations;
 }
@@ -454,21 +459,24 @@
         justify-content: space-between;
         /* gap: 92px; */
     }
+
     .menu__nav {
         display: flex;
         flex-direction: row;
         width: 71%;
     }
-    .header__menu__list{
+
+    .header__menu__list {
         width: 100%;
         justify-content: space-between;
         gap: 8px;
 
     }
+
     .header__language-switcher {
         display: block;
     }
-    
+
     .header__social-icons {
         display: flex;
     }
@@ -488,11 +496,11 @@
         width: 81.2%;
     }
 
-    .menu__nav{
+    .menu__nav {
         width: 67.5%;
     }
 
 
 
-    
+
 }
