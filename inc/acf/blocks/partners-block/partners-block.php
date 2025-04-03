@@ -50,6 +50,9 @@ if (file_exists($modules_file)) {
                 $partner_image = get_field('partner_image', $id);
                 $partner_text = get_field('partner_text', $id);
                 ?>
+                <h3 class="<?php echo esc_attr($classes['partners-title']); ?>">
+                    <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
+                </h3>
                 <div class="<?php echo esc_attr($classes['post-item']); ?>">
                     <?php if ($partner_image) : ?>
                         <img class="<?php echo esc_attr($classes['partner-image']); ?>"
