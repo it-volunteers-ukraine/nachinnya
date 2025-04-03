@@ -30,27 +30,21 @@ if (file_exists($modules_file)) {
             ]); ?>
         </div>
     <?php endif; ?>
-
     <div class="container">
-
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
+        $posts_per_page = wp_is_mobile() ? 4 : -1;
         $args = array(
             'post_type' => 'partners',
-            'posts_per_page' => -1,
+            'posts_per_page' => $posts_per_page,
             'orderby' => 'date',
             'order' => 'ASC',
             'paged' => $paged,
         );
-
-        $i = 0;
         $query = new WP_Query($args);
         if ($query->have_posts()) :
             echo '<div id="partners-block" class="' . esc_attr($classes['partners']) . '">';
             while ($query->have_posts()) : $query->the_post();
-
-                $i++;
                 $id = get_the_ID();
                 $partner_title = get_field('partner_title', $id);
                 $partner_image = get_field('partner_image', $id);
@@ -65,18 +59,12 @@ if (file_exists($modules_file)) {
                              src="<?php echo esc_url($partner_image['url']); ?>"
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
-
                     <p class="<?php echo esc_attr($classes['partner-text']); ?>"><?php echo esc_html($partner_text); ?></p>
                 </div>
-
             <?php endwhile;
-
-
             echo '</div>';
-
             wp_reset_postdata();
             ?>
-
             <div class="<?php echo esc_attr($classes['partners-pagination']); ?>">
                 <?php
                 $big = 999999999;

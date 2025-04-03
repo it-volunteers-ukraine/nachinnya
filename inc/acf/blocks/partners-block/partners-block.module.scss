@@ -13,9 +13,7 @@
     }
 
     @media screen and (max-width: 1439.9px) {
-      padding: 0 111px;
-      display: grid;
-      grid-template-rows: repeat(4, 1fr);
+      padding: 0 146px;
     }
 
     @media screen and (max-width: $mobile) {
@@ -67,7 +65,6 @@
       justify-content: space-between;
       margin-bottom: 88px;
       max-width: 100%;
-
 
       @media screen and (max-width: $desktop) {
         padding: 0 0;
@@ -144,15 +141,16 @@
   }
 
   .partners-pagination {
-    flex-direction: row;
-    list-style: none;
-    justify-content: center;
-    margin-bottom: 100px;
     display: none;
 
     @media screen and (max-width: 1439.9px) {
       display: flex;
+      flex-direction: row;
+      list-style: none;
+      justify-content: center;
+      margin-bottom: 100px;
     }
+
 
     @media screen and (max-width: $mobile) {
       margin-top: 80px;
@@ -187,6 +185,7 @@
       background: $yellow;
     }
   }
+
 }
 
 
