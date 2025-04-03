@@ -109,9 +109,9 @@
   margin: 0 auto;
   text-align: left;
 
-  @media screen and (max-width: 1440px) {
-    width: 400px;
-    font-size: 16px;
+  @media screen and (max-width: 360px) {
+    width: 248px;
+    font-size: 14px;
   }
 
   @media screen and (max-width: 768px) {
@@ -119,9 +119,9 @@
     font-size: 16px;
   }
 
-  @media screen and (max-width: 360px) {
-    width: 248px;
-    font-size: 14px;
+  @media screen and (min-width: 1440px) {
+    width: 400px;
+    font-size: 16px;
   }
 }
 
@@ -139,7 +139,6 @@
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
   z-index: 5;
   cursor: pointer;
-  border: none;
   border-radius: 100px;
   text-decoration: none;
   font-family: Raleway sans-serif;
@@ -171,7 +170,14 @@
 }
 
 /* Button hover */
-.support-home__button:hover {
-  background: #e6b800;
+.button:hover {
+  background: #EFB330;
+  transform: scale(1.05);
+}
+
+.button:focus {
+  background: #E89319;
+  border: 2px solid #F2C857;
+  color: #F5EFE6;
   transform: scale(1.05);
 }
