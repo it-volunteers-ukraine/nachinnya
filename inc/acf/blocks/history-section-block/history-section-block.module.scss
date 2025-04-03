@@ -107,12 +107,11 @@
 
     @media screen and (max-width: 767.9px) {
         flex-direction: column-reverse;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         gap: 83px;
     }
 
     @media screen and (max-width: 430px) {
-        margin-bottom: 100px;
         gap: 33px;
     }
 }
