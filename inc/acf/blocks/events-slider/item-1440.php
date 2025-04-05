@@ -204,6 +204,13 @@
                     if ($main_text): 
                         $main_text_class_to_show = $classes["item-1440-text-part-card-main-text-visible"];
                 ?>
+                        
+                        <div
+                            id="eventsItemTextPartCardMainText<?= $current_id ?>Desktop"
+                            class="<?= $classes["item-1440-text-part-card-main-text"] ?>"
+                        >
+                            <?= $main_text ?>
+                        </div>
                         <div class="<?= $classes["item-1440-text-part-card-show-more"] ?>">
                             <button
                                 id="eventsToggleMoreTextButton<?= $current_id ?>Desktop"
@@ -213,12 +220,6 @@
                             >
                                 <?= $show_more_text ?>
                             </button>
-                        </div>
-                        <div
-                            id="eventsItemTextPartCardMainText<?= $current_id ?>Desktop"
-                            class="<?= $classes["item-1440-text-part-card-main-text"] ?>"
-                        >
-                            <?= $main_text ?>
                         </div>
                 <?php 
                     endif;
