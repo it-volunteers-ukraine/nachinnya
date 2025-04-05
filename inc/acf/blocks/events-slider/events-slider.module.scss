@@ -1010,7 +1010,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    align-self:flex-end;
+    align-self: flex-end;
 }
 
 .item-1440-text-part-card-main-text {
@@ -1309,7 +1309,7 @@
     position: relative;
     padding: 0px 4px;
     font-family: variables.$primary-font;
-    font-size: 20px;
+    font-size: 16px;
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
     transition: all variables.$animations;
@@ -1342,7 +1342,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    align-self:flex-end;
+    align-self: flex-end;
 }
 
 .item-1920-text-part-card-main-text {
