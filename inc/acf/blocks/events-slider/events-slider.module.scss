@@ -196,7 +196,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 76px 12px 0px 12px;
+    padding: 0px 12px;
     border-left: 2px solid variables.$red;
 }
 
@@ -267,7 +267,7 @@
 .item-360-text-part-card-texts {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .item-360-text-part-mt-register-block {
@@ -333,6 +333,7 @@
 .item-360-text-part-card-show-more-button {
     position: relative;
     padding: 0px 4px;
+    margin-top: 16px;
     font-family: variables.$primary-font;
     font-size: 16px;
     color: variables.$red;
@@ -372,7 +373,8 @@
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
-    transition: all 1500ms ease-out;
+    /* transition: all 1500ms ease-out; */
+    transition: all 500ms ease-out;
 }
 
 /* 
@@ -654,6 +656,7 @@
 .item-768-text-part-card-show-more-button {
     position: relative;
     padding: 0px 4px;
+    margin-top: 16px;
     font-family: variables.$primary-font;
     font-size: 16px;
     color: variables.$red;
@@ -687,7 +690,7 @@
     width: 32.29vw;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .item-768-text-part-card-main-text {
@@ -700,7 +703,8 @@
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
-    transition: all 1500ms ease-out;
+    /* transition: all 1500ms ease-out; */
+    transition: all 500ms ease-out;
 }
 
 /* 
@@ -783,7 +787,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: center;
+    /* align-self: center; */
+    margin-top: 230px;
     margin-bottom: 12px;
 
     color: variables.$red;
@@ -976,6 +981,7 @@
 .item-1440-text-part-card-show-more-button {
     position: relative;
     padding: 0px 4px;
+    margin-top: 16px;
     font-family: variables.$primary-font;
     font-size: 16px;
     color: variables.$red;
@@ -1009,8 +1015,8 @@
     width: 21.18vw;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-self:flex-end;
+    /* gap: 16px; */
+    align-self: flex-end;
 }
 
 .item-1440-text-part-card-main-text {
@@ -1023,7 +1029,8 @@
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
-    transition: all 1500ms ease-out;
+    /* transition: all 1500ms ease-out; */
+    transition: all 500ms ease-out;
 }
 
 .item-1440-yellow-arrow-svg {
@@ -1046,16 +1053,17 @@
     position: relative;
     display: none;
     flex-direction: row;
-    gap: 28px;
+    /* gap: 28px; */
+    justify-content: space-between;
     width: 100vw;
-    padding: 0px 40px;
+    padding: 0px 80px;
 }
 
 .item-1920-upper-part {
     display: flex;
     justify-content: space-between;
     height: 31.77vw;
-    margin-left: 44px;
+    /* margin-left: 44px; */
 }
 
 .item-1920-upper-part-wrapper {
@@ -1114,7 +1122,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-self: center;
+    /* align-self: center; */
+    margin-top: 230px;
     margin-bottom: 12px;
 
     color: variables.$red;
@@ -1156,10 +1165,10 @@
 .item-1920-text-part {
     display: flex;
     flex-direction: column;
-    gap: 88px;
+    gap: 40px;
     width: 43.75vw;
-    margin-left: 100px;
-    margin-right: 59px;
+    /* margin-left: 100px;
+    margin-right: 59px; */
     z-index: 10;
 }
 
@@ -1308,8 +1317,9 @@
 .item-1920-text-part-card-show-more-button {
     position: relative;
     padding: 0px 4px;
+    margin-top: 16px;
     font-family: variables.$primary-font;
-    font-size: 20px;
+    font-size: 16px;
     color: variables.$red;
     border-bottom: 1px solid variables.$red;
     transition: all variables.$animations;
@@ -1341,8 +1351,8 @@
     width: 22.13vw;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-self:flex-end;
+    /* gap: 16px; */
+    align-self: flex-end;
 }
 
 .item-1920-text-part-card-main-text {
@@ -1355,7 +1365,8 @@
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
-    transition: all 1500ms ease-out;
+    /* transition: all 1500ms ease-out; */
+    transition: all 500ms ease-out;
 }
 
 .item-1920-yellow-arrow-svg {

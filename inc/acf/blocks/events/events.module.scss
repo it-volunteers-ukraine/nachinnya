@@ -29,7 +29,7 @@
 
 @media screen and (min-width: variables.$full) {
     .container {
-        gap: 160px;
+        gap: 100px;
     }
 }
 
@@ -168,7 +168,7 @@
 
 @media screen and (min-width: variables.$full) {
     .events {
-        gap: 160px;
+        gap: 100px;
     }
 }
 
@@ -323,7 +323,7 @@
 .item-text-part-card-texts {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .item-text-part-mt-register-block {
@@ -389,6 +389,7 @@
 .item-text-part-card-show-more-button {
     position: relative;
     padding: 0px 4px;
+    margin-top: 16px;
     font-family: variables.$primary-font;
     font-size: 16px;
     color: variables.$red;
@@ -428,7 +429,8 @@
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
-    transition: all 1500ms ease-out;
+    /* transition: all 1500ms ease-out; */
+    transition: all 500ms ease-out;
 }
 
 @media screen and (min-width: variables.$tablet) {

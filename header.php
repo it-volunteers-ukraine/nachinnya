@@ -1,10 +1,14 @@
 <?php
     // The logo elements
     $logo_url = get_field('logo', 'option');
+    $current_lang = function_exists('pll_current_language') ? pll_current_language() : 'uk';
+
+    $home_url = ($current_lang === 'en') ? '/en/' : '/';
+
     $logo_elements = "";
     if ($logo_url) {
         $logo_elements = <<<LOGO
-            <a href="/"><img class="header__logo-img" src="$logo_url"></a>
+            <a href="$home_url"><img class="header__logo-img" src="$logo_url"></a>
         LOGO;
     }
 
@@ -74,7 +78,6 @@
                     <!-- The language switcher -->
                     <div class="header__language-switcher">
                         <?php
-                        $current_lang = pll_current_language();
                         $display_lang = ($current_lang === 'uk') ? 'УКР' : 'ENG';
                         ?>
                         
@@ -118,11 +121,12 @@
                         </svg>
                     </button>
                     <!-- The dropdown menu toggle button for the tablet and the desktop screens -->
+                    <?php $menu_text = ($current_lang === 'en') ? 'Menu' : 'Меню'; ?>
                     <button class="header__td-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
                         <svg class="header__td-menu-dropdown-open-svg">
                             <use xlink:href="<?= $menu_open_svg_href ?>"></use>
                         </svg>
-                        Меню
+                         <?php echo $menu_text ?>
                     </button>
                 </div>
             </div>                      
@@ -143,11 +147,12 @@
                 </svg>
             </button>
             <!-- The dropdown menu toggle button for the tablet and desktop screens -->
+            <?php $close_text = ($current_lang === 'en') ? 'Close' : 'Закрити'; ?>
             <button class="header__td-menu-dropdown-toggle" type="button" onclick="toggleHeaderDropdownMenu();">
                 <svg class="header__td-menu-dropdown-close-svg">
                     <use xlink:href="<?= $menu_close_svg_href ?>"></use>
                 </svg>
-                Закрити
+                <?php echo $close_text ?>
             </button>
 
             <div class="header__dropdown-menu-wrapper">
