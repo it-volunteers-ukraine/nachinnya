@@ -2,6 +2,18 @@
 
 .partners_section {
 
+
+  .title-partners {
+    text-align: -webkit-center;
+    margin-top: -30px;
+    @media screen and (max-width: $desktop) {
+      margin-bottom: -41px;
+    }
+    @media screen and (max-width: 1439.9px) {
+      margin-top: 133px;
+    }
+  }
+
   .partners {
     display: flex;
     flex-direction: column;
@@ -13,7 +25,7 @@
     }
 
     @media screen and (max-width: 1439.9px) {
-      padding: 0 146px;
+      padding: 0 118px;
     }
 
     @media screen and (max-width: $mobile) {
@@ -22,20 +34,48 @@
     }
 
     .partners-title:nth-child(1) {
-      text-align: center;
+      padding-left: 34%;
+      margin-top: 7px;
+      @media screen and (max-width: $desktop) {
+        padding-left: 35%;
+      }
+      @media screen and (max-width: $tablet) {
+        text-align: center;
+        margin-top: 16px;
+      }
     }
 
-    .partners-title {
-      margin-bottom: 88px;
+    .partners-title:nth-child(2) {
       @media screen and (max-width: $tablet) {
-        margin-bottom: 40px;
+        margin-left: -61px;
+        padding-left: 0;
+      }
+      @media screen and (max-width: $mobile) {
+        margin-left: 0;
+      }
+    }
+
+
+    .partners-title {
+      margin-bottom: 52px;
+      @media screen and (max-width: $desktop) {
+        margin-bottom: 62px;
+      }
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 26px;
       }
     }
 
     .partners-title:not(:nth-child(1)) {
-      max-width: 50%;
       white-space: nowrap;
-      padding-left: 43%;
+      padding-left: 11%;
+      margin-top: 1px;
+
+      @media screen and (max-width: $desktop) {
+        text-align: center;
+        padding-left: 0;
+      }
+
 
       @media (min-width: $tablet) and (max-width: 1024px) {
         max-width: none;
@@ -63,18 +103,17 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 88px;
+      margin-bottom: 119px;
       max-width: 100%;
 
       @media screen and (max-width: $desktop) {
-        padding: 0 0;
-        gap: 63px;
+        margin-bottom: 60px;
       }
 
       @media screen and (max-width: 1439.9px) {
-        gap: 54px;
+        gap: 40px;
         align-items: center;
-        margin-bottom: 80px;
+        margin-bottom: 115px;
         max-width: none;
       }
 
@@ -92,12 +131,12 @@
 
       .partner-text {
         font-size: 20px;
-        line-height: 14px;
         white-space: pre;
+        width: 425px;
 
         @media screen and (max-width: $desktop) {
           font-size: 16px;
-          width: 425px;
+          width: 414px;
           line-height: 130%;
           white-space: normal;
         }
@@ -149,6 +188,7 @@
       list-style: none;
       justify-content: center;
       margin-bottom: 100px;
+      margin-top: 33px;
     }
 
 

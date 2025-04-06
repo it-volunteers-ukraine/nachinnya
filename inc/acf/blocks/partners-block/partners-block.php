@@ -21,12 +21,12 @@ if (file_exists($modules_file)) {
 <section class="section <?php echo esc_attr($classes['partners_section']); ?>">
 
     <?php
-    $h2_title = get_field('h2_title_main_section');
-    if (!empty($h2_title)) :
+    $partners_title = get_field('partners_title');
+    if (!empty($partners_title)) :
         ?>
-        <div class="<?php echo esc_attr($classes['title-template-part']); ?>">
+        <div class="<?php echo esc_attr($classes['title-partners']); ?>">
             <?php get_template_part('template-parts/h2-title-v2', null, [
-                'title' => $h2_title
+                'title' => $partners_title
             ]); ?>
         </div>
     <?php endif; ?>

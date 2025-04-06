@@ -217,20 +217,11 @@
       }
     }
 
-    .photo img {
-      transform: scaleX(1.08) scaleY(1.05) rotate(-5deg);
-      object-fit: contain;
-    }
-
     .photo {
       @media screen and (max-width: $tablet) {
         display: flex;
         justify-content: center;;
       }
-    }
-
-    .photo:hover img {
-      transform: scaleX(1.08) scaleY(1.05) rotate(-3deg);
     }
   }
 
