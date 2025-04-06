@@ -4,7 +4,7 @@ $ornament_url = get_template_directory_uri() . "/assets/images/symbol-defs.svg#i
 $phone_number = esc_html(get_field('phone_number', 'options'));
 $phone = str_replace(' ', '', $phone_number);
 $email = esc_html(get_field('email', 'options'));
-
+$home_url = function_exists('pll_home_url') ? esc_url(pll_home_url()) : '/';
 $socials = get_field('socials', 'options');
 ?>
 <style>
@@ -40,7 +40,7 @@ $socials = get_field('socials', 'options');
         <div class="ornament"></div>
         <div class="footer">
             <div class="footer-content">
-                <a href="/" class="logo-footer-link">
+                <a href="<?php echo $home_url?>" class="logo-footer-link">
                     <svg class="logo-footer-img">
                         <use xlink:href="<?php bloginfo('template_url'); ?>/assets/images/symbol-defs.svg#icon-logo-white"></use>
                     </svg>
