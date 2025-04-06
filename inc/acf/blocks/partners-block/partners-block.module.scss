@@ -132,14 +132,13 @@
 
       .partner-text {
         font-size: 20px;
-        white-space: pre;
         width: 425px;
         line-height: 130%;
+        white-space: normal;
 
         @media screen and (max-width: $desktop) {
           font-size: 16px;
           width: 414px;
-          white-space: normal;
         }
 
         @media (min-width: 768px) and (max-width: 1024px) {
