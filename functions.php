@@ -135,6 +135,21 @@ function enqueue_slider_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_slider_scripts');
 
+add_action( 'wp_footer', 'theme_lightbox2_settings' );
+function theme_lightbox2_settings() {
+    ?>
+    <script>
+      lightbox.option({
+        'resizeDuration': 200,
+        'fadeDuration': 300,
+        'imageFadeDuration': 300,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices': true,
+        'showImageNumberLabel': false,
+      })
+    </script>
+    <?php
+}
 
 /** ACF add options page */
 if (function_exists('acf_add_options_page')) {
