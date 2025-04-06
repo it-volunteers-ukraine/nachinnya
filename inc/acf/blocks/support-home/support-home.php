@@ -47,9 +47,9 @@ if (file_exists($modules_file)) {
 
             <!-- Text Support Home Block -->
             <?php if (!empty($wave_desc)) : ?>
-              <p class="<?php echo esc_attr($classes['text-content']); ?>">
-                <?php echo esc_html($wave_desc); ?>
-              </p>
+              <div class="<?php echo esc_attr($classes['text-content']); ?>">
+                <?php echo wp_kses_post($wave_desc); ?>
+              </div>
             <?php endif; ?>
 
             <!-- Button Support Home Block -->
@@ -57,9 +57,11 @@ if (file_exists($modules_file)) {
             $button_text = get_field('support_button_text');
             $button_link = get_field('support_button_link');
             if ($button_text && $button_link) : ?>
-              <a href="<?php echo esc_url($button_link); ?>" class="<?php echo esc_attr($classes['button']); ?>">
-                <?php echo esc_html($button_text); ?>
-              </a>
+              <div class="<?php echo esc_attr($classes['button-wrapper']); ?>">
+                <a href="<?php echo esc_url($button_link); ?>" class="<?php echo esc_attr($classes['button']); ?>">
+                  <?php echo esc_html($button_text); ?>
+                </a>
+              </div>
             <?php endif; ?>
 
           </div>
