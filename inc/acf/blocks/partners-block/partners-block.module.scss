@@ -2,15 +2,16 @@
 
 .partners_section {
 
-
   .title-partners {
     text-align: -webkit-center;
-    margin-top: -30px;
+    margin-top: -85px;
+    margin-bottom: 104px;
     @media screen and (max-width: $desktop) {
-      margin-bottom: -41px;
+      margin-bottom: 54px;
     }
     @media screen and (max-width: 1439.9px) {
-      margin-top: 133px;
+      margin-top: 96px;
+      margin-bottom: 67px;
     }
   }
 
@@ -35,7 +36,7 @@
 
     .partners-title:nth-child(1) {
       padding-left: 34%;
-      margin-top: 7px;
+      margin-top: 6px;
       @media screen and (max-width: $desktop) {
         padding-left: 35%;
       }
@@ -45,7 +46,7 @@
       }
     }
 
-    .partners-title:nth-child(2) {
+    .partners-title:nth-of-type(2) {
       @media screen and (max-width: $tablet) {
         margin-left: -61px;
         padding-left: 0;
@@ -57,9 +58,9 @@
 
 
     .partners-title {
-      margin-bottom: 52px;
+      margin-bottom: 43px;
       @media screen and (max-width: $desktop) {
-        margin-bottom: 62px;
+        margin-bottom: 42px;
       }
       @media screen and (max-width: $tablet) {
         margin-bottom: 26px;
@@ -69,7 +70,7 @@
     .partners-title:not(:nth-child(1)) {
       white-space: nowrap;
       padding-left: 11%;
-      margin-top: 1px;
+      margin-top: 2px;
 
       @media screen and (max-width: $desktop) {
         text-align: center;
@@ -103,11 +104,11 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 119px;
+      margin-bottom: 126px;
       max-width: 100%;
 
       @media screen and (max-width: $desktop) {
-        margin-bottom: 60px;
+        margin-bottom: 81px;
       }
 
       @media screen and (max-width: 1439.9px) {
@@ -133,11 +134,11 @@
         font-size: 20px;
         white-space: pre;
         width: 425px;
+        line-height: 130%;
 
         @media screen and (max-width: $desktop) {
           font-size: 16px;
           width: 414px;
-          line-height: 130%;
           white-space: normal;
         }
 
