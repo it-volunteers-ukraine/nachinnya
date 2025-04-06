@@ -10,7 +10,7 @@
     margin-bottom: 64px;
     margin-right: 1px;
   }
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: 1439.9px) {
     margin-top: -67px;
     margin-bottom: 43px;
   }
@@ -19,11 +19,9 @@
 .title-left {
   text-align: left;
   margin-bottom: 88px;
-  @media screen and (max-width: $mobile) {
-    margin-bottom: 40px;
-  }
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: 767.9px) {
     text-align: -webkit-center;
+    margin-bottom: 40px;
   }
 }
 
@@ -41,11 +39,10 @@
     width: 305px;
     align-self: flex-start;
   }
-  @media screen and (max-width: $tablet) {
-    max-width: 100%;
-  }
-  @media screen and (max-width: $mobile) {
+
+  @media screen and (max-width: 767.9px) {
     position: relative;
+    width: 100%;
   }
 }
 
@@ -77,13 +74,7 @@
       padding-bottom: 66px;
     }
 
-    @media screen and (max-width: $mobile) {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    @media (min-width: 360px) and (max-width: 500px) {
+    @media screen and (max-width: 767.9px) {
       display: flex;
       flex-direction: column;
       gap: 40px;
@@ -99,11 +90,11 @@
         margin-bottom: -4px;
       }
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         margin-bottom: 4px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767.9px) {
         margin-bottom: 20px;
       }
 
@@ -135,11 +126,7 @@
         width: 200px;
       }
 
-      @media screen and (max-width: $mobile) {
-        display: none;
-      }
-
-      @media (min-width: 360px) and (max-width: 500px) {
+      @media screen and (max-width: 767.9px) {
         display: none;
       }
 
@@ -150,18 +137,7 @@
     }
 
     .text-content::before {
-      @media screen and (max-width: $mobile) {
-        content: "";
-        position: absolute;
-        width: 99.41px;
-        height: 49.4px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        background-image: url(../../../../assets/images/element-yellow-mobile.svg);
-      }
-      @media (min-width: 360px) and (max-width: 500px) {
+      @media screen and (max-width: 767.9px) {
         content: "";
         position: absolute;
         width: 99.41px;
@@ -175,7 +151,7 @@
     }
 
     .text-content.red-mobile::before {
-      @media (min-width: 360px) and (max-width: 500px) {
+      @media screen and (max-width: 767.9px) {
         content: "";
         position: absolute;
         width: 99.41px;
@@ -189,14 +165,13 @@
     }
 
     p {
-      @media (min-width: 768px) and (max-width: 1024px) {
+      @media screen and (max-width: 1439.9px) {
         font-size: 16px;
         width: 248px;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767.9px) {
         font-size: 14px;
-        width: 100%;
       }
     }
 
@@ -210,7 +185,7 @@
         margin-left: 1px;
         margin-right: -1px;
       }
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         font-size: 16px;
         margin-top: -13px;
         padding-top: 1px;
@@ -218,9 +193,9 @@
     }
 
     .photo {
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 767.9px) {
         display: flex;
-        justify-content: center;;
+        justify-content: center;
       }
     }
   }
@@ -231,7 +206,7 @@
       margin-top: 2px;
       margin-left: 1px;
     }
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
       padding-left: 0;
       margin-left: 4px;
       margin-top: 2px;
@@ -249,11 +224,12 @@
         font-size: 16px;
         margin-bottom: 18px;
       }
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         margin-bottom: 11px;
       }
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767.9px) {
         font-size: 14px;
+        margin-bottom: 13px;
       }
     }
   }
@@ -268,19 +244,17 @@
       padding-top: 29px;
     }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media screen and (max-width: 1439.9px) {
       padding-top: 28px;
       line-height: 19px;
       margin-bottom: 20px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
       margin-top: 40px;
       white-space: normal;
       margin-bottom: 25px;
-    }
-    @media (min-width: 360px) and (max-width: 500px) {
-      margin-top: 40px;
+      font-size: 14px;
     }
   }
 
@@ -289,7 +263,7 @@
     @media screen and (max-width: $desktop) {
       margin-bottom: 25px;
     }
-    @media screen and (max-width: $tablet) {
+    @media screen and (max-width: 1439.9px) {
       margin-bottom: 30px;
     }
   }
