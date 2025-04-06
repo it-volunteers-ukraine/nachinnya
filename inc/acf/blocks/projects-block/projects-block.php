@@ -55,7 +55,24 @@ $team_block = null;
 // $welcome  = get_field('welcome_to_command');
 // $count = count($team_block) == 5 ? 'count-5' : '';
 
-$category_list = get_field('category_gallery');
+$taxonomy = 'project-category';
+$current_lang = pll_current_language();
+
+
+$current_lang = pll_current_language(); // Получаем текущий язык
+// echo 'current_lang: '. $current_lang . '<br>';
+
+$category_all_list = get_field('category_gallery');
+// $category_list = $category_all_list;
+$category_list = [];
+foreach($category_all_list as $category) {
+    $cat_id = $category['category'];
+    $cat_lang = pll_get_term_language($cat_id);
+    if ($current_lang === $cat_lang) {
+        $category_list[] = $category;
+    }
+}
+// echo '<br>category 36 lang: ' . pll_get_term_language('27');
 
 // echo '<pre>';
 // echo var_dump($category_list);
@@ -91,14 +108,14 @@ $category_list = get_field('category_gallery');
                 $posts = get_posts([
                     'post_type'      => 'project',  // Замени на твой пост-тайп
                     'posts_per_page' => -1,
+                    'post_status'    => 'publish',  // только опубликованные!
+                    'orderby'        => 'date',     // сортировка по дате
+                    'order'          => 'DESC',     // от новых к старым (убывание)
                     'tax_query'      => [
                         [
                             'taxonomy' => 'project-category',
                             'field'    => 'term_id',
                             'terms'    => $category_id,
-                            'post_status'    => 'publish',  // только опубликованные!
-                            'orderby'        => 'date',     // сортировка по дате
-                            'order'          => 'DESC',     // от новых к старым (убывание)
                         ]
                     ]
                 ]);
@@ -116,7 +133,6 @@ $category_list = get_field('category_gallery');
                 // echo '</pre>';
 
                 $class_close = esc_attr($classes['close']);
-
                 $is_close = $counter > 0 ? $class_close : '';
                 // $is_close = $class_close;
 
@@ -193,7 +209,7 @@ $category_list = get_field('category_gallery');
                                     // setup_postdata($post); 
                                     ?>
                                     <div class="<?php echo esc_attr($classes['project__item']); ?>">
-                                        <div class="<?php echo esc_attr($classes['swipper-wrapper']); ?>">
+                                        <div id='sw-wrapper' class="<?php echo esc_attr($classes['swipper-wrapper']); ?>">
                                             <div class="swiper <?php echo esc_attr($classes['project-slider']); ?>">
                                                 <div class="swiper-wrapper <?php echo esc_attr($classes['swiper-wrapper']); ?>">
                                                     <?php foreach ($gallery as $item_img) : ?>
@@ -267,8 +283,8 @@ $category_list = get_field('category_gallery');
                             <?php endif; ?>
                         </div>
                     </div>
+                    <?php $counter++; ?>
                 <?php endif; ?>
-                <?php $counter++; ?>
             <?php endforeach; ?>
         <?php endif;; ?>
 

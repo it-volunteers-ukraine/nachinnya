@@ -19,8 +19,10 @@ function projectsCategoryHidden(event, classClose) {
 
   // Посты после wrapper
   const posts = wrapper.querySelector('[data-category-posts]');
-
+  // const swWrapper = wrapper.querySelector('#sw-wrapper');
   // let postsHeight = (posts.scrollHeight) + 'px';
+  // const calcH = calcHeight(posts);
+  // console.log(`calcHeight: ${calcH} \ndata-category-post: ${posts.clientHeight}\nndata-category-post max: ${posts.scrollHeight}\nswWrapper: ${swWrapper.scrollHeight}`);
   const postsHeight = calcHeight(posts) + 'px';
 
 
@@ -73,12 +75,12 @@ window.addEventListener('DOMContentLoaded', () => {
 // text more 
 function calcHeight(domBlock) {
   let currentHeight = domBlock.scrollHeight;
-  // console.log('currnetHeihjt: ', currentHeight);
   const allTextBlock = domBlock.querySelectorAll('[data-text-content');
   for (item of allTextBlock) {
     currentHeight += item.scrollHeight;
   }
-  return currentHeight;
+
+  return currentHeight + 100;
 }
 
 function calculateCollapsedHeight(content) {
