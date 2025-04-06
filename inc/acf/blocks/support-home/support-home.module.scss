@@ -45,22 +45,18 @@
 
   @media screen and (max-width: 1440px) {
     width: 697px;
-    height: 538px;
   }
 
   @media screen and (max-width: 768px) {
     width: 498px;
-    height: 501px;
   }
 
   @media screen and (max-width: 360px) {
     width: 328px;
-    height: 453px;
   }
 }
 
 /* Title Support Home Block */
-
 .title-template-part {
   width: fit-content;
   text-align: center;
@@ -109,23 +105,68 @@
   margin: 0 auto;
   text-align: left;
 
+  @media screen and (max-width: 1440px) and (min-width: 769px) {
+    width: 400px;
+    font-size: 16px;
+    padding-bottom: 16px;
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 361px) {
+    width: 248px;
+    font-size: 16px;
+    padding-bottom: 16px;
+  }
+
   @media screen and (max-width: 360px) {
     width: 248px;
     font-size: 14px;
+    padding-bottom: 16px;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    width: 248px;
-    font-size: 16px;
+.text-content p:not(:last-child) {
+  margin-bottom: 44px;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 769px) {
+  .text-content p:not(:last-child) {
+    margin-bottom: 20px;
   }
+}
 
-  @media screen and (min-width: 1440px) {
-    width: 400px;
-    font-size: 16px;
+@media screen and (max-width: 768px) and (min-width: 361px) {
+  .text-content p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .text-content p:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
 /* Button Support Home Block*/
+.button-wrapper {
+  width: 425px;
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 1440px) and (min-width: 769px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 361px) {
+    width: 248px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 248px;
+  }
+
+}
+
 .button {
   display: inline-flex;
   justify-content: center;
@@ -133,7 +174,6 @@
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
-  left: 108px;
   width: 203px;
   height: 50px;
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -141,31 +181,27 @@
   cursor: pointer;
   border-radius: 100px;
   text-decoration: none;
-  font-family: Raleway sans-serif;
   font-size: 20px;
   font-weight: 500px;
-  background: #ffcc00;
+  background: #F2C857;
   color: #B74028;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1440px) and (min-width: 769px) {
     width: 177px;
     height: 45px;
     font-size: 16px;
-    left: 110px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) and (min-width: 361px) {
     width: 177px;
     height: 45px;
-    left: 35px;
     font-size: 16px;
   }
 
   @media screen and (max-width: 360px) {
     width: 248px;
     height: 45px;
-    padding-top: 16px;
-    left: 0;
+    font-size: 16px;
   }
 }
 
