@@ -14,8 +14,9 @@
 
     // The social-icons elements
     $socials = get_field('socials', 'option');
+
     $socials_elements = "";
-    if ($socials && count($socials)) {
+    if ($socials) {
         //
         $socials_items = "";
         foreach ($socials as $social) {
