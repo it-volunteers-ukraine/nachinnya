@@ -140,9 +140,22 @@
         }
 
         @media screen and (max-width: 767.9px) {
-          padding: 0 16px;
-          font-size: 14px;
+          font-size: 20px;
           width: 100%;
+        }
+      }
+
+      .image {
+        position: relative;
+
+        @media screen and (max-width: 1439.9px) {
+          padding: 0 0 35% 0;
+          width: 165px;
+        }
+
+        @media screen and (max-width: 767.9px) {
+          width: 164px;
+          padding: 0 0 48% 0;
         }
       }
 
@@ -150,15 +163,15 @@
         width: 220px;
 
         @media screen and (max-width: 1439.9px) {
-          width: 164px;
+          width: 100%;
+          position: absolute;
+          height: 100%;
+          object-fit: cover;
         }
+
       }
 
-      .partner-image:nth-child(1) {
-        @media screen and (max-width: 767.9px) {
-          width: 324px;
-        }
-      }
+
     }
   }
 

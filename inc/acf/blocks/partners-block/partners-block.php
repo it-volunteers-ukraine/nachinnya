@@ -7,6 +7,7 @@ $default_classes = [
     'post-item' => 'post-item',
     'partner-image' => 'partner-image',
     'partners-pagination' => 'partners-pagination',
+    'image' => 'image',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
@@ -54,11 +55,13 @@ if (file_exists($modules_file)) {
                     <?php echo esc_html($partner_title ? $partner_title : get_the_title()); ?>
                 </h3>
                 <div class="<?php echo esc_attr($classes['post-item']); ?>">
+                    <div class="<?php echo esc_attr($classes['image']); ?>">
                     <?php if ($partner_image) : ?>
                         <img class="<?php echo esc_attr($classes['partner-image']); ?>"
                              src="<?php echo esc_url($partner_image['url']); ?>"
                              alt="<?php echo esc_attr($partner_title); ?>">
                     <?php endif; ?>
+                    </div>
                     <p class="<?php echo esc_attr($classes['partner-text']); ?>"><?php echo esc_html($partner_text); ?></p>
                 </div>
             <?php endwhile;
