@@ -277,6 +277,7 @@
 .item-360-text-part-register-button {
     position: relative;
     width: 100%;
+    max-width: 328px;
     border-radius: 100px;
     padding: 12px 32px;
     background-color: variables.$yellow;

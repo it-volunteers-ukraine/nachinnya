@@ -130,7 +130,7 @@
             <a
                 class="<?= $classes["item-1440-upper-part-link"] ?>"
                 href="<?= $image['url'] ?>"
-                data-lightbox="image<?= $current_id ?>"
+                data-lightbox="image1440<?= $current_id ?>"
                 data-alt=""
             >
                 <?= $image_tag ?>
