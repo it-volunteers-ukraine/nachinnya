@@ -1,7 +1,6 @@
 @use "./../../../../src/styles/variables.scss" as *;
 
 .partners_section {
-
   .title-partners {
     text-align: -webkit-center;
     margin-top: -85px;
@@ -12,6 +11,10 @@
     @media screen and (max-width: 1439.9px) {
       margin-top: 96px;
       margin-bottom: 67px;
+    }
+    @media screen and (max-width: 767.9px) {
+      margin-top: -36px;
+      margin-bottom: 45px;
     }
   }
 
@@ -29,7 +32,7 @@
       padding: 0 118px;
     }
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 767.9px) {
       gap: 40px;
       padding: 0;
     }
@@ -40,29 +43,31 @@
       @media screen and (max-width: $desktop) {
         padding-left: 35%;
       }
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         padding-left: 30%;
         margin-top: 16px;
+      }
+      @media screen and (max-width: 767.9px) {
+        padding-left: 26%;
       }
     }
 
     .partners-title:nth-of-type(2) {
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         margin-left: -61px;
         padding-left: 0;
       }
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767.9px) {
         margin-left: 0;
       }
     }
-
 
     .partners-title {
       margin-bottom: 43px;
       @media screen and (max-width: $desktop) {
         margin-bottom: 42px;
       }
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: 1439.9px) {
         margin-bottom: 26px;
       }
     }
@@ -77,21 +82,13 @@
         padding-left: 0;
       }
 
-
-      @media (min-width: $tablet) and (max-width: 1024px) {
+      @media screen and (max-width: 1439.9px) {
         max-width: none;
         padding-left: 0;
         text-align: center;
       }
 
-      @media screen and (max-width: $mobile) {
-        padding-left: 0;
-        max-width: none;
-        white-space: normal;
-        text-align: center;
-      }
-
-      @media (min-width: $mobile) and (max-width: 600px) {
+      @media screen and (max-width: 767.9px) {
         padding-left: 0;
         max-width: none;
         white-space: normal;
@@ -118,16 +115,10 @@
         max-width: none;
       }
 
-      @media screen and (max-width: $mobile) {
+      @media screen and (max-width: 767.9px) {
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-      }
-
-      @media (min-width: $mobile) and (max-width: 600px) {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
+        margin-bottom: 40px;
       }
 
       .partner-text {
@@ -141,31 +132,18 @@
           width: 414px;
         }
 
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media screen and (max-width: 1439.9px) {
           font-size: 16px;
           width: 249px;
           white-space: normal;
           line-height: 120%;
         }
 
-        @media screen and (max-width: $mobile) {
-          margin-top: 20px;
-          font-size: 20px;
-          line-height: 20px;
-          white-space: normal;
-          padding: 0 26px;
+        @media screen and (max-width: 767.9px) {
+          padding: 0 16px;
+          font-size: 14px;
           width: 100%;
         }
-
-        @media (min-width: $mobile) and (max-width: 600px) {
-          margin-top: 20px;
-          font-size: 20px;
-          line-height: 20px;
-          white-space: normal;
-          padding: 0 26px;
-          width: 100%;
-        }
-
       }
 
       .partner-image {
@@ -175,8 +153,13 @@
           width: 164px;
         }
       }
-    }
 
+      .partner-image:nth-child(1) {
+        @media screen and (max-width: 767.9px) {
+          width: 324px;
+        }
+      }
+    }
   }
 
   .partners-pagination {
@@ -191,9 +174,8 @@
       margin-top: 33px;
     }
 
-
-    @media screen and (max-width: $mobile) {
-      margin-top: 80px;
+    @media screen and (max-width: 767.9px) {
+      margin-top: 64px;
     }
 
     a {
@@ -225,7 +207,6 @@
       background: $yellow;
     }
   }
-
 }
 
 
