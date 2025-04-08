@@ -14,48 +14,74 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 882px;
-  z-index: 1;
-  position: relative;
+  padding: 119px 0;
+
+  @media screen and (max-width: 1440px) {
+    padding: 121px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 130px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+  }
 
 }
 
 /* Wave Support Home Block */
 .wave {
-  position: absolute;
-  top: 119px;
-  left: 50%;
-  transform: translateX(-50%);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 3;
 }
 
-/* Element of Wave Support Home Block */
 .wave-item {
-  position: relative;
-  width: 839px;
-  height: 644px;
-  text-align: center;
-  padding: 0;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  z-index: 3;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  @media screen and (max-width: 1440px) {
-    width: 697px;
-    height: 538px;
+@media screen and (max-width: 1440px) {
+  .wave-item {
+    max-width: 697px;
+    aspect-ratio: 697 / 538;
   }
 
-  @media screen and (max-width: 768px) {
-    width: 498px;
-    height: 501px;
+  @supports not (aspect-ratio: 1 / 1) {
+    .wave-item::before {
+      padding-top: 77.2%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wave-item {
+    max-width: 498px;
+    aspect-ratio: 498 / 501;
   }
 
-  @media screen and (max-width: 360px) {
-    width: 328px;
-    height: 453px;
+  @supports not (aspect-ratio: 1 / 1) {
+    .wave-item::before {
+      padding-top: 100.6%;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .wave-item {
+    max-width: 328px;
+    aspect-ratio: 328 / 453;
+  }
+
+  @supports not (aspect-ratio: 1 / 1) {
+    .wave-item::before {
+      padding-top: 138.1%;
+    }
   }
 }
 
@@ -155,6 +181,7 @@
   text-align: right;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 80px;
 
   @media screen and (max-width: 1440px) and (min-width: 769px) {
     width: 400px;
@@ -210,12 +237,10 @@
 /* Button hover */
 .button:hover {
   background: #EFB330;
-  transform: scale(1.05);
 }
 
 .button:focus {
   background: #E89319;
   border: 2px solid #F2C857;
   color: #F5EFE6;
-  transform: scale(1.05);
 }
