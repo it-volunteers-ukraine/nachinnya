@@ -44,10 +44,29 @@
   margin-left: auto;
   margin-right: auto;
 
+  @media screen and (max-width: 1920px) {
+    width: 839px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    width: 697px;
+  }
+
   @media screen and (max-width: 1000px) {
     background-position: center;
   }
 
+  @media screen and (max-width: 768px) {
+    width: 498px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 328px;
+  }
 }
 
 /* Title Support Home Block */
