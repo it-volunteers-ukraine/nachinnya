@@ -120,7 +120,7 @@
             <a
                 class="<?= $classes["item-360-upper-part-link"] ?>"
                 href="<?= $image['url'] ?>"
-                data-lightbox="image<?= $current_id ?>"
+                data-lightbox="image360<?= $current_id ?>"
                 data-alt=""
             >
                 <?= $image_tag ?>

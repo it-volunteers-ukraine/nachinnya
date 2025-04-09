@@ -22,7 +22,7 @@
     $args = array(
         'post_type'             => 'event',
 
-        'posts_per_page'        => 5,
+        'posts_per_page'        => 4,
 
         'meta_query'            => array(
             'relation'          => 'AND',
