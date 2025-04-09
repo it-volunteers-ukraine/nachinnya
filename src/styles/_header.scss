@@ -353,6 +353,10 @@
 
 .header__prevent-scrolling {
     position: fixed;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
 // The scroll to top button
