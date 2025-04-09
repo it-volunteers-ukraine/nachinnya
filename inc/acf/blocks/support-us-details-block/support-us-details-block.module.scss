@@ -192,15 +192,28 @@
 .details-title {
     min-width: 132px;
     max-width: 160px;
+    overflow: hidden;
 
     @media screen and (max-width: 1919.9px) {
         min-width: 104px;
         max-width: 106px;
     }
+
+    @media screen and (max-width: 1439.9px) {
+        max-width: 250px;
+    }
 }
 
 /* IBAN */
 .details-flex-container:nth-of-type(3) {
+    .details-text {
+        max-width: 360px;
+
+        @media screen and (max-width: 1919.9px) {
+            max-width: 280px;
+        }
+    }
+
     @media screen and (min-width: 1440px) and (max-width: 1919.9px) {
         .details-title {
             min-width: 40px;
@@ -210,6 +223,18 @@
         .details-value {
             min-width: 330px;
         }
+    }
+}
+
+.details-text {
+    max-width: 370px;
+
+    @media screen and (max-width: 1919.9px) {
+        max-width: 230px;
+    }
+
+    @media screen and (max-width: 1439.9px) {
+        max-width: 250px;
     }
 }
 
