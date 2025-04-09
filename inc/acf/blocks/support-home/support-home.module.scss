@@ -40,48 +40,32 @@
 .wave-item {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
 
-@media screen and (max-width: 1440px) {
-  .wave-item {
-    max-width: 697px;
-    aspect-ratio: 697 / 538;
+  @media screen and (max-width: 1920px) {
+    width: 839px;
   }
 
-  @supports not (aspect-ratio: 1 / 1) {
-    .wave-item::before {
-      padding-top: 77.2%;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .wave-item {
-    max-width: 498px;
-    aspect-ratio: 498 / 501;
+  @media screen and (max-width: 1440px) {
+    width: 697px;
   }
 
-  @supports not (aspect-ratio: 1 / 1) {
-    .wave-item::before {
-      padding-top: 100.6%;
-    }
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .wave-item {
-    max-width: 328px;
-    aspect-ratio: 328 / 453;
+  @media screen and (max-width: 1000px) {
+    background-position: center;
   }
 
-  @supports not (aspect-ratio: 1 / 1) {
-    .wave-item::before {
-      padding-top: 138.1%;
-    }
+  @media screen and (max-width: 768px) {
+    width: 498px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 400px;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 328px;
   }
 }
 
