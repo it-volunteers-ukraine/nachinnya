@@ -98,13 +98,14 @@ if (file_exists($modules_file)) {
                         <?php
                         $email = get_field('contacts-email');
                         $phone = get_field('phone');
+                        $phone_call = str_replace(' ', '', $phone);
                         ?>
                         <div class="<?php echo esc_attr($classes['contacts-row']); ?>">
                             <?php if (!empty($phone)): ?>
-                                <a href="tel:<?php echo esc_attr($phone); ?>" rel="noopener noreferrer" class="icon">
+                                <a href="tel:<?php echo esc_attr($phone_call); ?>" rel="noopener noreferrer" class="icon">
                                     <img src="<?php the_field('icon-phone') ?>" alt="phone">
                                 </a>
-                                <a href=tel:<?php echo esc_attr($phone); ?> rel="noopener noreferrer">
+                                <a href="tel:<?php echo esc_attr($phone_call); ?>" rel="noopener noreferrer">
                                     <?php echo esc_html($phone); ?>
                                 </a>
                             <?php endif; ?>
@@ -112,10 +113,10 @@ if (file_exists($modules_file)) {
 
                         <div class="<?php echo esc_attr($classes['contacts-row']); ?>">
                             <?php if (!empty($email)): ?>
-                                <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
+                                <a href="mailto:<?php echo esc_attr($email); ?>" rel="noopener noreferrer">
                                     <img class="<?php echo esc_attr($classes['icon-email']); ?>" src="<?php the_field('icon-email') ?>" alt="email">
                                 </a>
-                                <a href=mailto:<?php echo esc_attr($email); ?> rel="noopener noreferrer">
+                                <a href="mailto:<?php echo esc_attr($email); ?>" rel="noopener noreferrer">
                                     <?php echo esc_html($email); ?>
                                 </a>
                             <?php endif; ?>
