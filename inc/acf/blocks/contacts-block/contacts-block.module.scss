@@ -233,14 +233,11 @@
       text-transform: uppercase;
       font-weight: 400;
       color: rgb(53, 19, 17);
-      margin-bottom: 22px;
+      margin-bottom: 2px;
       font-family: 'KharkivTone', sans-serif;
       @media screen and (max-width: $desktop) {
         font-size: 16px;
-        margin-bottom: 18px;
-      }
-      @media screen and (max-width: 1439.9px) {
-        margin-bottom: 11px;
+        margin-bottom: 0;
       }
       @media screen and (max-width: 767.9px) {
         font-size: 14px;
