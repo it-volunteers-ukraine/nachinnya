@@ -186,3 +186,5 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug' => 'theme-general-settings',
     ));
 }
+
+add_filter('wp_img_tag_add_decoding_attr', '__return_false');
