@@ -27,6 +27,10 @@
     justify-content: center;
     flex-wrap: wrap;
 
+    @media screen and (max-width: 1935px) {
+        gap: 30px;
+    }
+
     @media screen and (max-width: 1919.9px) {
         gap: 20px;
     }
