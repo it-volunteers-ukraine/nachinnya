@@ -57,7 +57,7 @@ const eventsSliderToggleShowMoreText = (id) => {
     // Retrieving the related elements
     const btn = document.getElementById(`eventsToggleMoreTextButton${id}Mobile`);
     const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}Mobile`);
-    
+
     // Checking the current state: does it show more text?
     if (('eventsShowMoreText' in btn) && (!btn.eventsShowMoreText)) {
         // Moving to the state "Show less text"
@@ -86,7 +86,7 @@ const eventsSliderToggleShowMoreTextTablet = (id) => {
     // Retrieving the related elements
     const btn = document.getElementById(`eventsToggleMoreTextButton${id}Tablet`);
     const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}Tablet`);
-    
+
     // Checking the current state: does it show more text?
     if (('eventsShowMoreText' in btn) && (!btn.eventsShowMoreText)) {
         // Moving to the state "Show less text"
@@ -115,7 +115,7 @@ const eventsSliderToggleShowMoreTextDesktop = (id) => {
     // Retrieving the related elements
     const btn = document.getElementById(`eventsToggleMoreTextButton${id}Desktop`);
     const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}Desktop`);
-    
+
     // Checking the current state: does it show more text?
     if (('eventsShowMoreText' in btn) && (!btn.eventsShowMoreText)) {
         // Moving to the state "Show less text"
@@ -144,7 +144,7 @@ const eventsSliderToggleShowMoreTextFull = (id) => {
     // Retrieving the related elements
     const btn = document.getElementById(`eventsToggleMoreTextButton${id}Full`);
     const textBlock = document.getElementById(`eventsItemTextPartCardMainText${id}Full`);
-    
+
     // Checking the current state: does it show more text?
     if (('eventsShowMoreText' in btn) && (!btn.eventsShowMoreText)) {
         // Moving to the state "Show less text"

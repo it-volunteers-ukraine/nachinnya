@@ -5,15 +5,18 @@
   margin-bottom: 168px;
   margin-right: -12px;
   margin-top: -87px;
+
   @media screen and (max-width: $desktop) {
     margin-top: -83px;
     margin-bottom: 64px;
     margin-right: 1px;
   }
+
   @media screen and (max-width: 1439.9px) {
     margin-top: -67px;
     margin-bottom: 43px;
   }
+
   @media screen and (max-width: 767.9px) {
     padding-top: 32px;
   }
@@ -22,6 +25,7 @@
 .title-left {
   text-align: left;
   margin-bottom: 88px;
+
   @media screen and (max-width: 767.9px) {
     text-align: -webkit-center;
     margin-bottom: 40px;
@@ -31,6 +35,7 @@
 .title-merch {
   text-align: left;
   margin-bottom: 88px;
+
   @media screen and (max-width: $desktop) {
     text-align: -webkit-center;
   }
@@ -38,6 +43,7 @@
 
 .text-content {
   width: 425px;
+
   @media screen and (max-width: $desktop) {
     width: 305px;
     align-self: flex-start;
@@ -114,6 +120,7 @@
         @media screen and (max-width: $desktop) {
           margin-bottom: 22px;
         }
+
         @media screen and (max-width: 767.9px) {
           margin-bottom: 21px;
         }
@@ -190,17 +197,20 @@
       margin-top: -1px;
       margin-left: 1px;
       margin-right: -1px;
+
       @media screen and (max-width: $desktop) {
         font-size: 16px;
         margin-top: -3px;
         margin-left: 1px;
         margin-right: -1px;
       }
+
       @media screen and (max-width: 1439.9px) {
         font-size: 16px;
         margin-top: -13px;
         padding-top: 1px;
       }
+
       @media screen and (max-width: 767.9px) {
         font-size: 14px;
         margin-right: 3px;
@@ -217,10 +227,12 @@
 
   .icon-email {
     margin-right: 9px;
+
     @media screen and (max-width: $desktop) {
       margin-top: 2px;
       margin-left: 1px;
     }
+
     @media screen and (max-width: 1439.9px) {
       padding-left: 0;
       margin-left: 4px;
@@ -235,10 +247,12 @@
       color: rgb(53, 19, 17);
       margin-bottom: 2px;
       font-family: 'KharkivTone', sans-serif;
+
       @media screen and (max-width: $desktop) {
         font-size: 16px;
         margin-bottom: 0;
       }
+
       @media screen and (max-width: 767.9px) {
         font-size: 14px;
         margin-bottom: 20px;
@@ -249,6 +263,7 @@
   .contacts-text {
     margin-bottom: 44px;
     white-space: pre-line;
+
     @media screen and (max-width: $desktop) {
       white-space: normal;
       font-size: 16px;
@@ -272,12 +287,15 @@
 
   .contacts-text2 {
     margin-bottom: 45px;
+
     @media screen and (max-width: $desktop) {
       margin-bottom: 25px;
     }
+
     @media screen and (max-width: 1439.9px) {
       margin-bottom: 30px;
     }
+
     @media screen and (max-width: 767.9px) {
       margin-bottom: 34px;
     }
@@ -289,22 +307,3 @@
     margin: 0 auto 40px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
