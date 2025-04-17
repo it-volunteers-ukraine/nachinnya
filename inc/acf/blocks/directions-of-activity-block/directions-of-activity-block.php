@@ -1,7 +1,12 @@
 <?php
 $default_classes = [
     'title-template-part' => 'title-template-part',
-    'bg-wrapper' => 'bg-wrapper'
+    'bg-wrapper' => 'bg-wrapper',
+    'ornament-wrapper' => 'ornament-wrapper',
+    'directions-and-descriptions-wrapper' => 'directions-and-descriptions-wrapper',
+    'directions-and-descriptions' => 'directions-and-descriptions',
+    'direction' => 'direction',
+    'description' => 'description',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';

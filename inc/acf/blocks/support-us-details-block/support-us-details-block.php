@@ -1,7 +1,24 @@
 <?php
 $default_classes = [
     'title-template-part' => 'title-template-part',
-    'bg-wrapper' => 'bg-wrapper'
+    'bg-wrapper' => 'bg-wrapper',
+    'ornament-wrapper' => 'ornament-wrapper',
+    'title-template-part-above-slider' => 'title-template-part-above-slider',
+    'swiper-container' => 'swiper-container',
+    'slide-1' => 'slide-1',
+    'slide-2' => 'slide-2',
+    'swiper-pagination-wrapper' => 'swiper-pagination-wrapper',
+    'swiper-pagination' => 'swiper-pagination',
+    'flex-container' => 'flex-container',
+    'image-left-wrapper' => 'image-left-wrapper',
+    'image-right-wrapper' => 'image-right-wrapper',
+    'middle-column-text' => 'middle-column-text',
+    'details' => 'details',
+    'details-flex-container' => 'details-flex-container',
+    'details-title' => 'details-title',
+    'details-value' => 'details-value',
+    'copy-value' => 'copy-value',
+    'copied-value' => 'copied-value',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';

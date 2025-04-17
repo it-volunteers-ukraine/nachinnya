@@ -1,6 +1,21 @@
 <?php
 $default_classes = [
     'title-template-part' => 'title-template-part',
+    'our-mission' => 'our-mission',
+    'our-vision' => 'our-vision',
+    'follow-us' => 'follow-us',
+    'variations-wrapper' => 'variations-wrapper',
+    'swiper-container' => 'swiper-container',
+    'v-slide' => 'v-slide',
+    'h-slide' => 'h-slide',
+    'swiper-pagination-wrapper' => 'swiper-pagination-wrapper',
+    'swiper-pagination' => 'swiper-pagination',
+    'text-container' => 'text-container',
+    'link-container' => 'link-container',
+    'link' => 'link',
+    'images-container' => 'images-container',
+    'image-vertical-wrapper' => 'image-vertical-wrapper',
+    'image-horizontal-wrapper' => 'image-horizontal-wrapper',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';

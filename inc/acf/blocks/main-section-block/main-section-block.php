@@ -9,6 +9,14 @@ $default_classes = [
     'main_section_slogan' => 'main_section_slogan',
     'slogan' => 'slogan',
     'main_section_columns-text' => 'main_section_columns-text',
+    'upper-title-container' => 'upper-title-container',
+    'upper-title-template-part-wrapper' => 'upper-title-template-part-wrapper',
+    'main-page' => 'main-page',
+    'team-page' => 'team-page',
+    'support-page' => 'support-page',
+    'about-page' => 'about-page',
+    'left' => 'left',
+    'right' => 'right',
 
 ];
 

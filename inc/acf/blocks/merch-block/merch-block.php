@@ -3,7 +3,10 @@ $default_classes = [
     'title-template-part' => 'title-template-part',
     'flex-container' => 'flex-container',
     'text-wrapper' => 'text-wrapper',
-
+    'merch_photo' => 'merch_photo',
+    'loop-arrow' => 'loop-arrow',
+    'merch_text' => 'merch_text',
+    'merch-socials' => 'merch-socials',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';

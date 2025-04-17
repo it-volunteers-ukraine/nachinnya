@@ -1,6 +1,12 @@
 <?php
 $default_classes = [
     'title-template-part' => 'title-template-part',
+    'partners-slider-wrapper' => 'partners-slider-wrapper',
+    'slide-prev' => 'slide-prev',
+    'partner-image' => 'partner-image',
+    'slide-next' => 'slide-next',
+    'partners-text-column' => 'partners-text-column',
+    'link' => 'link',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';

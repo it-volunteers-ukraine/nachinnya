@@ -4,6 +4,8 @@ $default_classes = [
     'title-template-part' => 'title-template-part',
     'values' => 'values',
     'value-item' => 'value-item',
+    'title-wrapper' => 'title-wrapper',
+    'value-title' => 'value-title',
 ];
 
 $modules_file = get_template_directory() . '/assets/blocks/styles/modules.json';
